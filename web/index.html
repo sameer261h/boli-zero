@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>boli-zero</title>
+<style>
+  :root { --bg:#faf8f5; --card:#fff; --ink:#1d1b18; --muted:#6b665e; --line:#e5e0d8; --accent:#b4531a; --ok:#2f7d4f; --warn:#a86a00; --bar:#e8c9b0; --err:#b3261e; --chip:#f1ece4; --hl:#fde7b0; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161513; --card:#201e1b; --ink:#f0ece4; --muted:#a39d92; --line:#34312c; --accent:#e58a4f; --ok:#6cc08d; --warn:#e0a84a; --bar:#5a3c27; --err:#f2877f; --chip:#2b2824; --hl:#5a4a1a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { margin:0; font-size: 28px; }
+  .sub { color:var(--muted); margin: 4px 0 16px; }
+  h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 28px 0 10px; }
+  h3 { font-size: 15px; margin: 0 0 8px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px; }
+  .grid .card b { display:block; font-size:18px; margin-bottom:6px; }
+  .row { display:flex; justify-content:space-between; gap:8px; font-size:14px; }
+  .bad { color: var(--warn); } .good { color: var(--ok); }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:500; }
+  td.num { font-variant-numeric: tabular-nums; }
+  td.barcell { width:40%; }
+  .bar { height:10px; background:var(--bar); border-radius:5px; min-width:2px; }
+  .bar.base { background: var(--line); }
+  textarea, select, button, input { font:inherit; color:inherit; }
+  textarea { width:100%; min-height:84px; padding:10px; border:1px solid var(--line); border-radius:8px; background:var(--bg); }
+  .controls { display:flex; gap:10px; align-items:center; margin-top:10px; flex-wrap:wrap; }
+  select, input[type=file] { padding:8px; border:1px solid var(--line); border-radius:8px; background:var(--bg); max-width:100%; }
+  button { padding:9px 16px; border:0; border-radius:8px; background:var(--accent); color:#fff; cursor:pointer; }
+  button.secondary { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  button:disabled { opacity:.55; cursor:not-allowed; }
+  button:focus-visible, select:focus-visible, input:focus-visible, .clip:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  .out { margin-top:14px; white-space:pre-wrap; }
+  .err { color: var(--warn); }
+  details { margin-top:10px; color:var(--muted); font-size:13px; }
+  summary { cursor:pointer; }
+  pre { white-space:pre-wrap; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--line); margin:6px 0 0; }
+  .empty { color:var(--muted); }
+
+  .banner { border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:10px 14px; background:var(--card); font-size:14px; }
+  .budget { display:flex; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--muted); margin:10px 0 0; }
+  .layout { display:grid; grid-template-columns: 340px 1fr; gap:16px; align-items:start; }
+  @media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
+  .tabs { display:flex; gap:6px; margin-bottom:10px; }
+  .tabs button { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  .tabs button[aria-selected=true] { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .clips { max-height:520px; overflow:auto; margin:10px 0 0; padding:0; list-style:none; border:1px solid var(--line); border-radius:8px; }
+  .clip { display:flex; justify-content:space-between; gap:8px; padding:8px 10px; border-bottom:1px solid var(--line); cursor:pointer; font-size:14px; }
+  .clip:last-child { border-bottom:0; }
+  .clip > span:first-child { white-space:nowrap; }
+  .clip > span:last-child { text-align:right; }
+  .clip[aria-selected=true] { background:var(--chip); font-weight:600; }
+  .chip { display:inline-block; font-size:12px; padding:1px 8px; border-radius:999px; background:var(--chip); border:1px solid var(--line); margin-left:4px; white-space:nowrap; }
+  .chip.ok { color:var(--ok); } .chip.warn { color:var(--warn); }
+  .status { margin:0 0 12px; padding:10px 14px; border-radius:8px; border:1px solid var(--line); font-size:14px; background:var(--card); }
+  .status.loading { border-left:4px solid var(--accent); }
+  .status.success { border-left:4px solid var(--ok); }
+  .status.warn { border-left:4px solid var(--warn); }
+  .status.error { border-left:4px solid var(--err); }
+  .status b { display:block; }
+  .headline { font-size:20px; font-weight:600; margin:0 0 6px; }
+  .meta { font-size:13px; color:var(--muted); margin:2px 0; }
+  .part { border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:10px 0; }
+  .part ul { margin:6px 0 0; padding-left:20px; font-size:14px; }
+  .kind { font-size:12px; color:var(--muted); margin-right:6px; }
+  .raw { font-size:18px; line-height:1.6; }
+  .cols { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width: 820px) { .cols { grid-template-columns: 1fr; } }
+  mark { background:var(--hl); color:inherit; border-radius:3px; padding:0 2px; }
+  .section { margin-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>boli-zero</h1>
+  <p class="sub">Try Gnani's Prisma speech recognition on short Hindi and Bhojpuri lesson clips, and see which language or variety each one looks like.</p>
+  <div class="banner" role="note">
+    <b>Provisional.</b> Labels are proposals from a short, unreviewed word list, not verified language identification. Prisma is not being trained or changed.
+    Prisma does not offer Bhojpuri, so audio is sent in Hindi mode. The sample recordings are of unknown licence: keep them on this computer.
+  </div>
+  <div class="budget" id="budget" aria-live="polite">Loading spend…</div>
+
+  <h2>Recognize</h2>
+  <div class="layout">
+    <section class="card" aria-label="Choose a recording">
+      <div class="tabs" role="tablist">
+        <button role="tab" id="tab-samples" aria-selected="true" aria-controls="pane-samples">Samples</button>
+        <button role="tab" id="tab-upload" aria-selected="false" aria-controls="pane-upload">Upload</button>
+      </div>
+      <div id="pane-samples" role="tabpanel">
+        <div class="controls" style="margin-top:0">
+          <label for="f-partition">Partition</label>
+          <select id="f-partition"><option value="all">All</option><option>development</option><option>validation</option><option>test</option></select>
+          <label for="f-elig">Show</label>
+          <select id="f-elig"><option value="all">All</option><option value="eligible">Can be sent</option><option value="deferred_over_30s">Over 30 s (deferred)</option></select>
+        </div>
+        <p class="meta" id="sample-count"></p>
+        <ul class="clips" id="clips" role="listbox" aria-label="Sample recordings"></ul>
+      </div>
+      <div id="pane-upload" role="tabpanel" hidden>
+        <label for="file">Recording (WAV, MP3, OGG, FLAC, AAC or M4A; up to 30 s and 10 MB)</label>
+        <div class="controls"><input type="file" id="file" accept=".wav,.mp3,.ogg,.flac,.aac,.m4a,audio/*"></div>
+        <p class="meta" id="file-note">Nothing chosen. Uploads are checked on the server, sent to Gnani for recognition, and not kept; the response is saved so a repeat is free.</p>
+      </div>
+    </section>
+
+    <section aria-label="Result">
+      <div id="status" class="status" role="status" aria-live="polite">Choose a recording to begin.</div>
+      <div class="card" id="detail">
+        <h3 id="detail-title">No recording selected</h3>
+        <audio id="player" controls preload="none" style="width:100%" hidden></audio>
+        <div class="controls">
+          <button id="btn-baseline" disabled>Recognize</button>
+          <button id="btn-boosted" class="secondary" disabled>Run boosted comparison</button>
+        </div>
+        <p class="meta" id="action-note"></p>
+        <div id="result"></div>
+      </div>
+    </section>
+  </div>
+
+  <details class="legacy" style="margin-top:36px">
+    <summary>Earlier scaffold panels: connection status, dataset splits, text experiments</summary>
+    <h2>Gnani connection</h2>
+    <div class="grid" id="legacy-status"></div>
+
+    <h2>Dataset</h2>
+    <div class="card" id="dataset">Loading…</div>
+
+    <h2>Experiments</h2>
+    <div class="card" id="experiments">Loading…</div>
+
+    <h2>Try a rewrite</h2>
+    <div class="card">
+      <label for="text">Hindi sentence</label>
+      <textarea id="text" lang="hi" placeholder="Type or paste a Hindi sentence"></textarea>
+      <div class="controls">
+        <label for="shots">Examples shown</label>
+        <select id="shots"><option>0</option><option>10</option><option>25</option><option>50</option><option>100</option></select>
+        <button id="go">Rewrite in Bhojpuri</button>
+      </div>
+      <div class="out" id="out"></div>
+      <details id="promptBox" hidden><summary>Prompt sent</summary><pre id="prompt"></pre></details>
+    </div>
+  </details>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const el = (tag, text, cls) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; };
+
+/* ---------- earlier scaffold panels (unchanged behaviour) ---------- */
+async function loadStatus() {
+  const data = await (await fetch('/api/status')).json();
+  const box = $('legacy-status'); box.replaceChildren();
+  for (const [name, s] of Object.entries(data)) {
+    const card = el('div', undefined, 'card');
+    card.append(el('b', name.charAt(0).toUpperCase() + name.slice(1)));
+    const line = (label, ok, yes, no) => { const r = el('div', undefined, 'row'); r.append(el('span', label), el('span', ok ? yes : no, ok ? 'good' : 'bad')); card.append(r); };
+    line('Credentials', s.credentials_present, 'present', 'missing');
+    line('HTTP calls', s.transport_implemented, 'implemented', 'not implemented');
+    const r = el('div', undefined, 'row'); r.append(el('span', 'Calls / cache hits'), el('span', `${s.api_calls} / ${s.cache_hits}`)); card.append(r);
+    box.append(card);
+  }
+}
+
+async function loadDataset() {
+  const d = await (await fetch('/api/dataset')).json();
+  const box = $('dataset'); box.replaceChildren();
+  box.append(el('div', `${d.processed_records} records ingested`));
+  if (!d.splits) { box.append(el('div', 'No split yet. Run the split command.', 'empty')); return; }
+  const c = d.splits.counts;
+  box.append(el('div', `train ${c.train} · validation ${c.validation} · test ${c.test} (seed ${d.splits.seed}, grouped by ${d.splits.group_by})`));
+}
+
+function renderRun(run) {
+  const wrap = el('div');
+  const m = run.metrics;
+  wrap.append(el('div', `${run.config.task} · ${run.config.status} · eval split ${run.config.eval_split || '?'} · ${run.config.n_eval} items · ${run.config.n_train} train`, 'empty'));
+  if (!m) { wrap.append(el('div', run.config.dry_run ? 'Dry run: prompts only, nothing to score.' : 'Not scored yet. Run the evaluate command.', 'empty')); return wrap; }
+  const rows = [['identity (no-op)', m.identity_baseline, true], ...Object.entries(m.conditions).map(([k, v]) => [`${k}-shot`, v, false])];
+  const table = el('table');
+  const head = el('tr'); ['Condition', 'n', 'chrF', '', 'Exact', 'Copy'].forEach((h) => head.append(el('th', h))); table.append(head);
+  for (const [label, v, base] of rows) {
+    const tr = el('tr');
+    tr.append(el('td', label), el('td', v.n, 'num'), el('td', v.chrf.toFixed(1), 'num'));
+    const barCell = el('td', undefined, 'barcell'); const bar = el('div', undefined, base ? 'bar base' : 'bar'); bar.style.width = `${Math.max(v.chrf, 1)}%`; barCell.append(bar); tr.append(barCell);
+    tr.append(el('td', v.exact_match.toFixed(3), 'num'), el('td', v.copy_rate.toFixed(3), 'num'));
+    table.append(tr);
+  }
+  wrap.append(table);
+  return wrap;
+}
+
+async function loadExperiments() {
+  const runs = await (await fetch('/api/experiments')).json();
+  const box = $('experiments'); box.replaceChildren();
+  if (!runs.length) { box.append(el('div', 'No runs yet.', 'empty')); return; }
+  const select = el('select'); runs.forEach((r, i) => { const o = el('option', r.name); o.value = i; select.append(o); });
+  const body = el('div'); body.style.marginTop = '12px';
+  const show = () => body.replaceChildren(renderRun(runs[select.value]));
+  select.onchange = show; box.append(select, body); show();
+}
+
+$('go').onclick = async () => {
+  const out = $('out'), btn = $('go'); out.replaceChildren(); $('promptBox').hidden = true;
+  if (!$('text').value.trim()) { out.append(el('div', 'Enter a sentence first.', 'err')); return; }
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/translate', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: $('text').value, shots: Number($('shots').value) }) });
+    const body = await res.json();
+    if (!res.ok) { out.append(el('div', body.detail || 'Request failed', 'err')); return; }
+    out.append(el('div', body.output)); $('prompt').textContent = body.prompt; $('promptBox').hidden = false;
+  } catch (e) { out.append(el('div', String(e), 'err')); }
+  finally { btn.disabled = false; }
+};
+
+/* ---------- recognition journey ---------- */
+const S = { samples: [], modes: { baseline: true, boosted: false }, limits: { max_seconds: 30, max_upload_mb: 10 },
+            selected: null, tab: 'samples', busy: false, epoch: 0, upload: null, results: {}, countdown: null };
+
+const RULES = {
+  two_or_more_distinct_markers: 'Two or more different Bhojpuri-side forms were recognized.',
+  one_marker_and_speaker_names_bhojpuri: 'One Bhojpuri-side form was recognized and the speaker says the word "Bhojpuri". This is weak evidence.',
+  one_marker_and_speaker_names_bhojpuri_but_saved_assessment_hedges: 'One Bhojpuri-side form plus the speaker naming Bhojpuri, but another source allows a related dialect.',
+  one_marker_without_speaker_naming_bhojpuri: 'Only one Bhojpuri-side form was recognized and the speaker never names Bhojpuri. Not enough to propose a variety.',
+  speaker_names_bhojpuri_but_no_variety_specific_form_recognized: 'The speaker says "Bhojpuri", but no Bhojpuri-side form appears in the recognized text.',
+  devanagari_text_without_variety_specific_evidence: 'Devanagari text with no form that points to a particular variety. Script and shared words are not evidence.',
+  two_or_more_distinct_hindi_markers: 'Two or more standard Hindi forms were recognized (for example the future forms करेंगे or बोलेंगे).',
+  one_hindi_marker_and_speaker_names_hindi: 'One standard Hindi form plus the speaker saying "Hindi".',
+  too_few_words_or_not_devanagari: 'Too few recognized words, or mostly non-Devanagari output.',
+  externally_supplied_evidence: 'Evidence was supplied from outside the word list. Unverified.',
+};
+const KINDS = { eastern_marker: 'Bhojpuri-side form', standard_hindi_marker: 'standard Hindi form', speaker_names_language: 'speaker names the language',
+                shared_form_noted: 'shared form (not counted)', supplied: 'supplied evidence', saved_model_assessment: 'saved assessment' };
+const ERROR_TITLES = {
+  empty_file: 'Empty file', file_too_large: 'File too large', unsupported_format: 'Unsupported file', unreadable_audio: 'Unreadable audio',
+  too_short: 'Recording too short', too_long: 'Recording too long', bad_request: 'Malformed request', mode_unavailable: 'Not available',
+  deferred_over_30s: 'Deferred: over 30 seconds', duplicate_excluded: 'Probable duplicate', cannot_check_duration: 'Cannot check the recording',
+  not_configured: 'Gnani is not set up on the server', gnani_auth: 'Authentication problem', rate_limited: 'Rate limit',
+  gnani_rejected_duration: 'Gnani rejected the length', gnani_rejected_input: 'Gnani rejected the recording', gnani_unavailable: 'Gnani processing error',
+  gnani_unreachable: 'Cannot reach Gnani', budget_exhausted: 'Trial spend cap reached', network: 'Cannot reach this app',
+};
+const INPUT_PROBLEMS = new Set(['empty_file', 'file_too_large', 'unsupported_format', 'unreadable_audio', 'too_short', 'too_long', 'bad_request', 'deferred_over_30s', 'duplicate_excluded', 'gnani_rejected_duration', 'gnani_rejected_input']);
+
+async function api(path, options = {}) {
+  let res;
+  try { res = await fetch(path, options); }
+  catch (e) { return { ok: false, status: 0, error: { code: 'network', message: 'Could not reach the Boli Zero server. Is it still running?' } }; }
+  const text = await res.text();
+  let data = null;
+  try { data = text ? JSON.parse(text) : null; } catch (e) { data = null; }
+  if (res.ok) return { ok: true, status: res.status, data };
+  const error = data && data.error ? data.error
+    : { code: 'http_' + res.status, message: data && typeof data.detail === 'string' ? data.detail : `The server answered HTTP ${res.status}.` };
+  return { ok: false, status: res.status, error, retryAfter: res.headers.get('Retry-After') };
+}
+
+function setStatus(kind, title, message, actions) {
+  const box = $('status'); box.className = 'status ' + kind; box.replaceChildren(el('b', title));
+  if (message) box.append(el('span', message));
+  (actions || []).forEach((a) => box.append(a));
+}
+
+function money(x) { return '₹' + Number(x).toFixed(2); }
+async function loadBudget() {
+  const r = await api('/api/budget');
+  const box = $('budget'); box.replaceChildren();
+  if (!r.ok) { box.append(el('span', 'Spend figures unavailable.')); return; }
+  const b = r.data;
+  box.append(el('span', `Estimated Gnani spend this trial: ${money(b.estimated_spent_inr)} of ${money(b.budget_inr)}`),
+             el('span', `${b.successful_live_calls} live calls succeeded`), el('span', `${b.failed_calls} failed`),
+             el('span', `${b.cache_replays} saved-result replays (free)`));
+}
+
+/* samples list */
+function filteredSamples() {
+  const p = $('f-partition').value, e = $('f-elig').value;
+  return S.samples.filter((s) => (p === 'all' || s.partition === p) && (e === 'all' || s.eligibility === e));
+}
+function renderSamples() {
+  const list = $('clips'); list.replaceChildren();
+  const rows = filteredSamples();
+  $('sample-count').textContent = S.samples.length ? `${rows.length} of ${S.samples.length} recordings` : '';
+  if (!S.samples.length) { list.append(el('li', 'No sample recordings are configured on this server.', 'clip empty')); return; }
+  if (!rows.length) { list.append(el('li', 'No recordings match these filters.', 'clip empty')); return; }
+  for (const s of rows) {
+    const li = el('li', undefined, 'clip'); li.tabIndex = 0; li.setAttribute('role', 'option'); li.dataset.id = s.id;
+    li.setAttribute('aria-selected', String(S.selected === s.id));
+    const left = el('span', `${s.label} · ${s.duration_s.toFixed(1)} s`);
+    const right = el('span');
+    right.append(el('span', s.partition, 'chip'));
+    if (s.eligibility === 'deferred_over_30s') right.append(el('span', 'over 30 s', 'chip warn'));
+    if (s.eligibility === 'duplicate_excluded') right.append(el('span', 'duplicate', 'chip warn'));
+    if (s.saved && s.saved.baseline) right.append(el('span', 'saved', 'chip ok'));
+    li.append(left, right);
+    li.onclick = () => selectSample(s.id);
+    li.onkeydown = (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); selectSample(s.id); } };
+    list.append(li);
+  }
+}
+
+/* result rendering */
+function wordDiff(a, b) {
+  const x = a.split(/\s+/).filter(Boolean), y = b.split(/\s+/).filter(Boolean);
+  const dp = Array.from({ length: x.length + 1 }, () => new Array(y.length + 1).fill(0));
+  for (let i = x.length - 1; i >= 0; i--) for (let j = y.length - 1; j >= 0; j--)
+    dp[i][j] = x[i] === y[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+  const left = [], right = []; let i = 0, j = 0, changed = 0;
+  while (i < x.length || j < y.length) {
+    if (i < x.length && j < y.length && x[i] === y[j]) { left.push([x[i], false]); right.push([y[j], false]); i++; j++; }
+    else if (j >= y.length || (i < x.length && dp[i + 1][j] >= dp[i][j + 1])) { left.push([x[i], true]); changed++; i++; }
+    else { right.push([y[j], true]); changed++; j++; }
+  }
+  return { left, right, changed };
+}
+function words(parts) {
+  const span = el('div', undefined, 'raw'); span.lang = 'hi';
+  parts.forEach(([w, hl], k) => { span.append(hl ? Object.assign(document.createElement('mark'), { textContent: w }) : document.createTextNode(w), document.createTextNode(k < parts.length - 1 ? ' ' : '')); });
+  return span;
+}
+
+function sourceLine(p) {
+  if (p.source === 'live') return `Live Gnani call, made just now (${p.origin && p.origin.host ? p.origin.host : 'host unknown'}).`;
+  const when = p.cached_at ? new Date(p.cached_at).toLocaleString() : 'an earlier time';
+  const via = p.origin ? (p.origin.via === 'http' ? `a real HTTP call to ${p.origin.host || 'an unknown host'}` : `an injected test transport (not a real Prisma call)`)
+                       : 'a call saved before origin tracking existed (host not recorded)';
+  return `Saved response replayed from the local cache. It was recorded at ${when} from ${via}. No new request was sent.`;
+}
+
+function renderPart(part, route) {
+  const box = el('div', undefined, 'part');
+  const head = el('div'); head.append(el('span', part.display, 'chip'), el('strong', ' ' + (route ? route.display : part.display)));
+  box.append(head);
+  box.append(el('p', RULES[part.rule] || part.rule, 'meta'));
+  const shown = part.evidence.filter((e) => e.kind !== 'shared_form_noted');
+  if (shown.length) {
+    const ul = el('ul');
+    const seen = new Set();
+    for (const e of shown) {
+      const key = e.kind + e.text + e.context; if (seen.has(key)) continue; seen.add(key);
+      const li = el('li'); li.append(el('span', KINDS[e.kind] || e.kind, 'kind'));
+      const w = el('b', e.text); w.lang = 'hi'; li.append(w);
+      if (e.context) { const c = el('span', '  …' + e.context + '…', 'meta'); c.lang = 'hi'; li.append(c); }
+      if (/development-derived/.test(e.note || '')) li.append(el('span', ' (development-derived, unverified)', 'meta'));
+      ul.append(li);
+    }
+    box.append(ul);
+  } else box.append(el('p', 'No supporting forms were found in the recognized text.', 'meta'));
+  const shared = part.evidence.filter((e) => e.kind === 'shared_form_noted');
+  if (shared.length) box.append(el('p', 'Shared forms seen but not counted: ' + [...new Set(shared.map((e) => e.text))].join(', '), 'meta'));
+  const d = el('details'); d.append(el('summary', 'Uncertainty and competing possibilities'));
+  const ul = el('ul'); part.uncertainty.forEach((u) => ul.append(el('li', u)));
+  if (part.competing.length) ul.append(el('li', 'Not ruled out: ' + part.competing.join(', ')));
+  d.append(ul); box.append(d);
+  return box;
+}
+
+function renderPayload(p, title) {
+  const wrap = el('div', undefined, 'section');
+  wrap.append(el('h3', title));
+  if (p.empty_transcript) {
+    wrap.append(el('div', 'Gnani answered successfully but returned no text for this audio (it may be silent or unintelligible). No language can be proposed.', 'status warn'));
+  }
+  const id = p.identification;
+  wrap.append(el('p', id.summary, 'headline'));
+  wrap.append(el('p', sourceLine(p), 'meta'));
+  wrap.append(el('p', `Sent to Prisma as ${p.settings.language_code}, verbatim format` + (p.settings.bias_words ? `, with ${p.settings.bias_words} boost words at score ${p.settings.bias_score}` : ', no boost') + '. ' + (id.mixed ? 'This clip contains more than one language, so more than one label is proposed. ' : '') + p.bhojpuri_note, 'meta'));
+  if (p.recognition.request_id) wrap.append(el('p', `Request id ${p.recognition.request_id}`, 'meta'));
+  const rawBox = el('div', undefined, 'section'); rawBox.append(el('h3', 'Exact Prisma output (unedited)'));
+  const pre = el('pre', p.recognition.raw_output === '' ? '(empty string)' : p.recognition.raw_output, 'raw'); pre.lang = 'hi'; rawBox.append(pre);
+  wrap.append(rawBox);
+  const proposals = el('div', undefined, 'section'); proposals.append(el('h3', 'Proposed language or variety, with evidence'));
+  id.parts.forEach((part, k) => proposals.append(renderPart(part, p.routes[k])));
+  wrap.append(proposals);
+  const dev = p.identification_with_dev_vocabulary;
+  if (dev && dev.summary !== id.summary) {
+    const x = el('div', undefined, 'section'); x.append(el('h3', 'Experimental: labels with development-derived vocabulary'));
+    x.append(el('p', dev.summary, 'headline'));
+    x.append(el('p', 'Using extra word forms derived from development recordings only (unverified, taken from Prisma output). The standard result above is unchanged.', 'meta'));
+    wrap.append(x);
+  } else if (dev) wrap.append(el('p', 'Experimental development-derived vocabulary was applied and gave the same labels.', 'meta'));
+  return wrap;
+}
+
+function renderResults() {
+  const box = $('result'); box.replaceChildren();
+  const base = S.results.baseline, boost = S.results.boosted;
+  if (!base && !boost) { box.append(el('p', 'No saved result for this recording yet.', 'empty')); return; }
+  if (base) box.append(renderPayload(base, 'Baseline result'));
+  if (boost) {
+    box.append(renderPayload(boost, 'Boosted result (experimental)'));
+    if (base) {
+      const d = wordDiff(base.recognition.raw_output, boost.recognition.raw_output);
+      const c = el('div', undefined, 'section'); c.append(el('h3', 'Baseline compared with boosted'));
+      c.append(el('p', d.changed === 0 ? 'The two transcripts are identical.' : `${d.changed} word differences (highlighted). There is no reference text, so neither side is marked correct.`, 'meta'));
+      const cols = el('div', undefined, 'cols');
+      const l = el('div'); l.append(el('b', 'Baseline'), words(d.left)); const r = el('div'); r.append(el('b', 'Boosted'), words(d.right));
+      cols.append(l, r); c.append(cols); box.append(c);
+    }
+  }
+}
+
+/* actions */
+function setBusy(b) { S.busy = b; updateButtons(); }
+function currentAudioInfo() {
+  if (S.tab === 'samples' && S.selected) { const s = S.samples.find((x) => x.id === S.selected); return s ? { kind: 'sample', sample: s } : null; }
+  if (S.tab === 'upload' && S.upload && S.upload.ok) return { kind: 'upload', file: S.upload.file };
+  return null;
+}
+function updateButtons() {
+  const info = currentAudioInfo();
+  const b = $('btn-baseline'), g = $('btn-boosted'), note = $('action-note');
+  note.textContent = ''; b.disabled = g.disabled = true;
+  if (!info || S.busy) { if (S.busy) note.textContent = 'Working…'; return; }
+  if (info.kind === 'sample') {
+    const s = info.sample;
+    if (s.eligibility !== 'eligible') { note.textContent = s.eligibility === 'deferred_over_30s' ? 'Longer than Prisma\'s 30 s limit. It is not cut down, so it stays deferred.' : 'A probable duplicate of another clip; it is not sent separately.'; return; }
+    const saved = S.results.baseline;
+    b.disabled = false; b.textContent = saved ? 'Show baseline again (free)' : 'Recognize (about ₹0.2)';
+    g.disabled = !S.modes.boosted; g.textContent = S.results.boosted ? 'Show boosted again (free)' : 'Run boosted comparison';
+    if (!S.modes.boosted) note.textContent = 'Boosted comparison is not available: no frozen boost configuration is loaded on this server.';
+  } else { b.disabled = false; b.textContent = 'Recognize upload (about ₹0.2)'; g.disabled = true; }
+}
+
+async function selectSample(id) {
+  S.epoch++; S.selected = id; S.results = {}; S.tab = 'samples';
+  const s = S.samples.find((x) => x.id === id);
+  $('detail-title').textContent = `${s.label} · ${s.duration_s.toFixed(1)} s · ${s.partition} partition` + (s.previously_inspected ? ' · inspected earlier' : '');
+  const player = $('player'); player.hidden = false; player.src = `/api/samples/${id}/audio`; player.load();
+  $('result').replaceChildren();
+  renderSamples(); updateButtons();
+  const epoch = S.epoch;
+  setStatus('loading', 'Checking for a saved result…');
+  const r = await api(`/api/samples/${id}/results`);
+  if (epoch !== S.epoch) return;
+  if (!r.ok) { showError(r, null); return; }
+  S.results = { baseline: r.data.baseline, boosted: r.data.boosted }; S.modes.boosted = r.data.boosted_available;
+  renderResults(); updateButtons();
+  if (S.results.baseline) setStatus('success', 'Saved result shown', 'This recording was recognized before. Nothing was sent just now.');
+  else if (s.eligibility !== 'eligible') setStatus('warn', ERROR_TITLES[s.eligibility] || 'Not sent', 'This recording cannot be sent to Gnani.');
+  else setStatus('info', 'No saved result yet', 'Press Recognize to send this clip to Gnani. It costs about ₹0.2 of programme credits.');
+}
+
+function showError(r, retry) {
+  const e = r.error; const actions = [];
+  let kind = INPUT_PROBLEMS.has(e.code) ? 'warn' : 'error';
+  if (e.code === 'rate_limited') {
+    kind = 'warn';
+    const secs = Math.max(5, Math.min(120, parseInt(r.retryAfter || e.retry_after || '20', 10) || 20));
+    const btn = el('button', `Try again in ${secs} s`); btn.disabled = true; btn.style.marginTop = '8px'; btn.style.display = 'block';
+    let left = secs; clearInterval(S.countdown);
+    S.countdown = setInterval(() => { left--; if (left <= 0) { clearInterval(S.countdown); btn.disabled = false; btn.textContent = 'Try again'; } else btn.textContent = `Try again in ${left} s`; }, 1000);
+    btn.onclick = () => { clearInterval(S.countdown); if (retry) retry(); };
+    actions.push(btn);
+  } else if (retry && !INPUT_PROBLEMS.has(e.code) && e.code !== 'budget_exhausted' && e.code !== 'not_configured') {
+    const btn = el('button', 'Try again', 'secondary'); btn.style.marginTop = '8px'; btn.style.display = 'block'; btn.onclick = retry; actions.push(btn);
+  }
+  setStatus(kind, ERROR_TITLES[e.code] || 'Something went wrong', e.message, actions);
+}
+
+async function runRecognize(mode) {
+  if (S.busy) return;
+  const info = currentAudioInfo(); if (!info) return;
+  const epoch = ++S.epoch;
+  setBusy(true); clearInterval(S.countdown);
+  setStatus('loading', mode === 'boosted' ? 'Running the boosted recognition…' : 'Recognizing…', 'Sending the audio to Gnani and labelling the result. This usually takes a few seconds.');
+  let r;
+  if (info.kind === 'sample') {
+    r = await api(`/api/samples/${info.sample.id}/recognize`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode }) });
+  } else {
+    const fd = new FormData(); fd.append('file', info.file, 'upload'); fd.append('mode', mode);
+    r = await api('/api/recognize/upload', { method: 'POST', body: fd });
+  }
+  if (epoch !== S.epoch) { setBusy(false); return; }
+  setBusy(false);
+  loadBudget();
+  if (!r.ok) { showError(r, () => runRecognize(mode)); return; }
+  S.results[mode] = r.data;
+  renderResults();
+  if (info.kind === 'sample') { const s = info.sample; s.saved = Object.assign(s.saved || {}, { [mode]: true }); renderSamples(); }
+  const p = r.data;
+  if (p.empty_transcript) setStatus('warn', 'No text returned', 'Gnani processed the audio but returned an empty transcript.');
+  else setStatus('success', p.source === 'live' ? 'Recognized by Gnani' : 'Saved result shown', p.source === 'live' ? 'A live request was made and its cost was added to the spend figure above.' : 'This exact audio was recognized before, so nothing new was sent or charged.');
+  updateButtons();
+}
+
+/* upload */
+const UPLOAD_EXTENSIONS = ['wav', 'mp3', 'ogg', 'flac', 'aac', 'm4a'];
+$('file').onchange = () => {
+  const f = $('file').files[0]; S.upload = null; S.epoch++; $('result').replaceChildren(); S.results = {};
+  const note = $('file-note'); const player = $('player');
+  if (!f) { note.textContent = 'Nothing chosen.'; updateButtons(); return; }
+  const ext = (f.name.split('.').pop() || '').toLowerCase();
+  if (f.size === 0) { S.upload = { ok: false }; note.textContent = 'This file is empty.'; setStatus('warn', ERROR_TITLES.empty_file, 'The file is empty.'); }
+  else if (f.size > S.limits.max_upload_mb * 1024 * 1024) { S.upload = { ok: false }; note.textContent = 'This file is too large.'; setStatus('warn', ERROR_TITLES.file_too_large, `Files must be ${S.limits.max_upload_mb} MB or smaller.`); }
+  else if (!UPLOAD_EXTENSIONS.includes(ext)) { S.upload = { ok: false }; note.textContent = 'Unsupported file type.'; setStatus('warn', ERROR_TITLES.unsupported_format, 'Use WAV, MP3, OGG, FLAC, AAC or M4A.'); }
+  else { S.upload = { ok: true, file: f }; note.textContent = `${f.name} · ${(f.size / 1024).toFixed(0)} KB. The server will check the format and length (30 s maximum) before anything is sent to Gnani.`; setStatus('info', 'Ready', 'Press Recognize to validate and send it.'); }
+  $('detail-title').textContent = f ? `Upload: ${f.name}` : 'No recording selected';
+  if (S.upload && S.upload.ok) { player.hidden = false; player.src = URL.createObjectURL(f); } else { player.hidden = true; player.removeAttribute('src'); }
+  updateButtons();
+};
+
+function setTab(tab) {
+  S.tab = tab; S.epoch++;
+  $('tab-samples').setAttribute('aria-selected', String(tab === 'samples')); $('tab-upload').setAttribute('aria-selected', String(tab === 'upload'));
+  $('pane-samples').hidden = tab !== 'samples'; $('pane-upload').hidden = tab !== 'upload';
+  $('result').replaceChildren(); S.results = {};
+  if (tab === 'samples') { if (S.selected) selectSample(S.selected); else { $('detail-title').textContent = 'No recording selected'; $('player').hidden = true; setStatus('info', 'Choose a recording to begin.'); } }
+  else { $('file').onchange(); }
+  updateButtons();
+}
+$('tab-samples').onclick = () => setTab('samples');
+$('tab-upload').onclick = () => setTab('upload');
+$('btn-baseline').onclick = () => runRecognize('baseline');
+$('btn-boosted').onclick = () => runRecognize('boosted');
+$('f-partition').onchange = $('f-elig').onchange = renderSamples;
+
+async function init() {
+  const r = await api('/api/samples');
+  if (!r.ok) { setStatus('error', 'Could not load the sample list', r.error.message); return; }
+  S.samples = r.data.samples; S.modes = r.data.modes || S.modes; if (r.data.limits) S.limits = r.data.limits;
+  renderSamples(); updateButtons(); loadBudget();
+  setStatus('info', S.samples.length ? 'Choose a recording to begin.' : 'No sample recordings are configured', S.samples.length ? 'Pick a sample from the list, or use the Upload tab.' : 'You can still upload a recording.');
+}
+init();
+Promise.all([loadStatus(), loadDataset(), loadExperiments()]).catch((e) => { $('legacy-status').append(el('pre', 'Failed to load: ' + e)); });
+</script>
+</body>
+</html>

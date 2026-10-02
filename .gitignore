@@ -1,0 +1,14 @@
+.env
+.cache/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Datasets may carry restrictive licences or personal voice data: keep them out of git.
+data/raw/*
+data/processed/*
+data/splits/*
+outputs/*
+!.gitkeep
+!data/raw/template.csv

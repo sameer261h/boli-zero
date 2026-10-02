@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boli Zero</title>
+<style>
+  :root { --bg:#faf8f5; --card:#fff; --ink:#1d1b18; --muted:#6b665e; --line:#e5e0d8; --accent:#b4531a; --accent-ink:#fff; --ok:#2f7d4f; --warn:#a86a00; --err:#b3261e; --chip:#f1ece4; --you:#eef3f8; --bot:#fdf1e7; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#161513; --card:#201e1b; --ink:#f0ece4; --muted:#a39d92; --line:#34312c; --accent:#e58a4f; --accent-ink:#1b1209; --ok:#6cc08d; --warn:#e0a84a; --err:#f2877f; --chip:#2b2824; --you:#1f2a35; --bot:#33261b; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.5 system-ui, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 20px 16px 64px; }
+  header { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+  h1 { margin:0; font-size: 26px; }
+  .sub { color:var(--muted); margin: 2px 0 14px; font-size:15px; }
+  a { color:var(--muted); font-size:14px; }
+  .note { border:1px solid var(--line); border-left:4px solid var(--warn); border-radius:8px; padding:8px 12px; background:var(--card); font-size:14px; margin:8px 0; }
+  .stage { text-align:center; margin:22px 0 10px; }
+  #mic { width:132px; height:132px; border-radius:50%; border:0; background:var(--accent); color:var(--accent-ink); font-size:16px; font-weight:600; cursor:pointer; box-shadow:0 4px 16px rgba(0,0,0,.18); }
+  #mic[data-phase=listening] { background:var(--err); color:#fff; animation:pulse 1.4s infinite; }
+  #mic:disabled { opacity:.5; cursor:not-allowed; animation:none; }
+  @keyframes pulse { 0% { box-shadow:0 0 0 0 rgba(179,38,30,.5); } 70% { box-shadow:0 0 0 22px rgba(179,38,30,0); } 100% { box-shadow:0 0 0 0 rgba(179,38,30,0); } }
+  button:focus-visible, summary:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  #state { margin:14px 0 4px; font-size:19px; font-weight:600; min-height:1.5em; }
+  #detail { color:var(--muted); font-size:15px; min-height:1.4em; }
+  #meter { height:8px; width:min(320px,80%); margin:10px auto 0; background:var(--line); border-radius:4px; overflow:hidden; visibility:hidden; }
+  #meter div { height:100%; width:0; background:var(--ok); transition:width .08s; }
+  .controls { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:14px 0; }
+  .controls button { padding:9px 16px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-size:15px; cursor:pointer; }
+  .controls button.primary { background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }
+  .controls button:disabled { opacity:.45; cursor:not-allowed; }
+  .problem { border:1px solid var(--line); border-left:4px solid var(--err); background:var(--card); border-radius:8px; padding:10px 14px; margin:10px 0; }
+  .problem.soft { border-left-color:var(--warn); }
+  .problem b { display:block; }
+  h2 { font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:26px 0 8px; }
+  #history { display:flex; flex-direction:column; gap:10px; max-height:44vh; overflow-y:auto; padding-right:4px; }  /* the page itself never scrolls away from the microphone */
+  .msg { padding:10px 14px; border-radius:12px; border:1px solid var(--line); }
+  .msg.you { background:var(--you); margin-right:14%; }
+  .msg.bot { background:var(--bot); margin-left:14%; }
+  .who { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .text { font-size:19px; margin:2px 0; }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .msg button { font:inherit; font-size:13px; padding:3px 10px; border-radius:6px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
+  details { font-size:13px; color:var(--muted); margin-top:4px; }
+  details dl { margin:6px 0 0; display:grid; grid-template-columns: max-content 1fr; gap:2px 10px; }
+  details dt { font-weight:600; } details dd { margin:0; word-break:break-word; }
+  .empty { color:var(--muted); text-align:center; padding:18px 0; }
+  .foot { color:var(--muted); font-size:13px; margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Boli Zero</h1>
+    <a href="/lab">Developer page</a>
+  </header>
+  <p class="sub">Talk in Bhojpuri. I answer out loud, in Bhojpuri.</p>
+  <div id="banner" class="note" hidden></div>
+
+  <div class="stage">
+    <button id="mic" data-phase="idle" aria-pressed="false" aria-label="Start recording">Tap to talk</button>
+    <div id="meter" aria-hidden="true"><div></div></div>
+    <div id="state" role="status" aria-live="polite">Getting ready…</div>
+    <div id="detail" aria-live="polite"></div>
+  </div>
+
+  <div id="problem" role="alert" hidden></div>
+
+  <div class="controls">
+    <button id="stop" disabled>Stop</button>
+    <button id="replay" disabled>Replay answer</button>
+    <button id="retry" class="primary" hidden>Try again</button>
+    <button id="fresh">New conversation</button>
+  </div>
+
+  <h2>Conversation</h2>
+  <div id="history" aria-live="polite"><div class="empty">Nothing yet. Tap the microphone and say something.</div></div>
+
+  <p class="foot" id="modes"></p>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const el = (tag, text, cls) => { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; };
+const MAX_SECONDS = 28, MIN_SECONDS = 0.4, SILENCE_PEAK = 0.02;
+
+const S = { cid: null, epoch: 0, phase: 'idle', turns: [], caps: null, recording: null, audio: null, lastAudioUrl: null, retry: null, countdown: null, tail: 0 };
+
+/* ---------- plain-language messages ---------- */
+const MESSAGES = {
+  reply_billing: ['My answering service has a billing problem', 'No reply can be made until that is fixed by whoever runs this app.'],
+  mic_denied: ['Microphone blocked', 'This page is not allowed to use the microphone. Allow it from the lock icon next to the address, then tap the microphone again.'],
+  mic_missing: ['No microphone found', 'Plug in or turn on a microphone and try again.'],
+  mic_unsupported: ['Microphone not available', 'This browser or page cannot record audio. Try a current Chrome, Edge, Firefox or Safari on this computer.'],
+  mic_error: ['Microphone problem', 'The microphone could not start. Close other apps that use it and try again.'],
+  silence: ['I could not hear anything', 'Move closer to the microphone, speak a little louder, and try again.'],
+  no_speech: ['I could not make out any speech', 'Try again in a quieter place, closer to the microphone.'],
+  too_short: ['That was too short', 'Hold the microphone button a little longer while you speak.'],
+  too_long: ['That was too long', 'Please keep each message under 30 seconds.'],
+  empty_file: ['Nothing was recorded', 'Try again.'], unreadable_audio: ['The recording could not be read', 'Try recording again.'], unsupported_format: ['The recording could not be used', 'Try recording again.'],
+  file_too_large: ['The recording was too large', 'Try a shorter message.'],
+  rate_limited: ['The speech service is busy', 'Wait a moment, then try again. Nothing was lost.'],
+  gnani_auth: ['The speech service refused this server\'s key', 'This needs fixing by whoever runs this app. Nothing was charged.'],
+  not_configured: ['The speech service is not set up', 'This server has no Gnani credentials, so it cannot listen or speak.'],
+  gnani_unavailable: ['The speech service had a problem', 'Try again in a moment.'],
+  gnani_unreachable: ['Cannot reach the speech service', 'Check the internet connection and try again.'],
+  gnani_rejected_duration: ['The speech service rejected the length', 'Please keep each message under 30 seconds.'],
+  gnani_rejected_input: ['The speech service could not use that recording', 'Try recording again.'],
+  budget_exhausted: ['The spending limit for this trial is reached', 'No more speech requests can be made until it is raised.'],
+  reply_not_configured: ['I heard you, but I cannot answer yet', 'The service that writes my answers is not connected on this server.'],
+  reply_failed: ['I could not come up with an answer', 'Try again in a moment.'], reply_unreachable: ['I could not reach my answering service', 'Try again in a moment.'],
+  reply_auth: ['My answering service refused the server\'s key', 'This needs fixing by whoever runs this app.'], reply_rate_limited: ['My answering service is busy', 'Wait a moment, then try again.'],
+  busy: ['Still working on your last message', 'Please wait until it finishes.'],
+  conversation_ended: ['That conversation was closed', 'Starting a fresh one. Please say it again.'], conversation_not_found: ['That conversation is gone', 'Starting a fresh one. Please say it again.'],
+  conversation_full: ['This conversation is long enough', 'Start a new conversation to keep going.'],
+  playback_failed: ['The answer could not be played', 'Press Replay answer, or try again.'], playback_blocked: ['Your browser blocked automatic playback', 'Press Replay answer to hear it.'],
+  network: ['Cannot reach this app', 'The Boli Zero server may have stopped.'],
+};
+const STAGE_NAMES = { recognize: 'Recognizing what you said…', reply: 'Thinking of an answer…', speech: 'Preparing the voice…' };
+
+/* ---------- api ---------- */
+async function api(path, options = {}) {
+  let res;
+  try { res = await fetch(path, options); } catch (e) { return { ok: false, error: { code: 'network', message: '' } }; }
+  const text = await res.text(); let data = null; try { data = text ? JSON.parse(text) : null; } catch (e) { data = null; }
+  if (res.ok) return { ok: true, data };
+  const error = data && data.error ? data.error : { code: 'http_' + res.status, message: `The server answered HTTP ${res.status}.` };
+  return { ok: false, error, retryAfter: res.headers.get('Retry-After') };
+}
+
+/* ---------- state display ---------- */
+function setPhase(phase, title, detail) {
+  S.phase = phase;
+  const mic = $('mic'); mic.dataset.phase = phase;
+  const labels = { idle: 'Tap to talk', listening: 'Tap to finish', working: 'Working…', speaking: 'Speaking…', error: 'Tap to talk' };
+  mic.textContent = labels[phase]; mic.setAttribute('aria-pressed', String(phase === 'listening'));
+  mic.setAttribute('aria-label', phase === 'listening' ? 'Stop recording and send' : 'Start recording');
+  mic.disabled = phase === 'working' || phase === 'speaking' || !S.cid;
+  $('stop').disabled = phase !== 'speaking';
+  $('replay').disabled = !(S.lastAudioUrl && (phase === 'idle' || phase === 'error'));
+  $('retry').hidden = !(phase === 'error' && S.retry);
+  $('state').textContent = title || ''; $('detail').textContent = detail || '';
+  $('meter').style.visibility = phase === 'listening' ? 'visible' : 'hidden';
+}
+function clearProblem() { clearInterval(S.countdown); $('problem').hidden = true; $('problem').replaceChildren(); }
+function showProblem(code, message, retry, retryAfter) {
+  clearInterval(S.countdown);
+  const [title, advice] = MESSAGES[code] || ['Something went wrong', message || 'Try again.'];
+  const box = $('problem'); box.replaceChildren(el('b', title), el('span', advice)); box.className = 'problem' + (['silence', 'no_speech', 'too_short', 'playback_blocked'].includes(code) ? ' soft' : '');
+  box.hidden = false; S.retry = retry || null;
+  setPhase('error', title, '');
+  if (code === 'rate_limited' || code === 'reply_rate_limited') {
+    let left = Math.max(5, Math.min(120, parseInt(retryAfter || '20', 10) || 20)); $('retry').disabled = true;
+    const tick = () => { $('retry').textContent = left > 0 ? `Try again in ${left} s` : 'Try again'; $('retry').disabled = left > 0; left--; if (left < 0) clearInterval(S.countdown); };
+    tick(); S.countdown = setInterval(tick, 1000);
+  } else { $('retry').textContent = 'Try again'; $('retry').disabled = false; }
+}
+
+/* ---------- history ---------- */
+function renderHistory() {
+  const box = $('history'); box.replaceChildren();
+  if (!S.turns.length) { box.append(el('div', 'Nothing yet. Tap the microphone and say something.', 'empty')); return; }
+  for (const t of S.turns) {
+    const you = el('div', undefined, 'msg you'); you.append(el('div', 'You said (as recognized)', 'who'));
+    const yt = el('div', t.user, 'text'); yt.lang = 'hi'; you.append(yt); box.append(you);
+    if (t.assistant || t.note) {
+      const bot = el('div', undefined, 'msg bot'); bot.append(el('div', 'Assistant', 'who'));
+      if (t.assistant) { const at = el('div', t.assistant, 'text'); at.lang = 'hi'; bot.append(at); }
+      if (t.note) bot.append(el('div', t.note, 'who'));
+      if (t.audioUrl) { const row = el('div', undefined, 'row'); const b = el('button', '▶ Play this answer'); b.onclick = () => playAnswer(t.audioUrl, true); row.append(b); bot.append(row); }
+      if (t.dev) bot.append(devDetails(t.dev));
+      box.append(bot);
+    }
+  }
+  box.scrollTop = box.scrollHeight;
+}
+function devDetails(dev) {
+  const d = el('details'); d.append(el('summary', 'Developer details')); const dl = el('dl');
+  const add = (k, v) => { if (v !== undefined && v !== null && v !== '') { dl.append(el('dt', k), el('dd', String(v))); } };
+  const r = dev.recognition || {}, a = dev.reply || {}, s = dev.speech || {};
+  add('Recognition', r.mode); add('Recognition source', r.source); add('Recognition request', r.request_id); add('Proposed variety', r.proposed_variety);
+  add('Reply provider', a.provider); add('Reply model', a.model); add('Earlier turns sent', a.context_turns_sent);
+  add('Speech', s.mode); add('Voice', s.voice); add('Speech source', s.source); add('Speech format', s.audio_format); add('Speech cost (estimate, Rs)', s.estimated_cost_inr);
+  d.append(dl); return d;
+}
+
+/* ---------- recording (16 kHz mono WAV made in the browser) ---------- */
+async function startRecording() {
+  clearProblem(); S.retry = null;
+  if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) return showProblem('mic_unsupported');
+  const my = ++S.epoch;
+  let stream;
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } }); }
+  catch (e) { return showProblem(e.name === 'NotAllowedError' || e.name === 'SecurityError' ? 'mic_denied' : e.name === 'NotFoundError' || e.name === 'OverconstrainedError' ? 'mic_missing' : 'mic_error'); }
+  if (my !== S.epoch || S.phase === 'working' || S.phase === 'speaking') { stream.getTracks().forEach((t) => t.stop()); return; }
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const source = ctx.createMediaStreamSource(stream), proc = ctx.createScriptProcessor(4096, 1, 1), mute = ctx.createGain(); mute.gain.value = 0;
+  const rec = { stream, ctx, source, proc, mute, chunks: [], started: performance.now(), epoch: my, timer: null };
+  proc.onaudioprocess = (ev) => {
+    const data = ev.inputBuffer.getChannelData(0); rec.chunks.push(new Float32Array(data));
+    let peak = 0; for (let i = 0; i < data.length; i++) peak = Math.max(peak, Math.abs(data[i]));
+    $('meter').firstElementChild.style.width = Math.min(100, peak * 160) + '%';
+  };
+  source.connect(proc); proc.connect(mute); mute.connect(ctx.destination);  // muted: the microphone is never played back
+  S.recording = rec;
+  rec.timer = setTimeout(() => { if (S.recording === rec) finishRecording(); }, MAX_SECONDS * 1000);
+  setPhase('listening', 'Listening…', 'Speak now, then tap again to send.');
+}
+function releaseRecording(rec) {
+  clearTimeout(rec.timer); try { rec.proc.disconnect(); rec.source.disconnect(); rec.mute.disconnect(); } catch (e) {}
+  rec.stream.getTracks().forEach((t) => t.stop()); rec.ctx.close().catch(() => {});
+}
+function encodeWav(chunks, inRate) {
+  const total = chunks.reduce((n, c) => n + c.length, 0), all = new Float32Array(total); let o = 0; for (const c of chunks) { all.set(c, o); o += c.length; }
+  const outRate = 16000, ratio = inRate / outRate, n = Math.floor(total / ratio), pcm = new Int16Array(n); let peak = 0;
+  for (let i = 0; i < n; i++) {  // box-average each group of input samples
+    const a = Math.floor(i * ratio), b = Math.max(a + 1, Math.min(total, Math.floor((i + 1) * ratio))); let sum = 0; for (let j = a; j < b; j++) sum += all[j];
+    const v = Math.max(-1, Math.min(1, sum / (b - a))); pcm[i] = v < 0 ? v * 32768 : v * 32767; peak = Math.max(peak, Math.abs(v));
+  }
+  const buf = new ArrayBuffer(44 + n * 2), dv = new DataView(buf), w = (off, s) => { for (let i = 0; i < s.length; i++) dv.setUint8(off + i, s.charCodeAt(i)); };
+  w(0, 'RIFF'); dv.setUint32(4, 36 + n * 2, true); w(8, 'WAVE'); w(12, 'fmt '); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true); dv.setUint16(22, 1, true);
+  dv.setUint32(24, outRate, true); dv.setUint32(28, outRate * 2, true); dv.setUint16(32, 2, true); dv.setUint16(34, 16, true); w(36, 'data'); dv.setUint32(40, n * 2, true);
+  new Int16Array(buf, 44).set(pcm);
+  return { blob: new Blob([buf], { type: 'audio/wav' }), peak, seconds: n / outRate };
+}
+function finishRecording() {
+  const rec = S.recording; if (!rec) return; S.recording = null; releaseRecording(rec);
+  if (rec.epoch !== S.epoch) return;
+  const wav = encodeWav(rec.chunks, rec.ctx.sampleRate);
+  if (wav.seconds < MIN_SECONDS) return showProblem('too_short');
+  if (wav.peak < SILENCE_PEAK) return showProblem('silence');
+  sendTurn(wav.blob);
+}
+function abandonRecording() { if (S.recording) { const rec = S.recording; S.recording = null; releaseRecording(rec); } }
+
+/* ---------- one spoken turn: recognize -> reply -> speech, each stage retryable ---------- */
+function newTurnId() { return (crypto.randomUUID ? crypto.randomUUID() : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2)); }
+async function sendTurn(blob) {
+  const turn = { tid: newTurnId(), blob, user: '', assistant: '', note: '', audioUrl: null, dev: null, stage: 'recognize' };
+  S.pendingTurn = turn; await runTurn(turn);
+}
+async function runTurn(turn) {
+  const my = S.epoch, cid = S.cid;
+  const stale = () => my !== S.epoch || cid !== S.cid;
+  clearProblem(); S.retry = () => runTurn(turn);
+  const fail = (r, stageKey) => {
+    const code = r.error.code;
+    if (code === 'conversation_ended' || code === 'conversation_not_found') { showProblem(code); newConversation(true); return; }
+    if (['silence', 'no_speech', 'too_short', 'too_long', 'empty_file', 'unreadable_audio', 'unsupported_format', 'file_too_large', 'gnani_rejected_duration', 'gnani_rejected_input'].includes(code)) { turn.discarded = true; showProblem(code, r.error.message, null); return; }
+    showProblem(code, r.error.message, () => runTurn(turn), r.retryAfter || r.error.retry_after);
+  };
+  if (turn.stage === 'recognize') {
+    setPhase('working', STAGE_NAMES.recognize, 'This usually takes a few seconds.');
+    const fd = new FormData(); fd.append('turn_id', turn.tid); fd.append('file', turn.blob, 'speech.wav');
+    const r = await api(`/api/conversations/${cid}/turns`, { method: 'POST', body: fd });
+    if (stale()) return; if (!r.ok) return fail(r);
+    turn.user = r.data.turn.recognized_text; turn.dev = r.data.turn.developer; turn.stage = 'reply';
+    if (!S.turns.includes(turn)) S.turns.push(turn); renderHistory();
+  }
+  if (turn.stage === 'reply') {
+    setPhase('working', STAGE_NAMES.reply, 'Heard: ' + turn.user);
+    const r = await api(`/api/conversations/${cid}/turns/${turn.tid}/reply`, { method: 'POST' });
+    if (stale()) return;
+    if (!r.ok) { if (r.error.code === 'reply_not_configured') turn.note = 'No answer: the answering service is not connected.'; renderHistory(); return fail(r); }
+    turn.assistant = r.data.turn.reply_text; turn.dev = r.data.turn.developer; turn.note = ''; turn.stage = 'speech'; renderHistory();
+  }
+  if (turn.stage === 'speech') {
+    setPhase('working', STAGE_NAMES.speech, turn.assistant);
+    const r = await api(`/api/conversations/${cid}/turns/${turn.tid}/speech`, { method: 'POST' });
+    if (stale()) return;
+    if (!r.ok) { turn.note = 'The voice could not be made for this answer.'; renderHistory(); return fail(r); }
+    turn.audioUrl = r.data.turn.audio_url; turn.dev = r.data.turn.developer; turn.note = ''; turn.stage = 'done'; renderHistory();
+  }
+  S.retry = null; S.pendingTurn = null;
+  playAnswer(turn.audioUrl, false);
+}
+
+/* ---------- playback (the microphone is unavailable while the assistant speaks, so it can never hear itself) ---------- */
+function stopAudio() { if (S.audio) { const a = S.audio; S.audio = null; clearTimeout(a.watchdog); a.onended = a.onerror = a.onplaying = null; a.pause(); } }
+function playAnswer(url, manual) {
+  stopAudio(); clearProblem(); S.lastAudioUrl = url;
+  const my = S.epoch, audio = new Audio(url); S.audio = audio;
+  setPhase('speaking', 'Speaking…', 'Tap Stop to interrupt.');
+  const retry = () => playAnswer(url, true);
+  const fail = (code) => { if (S.audio !== audio) return; stopAudio(); showProblem(code, '', retry); };
+  audio.onplaying = () => clearTimeout(audio.watchdog);
+  // A hidden or blocked page can leave play() pending forever: give up after 6 s instead of sitting in "Speaking…".
+  audio.watchdog = setTimeout(() => fail('playback_blocked'), 6000);
+  audio.onended = () => { if (S.audio !== audio || my !== S.epoch) return; clearTimeout(audio.watchdog); S.audio = null; S.tail = Date.now(); setTimeout(() => { if (S.phase === 'speaking' && !S.audio) setPhase('idle', 'Your turn', 'Tap the microphone to reply.'); }, 500); };
+  audio.onerror = () => fail('playback_failed');
+  audio.play().catch((e) => fail(e && e.name === 'NotAllowedError' ? 'playback_blocked' : 'playback_failed'));
+}
+$('stop').onclick = () => { stopAudio(); setPhase('idle', 'Stopped', 'Tap the microphone to reply.'); };
+$('replay').onclick = () => { if (S.lastAudioUrl && !['working', 'listening'].includes(S.phase)) playAnswer(S.lastAudioUrl, true); };
+
+/* ---------- controls ---------- */
+$('mic').onclick = () => {
+  if (S.phase === 'listening') return finishRecording();
+  if (S.phase === 'idle' || S.phase === 'error') { if (Date.now() - S.tail < 600) return; startRecording(); }
+};
+$('retry').onclick = () => { if (S.retry) { const f = S.retry; clearProblem(); f(); } };
+$('fresh').onclick = () => newConversation(false);
+
+async function newConversation(silent) {
+  S.epoch++; abandonRecording(); stopAudio(); clearInterval(S.countdown);
+  const old = S.cid; S.cid = null; S.turns = []; S.pendingTurn = null; S.retry = null; S.lastAudioUrl = null;
+  if (!silent) clearProblem();
+  if (old) api(`/api/conversations/${old}`, { method: 'DELETE' });  // anything still running for it is discarded by the server
+  renderHistory(); setPhase('working', 'Starting a new conversation…', '');
+  const r = await api('/api/conversations', { method: 'POST' });
+  if (!r.ok) return showProblem(r.error.code === 'network' ? 'network' : 'mic_error', r.error.message);
+  S.cid = r.data.conversation_id; S.caps = r.data; showCaps();
+  setPhase('idle', silent ? 'Fresh conversation' : 'Ready', 'Tap the microphone and speak.');
+}
+function showCaps() {
+  const c = S.caps, b = $('banner');
+  b.hidden = c.reply_ready; if (!c.reply_ready) b.textContent = 'The assistant\'s answering service is not connected on this server yet. I can listen and show what I heard, but I cannot reply.';
+  $('modes').textContent = `Listening: ${c.recognition_mode}. Voice: ${c.speech_mode}.`;
+}
+window.addEventListener('pagehide', () => { if (S.cid) navigator.sendBeacon && navigator.sendBeacon(`/api/conversations/${S.cid}/close`); });
+newConversation(true);
+</script>
+</body>
+</html>
