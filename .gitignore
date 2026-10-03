@@ -12,3 +12,8 @@ data/splits/*
 outputs/*
 !.gitkeep
 !data/raw/template.csv
+
+.env.*
+.vercel/
+.vercel
+.env*
