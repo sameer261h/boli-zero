@@ -7,6 +7,8 @@ and every outcome is written to the ledger.
 from __future__ import annotations
 
 import hashlib
+import io
+import wave
 import json
 import subprocess
 import tempfile
@@ -60,6 +62,24 @@ def inspect_upload(data: bytes) -> dict:
     fmt = sniff_format(data)
     if fmt is None:
         raise RecognitionError("unsupported_format", "This is not a supported audio file. Use " + ", ".join(SUPPORTED_FORMATS) + ".", 415)
+    if fmt == "wav":
+        try:
+            with wave.open(io.BytesIO(data), "rb") as recording:
+                frames, rate = recording.getnframes(), recording.getframerate()
+                frame_size = recording.getnchannels() * recording.getsampwidth()
+                raw = recording.readframes(frames)
+                # Timbre sends streaming PCM with both sizes set to UINT32_MAX.
+                streaming = data[4:8] == b"\xff" * 4 and frames == 0xffffffff // frame_size
+                if streaming:
+                    if not raw or len(raw) % frame_size:
+                        raise ValueError("incomplete streaming PCM")
+                    frames = len(raw) // frame_size
+                elif len(raw) != frames * frame_size:
+                    raise ValueError("truncated WAV")
+                duration = frames / rate
+        except (wave.Error, EOFError, ValueError, ZeroDivisionError, RuntimeError, OSError):
+            raise RecognitionError("unreadable_audio", "The WAV recording could not be read completely.", 422)
+        return _upload_info(data, fmt, duration)
     with tempfile.NamedTemporaryFile(suffix="." + fmt) as handle:  # name is ours, never the uploaded file's
         handle.write(data)
         handle.flush()
@@ -79,6 +99,10 @@ def inspect_upload(data: bytes) -> dict:
         raise RecognitionError("unreadable_audio", "The file looks like audio but could not be decoded, or its length is unknown.", 422)
     if probe.returncode != 0 or "audio" not in kinds or "video" in kinds:
         raise RecognitionError("unreadable_audio", "The file has no readable audio track, or it contains video.", 422)
+    return _upload_info(data, fmt, duration)
+
+
+def _upload_info(data: bytes, fmt: str, duration: float) -> dict:
     if duration < MIN_SECONDS:
         raise RecognitionError("too_short", "The recording is too short to recognize.", 422)
     if duration >= API_LIMIT_SECONDS:
