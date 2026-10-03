@@ -33,6 +33,8 @@ MAX_CONVERSATIONS = 50
 SILENCE_PEAK = 0.02  # a WAV whose loudest sample is below this share of full scale is treated as silence (heuristic)
 TTS_INR_PER_CHAR = 27.0 / 10_000
 
+UNCLEAR_TAG = "[UNCLEAR]"
+
 SYSTEM_PROMPT = (
     "You are a friendly voice assistant. Talk with the user in Bhojpuri, written in Devanagari script. "
     "Always answer what the user actually means: reply to a greeting with a greeting, give real, useful answers to questions, "
@@ -42,7 +44,11 @@ SYSTEM_PROMPT = (
     "English unless the user used it. "
     "The user's words come from a speech recognizer that listens in Hindi, so they may be spelled like Hindi or contain mistakes: "
     "infer the intent. If the words are unclear or could mean different things, ask one short clarifying question instead of guessing. "
-    "Do not comment on how the user speaks, on pronunciation, or on how good your own Bhojpuri is, and make no claims about language accuracy."
+    "Do not comment on how the user speaks, on pronunciation, or on how good your own Bhojpuri is, and make no claims about language accuracy. "
+    "Before answering, decide whether the words are a real, meaningful utterance. If they are nonsense or made-up sounds, a string of unrelated words, "
+    "too broken to follow, or clearly another language or a different regional variety such as Bundeli (marked by forms like हओ, काए, तुमाओ, मोरो, जा रए), start your reply with the exact tag " + UNCLEAR_TAG + " followed by one short Bhojpuri sentence "
+    "saying you did not understand (or that you only speak Bhojpuri) and asking them to say it again. Never invent a meaning for words you cannot follow. "
+    "Short real utterances such as a greeting are meaningful and must not get the tag."
 )
 
 
@@ -61,7 +67,7 @@ class AnthropicReply:
     PRICES_USD_PER_MTOK = {"claude-haiku-4-5-20251001": (1.0, 5.0), "claude-sonnet-5-5": (2.0, 10.0),
                            "claude-opus-5-5": (4.0, 20.0), "claude-fable-5-1": (10.0, 50.0)}  # (input, output), model overview page
 
-    def __init__(self, api_key: str, model: str, usage: ClaudeUsage, base_url: str | None = None, http: httpx.Client | None = None, max_tokens: int = 160):
+    def __init__(self, api_key: str, model: str, usage: ClaudeUsage, base_url: str | None = None, http: httpx.Client | None = None, max_tokens: int = 120):
         if model not in self.PRICES_USD_PER_MTOK:
             raise ValueError(f"no price known for model {model!r}; refusing to spend without a cost estimate")
         self._key, self.model, self.usage, self.max_tokens = api_key, model, usage, max_tokens
@@ -261,14 +267,18 @@ class ConversationEngine:
             context = []
             for tid in conv.history[-MAX_CONTEXT_TURNS:]:
                 past = conv.turns[tid]
+                if not past.dev.get("reply", {}).get("understood", True):
+                    continue  # a turn nobody understood must not steer later answers
                 context += [{"role": "user", "content": past.recognized_text[:MAX_TEXT_CHARS]}, {"role": "assistant", "content": past.reply_text[:MAX_TEXT_CHARS]}]
             started = time.time()
             if hasattr(self.replier, "reply_with_usage"):
                 text, usage = self.replier.reply_with_usage(context, turn.recognized_text[:MAX_TEXT_CHARS])
             else:
                 text, usage = self.replier.reply(context, turn.recognized_text[:MAX_TEXT_CHARS]), {}
+            understood = not text.startswith(UNCLEAR_TAG)
+            text = text.removeprefix(UNCLEAR_TAG).strip() or "मैं समझ नहीं पाया, कृपया फिर से बोलिए।"  # tag with no sentence
             info = {"provider": self.replier.name, "model": getattr(self.replier, "model", None), "context_turns_sent": len(context) // 2,
-                    "seconds": round(time.time() - started, 2), **usage}
+                    "seconds": round(time.time() - started, 2), "understood": understood, **usage}
 
             def apply():
                 turn.reply_text, turn.dev["reply"] = text, info

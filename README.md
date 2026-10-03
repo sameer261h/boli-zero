@@ -173,7 +173,7 @@ resumes at the failed step without a duplicate turn or charge:
 2. Reply: Claude through the Anthropic Messages API (Gnani documents no text-reply service and Evon has no hosted endpoint). It is used
    only if `ANTHROPIC_API_KEY` is in the local `.env`; otherwise the page shows what it heard and says it cannot answer. The
    instructions travel in the `system` field and the recognized words only as user messages; context is the last six exchanges;
-   replies are capped at 160 tokens; a dollar cap and a request cap (`BOLI_CLAUDE_*`) stop requests before they are exceeded.
+   replies are capped at 120 tokens; a dollar cap and a request cap (`BOLI_CLAUDE_*`) stop requests before they are exceeded.
 3. Speech: Timbre (documented REST endpoint) with a Hindi voice reading the reply. Pronunciation of Bhojpuri by a Hindi voice is unverified.
 
 The microphone is disabled while the assistant speaks, so it cannot record its own voice. Ending a conversation discards any step
