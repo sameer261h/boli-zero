@@ -56,8 +56,13 @@
   </header>
   <p class="sub">Talk in Bhojpuri. I answer out loud, in Bhojpuri.</p>
   <div id="banner" class="note" hidden></div>
+  <p class="note">Trial notice: on this hosted test, what you say and the replies are saved privately for 30 days so the maker can check how accurate they are. They are not used to train a model.</p>
 
-  <div class="stage">
+  <details class="note"><summary>Optional: contribute your speech</summary>
+<p>The trial notice above covers what is saved automatically. If you also choose to contribute a recording below, Boli Zero keeps that recording, your transcript correction and feedback privately for a 30-day retention period for evaluation and future model improvement. This does not train a model immediately and does not permit voice cloning or public redistribution. Please contribute only your own voice and avoid personal information.</p>
+<p>Conversation processing still sends speech to Gnani and recognized text to the configured reply provider. Contribution storage is a separate choice.</p>
+<p>Download your receipt to withdraw before any future training. Recordings are excluded from training until reviewed. The hosted website schedules hourly cleanup after the retention period.</p><label>Restore a downloaded withdrawal receipt <input id="import-receipt" type="file" accept="application/json,.json"></label><p id="receipt-import-status" role="status"></p><div id="saved-contributions"></div></details>
+<div class="stage">
     <button id="mic" data-phase="idle" aria-pressed="false" aria-label="Start recording">Tap to talk</button>
     <div id="meter" aria-hidden="true"><div></div></div>
     <div id="state" role="status" aria-live="polite">Getting ready…</div>
@@ -162,7 +167,7 @@ function renderHistory() {
   if (!S.turns.length) { box.append(el('div', 'Nothing yet. Tap the microphone and say something.', 'empty')); return; }
   for (const t of S.turns) {
     const you = el('div', undefined, 'msg you'); you.append(el('div', 'You said (as recognized)', 'who'));
-    const yt = el('div', t.user, 'text'); yt.lang = 'hi'; you.append(yt); box.append(you);
+    const yt = el('div', t.user, 'text'); yt.lang = 'hi'; you.append(yt); if (t.sourceBlob) you.append(contributionControls(t)); box.append(you);
     if (t.assistant || t.note) {
       const bot = el('div', undefined, 'msg bot'); bot.append(el('div', 'Assistant', 'who'));
       if (t.assistant) { const at = el('div', t.assistant, 'text'); at.lang = 'hi'; bot.append(at); }
@@ -174,12 +179,80 @@ function renderHistory() {
   }
   box.scrollTop = box.scrollHeight;
 }
+const RECEIPT_KEY = 'boli-zero-contribution-receipts-v1';
+$('import-receipt').onchange = async event => {
+  const file = event.target.files[0]; if (!file) return;
+  try {
+    if (file.size > 4096) throw new Error('too large');
+    const receipt = JSON.parse(await file.text());
+    if (!/^[0-9a-f]{32}$/.test(receipt.contribution_id) || !/^[A-Za-z0-9_-]{32,64}$/.test(receipt.withdrawal_token)) throw new Error('invalid');
+    forgetReceipt(receipt.contribution_id); rememberReceipt(receipt);
+    $('receipt-import-status').textContent = 'Receipt restored. You can withdraw this recording below.';
+  } catch (_) { $('receipt-import-status').textContent = 'That is not a valid Boli Zero withdrawal receipt.'; }
+  event.target.value = '';
+};
+function savedReceipts() { try { return JSON.parse(localStorage.getItem(RECEIPT_KEY) || '[]'); } catch (_) { return []; } }
+function rememberReceipt(receipt) {
+  try { localStorage.setItem(RECEIPT_KEY, JSON.stringify([...savedReceipts().filter(r => r.contribution_id !== receipt.contribution_id), receipt])); } catch (_) { /* Download remains available when storage is blocked. */ }
+  renderReceipts();
+  return savedReceipts().some(r => r.contribution_id === receipt.contribution_id && r.withdrawal_token === receipt.withdrawal_token);
+}
+function forgetReceipt(id) {
+  try { localStorage.setItem(RECEIPT_KEY, JSON.stringify(savedReceipts().filter(r => r.contribution_id !== id))); } catch (_) {}
+  renderReceipts();
+}
+function renderReceipts() {
+  const box = $('saved-contributions'); box.replaceChildren();
+  for (const r of savedReceipts()) {
+    const row = el('p', 'Recording receipt ' + r.contribution_id.slice(0, 8) + ' ');
+    const download = el('button', 'Download receipt');
+    download.onclick = () => {
+      const a = el('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(r)], {type:'application/json'}));
+      a.download = 'boli-zero-withdrawal-receipt.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    };
+    const remove = el('button', 'Withdraw recording');
+    remove.onclick = async () => {
+      remove.disabled = true;
+      const result = await api('/api/contributions/' + r.contribution_id, {method:'DELETE', headers:{Authorization:'Bearer ' + r.withdrawal_token}});
+      if (result.ok) { forgetReceipt(r.contribution_id); }
+      else { remove.disabled = false; row.append(el('span', ' Withdrawal failed or recording already expired. Keep your receipt.')); }
+    };
+    row.append(download, remove); box.append(row);
+  }
+}
+function contributionControls(t) {
+  const d = el('details'); d.append(el('summary', 'Correct or contribute this recording'));
+  const playback = el('audio'); playback.controls = true; playback.src = t.sourceUrl || (t.sourceUrl = URL.createObjectURL(t.sourceBlob)); d.append(playback);
+  const corrected = el('textarea'); corrected.value = t.correctedText ?? t.user; corrected.oninput = () => { t.correctedText = corrected.value; }; corrected.maxLength = 4000; corrected.setAttribute('aria-label', 'Your corrected transcript');
+  const feedback = el('textarea'); feedback.value = t.feedback ?? ''; feedback.oninput = () => { t.feedback = feedback.value; }; feedback.maxLength = 2000; feedback.placeholder = 'Was the reply natural? Pronunciation or wording problems?'; feedback.setAttribute('aria-label', 'Conversation feedback');
+  const label = el('label'); const consent = el('input'); consent.type = 'checkbox'; label.append(consent, document.createTextNode(' I agree to save my own recording and feedback for the purposes described above.'));
+  const status = el('p'); status.setAttribute('role', 'status');
+  const save = el('button', 'Save contribution'); save.disabled = !!t.receipt; consent.onchange = () => { save.disabled = !consent.checked || !!t.receipt; }; save.disabled = true;
+  const receipt = el('button', 'Download withdrawal receipt'); receipt.hidden = !t.receipt;
+  receipt.onclick = () => { const a = el('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(t.receipt)], {type:'application/json'})); a.download = 'boli-zero-withdrawal-receipt.json'; a.click(); URL.revokeObjectURL(a.href); };
+  const withdraw = el('button', 'Withdraw contribution'); withdraw.hidden = !t.receipt;
+  withdraw.onclick = async () => { withdraw.disabled = true; const r = await api(`/api/contributions/${t.receipt.contribution_id}`, {method:'DELETE', headers:{Authorization:'Bearer '+t.receipt.withdrawal_token}}); status.textContent = r.ok ? 'Contribution deleted.' : 'Could not delete. Keep your receipt and contact the app owner.'; if(r.ok) {forgetReceipt(t.receipt.contribution_id);t.receipt=null;receipt.hidden=withdraw.hidden=true;save.disabled=!consent.checked;} withdraw.disabled=false; };
+  save.onclick = async () => {
+    if (!consent.checked) return; save.disabled = true;
+    if (!t.pendingReceipt) {
+      const bytes = crypto.getRandomValues(new Uint8Array(32));
+      const token = btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+      t.pendingReceipt = {contribution_id: crypto.randomUUID().replace(/-/g, ''), withdrawal_token: token, retention_days: 30};
+    }
+    if (!rememberReceipt(t.pendingReceipt)) { status.textContent = 'Your browser cannot keep a withdrawal receipt. Enable local storage before contributing; you can still talk.'; save.disabled = false; return; }
+    const fd = new FormData(); fd.append('contribution_id',t.pendingReceipt.contribution_id);fd.append('withdrawal_token',t.pendingReceipt.withdrawal_token);fd.append('conversation_id',t.cid);fd.append('turn_id',t.tid);fd.append('file',t.sourceBlob,'contribution.wav');fd.append('consent','true');fd.append('consent_version','boli-zero-contribution-v1');fd.append('corrected_text',corrected.value);fd.append('feedback',feedback.value);
+    const r = await api('/api/contributions', {method:'POST',body:fd});
+    if(r.ok) {t.receipt=r.data; forgetReceipt(r.data.contribution_id); rememberReceipt(r.data); status.textContent='Saved privately. Keep a downloaded receipt; saved receipts also appear above on this browser.';receipt.hidden=withdraw.hidden=false;} else {status.textContent='Save could not be confirmed. Your receipt is kept above; retry uses the same recording ID.';save.disabled=false;}
+  };
+  d.append(el('p','Recognition may be wrong. Edit the words below before contributing.'),corrected,feedback,label,save,receipt,withdraw,status);return d;
+}
+
 function devDetails(dev) {
   const d = el('details'); d.append(el('summary', 'Developer details')); const dl = el('dl');
   const add = (k, v) => { if (v !== undefined && v !== null && v !== '') { dl.append(el('dt', k), el('dd', String(v))); } };
   const r = dev.recognition || {}, a = dev.reply || {}, s = dev.speech || {};
   add('Recognition', r.mode); add('Recognition source', r.source); add('Recognition request', r.request_id); add('Proposed variety', r.proposed_variety);
-  add('Reply provider', a.provider); add('Reply model', a.model); add('Earlier turns sent', a.context_turns_sent);
+  add('Reply provider', a.provider); add('Reply model', a.model); add('Earlier turns sent', a.context_turns_sent); add('Words understood', a.understood === false ? 'No, asked to say it again' : a.understood ? 'Yes' : '');
   add('Speech', s.mode); add('Voice', s.voice); add('Speech source', s.source); add('Speech format', s.audio_format); add('Speech cost (estimate, Rs)', s.estimated_cost_inr);
   d.append(dl); return d;
 }
@@ -190,7 +263,7 @@ async function startRecording() {
   if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) return showProblem('mic_unsupported');
   const my = ++S.epoch;
   let stream;
-  try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } }); }
+  try { stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: false, autoGainControl: false } }); }
   catch (e) { return showProblem(e.name === 'NotAllowedError' || e.name === 'SecurityError' ? 'mic_denied' : e.name === 'NotFoundError' || e.name === 'OverconstrainedError' ? 'mic_missing' : 'mic_error'); }
   if (my !== S.epoch || S.phase === 'working' || S.phase === 'speaking') { stream.getTracks().forEach((t) => t.stop()); return; }
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -210,9 +283,9 @@ function releaseRecording(rec) {
   clearTimeout(rec.timer); try { rec.proc.disconnect(); rec.source.disconnect(); rec.mute.disconnect(); } catch (e) {}
   rec.stream.getTracks().forEach((t) => t.stop()); rec.ctx.close().catch(() => {});
 }
-function encodeWav(chunks, inRate) {
+function encodeWav(chunks, inRate, outRate = 16000) {
   const total = chunks.reduce((n, c) => n + c.length, 0), all = new Float32Array(total); let o = 0; for (const c of chunks) { all.set(c, o); o += c.length; }
-  const outRate = 16000, ratio = inRate / outRate, n = Math.floor(total / ratio), pcm = new Int16Array(n); let peak = 0;
+  const ratio = inRate / outRate, n = Math.floor(total / ratio), pcm = new Int16Array(n); let peak = 0;
   for (let i = 0; i < n; i++) {  // box-average each group of input samples
     const a = Math.floor(i * ratio), b = Math.max(a + 1, Math.min(total, Math.floor((i + 1) * ratio))); let sum = 0; for (let j = a; j < b; j++) sum += all[j];
     const v = Math.max(-1, Math.min(1, sum / (b - a))); pcm[i] = v < 0 ? v * 32768 : v * 32767; peak = Math.max(peak, Math.abs(v));
@@ -229,14 +302,14 @@ function finishRecording() {
   const wav = encodeWav(rec.chunks, rec.ctx.sampleRate);
   if (wav.seconds < MIN_SECONDS) return showProblem('too_short');
   if (wav.peak < SILENCE_PEAK) return showProblem('silence');
-  sendTurn(wav.blob);
+  sendTurn(wav.blob, encodeWav(rec.chunks, rec.ctx.sampleRate, rec.ctx.sampleRate).blob);
 }
 function abandonRecording() { if (S.recording) { const rec = S.recording; S.recording = null; releaseRecording(rec); } }
 
 /* ---------- one spoken turn: recognize -> reply -> speech, each stage retryable ---------- */
 function newTurnId() { return (crypto.randomUUID ? crypto.randomUUID() : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2)); }
-async function sendTurn(blob) {
-  const turn = { tid: newTurnId(), blob, user: '', assistant: '', note: '', audioUrl: null, dev: null, stage: 'recognize' };
+async function sendTurn(blob, sourceBlob = blob) {
+  const turn = { tid: newTurnId(), blob, sourceBlob, cid: S.cid, user: '', assistant: '', note: '', audioUrl: null, dev: null, stage: 'recognize' };
   S.pendingTurn = turn; await runTurn(turn);
 }
 async function runTurn(turn) {
@@ -302,13 +375,21 @@ $('retry').onclick = () => { if (S.retry) { const f = S.retry; clearProblem(); f
 $('fresh').onclick = () => newConversation(false);
 
 async function newConversation(silent) {
+  for (const turn of S.turns) { if (turn.sourceUrl) URL.revokeObjectURL(turn.sourceUrl); }
   S.epoch++; abandonRecording(); stopAudio(); clearInterval(S.countdown);
   const old = S.cid; S.cid = null; S.turns = []; S.pendingTurn = null; S.retry = null; S.lastAudioUrl = null;
   if (!silent) clearProblem();
   if (old) api(`/api/conversations/${old}`, { method: 'DELETE' });  // anything still running for it is discarded by the server
   renderHistory(); setPhase('working', 'Starting a new conversation…', '');
-  const r = await api('/api/conversations', { method: 'POST' });
-  if (!r.ok) return showProblem(r.error.code === 'network' ? 'network' : 'mic_error', r.error.message);
+  const epoch = S.epoch;
+  let r = await api('/api/conversations', { method: 'POST' });
+  for (let attempt = 0; !r.ok && r.error.code === 'busy' && attempt < 2; attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    if (epoch !== S.epoch) return;
+    r = await api('/api/conversations', { method: 'POST' });
+  }
+  if (epoch !== S.epoch) return;
+  if (!r.ok) return showProblem(r.error.code, r.error.message, () => newConversation(false));
   S.cid = r.data.conversation_id; S.caps = r.data; showCaps();
   setPhase('idle', silent ? 'Fresh conversation' : 'Ready', 'Tap the microphone and speak.');
 }
@@ -318,6 +399,7 @@ function showCaps() {
   $('modes').textContent = `Listening: ${c.recognition_mode}. Voice: ${c.speech_mode}.`;
 }
 window.addEventListener('pagehide', () => { if (S.cid) navigator.sendBeacon && navigator.sendBeacon(`/api/conversations/${S.cid}/close`); });
+renderReceipts();
 newConversation(true);
 </script>
 </body>

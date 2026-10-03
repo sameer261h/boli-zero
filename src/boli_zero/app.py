@@ -18,6 +18,7 @@ from fastapi.responses import FileResponse, JSONResponse, Response
 from pydantic import BaseModel
 
 from . import conversation_routes
+from .contributions import ContributionStore, register as register_contributions
 from .catalog import Catalog
 from .clients import EvonClient, NotConfigured, PrismaClient, TimbreClient
 from .config import EXPERIMENTS_DIR, PROCESSED_DIR, ROOT, SPLITS_DIR
@@ -82,6 +83,7 @@ def create_app(prisma: PrismaClient | None = None, timbre: TimbreClient | None =
     service = service or service_from_env(prisma)
     engine = engine or ConversationEngine(service, timbre, service.ledger, replier_from_env(), os.environ.get("BOLI_VOICE") or None)
     conversation_routes.register(app, engine)
+    register_contributions(app, engine, ContributionStore(os.environ.get("BOLI_CONTRIBUTIONS_DB") or ROOT / ".cache" / "contributions.sqlite"))
     positions = {sid: n for n, sid in enumerate(sorted(catalog.samples), 1)} if catalog else {}
     saved_memo: dict[str, dict] = {}
 
