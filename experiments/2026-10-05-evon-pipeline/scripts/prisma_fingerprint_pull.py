@@ -35,12 +35,20 @@ import pandas as pd
 from huggingface_hub import HfApi, hf_hub_download
 
 REPO = "ARTPARK-IISc/Vaani-transcription-part"
-DIALECTS = ["Bhojpuri", "Magahi", "Maithili", "Bajjika", "Chhattisgarhi", "Garhwali"]
+
+# All 19 dialects confirmed to have transcript files in Vaani-transcription-part
+# (per derive_markers_multi.py's multi_dialect_markers.json).
+DIALECTS = [
+    "Bhojpuri", "Chhattisgarhi", "Maithili", "Garhwali", "Magahi", "Bajjika",
+    "Rajasthani", "Marwari", "Khortha", "Angika", "Kumaoni", "Sadri",
+    "Surgujia", "Bundeli", "Khariboli", "Surjapuri", "Awadhi", "Haryanvi", "Jaipuri",
+]
 
 # Proportional caps summing to ~24,000 total calls, derived from the
-# 2026-10-04 discover run (47,638 usable rows total) scaled to stay safely
-# under the ~25,000-call estimate for a 5000-credit Gnani budget
-# (web/index.html: "about ₹0.2 of programme credits" per Prisma STT call).
+# 2026-10-04 discover run scaled to stay safely under the ~25,000-call
+# estimate for a 5000-credit Gnani budget (web/index.html: "about ₹0.2 of
+# programme credits" per Prisma STT call). Set after running `discover`
+# for all 19 dialects — see DEFAULT_PER_DIALECT_CAPS below.
 DEFAULT_PER_DIALECT_CAPS = {
     "Bhojpuri": 7120,
     "Chhattisgarhi": 5932,
