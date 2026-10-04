@@ -1,204 +1,132 @@
 # boli-zero
 
-Experimental system for adapting a standard Indian-language AI stack (Gnani Prisma, Timbre, Evon) to
-regional languages it does not support. First target: Hindi to Bhojpuri.
+[![tests](https://github.com/sameer261h/boli-zero/actions/workflows/test.yml/badge.svg)](https://github.com/sameer261h/boli-zero/actions/workflows/test.yml)
 
-**Status: scaffold.** No Gnani endpoint, credential, dataset, score or sample result is included. The three
-Gnani clients are interfaces with the HTTP layer left as TODO until access is confirmed. Everything else
-(data intake, deterministic splits, caching, experiment runner, evaluation, rating sheets, demo app) works
-and is tested without any Gnani access.
+An experiment in making a standard Indian-language voice stack work with a regional language it does not support:
+**speak Bhojpuri to it, hear Bhojpuri back.** Built with [Gnani.ai](https://www.gnani.ai) speech models for the
+Great Indian AI Internship Challenge. This is an independent project and is not affiliated with or endorsed by Gnani.
 
-## Architecture
+## Status
 
-```
- CSV / JSONL pairs
-        |  boli_zero.ingest        validate + normalise -> data/processed/*.jsonl
-        v
-   canonical records
-        |  boli_zero.split         deterministic, leak-proof -> data/splits/{train,validation,test}.jsonl + manifest.json
-        v
- train (teaching pool) --------+------------------- validation / test (held out, never shown to a model)
-                               |                                  |
-                   boli_zero.experiment  -- 0/10/25/50/100-shot --> experiments/<run>/predictions.jsonl
-                               |                 (or --task rules -> rules_<k>shot.json)
-                               v
-                         EvonClient  -- every call goes through the cache --> .cache/api/
-                               |
-                         (TODO) Gnani Evon
-                               
- boli_zero.evaluate  <run>   chrF / exact match / copy rate + "do nothing" baseline -> metrics.json
- boli_zero.ratings           blinded A/B sheets for native speakers -> aggregate
- boli_zero.app (FastAPI)     status, dataset, experiments, try-a-rewrite page at /
- PrismaClient, TimbreClient  same cache + TODO transport (not used by the experiment runner yet)
-```
+Early and honest. What exists is a working, tested prototype and the tooling to measure it. What does **not** exist
+yet is any claim about accuracy: no benchmark, no native-speaker rating, no trained model.
 
-Why these choices:
-- **Splits group by anchor sentence.** If two speakers render the same Hindi sentence, both renderings stay in
-  one split. Otherwise a held-out sentence would have its answer sitting in the few-shot examples.
-- **Shots are nested.** One seeded ordering of train; 10-shot is the first 10, 25-shot the first 25, and so on.
-  Differences between conditions come from more examples, not different ones.
-- **Every API call is cached** by a hash of service, operation, params and the sha256 of any audio bytes.
-  Identical text or audio is never sent twice, credentials are never stored, and cached answers replay with no
-  credentials at all.
-- **Identity baseline.** `evaluate` scores "return the Hindi unchanged" too. A condition that does not beat it
-  has learned nothing.
+- **Spoken conversation** (page `/`): tap the microphone, speak, hear a spoken reply. Each turn is three steps:
+  recognise (Gnani Prisma, in Hindi mode because Prisma offers no Bhojpuri), reply (Claude, in Bhojpuri), speak
+  (Gnani Timbre, a Hindi voice). Pronunciation of Bhojpuri by a Hindi voice is unverified.
+- **Recognition lab** (page `/lab`): run Prisma on sample or uploaded audio and inspect exactly what came back, with
+  a provisional, hedged guess at the variety. It never claims a recording is verified Bhojpuri.
+- **Experiment tooling**: dataset intake, deterministic leak-proof splits, few-shot runner, scoring against held-out
+  references with a "do nothing" baseline, and blinded rating sheets for native speakers. Dry runs work; real runs
+  need an Evon connection, which does not exist yet.
+- **Private hosted trial**: an invitation-only deployment (Vercel + Postgres) used for small tests. It is not a public
+  service and its address is not published.
 
-## Setup
+| Gnani model | Status here |
+|---|---|
+| Prisma (speech to text) | Wired to the documented REST endpoint; run live on trial clips. |
+| Timbre (text to speech) | Wired to the documented REST endpoint; used for spoken replies. |
+| Evon (language model) | Not wired. No hosted endpoint was found; weights are published on Hugging Face by request. Replies come from Claude instead. |
+
+## Quick start
+
+Needs [uv](https://docs.astral.sh/uv/) and `ffprobe` (from ffmpeg) for non-WAV audio checks.
 
 ```bash
-cd boli-zero
+git clone https://github.com/sameer261h/boli-zero && cd boli-zero
 uv sync
-cp .env.example .env      # leave blank until access is confirmed
-uv run pytest             # 38 tests, no network, no Gnani access needed
+cp .env.example .env          # add your own keys; never commit this file
+uv run pytest                 # 161 tests, no network and no keys needed
+uv run uvicorn boli_zero.app:app --port 8000     # http://127.0.0.1:8000
 ```
 
-## Commands
+Without keys the pages load and say what is missing; nothing is faked.
 
-1. **Ingest** pairs (`--source` and `--license` are mandatory; a CSV template is at `data/raw/template.csv`):
-   ```bash
-   uv run python -m boli_zero.ingest data/raw/pairs.csv --anchor-language hi --target-language bho \
-       --source "<where it came from>" --license "<licence or consent basis>"
-   ```
-   Column names are configurable (`--anchor-col`, `--target-col`, `--id-col`, `--audio-col`, `--speaker-col`).
-   Output: `data/processed/pairs.jsonl` plus a report of invalid, duplicate and missing-audio rows.
+## Configuration
 
-2. **Split** (deterministic: same data + seed = byte-identical files):
-   ```bash
-   uv run python -m boli_zero.split --seed 42 --train 0.8 --validation 0.1 --test 0.1
-   ```
-   Use `--group-by speaker_id` to hold out whole speakers. Output: `data/splits/`.
+Set in `.env` (see `.env.example`). Spend is capped by design: requests stop before a cap would be passed.
 
-3. **Experiment, dry run** (builds every prompt, calls nothing):
-   ```bash
-   uv run python -m boli_zero.experiment --name first-dry-run --dry-run
-   ```
-   Conditions with more shots than the train split holds are skipped and recorded, not faked.
+| Variable | Purpose |
+|---|---|
+| `GNANI_API_KEY`, `GNANI_BASE_URL`, `GNANI_AUTH_HEADER` | Gnani speech API access, from the Gnani console and docs. |
+| `ANTHROPIC_API_KEY` | Enables Claude replies. Without it the page shows what it heard and cannot answer. |
+| `BOLI_REPLY_MODEL` | Reply model; only models with a known price are accepted. |
+| `BOLI_CLAUDE_BUDGET_USD`, `BOLI_CLAUDE_MAX_REQUESTS` | Hard caps on estimated reply spend and request count. |
+| `BOLI_BUDGET_INR`, `BOLI_LEDGER` | Estimated-spend cap and ledger file for Gnani calls. |
+| `BOLI_VOICE` | A documented Timbre voice name. |
+| `BOLI_CACHE_DIR` | Where API responses are cached (default `.cache/api`). |
 
-4. **Experiment, real** (needs Evon wired up, see below):
-   ```bash
-   uv run python -m boli_zero.experiment --name first-run                  # translate, validation split
-   uv run python -m boli_zero.experiment --name rules-run --task rules     # learned-rule induction
-   ```
-   Use `--eval-split test` once, for final numbers only.
+Hosted-only: `DATABASE_URL`, `BOLI_INVITE_PASSWORD`, `BOLI_OPEN_ACCESS`, `BOLI_PRIOR_GNANI_SPEND_INR`
+(see `deploy/` and `src/boli_zero/hosted.py`).
 
-5. **Evaluate** a finished translate run:
-   ```bash
-   uv run python -m boli_zero.evaluate experiments/first-run
-   ```
+## What testing against Gnani showed (2026-10-02)
 
-6. **Native-speaker ratings** (pairwise, blinded, e.g. 0-shot vs 25-shot, or vs the human reference):
-   ```bash
-   uv run python -m boli_zero.ratings export experiments/first-run --a 0 --b 25 -n 50 --out outputs/ratings
-   # each rater fills the `choice` column of their own copy: 1, 2, tie or both_bad
-   uv run python -m boli_zero.ratings aggregate outputs/ratings/key.json outputs/ratings/rater_*.csv
-   ```
+Our own observations; they differ from the docs in two places and may have changed.
+- Bhojpuri is not an offered Prisma language, so the nearest offered code is used and the interface says so.
+- Clips over 30 s were rejected with HTTP 400 although the docs say 60 s.
+- Two requests in quick succession returned HTTP 429.
+- The only documented ways to steer Prisma are `bias_list` (up to 100 words) and `substitution_map` (up to 10 rules).
+  No fine-tuning is documented.
 
-7. **Demo app**:
-   ```bash
-   uv run uvicorn boli_zero.app:app --reload     # open http://127.0.0.1:8000
-   ```
-   Routes that need Gnani return `503` with the TODO text until the HTTP layer exists.
+## How a turn works
 
-## Connecting the real APIs
+1. The browser records 16 kHz mono WAV and the server sends it to Prisma.
+2. Claude replies in Bhojpuri. Instructions travel in the `system` field and the recognised words only as user
+   messages; context is the last six exchanges; replies are capped at 120 tokens. If the words are nonsense or
+   another language or variety, the reply says it did not understand, and that turn is kept out of later context.
+3. Timbre speaks the reply. The microphone is disabled while it plays.
 
-Prisma (speech to text) is wired to the documented REST endpoint and has been run live on five clips; see the
-trial report in the audio audit folder. Timbre and Evon are not wired. Take details from the Gnani docs or console.
+Each step is idempotent and cached, so a retry resumes at the failed step with no duplicate turn or charge.
 
-Observed 2026-10-02 (differs from the docs in two places): Bhojpuri is not an offered language (use the nearest
-offered code and say so); clips over 30 s are rejected with HTTP 400 although the docs say 60 s; two requests
-in quick succession triggered HTTP 429, so space calls about 20 s apart. Documented tuning levers for Prisma are
-`bias_list` (up to 100 words) and `substitution_map` (up to 10 rules); there is no documented fine-tuning.
-
-- [x] Prisma: key in `.env`, `PrismaClient` calls `POST /stt/v3`.
-- [ ] Fill `.env`: key, base URL(s), auth header name.
-- [ ] Decide how Evon is reached: Gnani-hosted endpoint, or self-run from the open weights.
-      A self-run runtime can be passed as `EvonClient(transport=...)` without changing any other code.
-- [ ] Implement `_send` in `TimbreClient` and `EvonClient` (`src/boli_zero/clients.py`): endpoint, auth, request
-      encoding, and map the vendor response to the normalised shape in that file's docstring.
-      Timbre's documented route is `POST /api/v1/tts/inference` (no Bhojpuri language code); Evon has no hosted endpoint.
-- [ ] Add the model name/version to the request params once known, so a model upgrade cannot be served from a
-      stale cache entry.
-- [ ] Run one tiny experiment (`--limit 3 --conditions 0`) and inspect `predictions.jsonl` by hand first.
-
-## Language labelling and routing (provisional)
-
-`boli_zero.routing` proposes a variety for a recording and picks the Prisma mode it is sent in. It is a layer around
-Gnani, not a new Prisma language and not validated language identification (Gnani documents none for audio).
-
-- Labels: `hindi`, `bhojpuri_candidate`, `bundeli_candidate`, `related_variety_uncertain`, `other_or_insufficient`,
-  and `<name>_candidate` only when evidence is supplied. A clip can carry several (mixed lessons).
-- Shown to the user for an unsupported variety: "Likely Bhojpuri; recognized using Hindi mode." The label is never
-  changed to Hindi; the submitted language code, raw output and any boosted output are separate fields.
-- Evidence is the raw Prisma output checked against a short, unreviewed marker table, plus a hedge flag from saved
-  audio-model assessments. Filenames, script and resemblance to Hindi are not evidence. No numerical confidence.
-- Bundeli exists as a candidate but is unverified: the table never produces it.
-- Demonstration on the five saved trial clips: `outputs/language_routing_trial/` in the audio audit folder.
+## Experiment tooling
 
 ```bash
-uv run pytest tests/test_routing.py
+uv run python -m boli_zero.ingest data/raw/pairs.csv --anchor-language hi --target-language bho \
+    --source "<where it came from>" --license "<licence or consent basis>"   # source and licence are mandatory
+uv run python -m boli_zero.split --seed 42                                   # deterministic, grouped by anchor sentence
+uv run python -m boli_zero.experiment --name dry --dry-run                   # builds prompts, calls nothing
+uv run python -m boli_zero.evaluate experiments/<run>                        # chrF, exact match, copy rate, baseline
+uv run python -m boli_zero.ratings export experiments/<run> --a 0 --b 25 -n 50 --out outputs/ratings
 ```
 
-## Recognition page (local frontend)
+Design choices that matter:
+- Splits group by Hindi sentence, so a held-out sentence never has a sibling rendering in the teaching set.
+- Few-shot sets are nested (the 10-shot examples are inside the 25-shot set), so differences come from more
+  examples, not different ones.
+- Every API call is cached by a hash of the request and audio bytes; credentials are never stored.
+- `evaluate` also scores "return the Hindi unchanged". A system that cannot beat that has learned nothing.
 
-`web/lab.html` (served at `/lab`) is the page; `app.py` serves it. Pick a sample recording or upload your own (WAV, MP3, OGG, FLAC, AAC or
-M4A, 10 MB and 30 s at most), run Prisma, and see the exact returned text, the proposed variety with its evidence and, where
-both exist, baseline versus boosted text. Everything is proposal-only: no training happens and nothing is called verified.
+Data contracts are in [docs/CONTRACTS.md](docs/CONTRACTS.md) (design notes, proposal v0).
 
-```bash
-BOLI_CATALOG=<catalog.json> BOLI_SAMPLES_ROOT=<folder holding usable/ and non_usable/> \
-BOLI_LEDGER=<spend_ledger.jsonl> BOLI_BUDGET_INR=25 \
-uv run uvicorn boli_zero.app:app --host 127.0.0.1 --port 8010
-```
+## Privacy and data
 
-Optional: `BOLI_BOOST_CONFIG` (frozen boost settings enable the boosted mode) and `BOLI_DEV_VOCAB` (extra, unverified word forms
-for the experimental label view). The key stays in `.env` on the server; it is never sent to the browser.
-
-- Samples are named only by an opaque id from the catalog; the audio route serves nothing else and never builds a path from a request.
-- Uploads are checked on the server (format by content, length with ffprobe, size) before anything is sent. Recordings of 30 s
-  or more are refused, not cut: Prisma rejected longer audio when tested, although its docs say 60 s.
-- Each live request is capped by an estimated-spend ledger, only one request per audio runs at a time, and every result is cached,
-  so a repeat is free. The page says whether a result is a live call, a saved replay, or (never in normal use) a mock.
-- Failure states shown with their own messages: bad file, over length, no credentials, rejected key, rate limit (with a retry
-  countdown), Gnani processing error, unreachable, spend cap reached, empty result.
-- `catalog.py` builds deterministic development/validation/test partitions by group; the sample recordings have unknown licence,
-  so keep them off any shared host.
-
-## Spoken conversation (main page)
-
-`web/index.html` is a conversation screen: tap the microphone, speak, and the answer is spoken back; earlier turns are kept
-as bounded context. The recognition lab described above lives at `/lab`. Each turn runs three idempotent steps, so a retry
-resumes at the failed step without a duplicate turn or charge:
-
-1. Recognition: the browser records 16 kHz mono WAV and the server sends it to Prisma in Hindi mode (a workaround: Prisma has no Bhojpuri).
-2. Reply: Claude through the Anthropic Messages API (Gnani documents no text-reply service and Evon has no hosted endpoint). It is used
-   only if `ANTHROPIC_API_KEY` is in the local `.env`; otherwise the page shows what it heard and says it cannot answer. The
-   instructions travel in the `system` field and the recognized words only as user messages; context is the last six exchanges;
-   replies are capped at 120 tokens; a dollar cap and a request cap (`BOLI_CLAUDE_*`) stop requests before they are exceeded.
-3. Speech: Timbre (documented REST endpoint) with a Hindi voice reading the reply. Pronunciation of Bhojpuri by a Hindi voice is unverified.
-
-The microphone is disabled while the assistant speaks, so it cannot record its own voice. Ending a conversation discards any step
-still running for it.
-
-## Data policy
-
-- Every record carries `source` and `license`. Do not ingest data whose licence you cannot name.
-- The Gnani challenge rules say not to use real phone numbers, account numbers, Aadhaar, PAN or recorded calls.
-  Use open datasets, scripts, or recordings made with explicit consent.
-- `data/raw`, `data/processed`, `data/splits` and `outputs` are git-ignored on purpose.
+- Do not ingest data whose licence you cannot name. `data/raw`, `data/processed`, `data/splits` and `outputs`
+  are git-ignored on purpose, and no recordings or datasets are in this repository.
+- The challenge rules forbid real phone numbers, account numbers, Aadhaar, PAN and recorded calls. Use open data,
+  scripts, or recordings made with explicit consent.
+- In the private hosted trial, recordings and replies are kept for 30 days so the maker can check accuracy, and a
+  speaker can separately opt in to contribute a recording with a transcript correction. Contributions are
+  withdrawable with a private receipt, are not used for training, and are not shared or used for voice cloning.
 
 ## Known limits
 
-- chrF is a close approximation, not sacreBLEU. Use the same code for every comparison; swap in sacrebleu before
-  publishing numbers.
-- Reference text scores overlap with one translator's phrasing, not naturalness. Final claims need native raters.
-- Rating aggregation gives counts only (no agreement statistic or confidence interval yet).
-- Rule induction trusts model self-reported confidence; it is not calibrated.
-- Voice cloning, audio features and fine-tuning are out of scope for this scaffold.
+- No accuracy has been measured. Anything on the pages is proposal-only until native speakers rate it.
+- chrF here approximates sacreBLEU; use one implementation for every comparison and swap in `sacrebleu` before
+  publishing numbers. It scores overlap with one translator's phrasing, not naturalness.
+- Rating aggregation gives counts only (no agreement statistic or confidence interval).
+- The hosted trial serialises requests and is not built for more than a handful of testers.
 
 ## Layout
 
 ```
-src/boli_zero/  config  schema  cache  clients  ingest  split  experiment  evaluate  ratings  app
-web/index.html  demo page          tests/  38 tests          docs/CONTRACTS.md  interface proposal
-data/{raw,processed,splits}  experiments/  outputs/
+src/boli_zero/   app, conversation, service, clients (Gnani), routing, ledger, contributions, hosted,
+                 ingest, split, experiment, evaluate, ratings
+web/             index.html (lab, /lab) and talk.html (conversation, /)
+deploy/          Vercel + Postgres setup and owner-only review/export scripts
+tests/           161 tests
+docs/            design notes
 ```
+
+## License
+
+[MIT](LICENSE).

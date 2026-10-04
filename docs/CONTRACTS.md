@@ -1,3 +1,5 @@
+> Design notes written on 2026-10-02 while the data and experiment tooling was being split between two contributors. Kept as a record; the README describes current status.
+
 # Contracts between the application side and the experiment/evaluation side
 
 Status: **proposal v0 for review**. Fields marked `proposed` are not in the code yet; everything else is
