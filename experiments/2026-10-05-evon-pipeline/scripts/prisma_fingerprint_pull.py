@@ -1,0 +1,255 @@
+"""Prisma-fingerprint feasibility pull.
+
+For each of 6 well-resourced dialects (Bhojpuri, Magahi, Maithili, Bajjika,
+Chhattisgarhi, Garhwali), pull real audio + human transcripts from the gated
+ARTPARK-IISc/Vaani-transcription-part dataset, run each clip through Prisma
+(hi-IN, verbatim), and save human-vs-Prisma transcript pairs for later
+pattern analysis. No audio is re-hosted — only text + metadata is written
+to disk/committed, per project policy.
+
+Two modes:
+
+  discover   -- download all available shards per dialect, count usable rows
+                (has both audio and a non-empty transcript), no Prisma calls.
+                Cheap, use this first to size the job against the credit budget.
+
+  transcribe -- actually call Prisma for up to --per-dialect rows per dialect
+                (or all available rows if fewer), with bounded concurrency.
+                Writes experiments/2026-10-05-evon-pipeline/data/prisma_fingerprint/
+                <dialect>.jsonl incrementally (safe to interrupt/resume).
+
+Usage:
+  python prisma_fingerprint_pull.py discover
+  python prisma_fingerprint_pull.py transcribe --per-dialect 1500 --concurrency 16
+"""
+
+import argparse
+import io
+import json
+import os
+import sys
+import time
+import wave
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+
+import pandas as pd
+from huggingface_hub import HfApi, hf_hub_download
+
+REPO = "ARTPARK-IISc/Vaani-transcription-part"
+DIALECTS = ["Bhojpuri", "Magahi", "Maithili", "Bajjika", "Chhattisgarhi", "Garhwali"]
+
+GNANI_URL = "https://api.vachana.ai/stt/v3"
+GNANI_LANGUAGE = "hi-IN"
+GNANI_FORMAT = "verbatim"
+
+OUT_DIR = Path(__file__).resolve().parent.parent / "data" / "prisma_fingerprint"
+MANIFEST_PATH = OUT_DIR / "discover_manifest.json"
+
+
+def list_dialect_files(api, dialect):
+    files = api.list_repo_files(REPO, repo_type="dataset")
+    return sorted(f for f in files if f"/{dialect}/" in f and f.endswith(".parquet"))
+
+
+def find_text_col(df):
+    for c in df.columns:
+        lc = c.lower()
+        if "transcript" in lc or lc == "text":
+            return c
+    return None
+
+
+def find_audio_col(df):
+    for c in df.columns:
+        if "audio" in c.lower():
+            return c
+    return None
+
+
+def iter_rows(df, text_col, audio_col):
+    for i in range(len(df)):
+        row = df.iloc[i]
+        text = row[text_col]
+        if text is None or (isinstance(text, float)) or not str(text).strip():
+            continue
+        audio = row[audio_col]
+        audio_bytes = audio["bytes"] if isinstance(audio, dict) else audio
+        if not audio_bytes:
+            continue
+        meta = {c: row[c] for c in df.columns if c not in (text_col, audio_col)}
+        meta = {k: (v.item() if hasattr(v, "item") else v) for k, v in meta.items()}
+        yield i, str(text).strip(), audio_bytes, meta
+
+
+def discover():
+    token = os.environ["HF_TOKEN"]
+    api = HfApi(token=token)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    manifest = {}
+    for dialect in DIALECTS:
+        files = list_dialect_files(api, dialect)
+        print(f"=== {dialect}: {len(files)} shard files ===")
+        total_rows = 0
+        shard_info = []
+        for f in files:
+            path = hf_hub_download(REPO, f, repo_type="dataset", token=token)
+            df = pd.read_parquet(path)
+            text_col = find_text_col(df)
+            audio_col = find_audio_col(df)
+            usable = sum(
+                1
+                for _ in iter_rows(df, text_col, audio_col)
+                if text_col and audio_col
+            ) if text_col and audio_col else 0
+            print(f"  {f}: {len(df)} rows, text_col={text_col}, audio_col={audio_col}, usable={usable}")
+            shard_info.append({"file": f, "rows": len(df), "usable": usable, "text_col": text_col, "audio_col": audio_col})
+            total_rows += usable
+        manifest[dialect] = {"total_usable_rows": total_rows, "shards": shard_info}
+        print(f"  -> {dialect} total usable rows: {total_rows}\n")
+
+    with open(MANIFEST_PATH, "w") as fh:
+        json.dump(manifest, fh, ensure_ascii=False, indent=2)
+
+    grand_total = sum(d["total_usable_rows"] for d in manifest.values())
+    print(f"\nGRAND TOTAL usable rows across {len(DIALECTS)} dialects: {grand_total}")
+    print(f"Manifest written to {MANIFEST_PATH}")
+
+
+def wav_duration_seconds(audio_bytes):
+    try:
+        with wave.open(io.BytesIO(audio_bytes), "rb") as w:
+            return w.getnframes() / float(w.getframerate())
+    except Exception:
+        return None
+
+
+def call_prisma(audio_bytes, api_key, max_retries=3):
+    import requests
+
+    for attempt in range(max_retries):
+        start = time.time()
+        try:
+            resp = requests.post(
+                GNANI_URL,
+                headers={"X-API-Key-ID": api_key},
+                files={"audio_file": ("audio.wav", audio_bytes)},
+                data={"language_code": GNANI_LANGUAGE, "format": GNANI_FORMAT},
+                timeout=60,
+            )
+        except requests.RequestException as e:
+            if attempt == max_retries - 1:
+                return {"error": f"request_exception: {e}", "latency_sec": round(time.time() - start, 2)}
+            time.sleep(2 * (attempt + 1))
+            continue
+        latency = time.time() - start
+        if resp.status_code == 429:
+            time.sleep(2 * (attempt + 1))
+            continue
+        if not resp.ok:
+            return {"error": f"HTTP {resp.status_code}: {resp.text[:500]}", "latency_sec": round(latency, 2)}
+        try:
+            data = resp.json()
+        except Exception:
+            return {"error": f"bad_json: {resp.text[:500]}", "latency_sec": round(latency, 2)}
+        return {"prisma_transcript": data.get("transcript"), "raw": data, "latency_sec": round(latency, 2)}
+    return {"error": "exhausted_retries"}
+
+
+def transcribe_dialect(dialect, per_dialect_target, concurrency, api_key, token):
+    out_path = OUT_DIR / f"{dialect}.jsonl"
+    already_done = set()
+    if out_path.exists():
+        with open(out_path) as fh:
+            for line in fh:
+                try:
+                    rec = json.loads(line)
+                    already_done.add((rec["shard"], rec["row_idx"]))
+                except Exception:
+                    pass
+        print(f"  {dialect}: resuming, {len(already_done)} rows already done")
+
+    api = HfApi(token=token)
+    files = list_dialect_files(api, dialect)
+
+    jobs = []
+    for f in files:
+        if len(jobs) >= per_dialect_target:
+            break
+        path = hf_hub_download(REPO, f, repo_type="dataset", token=token)
+        df = pd.read_parquet(path)
+        text_col = find_text_col(df)
+        audio_col = find_audio_col(df)
+        if not text_col or not audio_col:
+            continue
+        for row_idx, text, audio_bytes, meta in iter_rows(df, text_col, audio_col):
+            if (f, row_idx) in already_done:
+                continue
+            jobs.append((f, row_idx, text, audio_bytes, meta))
+            if len(jobs) >= per_dialect_target:
+                break
+
+    print(f"  {dialect}: {len(jobs)} new clips to transcribe (target {per_dialect_target})")
+
+    def process(job):
+        shard, row_idx, human_text, audio_bytes, meta = job
+        result = call_prisma(audio_bytes, api_key)
+        record = {
+            "dialect": dialect,
+            "shard": shard,
+            "row_idx": row_idx,
+            "human_transcript": human_text,
+            "duration_sec": wav_duration_seconds(audio_bytes),
+            "meta": meta,
+            **result,
+        }
+        record.pop("raw", None)  # keep file lean; raw kept only transiently for debugging if needed
+        return record
+
+    done = 0
+    errors = 0
+    with open(out_path, "a") as out_fh, ThreadPoolExecutor(max_workers=concurrency) as pool:
+        futures = {pool.submit(process, job): job for job in jobs}
+        for fut in as_completed(futures):
+            rec = fut.result()
+            out_fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            out_fh.flush()
+            done += 1
+            if rec.get("error"):
+                errors += 1
+            if done % 50 == 0:
+                print(f"  {dialect}: {done}/{len(jobs)} done ({errors} errors so far)")
+
+    print(f"  {dialect}: finished. {done} processed, {errors} errors. -> {out_path}")
+    return done, errors
+
+
+def transcribe(per_dialect_target, concurrency):
+    token = os.environ["HF_TOKEN"]
+    api_key = os.environ["GNANI_API_KEY"]
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    grand_done, grand_errors = 0, 0
+    for dialect in DIALECTS:
+        print(f"=== {dialect} ===")
+        d, e = transcribe_dialect(dialect, per_dialect_target, concurrency, api_key, token)
+        grand_done += d
+        grand_errors += e
+
+    print(f"\nGRAND TOTAL: {grand_done} clips transcribed, {grand_errors} errors")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    sub = parser.add_subparsers(dest="mode", required=True)
+    sub.add_parser("discover")
+    p_t = sub.add_parser("transcribe")
+    p_t.add_argument("--per-dialect", type=int, default=1500)
+    p_t.add_argument("--concurrency", type=int, default=12)
+    args = parser.parse_args()
+
+    if args.mode == "discover":
+        discover()
+    else:
+        transcribe(args.per_dialect, args.concurrency)
