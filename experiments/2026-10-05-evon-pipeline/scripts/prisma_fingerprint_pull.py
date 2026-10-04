@@ -137,9 +137,11 @@ def wav_duration_seconds(audio_bytes):
         return None
 
 
-def call_prisma(audio_bytes, max_retries=3):
+def call_prisma(audio_bytes, max_retries=8):
     # No explicit API key header: this environment's egress proxy injects
     # the real X-API-Key-ID header transparently for requests to api.vachana.ai.
+    import random
+
     import requests
 
     for attempt in range(max_retries):
@@ -154,11 +156,13 @@ def call_prisma(audio_bytes, max_retries=3):
         except requests.RequestException as e:
             if attempt == max_retries - 1:
                 return {"error": f"request_exception: {e}", "latency_sec": round(time.time() - start, 2)}
-            time.sleep(2 * (attempt + 1))
+            time.sleep(min(30, 2 * (attempt + 1)) + random.uniform(0, 1))
             continue
         latency = time.time() - start
         if resp.status_code == 429:
-            time.sleep(2 * (attempt + 1))
+            if attempt == max_retries - 1:
+                return {"error": "exhausted_retries_429", "latency_sec": round(latency, 2)}
+            time.sleep(min(30, 3 * (attempt + 1)) + random.uniform(0, 1))
             continue
         if not resp.ok:
             return {"error": f"HTTP {resp.status_code}: {resp.text[:500]}", "latency_sec": round(latency, 2)}
@@ -178,10 +182,11 @@ def transcribe_dialect(dialect, per_dialect_target, concurrency):
             for line in fh:
                 try:
                     rec = json.loads(line)
-                    already_done.add((rec["shard"], rec["row_idx"]))
+                    if not rec.get("error"):  # only successful rows count as done; failures get retried
+                        already_done.add((rec["shard"], rec["row_idx"]))
                 except Exception:
                     pass
-        print(f"  {dialect}: resuming, {len(already_done)} rows already done")
+        print(f"  {dialect}: resuming, {len(already_done)} rows already succeeded")
 
     api = HfApi()
     files = list_dialect_files(api, dialect)
@@ -263,7 +268,7 @@ if __name__ == "__main__":
         default=None,
         help="Uniform cap per dialect. Omit to use the proportional DEFAULT_PER_DIALECT_CAPS (~24k total).",
     )
-    p_t.add_argument("--concurrency", type=int, default=12)
+    p_t.add_argument("--concurrency", type=int, default=5)
     args = parser.parse_args()
 
     if args.mode == "discover":
