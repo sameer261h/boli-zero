@@ -26,7 +26,7 @@ from . import conversation_routes
 from .clients import PrismaClient, TimbreClient
 from .config import GnaniConfig, ROOT
 from .contributions import register as register_contributions, verify_retry
-from .conversation import AnthropicReply, Conversation, ConversationEngine, Turn, MAX_CONTEXT_TURNS, MAX_TEXT_CHARS, MAX_TURNS, SILENCE_PEAK, wav_peak
+from .conversation import AnthropicReply, Conversation, ConversationEngine, EvonReply, Turn, MAX_CONTEXT_TURNS, MAX_TEXT_CHARS, MAX_TURNS, SILENCE_PEAK, wav_peak
 from .ledger import ClaudeUsage, Ledger, estimate_cost_inr
 from .service import RecognitionError, RecognitionService, inspect_upload
 
@@ -69,8 +69,13 @@ def restore(state, root):
         client._http = httpx.Client(timeout=httpx.Timeout(20, connect=5))
     ledger = Ledger(root / 'gnani.jsonl', float(os.environ.get('BOLI_BUDGET_INR', '25')))
     usage = ClaudeUsage(root / 'claude.jsonl', float(os.environ.get('BOLI_CLAUDE_BUDGET_USD', '.25')), 40)
-    key = os.environ.get('ANTHROPIC_API_KEY')
-    replier = AnthropicReply(key, AnthropicReply.DEFAULT_MODEL, usage, http=httpx.Client(timeout=httpx.Timeout(20, connect=5))) if key else None
+    evon_url, key = os.environ.get('BOLI_EVON_URL'), os.environ.get('ANTHROPIC_API_KEY')
+    if evon_url:
+        replier = EvonReply(evon_url, os.environ.get('BOLI_EVON_MODEL') or '/weights/gnani/gnani-evon-v3.3-30B-A3B')
+    elif key:
+        replier = AnthropicReply(key, AnthropicReply.DEFAULT_MODEL, usage, http=httpx.Client(timeout=httpx.Timeout(20, connect=5)))
+    else:
+        replier = None
     engine = ConversationEngine(RecognitionService(prisma, ledger), timbre, ledger, replier)
     for cid, value in state.get('conversations', {}).items():
         if value['created'] < time.time() - 3600:

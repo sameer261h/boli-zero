@@ -130,6 +130,73 @@ class AnthropicReply:
                                        "request_id": response.headers.get("request-id"), "seconds": seconds}
 
 
+# --- reply provider: Evon (self-hosted on Modal, OpenAI-compatible chat/completions) -------------------------------
+EVON_TASK_TEMPLATE = (
+    "{history}User said:\n\n{user_text}\n\n"
+    "Reply in one short, natural sentence suitable for being spoken aloud on a phone call. "
+    "Do not explain your reasoning, do not give alternatives, do not add anything before or after. "
+    "Return exactly:\n\nREPLY: <your one-sentence reply>"
+)
+
+
+class EvonReply:
+    """Reply generation with Evon v3.3 (30B-A3B), self-hosted on Modal — no Gnani-documented endpoint exists, so this
+    calls whatever OpenAI-compatible endpoint the operator deployed (see README, 'Connecting the real APIs').
+
+    Deliberately carries NO system prompt: every instruction lives in the single user-turn template above. An
+    earlier round of testing (see experiments/2026-10-05-evon-pipeline/) found that giving Evon a system prompt or
+    leaving its raw chain-of-thought unconstrained produces replies of 1,000-6,000+ characters that broke Timbre
+    outright; the structured `REPLY:` extraction below is the fix that was actually validated, not a style choice.
+    Cost is Modal GPU-time, not a per-token API charge, so cost_usd is always reported as 0.0 with the real
+    accounting left to the Modal dashboard.
+    """
+
+    def __init__(self, base_url: str, model: str, http: httpx.Client | None = None, max_tokens: int = 400):
+        self.base_url, self.model, self.max_tokens = base_url.rstrip("/"), model, max_tokens
+        # Evon's A100 can cold-boot for several minutes after an idle period; a short timeout here would
+        # misreport a cold start as a failure. follow_redirects=True is required: Modal answers an in-flight
+        # cold-start request with an HTTP 303 the client must follow (as GET) to get the real response.
+        self.http = http or httpx.Client(timeout=httpx.Timeout(600, connect=10), follow_redirects=True)
+        self.name = f"Evon ({model}) via a self-hosted Modal endpoint"
+
+    def reply(self, history: list[dict], user_text: str) -> str:
+        return self.reply_with_usage(history, user_text)[0]
+
+    def reply_with_usage(self, history: list[dict], user_text: str) -> tuple[str, dict]:
+        history_text = "".join(f"{'Assistant' if m['role'] == 'assistant' else 'User'}: {m['content']}\n" for m in history)
+        content = EVON_TASK_TEMPLATE.format(history=history_text, user_text=user_text)
+        started = time.time()
+        try:
+            response = self.http.post(f"{self.base_url}/v1/chat/completions",
+                                      json={"model": self.model, "messages": [{"role": "user", "content": content}]})
+        except httpx.HTTPError as error:
+            raise ReplyError("reply_unreachable", "The answer service could not be reached.", 502) from error
+        seconds = round(time.time() - started, 2)
+        if response.status_code != 200:
+            if response.status_code == 429:
+                raise ReplyError("reply_rate_limited", "The answer service is busy. Try again in a moment.", 429, retry_after=response.headers.get("retry-after") or "10")
+            raise ReplyError("reply_failed", f"The answer service had a problem (HTTP {response.status_code}). Try again.", 502)
+        try:
+            body = response.json()
+            raw = body["choices"][0]["message"]["content"]
+            usage = body.get("usage") or {}
+        except (ValueError, KeyError, IndexError) as error:
+            raise ReplyError("reply_failed", "The answer service did not give a usable reply.", 502) from error
+        # Evon's raw output is <reasoning...></think>\nREPLY: <answer> (or occasionally just the answer with no
+        # </think> at all, when it skips visible reasoning). Take the text after the LAST </think>, then the
+        # text after "REPLY:" if present, falling back to the first line of whatever remains.
+        final_block = raw.rsplit("</think>", 1)[-1].strip()
+        if "REPLY:" in final_block:
+            text = final_block.split("REPLY:", 1)[1].strip().splitlines()[0].strip()
+        else:
+            text = (final_block.splitlines() or [""])[0].strip()
+        if not text:
+            raise ReplyError("reply_failed", "The answer service did not give a usable reply.", 502)
+        return text[:MAX_TEXT_CHARS], {"input_tokens": usage.get("prompt_tokens", 0), "output_tokens": usage.get("completion_tokens", 0),
+                                       "cost_usd": 0.0, "stop_reason": body["choices"][0].get("finish_reason"),
+                                       "request_id": body.get("id"), "seconds": seconds}
+
+
 # --- state ------------------------------------------------------------------------------------------------------------
 @dataclass
 class Turn:

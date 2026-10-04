@@ -22,7 +22,7 @@ from .contributions import ContributionStore, register as register_contributions
 from .catalog import Catalog
 from .clients import EvonClient, NotConfigured, PrismaClient, TimbreClient
 from .config import EXPERIMENTS_DIR, PROCESSED_DIR, ROOT, SPLITS_DIR
-from .conversation import AnthropicReply, ConversationEngine
+from .conversation import AnthropicReply, ConversationEngine, EvonReply
 from .experiment import load_split, shot_order, translation_prompt
 from .ledger import ClaudeUsage, Ledger
 from .service import LANGUAGE_CODE, MAX_UPLOAD_BYTES, RecognitionError, RecognitionService, inspect_upload
@@ -40,7 +40,11 @@ class TranslateRequest(BaseModel):
 
 
 def replier_from_env():
-    """Claude as the reply generator, only if a key is configured locally (ANTHROPIC_API_KEY in the environment or .env)."""
+    """Evon if BOLI_EVON_URL is set (a self-hosted Modal endpoint — Gnani documents no hosted Evon), else Claude if
+    ANTHROPIC_API_KEY is set, else None. Evon is preferred: it is the model this project is actually about."""
+    evon_url = os.environ.get("BOLI_EVON_URL")
+    if evon_url:
+        return EvonReply(evon_url, os.environ.get("BOLI_EVON_MODEL") or "/weights/gnani/gnani-evon-v3.3-30B-A3B")
     key = os.environ.get("ANTHROPIC_API_KEY")
     if not key:
         return None

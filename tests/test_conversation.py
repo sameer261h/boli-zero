@@ -462,3 +462,96 @@ def test_app_uses_claude_only_when_a_key_is_configured_locally(monkeypatch, tmp_
 def test_wav_peak_measures_loudness_and_declines_non_wav():
     assert cv.wav_peak(wav_bytes(1, amplitude=0)) == 0 and cv.wav_peak(wav_bytes(1, amplitude=16384)) == pytest.approx(0.5, abs=0.01)
     assert cv.wav_peak(b"not a wav") is None
+
+
+# --- Evon reply provider -----------------------------------------------------------------------------------------------------
+def evon(handler, model="/weights/gnani/gnani-evon-v3.3-30B-A3B"):
+    return cv.EvonReply("https://evon.example.invalid", model, http=httpx.Client(transport=httpx.MockTransport(handler)))
+
+
+def evon_ok(reply_text="REPLY: ठीक बा", raw=None, tin=50, tout=120, stop="stop", request_id="chatcmpl-test"):
+    """Shapes a vLLM OpenAI-compatible chat/completions response. `raw`, if given, overrides reply_text and skips the
+    '</think>\\n' wrapping, to test the 'Evon skipped visible reasoning' case."""
+    content = raw if raw is not None else f"some chain-of-thought reasoning here\n</think>\n{reply_text}"
+    return httpx.Response(200, json={"id": request_id, "choices": [{"message": {"content": content}, "finish_reason": stop}],
+                                     "usage": {"prompt_tokens": tin, "completion_tokens": tout}})
+
+
+def test_evon_extracts_only_the_text_after_think_and_reply_label():
+    p = evon(lambda r: evon_ok("REPLY: सोमवार को जमा कर दीजिएगा।"))
+    assert p.reply([], "x") == "सोमवार को जमा कर दीजिएगा।"
+
+
+def test_evon_falls_back_to_first_line_when_the_reply_label_is_missing():
+    # Evon does not always emit the literal "REPLY:" label; the first line after </think> is used instead.
+    p = evon(lambda r: evon_ok(raw="reasoning\n</think>\nठीक है, कल जमा कर दीजिए।\nextra trailing line"))
+    assert p.reply([], "x") == "ठीक है, कल जमा कर दीजिए।"
+
+
+def test_evon_handles_no_visible_reasoning_at_all():
+    p = evon(lambda r: evon_ok(raw="REPLY: सीधा जवाब"))  # no </think> present
+    assert p.reply([], "x") == "सीधा जवाब"
+
+
+def test_evon_sends_no_system_prompt_and_no_prior_turns_leak_into_a_fresh_history():
+    seen = []
+
+    def handler(request):
+        seen.append(json.loads(request.content))
+        return evon_ok()
+
+    p = evon(handler)
+    p.reply([{"role": "user", "content": "पहिले का सवाल"}, {"role": "assistant", "content": "पहिले का जवाब"}], "नया सवाल")
+    body = seen[0]
+    assert all(m["role"] != "system" for m in body["messages"])
+    assert len(body["messages"]) == 1  # history is folded into the single user-turn template, not separate messages
+    assert "पहिले का सवाल" in body["messages"][0]["content"] and "नया सवाल" in body["messages"][0]["content"]
+
+
+def test_evon_reports_zero_cost_since_billing_is_modal_gpu_time_not_per_token():
+    p = evon(lambda r: evon_ok(tin=80, tout=200))
+    _, usage = p.reply_with_usage([], "x")
+    assert usage["cost_usd"] == 0.0 and usage["input_tokens"] == 80 and usage["output_tokens"] == 200
+
+
+@pytest.mark.parametrize("response,code,status", [
+    (httpx.Response(429, json={}, headers={"retry-after": "9"}), "reply_rate_limited", 429),
+    (httpx.Response(500, text="boom"), "reply_failed", 502),
+    (httpx.Response(200, json={"choices": [{"message": {"content": "</think>\n   "}, "finish_reason": "stop"}], "usage": {}}), "reply_failed", 502),
+    (httpx.Response(200, json={"choices": []}), "reply_failed", 502),
+    (httpx.Response(200, text="<html>not json"), "reply_failed", 502),
+], ids=["429", "500", "blank-reply", "no-choices", "non-json"])
+def test_evon_failures_become_specific_reply_errors(response, code, status):
+    p = evon(lambda r: response)
+    with pytest.raises(cv.ReplyError) as caught:
+        p.reply([], "x")
+    assert (caught.value.code, caught.value.status) == (code, status)
+
+
+def test_evon_network_failure():
+    def boom(request):
+        raise httpx.ConnectError("down", request=request)
+
+    p = evon(boom)
+    with pytest.raises(cv.ReplyError) as caught:
+        p.reply([], "x")
+    assert caught.value.code == "reply_unreachable"
+
+
+def test_app_prefers_evon_over_claude_when_both_are_configured(monkeypatch, tmp_path):
+    from boli_zero.app import replier_from_env
+    monkeypatch.delenv("BOLI_EVON_URL", raising=False)
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    assert replier_from_env() is None
+
+    monkeypatch.setenv("ANTHROPIC_API_KEY", KEY_CLAUDE)
+    monkeypatch.setenv("BOLI_CLAUDE_USAGE", str(tmp_path / "u.jsonl"))
+    assert isinstance(replier_from_env(), cv.AnthropicReply)
+
+    monkeypatch.setenv("BOLI_EVON_URL", "https://evon.example.invalid")
+    chosen = replier_from_env()
+    assert isinstance(chosen, cv.EvonReply) and chosen.base_url == "https://evon.example.invalid"
+    assert chosen.model == "/weights/gnani/gnani-evon-v3.3-30B-A3B"
+
+    monkeypatch.setenv("BOLI_EVON_MODEL", "/weights/other")
+    assert replier_from_env().model == "/weights/other"

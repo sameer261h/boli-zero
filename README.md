@@ -12,13 +12,15 @@ Early and honest. What exists is a working, tested prototype and the tooling to 
 yet is any claim about accuracy: no benchmark, no native-speaker rating, no trained model.
 
 - **Spoken conversation** (page `/`): tap the microphone, speak, hear a spoken reply. Each turn is three steps:
-  recognise (Gnani Prisma, in Hindi mode because Prisma offers no Bhojpuri), reply (Claude, in Bhojpuri), speak
-  (Gnani Timbre, a Hindi voice). Pronunciation of Bhojpuri by a Hindi voice is unverified.
+  recognise (Gnani Prisma, in Hindi mode because Prisma offers no Bhojpuri), reply (Evon if `BOLI_EVON_URL` is set,
+  else Claude as a fallback — see below), speak (Gnani Timbre, a Hindi voice). Pronunciation of Bhojpuri by a Hindi
+  voice is unverified.
 - **Recognition lab** (page `/lab`): run Prisma on sample or uploaded audio and inspect exactly what came back, with
   a provisional, hedged guess at the variety. It never claims a recording is verified Bhojpuri.
 - **Experiment tooling**: dataset intake, deterministic leak-proof splits, few-shot runner, scoring against held-out
-  references with a "do nothing" baseline, and blinded rating sheets for native speakers. Dry runs work; real runs
-  need an Evon connection, which does not exist yet.
+  references with a "do nothing" baseline, and blinded rating sheets for native speakers. A real Evon connection now
+  exists (see `experiments/2026-10-05-evon-pipeline/`); most of this tooling's real runs are still unexercised
+  against it.
 - **Private hosted trial**: an invitation-only deployment (Vercel + Postgres) used for small tests. It is not a public
   service and its address is not published.
 
@@ -26,7 +28,7 @@ yet is any claim about accuracy: no benchmark, no native-speaker rating, no trai
 |---|---|
 | Prisma (speech to text) | Wired to the documented REST endpoint; run live on trial clips. |
 | Timbre (text to speech) | Wired to the documented REST endpoint; used for spoken replies. |
-| Evon (language model) | Not wired. No hosted endpoint was found; weights are published on Hugging Face by request. Replies come from Claude instead. |
+| Evon (language model) | **Now wired.** Gnani documents no hosted endpoint, so this is the official `gnani/gnani-evon-v3.3-30B-A3B` BF16 checkpoint self-hosted on Modal (vLLM, single A100 80GB) and called via an OpenAI-compatible endpoint — see `src/boli_zero/conversation.py:EvonReply` and `experiments/2026-10-05-evon-pipeline/`. Claude remains the fallback when `BOLI_EVON_URL` is unset. |
 
 ## Quick start
 
@@ -49,8 +51,10 @@ Set in `.env` (see `.env.example`). Spend is capped by design: requests stop bef
 | Variable | Purpose |
 |---|---|
 | `GNANI_API_KEY`, `GNANI_BASE_URL`, `GNANI_AUTH_HEADER` | Gnani speech API access, from the Gnani console and docs. |
-| `ANTHROPIC_API_KEY` | Enables Claude replies. Without it the page shows what it heard and cannot answer. |
-| `BOLI_REPLY_MODEL` | Reply model; only models with a known price are accepted. |
+| `BOLI_EVON_URL` | A self-hosted Evon endpoint (see `experiments/2026-10-05-evon-pipeline/`). Preferred reply provider when set. |
+| `BOLI_EVON_MODEL` | Model path sent in the Evon request; defaults to the official checkpoint's HF path. |
+| `ANTHROPIC_API_KEY` | Fallback replies with Claude, used only when `BOLI_EVON_URL` is unset. Without either, the page shows what it heard and cannot answer. |
+| `BOLI_REPLY_MODEL` | Claude reply model; only models with a known price are accepted. |
 | `BOLI_CLAUDE_BUDGET_USD`, `BOLI_CLAUDE_MAX_REQUESTS` | Hard caps on estimated reply spend and request count. |
 | `BOLI_BUDGET_INR`, `BOLI_LEDGER` | Estimated-spend cap and ledger file for Gnani calls. |
 | `BOLI_VOICE` | A documented Timbre voice name. |
@@ -67,6 +71,22 @@ Our own observations; they differ from the docs in two places and may have chang
 - Two requests in quick succession returned HTTP 429.
 - The only documented ways to steer Prisma are `bias_list` (up to 100 words) and `substitution_map` (up to 10 rules).
   No fine-tuning is documented.
+
+## What testing Evon showed (2026-10-05)
+
+Full writeup in `experiments/2026-10-05-evon-pipeline/`. The short version:
+- Evon's raw output (no system prompt, as this project requires) reliably ran 1,100–6,200+ characters on
+  open-ended statements, because it treats any non-question input as something to reason through at length. This
+  broke Timbre about half the time — Timbre has an undocumented length cutoff somewhere between ~1,500–2,800
+  characters. The fix: force `INTENT: / DETAILS: / REPLY:` structured output, send only the `REPLY:` line to
+  Timbre. 10/10 success once in place.
+- A hand-written Bhojpuri glossary given to Evon alongside the business task added no measurable benefit over the
+  task prompt alone, on the statements tested. The structured-output format did the actual work.
+- Corpus-derived dialect markers (real word-frequency comparison, not guessing) separate well-resourced, distant
+  dialects (Garhwali) from Hindi, but do not reliably separate closely related dialects (Bhojpuri/Magahi/
+  Bajjika/Angika/Maithili) from each other at the single-utterance level — held-out accuracy for that cluster was
+  0–34%. This pushed the design toward marker-based *grounding* (surface only the specific words that matched,
+  with their meanings) rather than a dialect *classifier*.
 
 ## How a turn works
 
