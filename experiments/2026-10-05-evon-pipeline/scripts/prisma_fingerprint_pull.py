@@ -37,25 +37,44 @@ from huggingface_hub import HfApi, hf_hub_download
 REPO = "ARTPARK-IISc/Vaani-transcription-part"
 
 # All 19 dialects confirmed to have transcript files in Vaani-transcription-part
-# (per derive_markers_multi.py's multi_dialect_markers.json).
+# (per derive_markers_multi.py's multi_dialect_markers.json). Ordered smallest
+# target first, so an interrupted overnight run still touches every dialect
+# instead of leaving the ones at the end of the list untouched.
 DIALECTS = [
-    "Bhojpuri", "Chhattisgarhi", "Maithili", "Garhwali", "Magahi", "Bajjika",
-    "Rajasthani", "Marwari", "Khortha", "Angika", "Kumaoni", "Sadri",
-    "Surgujia", "Bundeli", "Khariboli", "Surjapuri", "Awadhi", "Haryanvi", "Jaipuri",
+    "Jaipuri", "Haryanvi", "Awadhi", "Surjapuri", "Bundeli", "Surgujia",
+    "Angika", "Sadri", "Bajjika", "Khariboli", "Khortha", "Magahi",
+    "Kumaoni", "Marwari", "Garhwali", "Rajasthani", "Maithili",
+    "Chhattisgarhi", "Bhojpuri",
 ]
 
-# Proportional caps summing to ~24,000 total calls, derived from the
-# 2026-10-04 discover run scaled to stay safely under the ~25,000-call
+# Caps summing to ~24,000 total calls, staying under the ~25,000-call
 # estimate for a 5000-credit Gnani budget (web/index.html: "about ₹0.2 of
-# programme credits" per Prisma STT call). Set after running `discover`
-# for all 19 dialects — see DEFAULT_PER_DIALECT_CAPS below.
+# programme credits" per Prisma STT call). From the 2026-10-04 discover run
+# across all 19 dialects (69,138 usable rows total): the 9 smallest dialects
+# (<=1200 available) take 100% of their population (only ~4,157 calls total,
+# since they're small anyway -- a flat proportional split would've left them
+# at ~30-70 samples each, too thin to find real patterns in). The remaining
+# ~19,843 budget is split proportionally across the 10 larger dialects.
 DEFAULT_PER_DIALECT_CAPS = {
-    "Bhojpuri": 7120,
-    "Chhattisgarhi": 5932,
-    "Maithili": 5386,
-    "Garhwali": 2970,
-    "Magahi": 1429,
-    "Bajjika": 1164,
+    "Bhojpuri": 4316,
+    "Chhattisgarhi": 3596,
+    "Maithili": 3264,
+    "Rajasthani": 2472,
+    "Garhwali": 1800,
+    "Marwari": 1462,
+    "Magahi": 866,
+    "Khortha": 804,
+    "Bajjika": 705,
+    "Angika": 559,
+    "Kumaoni": 1142,   # 100% of availability
+    "Sadri": 685,      # 100%
+    "Khariboli": 718,  # 100%
+    "Surgujia": 529,   # 100%
+    "Bundeli": 447,    # 100%
+    "Surjapuri": 197,  # 100%
+    "Awadhi": 187,     # 100%
+    "Haryanvi": 165,   # 100%
+    "Jaipuri": 87,     # 100%
 }
 
 GNANI_URL = "https://api.vachana.ai/stt/v3"
