@@ -37,6 +37,19 @@ from huggingface_hub import HfApi, hf_hub_download
 REPO = "ARTPARK-IISc/Vaani-transcription-part"
 DIALECTS = ["Bhojpuri", "Magahi", "Maithili", "Bajjika", "Chhattisgarhi", "Garhwali"]
 
+# Proportional caps summing to ~24,000 total calls, derived from the
+# 2026-10-04 discover run (47,638 usable rows total) scaled to stay safely
+# under the ~25,000-call estimate for a 5000-credit Gnani budget
+# (web/index.html: "about ₹0.2 of programme credits" per Prisma STT call).
+DEFAULT_PER_DIALECT_CAPS = {
+    "Bhojpuri": 7120,
+    "Chhattisgarhi": 5932,
+    "Maithili": 5386,
+    "Garhwali": 2970,
+    "Magahi": 1429,
+    "Bajjika": 1164,
+}
+
 GNANI_URL = "https://api.vachana.ai/stt/v3"
 GNANI_LANGUAGE = "hi-IN"
 GNANI_FORMAT = "verbatim"
@@ -230,8 +243,9 @@ def transcribe(per_dialect_target, concurrency):
 
     grand_done, grand_errors = 0, 0
     for dialect in DIALECTS:
-        print(f"=== {dialect} ===")
-        d, e = transcribe_dialect(dialect, per_dialect_target, concurrency)
+        target = per_dialect_target if per_dialect_target is not None else DEFAULT_PER_DIALECT_CAPS[dialect]
+        print(f"=== {dialect} (target {target}) ===")
+        d, e = transcribe_dialect(dialect, target, concurrency)
         grand_done += d
         grand_errors += e
 
@@ -243,7 +257,12 @@ if __name__ == "__main__":
     sub = parser.add_subparsers(dest="mode", required=True)
     sub.add_parser("discover")
     p_t = sub.add_parser("transcribe")
-    p_t.add_argument("--per-dialect", type=int, default=1500)
+    p_t.add_argument(
+        "--per-dialect",
+        type=int,
+        default=None,
+        help="Uniform cap per dialect. Omit to use the proportional DEFAULT_PER_DIALECT_CAPS (~24k total).",
+    )
     p_t.add_argument("--concurrency", type=int, default=12)
     args = parser.parse_args()
 

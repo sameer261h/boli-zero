@@ -1,0 +1,235 @@
+{
+  "Bhojpuri": {
+    "total_usable_rows": 14134,
+    "shards": [
+      {
+        "file": "audio/Bhojpuri/test-00000-of-00001.parquet",
+        "rows": 1426,
+        "usable": 1426,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bhojpuri/train-00000-of-00005.parquet",
+        "rows": 2239,
+        "usable": 2239,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bhojpuri/train-00001-of-00005.parquet",
+        "rows": 2238,
+        "usable": 2238,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bhojpuri/train-00002-of-00005.parquet",
+        "rows": 2238,
+        "usable": 2238,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bhojpuri/train-00003-of-00005.parquet",
+        "rows": 2238,
+        "usable": 2238,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bhojpuri/train-00004-of-00005.parquet",
+        "rows": 2238,
+        "usable": 2238,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bhojpuri/validation-00000-of-00001.parquet",
+        "rows": 1517,
+        "usable": 1517,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      }
+    ]
+  },
+  "Magahi": {
+    "total_usable_rows": 2837,
+    "shards": [
+      {
+        "file": "audio/Magahi/test-00000-of-00001.parquet",
+        "rows": 245,
+        "usable": 245,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Magahi/train-00000-of-00001.parquet",
+        "rows": 2363,
+        "usable": 2363,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Magahi/validation-00000-of-00001.parquet",
+        "rows": 229,
+        "usable": 229,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      }
+    ]
+  },
+  "Maithili": {
+    "total_usable_rows": 10690,
+    "shards": [
+      {
+        "file": "audio/Maithili/test-00000-of-00001.parquet",
+        "rows": 1000,
+        "usable": 1000,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Maithili/train-00000-of-00004.parquet",
+        "rows": 2184,
+        "usable": 2184,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Maithili/train-00001-of-00004.parquet",
+        "rows": 2183,
+        "usable": 2183,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Maithili/train-00002-of-00004.parquet",
+        "rows": 2183,
+        "usable": 2183,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Maithili/train-00003-of-00004.parquet",
+        "rows": 2183,
+        "usable": 2183,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Maithili/validation-00000-of-00001.parquet",
+        "rows": 957,
+        "usable": 957,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      }
+    ]
+  },
+  "Bajjika": {
+    "total_usable_rows": 2310,
+    "shards": [
+      {
+        "file": "audio/Bajjika/test-00000-of-00001.parquet",
+        "rows": 227,
+        "usable": 227,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bajjika/train-00000-of-00001.parquet",
+        "rows": 1894,
+        "usable": 1894,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Bajjika/validation-00000-of-00001.parquet",
+        "rows": 189,
+        "usable": 189,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      }
+    ]
+  },
+  "Chhattisgarhi": {
+    "total_usable_rows": 11773,
+    "shards": [
+      {
+        "file": "audio/Chhattisgarhi/test-00000-of-00001.parquet",
+        "rows": 1079,
+        "usable": 1079,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Chhattisgarhi/train-00000-of-00004.parquet",
+        "rows": 2364,
+        "usable": 2364,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Chhattisgarhi/train-00001-of-00004.parquet",
+        "rows": 2364,
+        "usable": 2364,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Chhattisgarhi/train-00002-of-00004.parquet",
+        "rows": 2364,
+        "usable": 2364,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Chhattisgarhi/train-00003-of-00004.parquet",
+        "rows": 2364,
+        "usable": 2364,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Chhattisgarhi/validation-00000-of-00001.parquet",
+        "rows": 1238,
+        "usable": 1238,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      }
+    ]
+  },
+  "Garhwali": {
+    "total_usable_rows": 5894,
+    "shards": [
+      {
+        "file": "audio/Garhwali/test-00000-of-00001.parquet",
+        "rows": 450,
+        "usable": 450,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Garhwali/train-00000-of-00002.parquet",
+        "rows": 2389,
+        "usable": 2389,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Garhwali/train-00001-of-00002.parquet",
+        "rows": 2389,
+        "usable": 2389,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      },
+      {
+        "file": "audio/Garhwali/validation-00000-of-00001.parquet",
+        "rows": 666,
+        "usable": 666,
+        "text_col": "transcript",
+        "audio_col": "audio"
+      }
+    ]
+  }
+}
