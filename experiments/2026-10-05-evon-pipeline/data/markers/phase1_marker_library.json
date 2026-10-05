@@ -1,0 +1,11272 @@
+{
+ "Angika": [
+  {
+   "feature": "w:छै",
+   "kind": "w",
+   "df": 25,
+   "f_V": 0.07463,
+   "f_others_macro": 0.01267,
+   "f_max_other": 0.10304,
+   "lift": 5.67,
+   "w": 1.365,
+   "groups": 25,
+   "districts": 4,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.52,
+   "shared_with": [
+    [
+     "Maithili",
+     0.103
+    ],
+    [
+     "Rajasthani",
+     0.043
+    ]
+   ],
+   "human_df": 106,
+   "asr_ratio": 0.24,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:के फोटो",
+   "kind": "b",
+   "df": 9,
+   "f_V": 0.02687,
+   "f_others_macro": 0.00406,
+   "f_max_other": 0.01684,
+   "lift": 5.9,
+   "w": 1.171,
+   "groups": 9,
+   "districts": 3,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.9,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0154
+    ],
+    [
+     "Bhojpuri",
+     0.0168
+    ],
+    [
+     "Chhattisgarhi",
+     0.0113
+    ],
+    [
+     "Khortha",
+     0.0123
+    ]
+   ],
+   "human_df": 7,
+   "asr_ratio": 1.25,
+   "stable_runs": 6
+  }
+ ],
+ "Awadhi": [
+  {
+   "feature": "e2:ती",
+   "kind": "e2",
+   "df": 10,
+   "f_V": 0.0885,
+   "f_others_macro": 0.02429,
+   "f_max_other": 0.04872,
+   "lift": 3.57,
+   "w": 0.687,
+   "groups": 10,
+   "districts": 5,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.65,
+   "shared_with": [
+    [
+     "Angika",
+     0.0388
+    ],
+    [
+     "Bundeli",
+     0.0297
+    ],
+    [
+     "Khariboli",
+     0.0487
+    ],
+    [
+     "Magahi",
+     0.0412
+    ],
+    [
+     "Maithili",
+     0.0299
+    ],
+    [
+     "Sadri",
+     0.0418
+    ],
+    [
+     "Surgujia",
+     0.0316
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 1.57,
+   "stable_runs": 6
+  }
+ ],
+ "Bajjika": [],
+ "Bhojpuri": [
+  {
+   "feature": "w:बाटे",
+   "kind": "w",
+   "df": 347,
+   "f_V": 0.11928,
+   "f_others_macro": 0.00075,
+   "f_max_other": 0.00885,
+   "lift": 95.64,
+   "w": 4.466,
+   "groups": 331,
+   "districts": 10,
+   "prompts": 322,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 68.16,
+   "shared_with": [],
+   "human_df": 402,
+   "asr_ratio": 0.86,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:बा",
+   "kind": "w",
+   "df": 1239,
+   "f_V": 0.42592,
+   "f_others_macro": 0.00943,
+   "f_max_other": 0.0354,
+   "lift": 42.91,
+   "w": 3.718,
+   "groups": 1150,
+   "districts": 14,
+   "prompts": 1034,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 46.76,
+   "shared_with": [],
+   "human_df": 1427,
+   "asr_ratio": 0.87,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ाटे",
+   "kind": "e3",
+   "df": 364,
+   "f_V": 0.12513,
+   "f_others_macro": 0.00257,
+   "f_max_other": 0.0101,
+   "lift": 40.72,
+   "w": 3.614,
+   "groups": 346,
+   "districts": 10,
+   "prompts": 335,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 23.01,
+   "shared_with": [],
+   "human_df": 436,
+   "asr_ratio": 0.84,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:जाला",
+   "kind": "w",
+   "df": 49,
+   "f_V": 0.01684,
+   "f_others_macro": 5e-05,
+   "f_max_other": 0.00088,
+   "lift": 30.69,
+   "w": 3.185,
+   "groups": 49,
+   "districts": 7,
+   "prompts": 48,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 31.59,
+   "shared_with": [],
+   "human_df": 89,
+   "asr_ratio": 0.56,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:लौकता",
+   "kind": "w",
+   "df": 55,
+   "f_V": 0.01891,
+   "f_others_macro": 0.00026,
+   "f_max_other": 0.00464,
+   "lift": 24.95,
+   "w": 2.989,
+   "groups": 55,
+   "districts": 9,
+   "prompts": 55,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 34.01,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 4.67,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:देता",
+   "kind": "w",
+   "df": 44,
+   "f_V": 0.01513,
+   "f_others_macro": 0.00032,
+   "f_max_other": 0.00199,
+   "lift": 18.35,
+   "w": 2.66,
+   "groups": 43,
+   "districts": 7,
+   "prompts": 43,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 24.45,
+   "shared_with": [],
+   "human_df": 30,
+   "asr_ratio": 1.45,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:लागता",
+   "kind": "w",
+   "df": 77,
+   "f_V": 0.02647,
+   "f_others_macro": 0.00147,
+   "f_max_other": 0.0177,
+   "lift": 13.42,
+   "w": 2.4,
+   "groups": 74,
+   "districts": 9,
+   "prompts": 72,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 19.08,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0177
+    ]
+   ],
+   "human_df": 106,
+   "asr_ratio": 0.73,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:जौन",
+   "kind": "w",
+   "df": 25,
+   "f_V": 0.00859,
+   "f_others_macro": 0.00011,
+   "f_max_other": 0.00205,
+   "lift": 14.0,
+   "w": 2.333,
+   "groups": 25,
+   "districts": 6,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.67,
+   "shared_with": [],
+   "human_df": 31,
+   "asr_ratio": 0.81,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:गैल",
+   "kind": "w",
+   "df": 52,
+   "f_V": 0.01788,
+   "f_others_macro": 0.0009,
+   "f_max_other": 0.00928,
+   "lift": 12.8,
+   "w": 2.317,
+   "groups": 51,
+   "districts": 8,
+   "prompts": 50,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.47,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0093
+    ]
+   ],
+   "human_df": 5,
+   "asr_ratio": 8.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:ह",
+   "kind": "w",
+   "df": 177,
+   "f_V": 0.06085,
+   "f_others_macro": 0.00476,
+   "f_max_other": 0.02846,
+   "lift": 11.57,
+   "w": 2.315,
+   "groups": 176,
+   "districts": 9,
+   "prompts": 174,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.71,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.0285
+    ]
+   ],
+   "human_df": 332,
+   "asr_ratio": 0.53,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:वता",
+   "kind": "e3",
+   "df": 41,
+   "f_V": 0.01409,
+   "f_others_macro": 0.0006,
+   "f_max_other": 0.00316,
+   "lift": 12.78,
+   "w": 2.291,
+   "groups": 41,
+   "districts": 8,
+   "prompts": 41,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.12,
+   "shared_with": [],
+   "human_df": 45,
+   "asr_ratio": 0.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:एमे",
+   "kind": "w",
+   "df": 68,
+   "f_V": 0.02338,
+   "f_others_macro": 0.00236,
+   "f_max_other": 0.01931,
+   "lift": 8.18,
+   "w": 1.893,
+   "groups": 68,
+   "districts": 9,
+   "prompts": 68,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.13,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0193
+    ],
+    [
+     "Surgujia",
+     0.0095
+    ]
+   ],
+   "human_df": 117,
+   "asr_ratio": 0.58,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:गता",
+   "kind": "e3",
+   "df": 138,
+   "f_V": 0.04744,
+   "f_others_macro": 0.00586,
+   "f_max_other": 0.02655,
+   "lift": 7.46,
+   "w": 1.859,
+   "groups": 131,
+   "districts": 9,
+   "prompts": 129,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.82,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0265
+    ],
+    [
+     "Maithili",
+     0.0169
+    ]
+   ],
+   "human_df": 162,
+   "asr_ratio": 0.85,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:टे",
+   "kind": "e2",
+   "df": 396,
+   "f_V": 0.13613,
+   "f_others_macro": 0.02004,
+   "f_max_other": 0.05769,
+   "lift": 6.63,
+   "w": 1.803,
+   "groups": 377,
+   "districts": 11,
+   "prompts": 359,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.8,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0409
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ]
+   ],
+   "human_df": 462,
+   "asr_ratio": 0.86,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ावल",
+   "kind": "e3",
+   "df": 136,
+   "f_V": 0.04675,
+   "f_others_macro": 0.00657,
+   "f_max_other": 0.04826,
+   "lift": 6.61,
+   "w": 1.737,
+   "groups": 133,
+   "districts": 9,
+   "prompts": 132,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.45,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0483
+    ],
+    [
+     "Magahi",
+     0.0143
+    ]
+   ],
+   "human_df": 144,
+   "asr_ratio": 0.94,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:वल",
+   "kind": "e2",
+   "df": 153,
+   "f_V": 0.0526,
+   "f_others_macro": 0.00772,
+   "f_max_other": 0.05598,
+   "lift": 6.4,
+   "w": 1.712,
+   "groups": 148,
+   "districts": 9,
+   "prompts": 146,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.8,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.056
+    ],
+    [
+     "Sadri",
+     0.0172
+    ]
+   ],
+   "human_df": 157,
+   "asr_ratio": 0.97,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:इ",
+   "kind": "w",
+   "df": 187,
+   "f_V": 0.06428,
+   "f_others_macro": 0.01119,
+   "f_max_other": 0.03475,
+   "lift": 5.5,
+   "w": 1.574,
+   "groups": 187,
+   "districts": 11,
+   "prompts": 184,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.1,
+   "shared_with": [
+    [
+     "Angika",
+     0.0299
+    ],
+    [
+     "Bajjika",
+     0.0347
+    ],
+    [
+     "Khortha",
+     0.0287
+    ],
+    [
+     "Maithili",
+     0.0333
+    ]
+   ],
+   "human_df": 479,
+   "asr_ratio": 0.39,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:ठल",
+   "kind": "e2",
+   "df": 95,
+   "f_V": 0.03266,
+   "f_others_macro": 0.00597,
+   "f_max_other": 0.02703,
+   "lift": 5.05,
+   "w": 1.44,
+   "groups": 88,
+   "districts": 11,
+   "prompts": 83,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.39,
+   "shared_with": [
+    [
+     "Angika",
+     0.0119
+    ],
+    [
+     "Awadhi",
+     0.0177
+    ],
+    [
+     "Bajjika",
+     0.027
+    ],
+    [
+     "Khortha",
+     0.0144
+    ],
+    [
+     "Magahi",
+     0.0161
+    ],
+    [
+     "Maithili",
+     0.0154
+    ]
+   ],
+   "human_df": 99,
+   "asr_ratio": 0.96,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ैठल",
+   "kind": "e3",
+   "df": 95,
+   "f_V": 0.03266,
+   "f_others_macro": 0.00597,
+   "f_max_other": 0.02703,
+   "lift": 5.05,
+   "w": 1.44,
+   "groups": 88,
+   "districts": 11,
+   "prompts": 83,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.39,
+   "shared_with": [
+    [
+     "Angika",
+     0.0119
+    ],
+    [
+     "Awadhi",
+     0.0177
+    ],
+    [
+     "Bajjika",
+     0.027
+    ],
+    [
+     "Khortha",
+     0.0144
+    ],
+    [
+     "Magahi",
+     0.0161
+    ],
+    [
+     "Maithili",
+     0.0154
+    ]
+   ],
+   "human_df": 30,
+   "asr_ratio": 3.1,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:बैठल",
+   "kind": "w",
+   "df": 95,
+   "f_V": 0.03266,
+   "f_others_macro": 0.00597,
+   "f_max_other": 0.02703,
+   "lift": 5.05,
+   "w": 1.44,
+   "groups": 88,
+   "districts": 11,
+   "prompts": 83,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.39,
+   "shared_with": [
+    [
+     "Angika",
+     0.0119
+    ],
+    [
+     "Awadhi",
+     0.0177
+    ],
+    [
+     "Bajjika",
+     0.027
+    ],
+    [
+     "Khortha",
+     0.0144
+    ],
+    [
+     "Magahi",
+     0.0161
+    ],
+    [
+     "Maithili",
+     0.0154
+    ]
+   ],
+   "human_df": 30,
+   "asr_ratio": 3.1,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:एगो",
+   "kind": "w",
+   "df": 443,
+   "f_V": 0.15229,
+   "f_others_macro": 0.04108,
+   "f_max_other": 0.18147,
+   "lift": 3.66,
+   "w": 1.215,
+   "groups": 425,
+   "districts": 12,
+   "prompts": 407,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.2,
+   "shared_with": [
+    [
+     "Angika",
+     0.1134
+    ],
+    [
+     "Bajjika",
+     0.1815
+    ],
+    [
+     "Khortha",
+     0.1725
+    ],
+    [
+     "Magahi",
+     0.0735
+    ],
+    [
+     "Maithili",
+     0.0762
+    ]
+   ],
+   "human_df": 556,
+   "asr_ratio": 0.8,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:ता",
+   "kind": "e2",
+   "df": 671,
+   "f_V": 0.23066,
+   "f_others_macro": 0.06386,
+   "f_max_other": 0.13022,
+   "lift": 3.58,
+   "w": 1.212,
+   "groups": 646,
+   "districts": 12,
+   "prompts": 598,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.88,
+   "shared_with": [
+    [
+     "Angika",
+     0.0806
+    ],
+    [
+     "Awadhi",
+     0.0885
+    ],
+    [
+     "Chhattisgarhi",
+     0.07
+    ],
+    [
+     "Magahi",
+     0.0735
+    ],
+    [
+     "Maithili",
+     0.0901
+    ],
+    [
+     "Sadri",
+     0.1302
+    ],
+    [
+     "Surgujia",
+     0.0823
+    ],
+    [
+     "Surjapuri",
+     0.0855
+    ]
+   ],
+   "human_df": 658,
+   "asr_ratio": 1.02,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:मिलेला",
+   "kind": "w",
+   "df": 31,
+   "f_V": 0.01066,
+   "f_others_macro": 3e-05,
+   "f_max_other": 0.00045,
+   "lift": 20.29,
+   "w": 2.726,
+   "groups": 30,
+   "districts": 6,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 19.47,
+   "shared_with": [],
+   "human_df": 44,
+   "asr_ratio": 0.71,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:सन",
+   "kind": "e2",
+   "df": 49,
+   "f_V": 0.01684,
+   "f_others_macro": 0.00111,
+   "f_max_other": 0.00737,
+   "lift": 10.43,
+   "w": 2.106,
+   "groups": 48,
+   "districts": 8,
+   "prompts": 48,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.05,
+   "shared_with": [
+    [
+     "Maithili",
+     0.006
+    ],
+    [
+     "Sadri",
+     0.0074
+    ]
+   ],
+   "human_df": 80,
+   "asr_ratio": 0.62,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:रता",
+   "kind": "e3",
+   "df": 67,
+   "f_V": 0.02303,
+   "f_others_macro": 0.00238,
+   "f_max_other": 0.01474,
+   "lift": 8.0,
+   "w": 1.869,
+   "groups": 66,
+   "districts": 9,
+   "prompts": 66,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.33,
+   "shared_with": [
+    [
+     "Sadri",
+     0.0147
+    ]
+   ],
+   "human_df": 51,
+   "asr_ratio": 1.31,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ेला",
+   "kind": "e3",
+   "df": 185,
+   "f_V": 0.0636,
+   "f_others_macro": 0.01224,
+   "f_max_other": 0.04274,
+   "lift": 4.99,
+   "w": 1.477,
+   "groups": 178,
+   "districts": 10,
+   "prompts": 171,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.89,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0212
+    ],
+    [
+     "Maithili",
+     0.0199
+    ],
+    [
+     "Surjapuri",
+     0.0427
+    ]
+   ],
+   "human_df": 230,
+   "asr_ratio": 0.81,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ाता",
+   "kind": "e3",
+   "df": 143,
+   "f_V": 0.04916,
+   "f_others_macro": 0.01114,
+   "f_max_other": 0.02703,
+   "lift": 4.22,
+   "w": 1.292,
+   "groups": 142,
+   "districts": 9,
+   "prompts": 136,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.75,
+   "shared_with": [
+    [
+     "Angika",
+     0.0179
+    ],
+    [
+     "Awadhi",
+     0.0177
+    ],
+    [
+     "Khariboli",
+     0.0162
+    ],
+    [
+     "Marwari",
+     0.0264
+    ],
+    [
+     "Sadri",
+     0.027
+    ],
+    [
+     "Surgujia",
+     0.0222
+    ]
+   ],
+   "human_df": 161,
+   "asr_ratio": 0.89,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:लागल",
+   "kind": "w",
+   "df": 214,
+   "f_V": 0.07356,
+   "f_others_macro": 0.02027,
+   "f_max_other": 0.10425,
+   "lift": 3.54,
+   "w": 1.143,
+   "groups": 208,
+   "districts": 10,
+   "prompts": 203,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.82,
+   "shared_with": [
+    [
+     "Angika",
+     0.0418
+    ],
+    [
+     "Awadhi",
+     0.0354
+    ],
+    [
+     "Bajjika",
+     0.1042
+    ],
+    [
+     "Khortha",
+     0.0472
+    ],
+    [
+     "Maithili",
+     0.0612
+    ],
+    [
+     "Sadri",
+     0.0246
+    ],
+    [
+     "Surjapuri",
+     0.0256
+    ]
+   ],
+   "human_df": 214,
+   "asr_ratio": 1.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:जोन",
+   "kind": "w",
+   "df": 41,
+   "f_V": 0.01409,
+   "f_others_macro": 0.00067,
+   "f_max_other": 0.01115,
+   "lift": 12.05,
+   "w": 2.233,
+   "groups": 41,
+   "districts": 7,
+   "prompts": 41,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.28,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0112
+    ]
+   ],
+   "human_df": 58,
+   "asr_ratio": 0.71,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:गईल",
+   "kind": "w",
+   "df": 17,
+   "f_V": 0.00584,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 11.69,
+   "w": 2.117,
+   "groups": 17,
+   "districts": 6,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.59,
+   "shared_with": [],
+   "human_df": 36,
+   "asr_ratio": 0.49,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:करता",
+   "kind": "w",
+   "df": 47,
+   "f_V": 0.01616,
+   "f_others_macro": 0.00166,
+   "f_max_other": 0.01229,
+   "lift": 7.47,
+   "w": 1.768,
+   "groups": 47,
+   "districts": 9,
+   "prompts": 47,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 16.6,
+   "shared_with": [
+    [
+     "Sadri",
+     0.0123
+    ]
+   ],
+   "human_df": 27,
+   "asr_ratio": 1.71,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e3:ेता",
+   "kind": "e3",
+   "df": 56,
+   "f_V": 0.01925,
+   "f_others_macro": 0.00232,
+   "f_max_other": 0.00855,
+   "lift": 6.82,
+   "w": 1.694,
+   "groups": 55,
+   "districts": 9,
+   "prompts": 54,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.22,
+   "shared_with": [
+    [
+     "Maithili",
+     0.0065
+    ],
+    [
+     "Surjapuri",
+     0.0085
+    ]
+   ],
+   "human_df": 38,
+   "asr_ratio": 1.46,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:आवेला",
+   "kind": "w",
+   "df": 24,
+   "f_V": 0.00825,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 16.5,
+   "w": 2.493,
+   "groups": 24,
+   "districts": 6,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.34,
+   "shared_with": [],
+   "human_df": 33,
+   "asr_ratio": 0.74,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:हटे",
+   "kind": "w",
+   "df": 25,
+   "f_V": 0.00859,
+   "f_others_macro": 0.00017,
+   "f_max_other": 0.00246,
+   "lift": 12.74,
+   "w": 2.239,
+   "groups": 24,
+   "districts": 7,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.01,
+   "shared_with": [],
+   "human_df": 20,
+   "asr_ratio": 1.24,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:जला",
+   "kind": "w",
+   "df": 31,
+   "f_V": 0.01066,
+   "f_others_macro": 0.00049,
+   "f_max_other": 0.00316,
+   "lift": 10.75,
+   "w": 2.091,
+   "groups": 31,
+   "districts": 8,
+   "prompts": 31,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.45,
+   "shared_with": [],
+   "human_df": 8,
+   "asr_ratio": 3.56,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:बनावल",
+   "kind": "w",
+   "df": 42,
+   "f_V": 0.01444,
+   "f_others_macro": 0.00134,
+   "f_max_other": 0.00965,
+   "lift": 7.83,
+   "w": 1.804,
+   "groups": 41,
+   "districts": 7,
+   "prompts": 41,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.96,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0097
+    ],
+    [
+     "Bundeli",
+     0.0074
+    ],
+    [
+     "Khariboli",
+     0.0046
+    ]
+   ],
+   "human_df": 42,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:लवा",
+   "kind": "e3",
+   "df": 50,
+   "f_V": 0.01719,
+   "f_others_macro": 0.00187,
+   "f_max_other": 0.00855,
+   "lift": 7.27,
+   "w": 1.746,
+   "groups": 48,
+   "districts": 8,
+   "prompts": 46,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.0,
+   "shared_with": [
+    [
+     "Khortha",
+     0.0082
+    ],
+    [
+     "Magahi",
+     0.0072
+    ],
+    [
+     "Surjapuri",
+     0.0085
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 2.43,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:बावे",
+   "kind": "w",
+   "df": 28,
+   "f_V": 0.00963,
+   "f_others_macro": 3e-05,
+   "f_max_other": 0.0005,
+   "lift": 18.24,
+   "w": 2.609,
+   "groups": 28,
+   "districts": 5,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.11,
+   "shared_with": [],
+   "human_df": 34,
+   "asr_ratio": 0.83,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:कुल",
+   "kind": "w",
+   "df": 33,
+   "f_V": 0.01134,
+   "f_others_macro": 0.00036,
+   "f_max_other": 0.00232,
+   "lift": 13.12,
+   "w": 2.296,
+   "groups": 33,
+   "districts": 5,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.43,
+   "shared_with": [],
+   "human_df": 43,
+   "asr_ratio": 0.77,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:जो उनकी",
+   "kind": "b",
+   "df": 16,
+   "f_V": 0.0055,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 11.0,
+   "w": 2.051,
+   "groups": 16,
+   "districts": 6,
+   "prompts": 16,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.85,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 17.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:जाता",
+   "kind": "w",
+   "df": 62,
+   "f_V": 0.02131,
+   "f_others_macro": 0.00353,
+   "f_max_other": 0.01856,
+   "lift": 5.29,
+   "w": 1.45,
+   "groups": 61,
+   "districts": 8,
+   "prompts": 61,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.69,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0186
+    ],
+    [
+     "Marwari",
+     0.0069
+    ],
+    [
+     "Sadri",
+     0.0098
+    ]
+   ],
+   "human_df": 48,
+   "asr_ratio": 1.29,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:लागत",
+   "kind": "w",
+   "df": 95,
+   "f_V": 0.03266,
+   "f_others_macro": 0.00731,
+   "f_max_other": 0.04177,
+   "lift": 4.18,
+   "w": 1.251,
+   "groups": 94,
+   "districts": 10,
+   "prompts": 91,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.28,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.0199
+    ],
+    [
+     "Sadri",
+     0.0418
+    ],
+    [
+     "Surgujia",
+     0.0253
+    ],
+    [
+     "Surjapuri",
+     0.0171
+    ]
+   ],
+   "human_df": 35,
+   "asr_ratio": 2.67,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:ागल",
+   "kind": "e3",
+   "df": 213,
+   "f_V": 0.07322,
+   "f_others_macro": 0.01834,
+   "f_max_other": 0.10232,
+   "lift": 3.89,
+   "w": 1.235,
+   "groups": 208,
+   "districts": 10,
+   "prompts": 204,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.92,
+   "shared_with": [
+    [
+     "Angika",
+     0.0537
+    ],
+    [
+     "Bajjika",
+     0.1023
+    ],
+    [
+     "Khortha",
+     0.0309
+    ],
+    [
+     "Magahi",
+     0.0287
+    ],
+    [
+     "Maithili",
+     0.0647
+    ],
+    [
+     "Sadri",
+     0.0221
+    ]
+   ],
+   "human_df": 215,
+   "asr_ratio": 0.99,
+   "stable_runs": 6
+  }
+ ],
+ "Bundeli": [
+  {
+   "feature": "b:जहा मे",
+   "kind": "b",
+   "df": 8,
+   "f_V": 0.02974,
+   "f_others_macro": 0.0009,
+   "f_max_other": 0.01624,
+   "lift": 21.21,
+   "w": 2.412,
+   "groups": 8,
+   "districts": 3,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.18,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0162
+    ]
+   ],
+   "human_df": 1,
+   "asr_ratio": 4.5,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:खो",
+   "kind": "e2",
+   "df": 12,
+   "f_V": 0.04461,
+   "f_others_macro": 0.01231,
+   "f_max_other": 0.04659,
+   "lift": 3.48,
+   "w": 0.715,
+   "groups": 12,
+   "districts": 3,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.14,
+   "shared_with": [
+    [
+     "Angika",
+     0.0179
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Magahi",
+     0.0466
+    ],
+    [
+     "Marwari",
+     0.0149
+    ],
+    [
+     "Rajasthani",
+     0.0225
+    ],
+    [
+     "Surjapuri",
+     0.0342
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 0.93,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:छी",
+   "kind": "e2",
+   "df": 9,
+   "f_V": 0.03346,
+   "f_others_macro": 0.00611,
+   "f_max_other": 0.01856,
+   "lift": 5.06,
+   "w": 1.012,
+   "groups": 9,
+   "districts": 3,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.21,
+   "shared_with": [
+    [
+     "Angika",
+     0.0119
+    ],
+    [
+     "Garhwali",
+     0.0141
+    ],
+    [
+     "Khariboli",
+     0.0186
+    ],
+    [
+     "Kumaoni",
+     0.0146
+    ],
+    [
+     "Maithili",
+     0.011
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.11,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:पीले",
+   "kind": "w",
+   "df": 10,
+   "f_V": 0.03717,
+   "f_others_macro": 0.00367,
+   "f_max_other": 0.01887,
+   "lift": 8.91,
+   "w": 1.608,
+   "groups": 10,
+   "districts": 3,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.08,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0189
+    ],
+    [
+     "Khariboli",
+     0.0116
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e2:गी",
+   "kind": "e2",
+   "df": 14,
+   "f_V": 0.05204,
+   "f_others_macro": 0.01076,
+   "f_max_other": 0.02088,
+   "lift": 4.62,
+   "w": 1.037,
+   "groups": 11,
+   "districts": 2,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.06,
+   "shared_with": [
+    [
+     "Angika",
+     0.0179
+    ],
+    [
+     "Garhwali",
+     0.0202
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Khariboli",
+     0.0209
+    ],
+    [
+     "Kumaoni",
+     0.0175
+    ],
+    [
+     "Surjapuri",
+     0.0171
+    ]
+   ],
+   "human_df": 15,
+   "asr_ratio": 0.94,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:सारे",
+   "kind": "w",
+   "df": 24,
+   "f_V": 0.08922,
+   "f_others_macro": 0.02617,
+   "f_max_other": 0.11095,
+   "lift": 3.34,
+   "w": 0.83,
+   "groups": 23,
+   "districts": 3,
+   "prompts": 23,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.95,
+   "shared_with": [
+    [
+     "Angika",
+     0.0358
+    ],
+    [
+     "Haryanvi",
+     0.0505
+    ],
+    [
+     "Khariboli",
+     0.0905
+    ],
+    [
+     "Kumaoni",
+     0.1109
+    ],
+    [
+     "Magahi",
+     0.0394
+    ],
+    [
+     "Maithili",
+     0.0358
+    ]
+   ],
+   "human_df": 24,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:लगी",
+   "kind": "w",
+   "df": 30,
+   "f_V": 0.11152,
+   "f_others_macro": 0.03467,
+   "f_max_other": 0.13644,
+   "lift": 3.17,
+   "w": 0.819,
+   "groups": 30,
+   "districts": 3,
+   "prompts": 30,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.26,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.1364
+    ],
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Khariboli",
+     0.0951
+    ],
+    [
+     "Kumaoni",
+     0.1343
+    ]
+   ],
+   "human_df": 32,
+   "asr_ratio": 0.94,
+   "stable_runs": 6
+  }
+ ],
+ "Chhattisgarhi": [
+  {
+   "feature": "w:हावे",
+   "kind": "w",
+   "df": 35,
+   "f_V": 0.01581,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 31.62,
+   "w": 3.169,
+   "groups": 35,
+   "districts": 7,
+   "prompts": 35,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 34.02,
+   "shared_with": [],
+   "human_df": 74,
+   "asr_ratio": 0.48,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:दिखत हे",
+   "kind": "b",
+   "df": 261,
+   "f_V": 0.11789,
+   "f_others_macro": 0.00645,
+   "f_max_other": 0.07278,
+   "lift": 16.96,
+   "w": 2.721,
+   "groups": 256,
+   "districts": 10,
+   "prompts": 250,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 30.09,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.0728
+    ]
+   ],
+   "human_df": 295,
+   "asr_ratio": 0.89,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हमन",
+   "kind": "w",
+   "df": 28,
+   "f_V": 0.01265,
+   "f_others_macro": 0.00019,
+   "f_max_other": 0.00316,
+   "lift": 18.2,
+   "w": 2.59,
+   "groups": 28,
+   "districts": 7,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.56,
+   "shared_with": [],
+   "human_df": 57,
+   "asr_ratio": 0.5,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:अउ",
+   "kind": "w",
+   "df": 36,
+   "f_V": 0.01626,
+   "f_others_macro": 0.00048,
+   "f_max_other": 0.00633,
+   "lift": 16.51,
+   "w": 2.522,
+   "groups": 36,
+   "districts": 9,
+   "prompts": 36,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.66,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.0063
+    ]
+   ],
+   "human_df": 352,
+   "asr_ratio": 0.1,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:अऊ",
+   "kind": "w",
+   "df": 89,
+   "f_V": 0.0402,
+   "f_others_macro": 0.00224,
+   "f_max_other": 0.02532,
+   "lift": 14.7,
+   "w": 2.499,
+   "groups": 84,
+   "districts": 9,
+   "prompts": 84,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.95,
+   "shared_with": [
+    [
+     "Sadri",
+     0.0123
+    ],
+    [
+     "Surgujia",
+     0.0253
+    ]
+   ],
+   "human_df": 141,
+   "asr_ratio": 0.63,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हवे",
+   "kind": "w",
+   "df": 264,
+   "f_V": 0.11924,
+   "f_others_macro": 0.01117,
+   "f_max_other": 0.1519,
+   "lift": 10.22,
+   "w": 2.215,
+   "groups": 252,
+   "districts": 10,
+   "prompts": 248,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.71,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.1519
+    ]
+   ],
+   "human_df": 236,
+   "asr_ratio": 1.12,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:ठन",
+   "kind": "w",
+   "df": 38,
+   "f_V": 0.01716,
+   "f_others_macro": 0.00096,
+   "f_max_other": 0.0172,
+   "lift": 11.79,
+   "w": 2.192,
+   "groups": 37,
+   "districts": 9,
+   "prompts": 37,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.22,
+   "shared_with": [
+    [
+     "Sadri",
+     0.0172
+    ]
+   ],
+   "human_df": 56,
+   "asr_ratio": 0.68,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:औ",
+   "kind": "w",
+   "df": 35,
+   "f_V": 0.01581,
+   "f_others_macro": 0.00099,
+   "f_max_other": 0.00949,
+   "lift": 10.64,
+   "w": 2.079,
+   "groups": 35,
+   "districts": 9,
+   "prompts": 35,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.8,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.0095
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 2.57,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हे",
+   "kind": "w",
+   "df": 501,
+   "f_V": 0.22629,
+   "f_others_macro": 0.02614,
+   "f_max_other": 0.14241,
+   "lift": 8.49,
+   "w": 2.064,
+   "groups": 477,
+   "districts": 10,
+   "prompts": 459,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.61,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.115
+    ],
+    [
+     "Sadri",
+     0.0909
+    ],
+    [
+     "Surgujia",
+     0.1424
+    ]
+   ],
+   "human_df": 1139,
+   "asr_ratio": 0.44,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:जन",
+   "kind": "w",
+   "df": 50,
+   "f_V": 0.02258,
+   "f_others_macro": 0.0018,
+   "f_max_other": 0.00876,
+   "lift": 9.81,
+   "w": 2.039,
+   "groups": 49,
+   "districts": 8,
+   "prompts": 48,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.68,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.007
+    ],
+    [
+     "Kumaoni",
+     0.0088
+    ],
+    [
+     "Sadri",
+     0.0074
+    ]
+   ],
+   "human_df": 19,
+   "asr_ratio": 2.55,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखत",
+   "kind": "w",
+   "df": 417,
+   "f_V": 0.18835,
+   "f_others_macro": 0.02274,
+   "f_max_other": 0.16139,
+   "lift": 8.11,
+   "w": 2.008,
+   "groups": 408,
+   "districts": 11,
+   "prompts": 392,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.54,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.1416
+    ],
+    [
+     "Sadri",
+     0.0713
+    ],
+    [
+     "Surgujia",
+     0.1614
+    ]
+   ],
+   "human_df": 427,
+   "asr_ratio": 0.98,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:िखत",
+   "kind": "e3",
+   "df": 417,
+   "f_V": 0.18835,
+   "f_others_macro": 0.02276,
+   "f_max_other": 0.16139,
+   "lift": 8.1,
+   "w": 2.007,
+   "groups": 408,
+   "districts": 11,
+   "prompts": 392,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.52,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.1416
+    ],
+    [
+     "Sadri",
+     0.0713
+    ],
+    [
+     "Surgujia",
+     0.1614
+    ]
+   ],
+   "human_df": 429,
+   "asr_ratio": 0.97,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:खत",
+   "kind": "e2",
+   "df": 448,
+   "f_V": 0.20235,
+   "f_others_macro": 0.02479,
+   "f_max_other": 0.17722,
+   "lift": 8.0,
+   "w": 1.999,
+   "groups": 437,
+   "districts": 11,
+   "prompts": 419,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.43,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.1504
+    ],
+    [
+     "Sadri",
+     0.0737
+    ],
+    [
+     "Surgujia",
+     0.1772
+    ]
+   ],
+   "human_df": 477,
+   "asr_ratio": 0.94,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:आऊ",
+   "kind": "w",
+   "df": 29,
+   "f_V": 0.0131,
+   "f_others_macro": 0.0012,
+   "f_max_other": 0.01266,
+   "lift": 7.73,
+   "w": 1.737,
+   "groups": 29,
+   "districts": 9,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.69,
+   "shared_with": [
+    [
+     "Khortha",
+     0.0041
+    ],
+    [
+     "Surgujia",
+     0.0127
+    ]
+   ],
+   "human_df": 47,
+   "asr_ratio": 0.62,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:मन",
+   "kind": "w",
+   "df": 306,
+   "f_V": 0.13821,
+   "f_others_macro": 0.02228,
+   "f_max_other": 0.17722,
+   "lift": 6.07,
+   "w": 1.702,
+   "groups": 299,
+   "districts": 10,
+   "prompts": 287,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.79,
+   "shared_with": [
+    [
+     "Sadri",
+     0.1253
+    ],
+    [
+     "Surgujia",
+     0.1772
+    ]
+   ],
+   "human_df": 426,
+   "asr_ratio": 0.72,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:मस्त",
+   "kind": "w",
+   "df": 120,
+   "f_V": 0.0542,
+   "f_others_macro": 0.00885,
+   "f_max_other": 0.04914,
+   "lift": 5.8,
+   "w": 1.594,
+   "groups": 118,
+   "districts": 9,
+   "prompts": 115,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.85,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0442
+    ],
+    [
+     "Sadri",
+     0.0491
+    ]
+   ],
+   "human_df": 133,
+   "asr_ratio": 0.9,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:ठो",
+   "kind": "w",
+   "df": 82,
+   "f_V": 0.03704,
+   "f_others_macro": 0.00576,
+   "f_max_other": 0.04423,
+   "lift": 5.92,
+   "w": 1.582,
+   "groups": 80,
+   "districts": 8,
+   "prompts": 80,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.65,
+   "shared_with": [
+    [
+     "Angika",
+     0.0179
+    ],
+    [
+     "Sadri",
+     0.0442
+    ]
+   ],
+   "human_df": 88,
+   "asr_ratio": 0.93,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:सामने मे",
+   "kind": "b",
+   "df": 40,
+   "f_V": 0.01807,
+   "f_others_macro": 0.00259,
+   "f_max_other": 0.02388,
+   "lift": 5.84,
+   "w": 1.496,
+   "groups": 40,
+   "districts": 8,
+   "prompts": 40,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.59,
+   "shared_with": [
+    [
+     "Angika",
+     0.0239
+    ]
+   ],
+   "human_df": 36,
+   "asr_ratio": 1.11,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:स्त",
+   "kind": "e3",
+   "df": 132,
+   "f_V": 0.05962,
+   "f_others_macro": 0.01122,
+   "f_max_other": 0.05405,
+   "lift": 5.09,
+   "w": 1.47,
+   "groups": 129,
+   "districts": 9,
+   "prompts": 126,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.06,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0442
+    ],
+    [
+     "Sadri",
+     0.0541
+    ]
+   ],
+   "human_df": 145,
+   "asr_ratio": 0.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:्त",
+   "kind": "e2",
+   "df": 138,
+   "f_V": 0.06233,
+   "f_others_macro": 0.01246,
+   "f_max_other": 0.05405,
+   "lift": 4.81,
+   "w": 1.418,
+   "groups": 135,
+   "districts": 9,
+   "prompts": 132,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.98,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0442
+    ],
+    [
+     "Sadri",
+     0.0541
+    ]
+   ],
+   "human_df": 153,
+   "asr_ratio": 0.9,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हा",
+   "kind": "w",
+   "df": 101,
+   "f_V": 0.04562,
+   "f_others_macro": 0.00877,
+   "f_max_other": 0.02655,
+   "lift": 4.92,
+   "w": 1.415,
+   "groups": 99,
+   "districts": 10,
+   "prompts": 99,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.63,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0265
+    ],
+    [
+     "Sadri",
+     0.0172
+    ],
+    [
+     "Surgujia",
+     0.0222
+    ]
+   ],
+   "human_df": 70,
+   "asr_ratio": 1.44,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:थे",
+   "kind": "w",
+   "df": 69,
+   "f_V": 0.03117,
+   "f_others_macro": 0.00568,
+   "f_max_other": 0.01966,
+   "lift": 5.04,
+   "w": 1.405,
+   "groups": 69,
+   "districts": 8,
+   "prompts": 69,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.33,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0135
+    ],
+    [
+     "Magahi",
+     0.0161
+    ],
+    [
+     "Sadri",
+     0.0197
+    ],
+    [
+     "Surgujia",
+     0.0095
+    ]
+   ],
+   "human_df": 128,
+   "asr_ratio": 0.54,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:बडे",
+   "kind": "w",
+   "df": 135,
+   "f_V": 0.06098,
+   "f_others_macro": 0.01455,
+   "f_max_other": 0.05769,
+   "lift": 4.05,
+   "w": 1.245,
+   "groups": 132,
+   "districts": 11,
+   "prompts": 127,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.9,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0442
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Khariboli",
+     0.0302
+    ],
+    [
+     "Kumaoni",
+     0.0204
+    ],
+    [
+     "Sadri",
+     0.0221
+    ],
+    [
+     "Surgujia",
+     0.0222
+    ]
+   ],
+   "human_df": 141,
+   "asr_ratio": 0.96,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:सकत",
+   "kind": "w",
+   "df": 15,
+   "f_V": 0.00678,
+   "f_others_macro": 0.00032,
+   "f_max_other": 0.00316,
+   "lift": 8.26,
+   "w": 1.726,
+   "groups": 14,
+   "districts": 5,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.86,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.0032
+    ]
+   ],
+   "human_df": 22,
+   "asr_ratio": 0.7,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:थे",
+   "kind": "e2",
+   "df": 46,
+   "f_V": 0.02078,
+   "f_others_macro": 0.00327,
+   "f_max_other": 0.02532,
+   "lift": 5.51,
+   "w": 1.452,
+   "groups": 46,
+   "districts": 6,
+   "prompts": 46,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.71,
+   "shared_with": [
+    [
+     "Marwari",
+     0.0069
+    ],
+    [
+     "Sadri",
+     0.0123
+    ],
+    [
+     "Surgujia",
+     0.0253
+    ]
+   ],
+   "human_df": 193,
+   "asr_ratio": 0.24,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:जाते",
+   "kind": "w",
+   "df": 54,
+   "f_V": 0.02439,
+   "f_others_macro": 0.0045,
+   "f_max_other": 0.0177,
+   "lift": 4.88,
+   "w": 1.347,
+   "groups": 50,
+   "districts": 7,
+   "prompts": 50,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.38,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0177
+    ],
+    [
+     "Bundeli",
+     0.0112
+    ],
+    [
+     "Magahi",
+     0.0125
+    ],
+    [
+     "Surgujia",
+     0.0158
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 6.11,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:ठी",
+   "kind": "w",
+   "df": 17,
+   "f_V": 0.00768,
+   "f_others_macro": 0.00033,
+   "f_max_other": 0.00316,
+   "lift": 9.24,
+   "w": 1.852,
+   "groups": 17,
+   "districts": 7,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.32,
+   "shared_with": [
+    [
+     "Sadri",
+     0.0025
+    ],
+    [
+     "Surgujia",
+     0.0032
+    ]
+   ],
+   "human_df": 27,
+   "asr_ratio": 0.64,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:पोता",
+   "kind": "w",
+   "df": 14,
+   "f_V": 0.00632,
+   "f_others_macro": 0.00019,
+   "f_max_other": 0.00246,
+   "lift": 9.14,
+   "w": 1.82,
+   "groups": 14,
+   "districts": 5,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.42,
+   "shared_with": [
+    [
+     "Sadri",
+     0.0025
+    ]
+   ],
+   "human_df": 3,
+   "asr_ratio": 3.75,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e3:ाते",
+   "kind": "e3",
+   "df": 96,
+   "f_V": 0.04336,
+   "f_others_macro": 0.0106,
+   "f_max_other": 0.0354,
+   "lift": 3.91,
+   "w": 1.181,
+   "groups": 91,
+   "districts": 8,
+   "prompts": 90,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.15,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0354
+    ],
+    [
+     "Bundeli",
+     0.0149
+    ],
+    [
+     "Khariboli",
+     0.0162
+    ],
+    [
+     "Magahi",
+     0.0179
+    ],
+    [
+     "Surgujia",
+     0.0348
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 8.82,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:बने",
+   "kind": "w",
+   "df": 71,
+   "f_V": 0.03207,
+   "f_others_macro": 0.00931,
+   "f_max_other": 0.03846,
+   "lift": 3.27,
+   "w": 0.975,
+   "groups": 69,
+   "districts": 9,
+   "prompts": 69,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.71,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.026
+    ],
+    [
+     "Haryanvi",
+     0.0101
+    ],
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Khariboli",
+     0.0162
+    ],
+    [
+     "Kumaoni",
+     0.0175
+    ],
+    [
+     "Sadri",
+     0.0123
+    ]
+   ],
+   "human_df": 72,
+   "asr_ratio": 0.99,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:गाडी खडे",
+   "kind": "b",
+   "df": 13,
+   "f_V": 0.00587,
+   "f_others_macro": 2e-05,
+   "f_max_other": 0.00034,
+   "lift": 11.31,
+   "w": 2.025,
+   "groups": 13,
+   "districts": 4,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.04,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 1.17,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:आथे",
+   "kind": "w",
+   "df": 17,
+   "f_V": 0.00768,
+   "f_others_macro": 0.00039,
+   "f_max_other": 0.00633,
+   "lift": 8.63,
+   "w": 1.785,
+   "groups": 17,
+   "districts": 5,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.14,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.0063
+    ]
+   ],
+   "human_df": 34,
+   "asr_ratio": 0.51,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:मिलते",
+   "kind": "w",
+   "df": 23,
+   "f_V": 0.01039,
+   "f_others_macro": 0.00105,
+   "f_max_other": 0.00928,
+   "lift": 6.7,
+   "w": 1.567,
+   "groups": 23,
+   "districts": 7,
+   "prompts": 22,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.31,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0093
+    ]
+   ],
+   "human_df": 0,
+   "asr_ratio": 24.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:ेखत",
+   "kind": "e3",
+   "df": 34,
+   "f_V": 0.01536,
+   "f_others_macro": 0.00191,
+   "f_max_other": 0.01582,
+   "lift": 6.38,
+   "w": 1.564,
+   "groups": 34,
+   "districts": 7,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.08,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Bhojpuri",
+     0.0072
+    ],
+    [
+     "Surgujia",
+     0.0158
+    ]
+   ],
+   "human_df": 53,
+   "asr_ratio": 0.65,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:देखत",
+   "kind": "w",
+   "df": 34,
+   "f_V": 0.01536,
+   "f_others_macro": 0.00191,
+   "f_max_other": 0.01582,
+   "lift": 6.38,
+   "w": 1.564,
+   "groups": 34,
+   "districts": 7,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.08,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Bhojpuri",
+     0.0072
+    ],
+    [
+     "Surgujia",
+     0.0158
+    ]
+   ],
+   "human_df": 53,
+   "asr_ratio": 0.65,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:ावे",
+   "kind": "e3",
+   "df": 52,
+   "f_V": 0.02349,
+   "f_others_macro": 0.00498,
+   "f_max_other": 0.01791,
+   "lift": 4.29,
+   "w": 1.215,
+   "groups": 52,
+   "districts": 7,
+   "prompts": 52,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.58,
+   "shared_with": [
+    [
+     "Angika",
+     0.0179
+    ],
+    [
+     "Bhojpuri",
+     0.0168
+    ],
+    [
+     "Bundeli",
+     0.0074
+    ],
+    [
+     "Khortha",
+     0.0103
+    ],
+    [
+     "Maithili",
+     0.0139
+    ]
+   ],
+   "human_df": 75,
+   "asr_ratio": 0.7,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:खते",
+   "kind": "e3",
+   "df": 32,
+   "f_V": 0.01445,
+   "f_others_macro": 0.00283,
+   "f_max_other": 0.01923,
+   "lift": 4.34,
+   "w": 1.172,
+   "groups": 32,
+   "districts": 8,
+   "prompts": 32,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.45,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0135
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Khariboli",
+     0.0046
+    ],
+    [
+     "Surgujia",
+     0.0063
+    ]
+   ],
+   "human_df": 4,
+   "asr_ratio": 6.6,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:एहा",
+   "kind": "w",
+   "df": 13,
+   "f_V": 0.00587,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 11.74,
+   "w": 2.063,
+   "groups": 13,
+   "districts": 7,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.53,
+   "shared_with": [],
+   "human_df": 90,
+   "asr_ratio": 0.15,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:लते",
+   "kind": "e3",
+   "df": 43,
+   "f_V": 0.01943,
+   "f_others_macro": 0.00263,
+   "f_max_other": 0.00928,
+   "lift": 6.21,
+   "w": 1.565,
+   "groups": 43,
+   "districts": 9,
+   "prompts": 41,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.07,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0074
+    ],
+    [
+     "Khariboli",
+     0.0093
+    ],
+    [
+     "Kumaoni",
+     0.0058
+    ],
+    [
+     "Maithili",
+     0.006
+    ],
+    [
+     "Surgujia",
+     0.0063
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 6.29,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:ेवा",
+   "kind": "e3",
+   "df": 20,
+   "f_V": 0.00903,
+   "f_others_macro": 0.00095,
+   "f_max_other": 0.00299,
+   "lift": 6.25,
+   "w": 1.481,
+   "groups": 20,
+   "districts": 5,
+   "prompts": 20,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.74,
+   "shared_with": [
+    [
+     "Angika",
+     0.003
+    ],
+    [
+     "Rajasthani",
+     0.0027
+    ]
+   ],
+   "human_df": 4,
+   "asr_ratio": 4.2,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:प्रकार के",
+   "kind": "b",
+   "df": 28,
+   "f_V": 0.01265,
+   "f_others_macro": 0.00216,
+   "f_max_other": 0.00997,
+   "lift": 4.76,
+   "w": 1.249,
+   "groups": 27,
+   "districts": 7,
+   "prompts": 26,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.08,
+   "shared_with": [
+    [
+     "Bhojpuri",
+     0.01
+    ],
+    [
+     "Khortha",
+     0.0082
+    ],
+    [
+     "Magahi",
+     0.009
+    ],
+    [
+     "Maithili",
+     0.0045
+    ]
+   ],
+   "human_df": 32,
+   "asr_ratio": 0.88,
+   "stable_runs": 6
+  }
+ ],
+ "Garhwali": [
+  {
+   "feature": "e2:ेण",
+   "kind": "e2",
+   "df": 130,
+   "f_V": 0.11444,
+   "f_others_macro": 0.00292,
+   "f_max_other": 0.05255,
+   "lift": 33.46,
+   "w": 3.352,
+   "groups": 127,
+   "districts": 2,
+   "prompts": 126,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 39.73,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0526
+    ]
+   ],
+   "human_df": 121,
+   "asr_ratio": 1.07,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:खेण",
+   "kind": "e3",
+   "df": 130,
+   "f_V": 0.11444,
+   "f_others_macro": 0.00292,
+   "f_max_other": 0.05255,
+   "lift": 33.46,
+   "w": 3.352,
+   "groups": 127,
+   "districts": 2,
+   "prompts": 126,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 39.73,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0526
+    ]
+   ],
+   "human_df": 105,
+   "asr_ratio": 1.24,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखेण",
+   "kind": "w",
+   "df": 129,
+   "f_V": 0.11356,
+   "f_others_macro": 0.00292,
+   "f_max_other": 0.05255,
+   "lift": 33.21,
+   "w": 3.344,
+   "groups": 126,
+   "districts": 2,
+   "prompts": 125,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 39.28,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0526
+    ]
+   ],
+   "human_df": 103,
+   "asr_ratio": 1.25,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:गणा",
+   "kind": "e3",
+   "df": 18,
+   "f_V": 0.01585,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 31.69,
+   "w": 3.049,
+   "groups": 17,
+   "districts": 2,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 28.13,
+   "shared_with": [],
+   "human_df": 13,
+   "asr_ratio": 1.36,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:लग्यु",
+   "kind": "w",
+   "df": 119,
+   "f_V": 0.10475,
+   "f_others_macro": 0.00435,
+   "f_max_other": 0.07007,
+   "lift": 21.61,
+   "w": 2.907,
+   "groups": 111,
+   "districts": 2,
+   "prompts": 111,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 21.84,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0701
+    ]
+   ],
+   "human_df": 133,
+   "asr_ratio": 0.9,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:यु",
+   "kind": "w",
+   "df": 39,
+   "f_V": 0.03433,
+   "f_others_macro": 0.00095,
+   "f_max_other": 0.01606,
+   "lift": 23.69,
+   "w": 2.876,
+   "groups": 39,
+   "districts": 2,
+   "prompts": 39,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 24.11,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0161
+    ]
+   ],
+   "human_df": 105,
+   "asr_ratio": 0.38,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखेणा",
+   "kind": "w",
+   "df": 56,
+   "f_V": 0.0493,
+   "f_others_macro": 0.0017,
+   "f_max_other": 0.03066,
+   "lift": 22.38,
+   "w": 2.865,
+   "groups": 56,
+   "districts": 2,
+   "prompts": 56,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 38.95,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0307
+    ]
+   ],
+   "human_df": 43,
+   "asr_ratio": 1.3,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ेणा",
+   "kind": "e3",
+   "df": 59,
+   "f_V": 0.05194,
+   "f_others_macro": 0.00191,
+   "f_max_other": 0.03066,
+   "lift": 21.58,
+   "w": 2.835,
+   "groups": 59,
+   "districts": 2,
+   "prompts": 59,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 40.13,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0307
+    ]
+   ],
+   "human_df": 65,
+   "asr_ratio": 0.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:लग्या",
+   "kind": "w",
+   "df": 114,
+   "f_V": 0.10035,
+   "f_others_macro": 0.00458,
+   "f_max_other": 0.07153,
+   "lift": 19.74,
+   "w": 2.813,
+   "groups": 111,
+   "districts": 2,
+   "prompts": 108,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 23.23,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0715
+    ]
+   ],
+   "human_df": 110,
+   "asr_ratio": 1.04,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:यु",
+   "kind": "e2",
+   "df": 175,
+   "f_V": 0.15405,
+   "f_others_macro": 0.008,
+   "f_max_other": 0.12263,
+   "lift": 18.12,
+   "w": 2.763,
+   "groups": 162,
+   "districts": 2,
+   "prompts": 161,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 16.36,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.1226
+    ]
+   ],
+   "human_df": 247,
+   "asr_ratio": 0.71,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:्यु",
+   "kind": "e3",
+   "df": 138,
+   "f_V": 0.12148,
+   "f_others_macro": 0.00612,
+   "f_max_other": 0.09197,
+   "lift": 18.34,
+   "w": 2.756,
+   "groups": 128,
+   "districts": 2,
+   "prompts": 128,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.34,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.092
+    ]
+   ],
+   "human_df": 187,
+   "asr_ratio": 0.74,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:यख",
+   "kind": "w",
+   "df": 79,
+   "f_V": 0.06954,
+   "f_others_macro": 0.00316,
+   "f_max_other": 0.05693,
+   "lift": 18.98,
+   "w": 2.739,
+   "groups": 76,
+   "districts": 2,
+   "prompts": 76,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 26.34,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0569
+    ]
+   ],
+   "human_df": 168,
+   "asr_ratio": 0.47,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:लगण",
+   "kind": "w",
+   "df": 30,
+   "f_V": 0.02641,
+   "f_others_macro": 0.00081,
+   "f_max_other": 0.0146,
+   "lift": 20.14,
+   "w": 2.677,
+   "groups": 29,
+   "districts": 2,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 23.68,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0146
+    ]
+   ],
+   "human_df": 40,
+   "asr_ratio": 0.76,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:बिटिन",
+   "kind": "w",
+   "df": 33,
+   "f_V": 0.02905,
+   "f_others_macro": 0.00117,
+   "f_max_other": 0.02044,
+   "lift": 17.36,
+   "w": 2.542,
+   "groups": 31,
+   "districts": 2,
+   "prompts": 31,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.79,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0204
+    ]
+   ],
+   "human_df": 40,
+   "asr_ratio": 0.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:जू",
+   "kind": "w",
+   "df": 29,
+   "f_V": 0.02553,
+   "f_others_macro": 0.00097,
+   "f_max_other": 0.01606,
+   "lift": 17.39,
+   "w": 2.525,
+   "groups": 29,
+   "districts": 2,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.6,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0161
+    ]
+   ],
+   "human_df": 45,
+   "asr_ratio": 0.65,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:पिछाडी",
+   "kind": "w",
+   "df": 45,
+   "f_V": 0.03961,
+   "f_others_macro": 0.00211,
+   "f_max_other": 0.03796,
+   "lift": 15.18,
+   "w": 2.45,
+   "groups": 44,
+   "districts": 2,
+   "prompts": 44,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.3,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.038
+    ]
+   ],
+   "human_df": 40,
+   "asr_ratio": 1.12,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:खमा",
+   "kind": "e3",
+   "df": 43,
+   "f_V": 0.03785,
+   "f_others_macro": 0.00203,
+   "f_max_other": 0.0365,
+   "lift": 14.98,
+   "w": 2.43,
+   "groups": 42,
+   "districts": 2,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.72,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0365
+    ]
+   ],
+   "human_df": 26,
+   "asr_ratio": 1.63,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:छन",
+   "kind": "w",
+   "df": 121,
+   "f_V": 0.10651,
+   "f_others_macro": 0.0079,
+   "f_max_other": 0.11533,
+   "lift": 12.68,
+   "w": 2.376,
+   "groups": 116,
+   "districts": 2,
+   "prompts": 115,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.86,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.1153
+    ]
+   ],
+   "human_df": 106,
+   "asr_ratio": 1.14,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:णा",
+   "kind": "e2",
+   "df": 124,
+   "f_V": 0.10915,
+   "f_others_macro": 0.00819,
+   "f_max_other": 0.05401,
+   "lift": 12.56,
+   "w": 2.368,
+   "groups": 119,
+   "districts": 2,
+   "prompts": 117,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.19,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Kumaoni",
+     0.054
+    ]
+   ],
+   "human_df": 149,
+   "asr_ratio": 0.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:छा",
+   "kind": "w",
+   "df": 145,
+   "f_V": 0.12764,
+   "f_others_macro": 0.0103,
+   "f_max_other": 0.11387,
+   "lift": 11.82,
+   "w": 2.321,
+   "groups": 140,
+   "districts": 2,
+   "prompts": 140,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.32,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.1139
+    ]
+   ],
+   "human_df": 106,
+   "asr_ratio": 1.36,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:णी",
+   "kind": "e2",
+   "df": 97,
+   "f_V": 0.08539,
+   "f_others_macro": 0.00692,
+   "f_max_other": 0.05985,
+   "lift": 11.51,
+   "w": 2.259,
+   "groups": 95,
+   "districts": 2,
+   "prompts": 95,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.57,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Kumaoni",
+     0.0599
+    ]
+   ],
+   "human_df": 119,
+   "asr_ratio": 0.82,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:ते",
+   "kind": "w",
+   "df": 110,
+   "f_V": 0.09683,
+   "f_others_macro": 0.00803,
+   "f_max_other": 0.04526,
+   "lift": 11.36,
+   "w": 2.257,
+   "groups": 105,
+   "districts": 2,
+   "prompts": 104,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.94,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0453
+    ]
+   ],
+   "human_df": 57,
+   "asr_ratio": 1.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:यखमा",
+   "kind": "w",
+   "df": 36,
+   "f_V": 0.03169,
+   "f_others_macro": 0.00203,
+   "f_max_other": 0.0365,
+   "lift": 12.54,
+   "w": 2.229,
+   "groups": 36,
+   "districts": 2,
+   "prompts": 36,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 20.19,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0365
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 1.76,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:छ",
+   "kind": "w",
+   "df": 111,
+   "f_V": 0.09771,
+   "f_others_macro": 0.00864,
+   "f_max_other": 0.06277,
+   "lift": 10.69,
+   "w": 2.197,
+   "groups": 106,
+   "districts": 2,
+   "prompts": 106,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.35,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0628
+    ],
+    [
+     "Rajasthani",
+     0.0403
+    ]
+   ],
+   "human_df": 124,
+   "asr_ratio": 0.9,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:बडु",
+   "kind": "w",
+   "df": 28,
+   "f_V": 0.02465,
+   "f_others_macro": 0.0017,
+   "f_max_other": 0.02774,
+   "lift": 11.2,
+   "w": 2.08,
+   "groups": 28,
+   "districts": 2,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.67,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0277
+    ]
+   ],
+   "human_df": 22,
+   "asr_ratio": 1.26,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:यू",
+   "kind": "e2",
+   "df": 50,
+   "f_V": 0.04401,
+   "f_others_macro": 0.00377,
+   "f_max_other": 0.03066,
+   "lift": 10.31,
+   "w": 2.077,
+   "groups": 49,
+   "districts": 2,
+   "prompts": 49,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.93,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0307
+    ]
+   ],
+   "human_df": 84,
+   "asr_ratio": 0.6,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:टिन",
+   "kind": "e3",
+   "df": 36,
+   "f_V": 0.03169,
+   "f_others_macro": 0.00245,
+   "f_max_other": 0.02628,
+   "lift": 10.73,
+   "w": 2.073,
+   "groups": 34,
+   "districts": 2,
+   "prompts": 34,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.25,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0263
+    ]
+   ],
+   "human_df": 53,
+   "asr_ratio": 0.69,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:्या",
+   "kind": "e3",
+   "df": 179,
+   "f_V": 0.15757,
+   "f_others_macro": 0.01759,
+   "f_max_other": 0.10365,
+   "lift": 8.71,
+   "w": 2.032,
+   "groups": 173,
+   "districts": 2,
+   "prompts": 168,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.89,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0531
+    ],
+    [
+     "Kumaoni",
+     0.1036
+    ]
+   ],
+   "human_df": 227,
+   "asr_ratio": 0.79,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:डाला",
+   "kind": "w",
+   "df": 32,
+   "f_V": 0.02817,
+   "f_others_macro": 0.00224,
+   "f_max_other": 0.02774,
+   "lift": 10.28,
+   "w": 2.013,
+   "groups": 32,
+   "districts": 2,
+   "prompts": 32,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.6,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0277
+    ]
+   ],
+   "human_df": 44,
+   "asr_ratio": 0.73,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:तक",
+   "kind": "w",
+   "df": 47,
+   "f_V": 0.04137,
+   "f_others_macro": 0.00417,
+   "f_max_other": 0.01232,
+   "lift": 8.85,
+   "w": 1.916,
+   "groups": 46,
+   "districts": 2,
+   "prompts": 46,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 16.71,
+   "shared_with": [],
+   "human_df": 3,
+   "asr_ratio": 12.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:जी एक",
+   "kind": "b",
+   "df": 30,
+   "f_V": 0.02641,
+   "f_others_macro": 0.00231,
+   "f_max_other": 0.0292,
+   "lift": 9.39,
+   "w": 1.913,
+   "groups": 30,
+   "districts": 2,
+   "prompts": 30,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.49,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0292
+    ]
+   ],
+   "human_df": 18,
+   "asr_ratio": 1.63,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:कु",
+   "kind": "w",
+   "df": 60,
+   "f_V": 0.05282,
+   "f_others_macro": 0.00575,
+   "f_max_other": 0.05693,
+   "lift": 8.44,
+   "w": 1.898,
+   "groups": 59,
+   "districts": 2,
+   "prompts": 59,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.96,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0569
+    ]
+   ],
+   "human_df": 109,
+   "asr_ratio": 0.55,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:मा",
+   "kind": "w",
+   "df": 144,
+   "f_V": 0.12676,
+   "f_others_macro": 0.01742,
+   "f_max_other": 0.10073,
+   "lift": 7.07,
+   "w": 1.807,
+   "groups": 138,
+   "districts": 2,
+   "prompts": 137,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.15,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.0542
+    ],
+    [
+     "Kumaoni",
+     0.1007
+    ]
+   ],
+   "human_df": 207,
+   "asr_ratio": 0.7,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:णु",
+   "kind": "e2",
+   "df": 93,
+   "f_V": 0.08187,
+   "f_others_macro": 0.00374,
+   "f_max_other": 0.05693,
+   "lift": 19.3,
+   "w": 2.772,
+   "groups": 91,
+   "districts": 2,
+   "prompts": 90,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 19.34,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0569
+    ]
+   ],
+   "human_df": 131,
+   "asr_ratio": 0.71,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ेणु",
+   "kind": "e3",
+   "df": 48,
+   "f_V": 0.04225,
+   "f_others_macro": 0.00219,
+   "f_max_other": 0.03942,
+   "lift": 15.71,
+   "w": 2.492,
+   "groups": 47,
+   "districts": 2,
+   "prompts": 47,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 20.13,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0394
+    ]
+   ],
+   "human_df": 58,
+   "asr_ratio": 0.83,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:दिखेणु",
+   "kind": "w",
+   "df": 46,
+   "f_V": 0.04049,
+   "f_others_macro": 0.00211,
+   "f_max_other": 0.03796,
+   "lift": 15.52,
+   "w": 2.475,
+   "groups": 45,
+   "districts": 2,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 20.77,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.038
+    ]
+   ],
+   "human_df": 47,
+   "asr_ratio": 0.98,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ाणी",
+   "kind": "e3",
+   "df": 29,
+   "f_V": 0.02553,
+   "f_others_macro": 0.00136,
+   "f_max_other": 0.01149,
+   "lift": 13.73,
+   "w": 2.288,
+   "groups": 28,
+   "districts": 2,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.78,
+   "shared_with": [
+    [
+     "Marwari",
+     0.0115
+    ]
+   ],
+   "human_df": 46,
+   "asr_ratio": 0.64,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ेणी",
+   "kind": "e3",
+   "df": 33,
+   "f_V": 0.02905,
+   "f_others_macro": 0.00195,
+   "f_max_other": 0.03504,
+   "lift": 11.87,
+   "w": 2.162,
+   "groups": 32,
+   "districts": 2,
+   "prompts": 32,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.98,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.035
+    ]
+   ],
+   "human_df": 33,
+   "asr_ratio": 1.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:हम ते",
+   "kind": "b",
+   "df": 46,
+   "f_V": 0.04049,
+   "f_others_macro": 0.00129,
+   "f_max_other": 0.02044,
+   "lift": 22.64,
+   "w": 2.852,
+   "groups": 44,
+   "districts": 2,
+   "prompts": 44,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 19.51,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0204
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 4.27,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:जु",
+   "kind": "w",
+   "df": 33,
+   "f_V": 0.02902,
+   "f_others_macro": 0.00162,
+   "f_max_other": 0.02482,
+   "lift": 13.67,
+   "w": 2.303,
+   "groups": 33,
+   "districts": 2,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 19.65,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0248
+    ]
+   ],
+   "human_df": 43,
+   "asr_ratio": 0.77,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:कई सारा",
+   "kind": "b",
+   "df": 26,
+   "f_V": 0.02289,
+   "f_others_macro": 0.00155,
+   "f_max_other": 0.02628,
+   "lift": 11.16,
+   "w": 2.064,
+   "groups": 26,
+   "districts": 2,
+   "prompts": 26,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 20.67,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0263
+    ]
+   ],
+   "human_df": 28,
+   "asr_ratio": 0.93,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:दिखेणी",
+   "kind": "w",
+   "df": 30,
+   "f_V": 0.02641,
+   "f_others_macro": 0.00195,
+   "f_max_other": 0.03504,
+   "lift": 10.79,
+   "w": 2.053,
+   "groups": 29,
+   "districts": 2,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.06,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.035
+    ]
+   ],
+   "human_df": 30,
+   "asr_ratio": 1.0,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:लगी",
+   "kind": "w",
+   "df": 155,
+   "f_V": 0.13644,
+   "f_others_macro": 0.03329,
+   "f_max_other": 0.13431,
+   "lift": 4.04,
+   "w": 1.252,
+   "groups": 150,
+   "districts": 2,
+   "prompts": 147,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.85,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.1115
+    ],
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Khariboli",
+     0.0951
+    ],
+    [
+     "Kumaoni",
+     0.1343
+    ]
+   ],
+   "human_df": 152,
+   "asr_ratio": 1.02,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:मन की",
+   "kind": "b",
+   "df": 18,
+   "f_V": 0.01585,
+   "f_others_macro": 0.00018,
+   "f_max_other": 0.00181,
+   "lift": 23.25,
+   "w": 2.739,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 31.49,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 19.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:यू",
+   "kind": "w",
+   "df": 28,
+   "f_V": 0.02463,
+   "f_others_macro": 0.00122,
+   "f_max_other": 0.0146,
+   "lift": 14.3,
+   "w": 2.324,
+   "groups": 28,
+   "districts": 2,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.23,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0146
+    ]
+   ],
+   "human_df": 54,
+   "asr_ratio": 0.53,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:यखम",
+   "kind": "w",
+   "df": 24,
+   "f_V": 0.02113,
+   "f_others_macro": 0.00097,
+   "f_max_other": 0.01752,
+   "lift": 14.34,
+   "w": 2.303,
+   "groups": 22,
+   "districts": 2,
+   "prompts": 22,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.07,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0175
+    ]
+   ],
+   "human_df": 50,
+   "asr_ratio": 0.49,
+   "stable_runs": 6
+  }
+ ],
+ "Haryanvi": [
+  {
+   "feature": "b:रखी है",
+   "kind": "b",
+   "df": 11,
+   "f_V": 0.11111,
+   "f_others_macro": 0.00765,
+   "f_max_other": 0.04368,
+   "lift": 13.63,
+   "w": 2.056,
+   "groups": 11,
+   "districts": 2,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.08,
+   "shared_with": [
+    [
+     "Marwari",
+     0.0437
+    ]
+   ],
+   "human_df": 0,
+   "asr_ratio": 12.0,
+   "stable_runs": 6
+  }
+ ],
+ "Jaipuri": [
+  {
+   "feature": "w:बगल",
+   "kind": "w",
+   "df": 18,
+   "f_V": 0.34615,
+   "f_others_macro": 0.02905,
+   "f_max_other": 0.0708,
+   "lift": 11.71,
+   "w": 2.061,
+   "groups": 16,
+   "districts": 2,
+   "prompts": 16,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.62,
+   "shared_with": [],
+   "human_df": 17,
+   "asr_ratio": 1.06,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:हुए है",
+   "kind": "b",
+   "df": 17,
+   "f_V": 0.32692,
+   "f_others_macro": 0.03311,
+   "f_max_other": 0.15912,
+   "lift": 9.73,
+   "w": 1.859,
+   "groups": 17,
+   "districts": 2,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.74,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.1415
+    ],
+    [
+     "Kumaoni",
+     0.1591
+    ]
+   ],
+   "human_df": 11,
+   "asr_ratio": 1.5,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:फेद",
+   "kind": "e3",
+   "df": 14,
+   "f_V": 0.26923,
+   "f_others_macro": 0.02732,
+   "f_max_other": 0.1127,
+   "lift": 9.68,
+   "w": 1.799,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.11,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.1127
+    ]
+   ],
+   "human_df": 14,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:सफेद",
+   "kind": "w",
+   "df": 14,
+   "f_V": 0.26923,
+   "f_others_macro": 0.02732,
+   "f_max_other": 0.1127,
+   "lift": 9.68,
+   "w": 1.799,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.11,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.1127
+    ]
+   ],
+   "human_df": 14,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:ेद",
+   "kind": "e2",
+   "df": 14,
+   "f_V": 0.26923,
+   "f_others_macro": 0.02746,
+   "f_max_other": 0.1127,
+   "lift": 9.63,
+   "w": 1.794,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.08,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.1127
+    ]
+   ],
+   "human_df": 14,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:हुई है",
+   "kind": "b",
+   "df": 15,
+   "f_V": 0.28846,
+   "f_others_macro": 0.03616,
+   "f_max_other": 0.17865,
+   "lift": 7.87,
+   "w": 1.612,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.15,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0892
+    ],
+    [
+     "Khariboli",
+     0.1787
+    ],
+    [
+     "Kumaoni",
+     0.1635
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 0.76,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हुआ",
+   "kind": "w",
+   "df": 20,
+   "f_V": 0.38462,
+   "f_others_macro": 0.05574,
+   "f_max_other": 0.1854,
+   "lift": 6.84,
+   "w": 1.551,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.36,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.1485
+    ],
+    [
+     "Kumaoni",
+     0.1854
+    ],
+    [
+     "Magahi",
+     0.1398
+    ]
+   ],
+   "human_df": 19,
+   "asr_ratio": 1.05,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हुए",
+   "kind": "w",
+   "df": 17,
+   "f_V": 0.32692,
+   "f_others_macro": 0.04711,
+   "f_max_other": 0.20876,
+   "lift": 6.87,
+   "w": 1.511,
+   "groups": 17,
+   "districts": 2,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.52,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.1115
+    ],
+    [
+     "Khariboli",
+     0.1694
+    ],
+    [
+     "Kumaoni",
+     0.2088
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 1.29,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हुई",
+   "kind": "w",
+   "df": 16,
+   "f_V": 0.30769,
+   "f_others_macro": 0.04515,
+   "f_max_other": 0.19854,
+   "lift": 6.74,
+   "w": 1.476,
+   "groups": 15,
+   "districts": 2,
+   "prompts": 15,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.22,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0967
+    ],
+    [
+     "Khariboli",
+     0.1949
+    ],
+    [
+     "Kumaoni",
+     0.1985
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 0.81,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:है और",
+   "kind": "b",
+   "df": 23,
+   "f_V": 0.44231,
+   "f_others_macro": 0.08964,
+   "f_max_other": 0.29002,
+   "lift": 4.91,
+   "w": 1.256,
+   "groups": 23,
+   "districts": 2,
+   "prompts": 23,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.86,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.2379
+    ],
+    [
+     "Khariboli",
+     0.29
+    ],
+    [
+     "Kumaoni",
+     0.1693
+    ],
+    [
+     "Marwari",
+     0.1908
+    ]
+   ],
+   "human_df": 23,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:बादल",
+   "kind": "w",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.00712,
+   "f_max_other": 0.01724,
+   "lift": 30.29,
+   "w": 2.895,
+   "groups": 12,
+   "districts": 2,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.28,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 1.08,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ादल",
+   "kind": "e3",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.00728,
+   "f_max_other": 0.01724,
+   "lift": 29.67,
+   "w": 2.874,
+   "groups": 12,
+   "districts": 2,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.01,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 1.08,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:दल",
+   "kind": "e2",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.00844,
+   "f_max_other": 0.01839,
+   "lift": 25.82,
+   "w": 2.735,
+   "groups": 12,
+   "districts": 2,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.36,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 1.08,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:अगल",
+   "kind": "w",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.00852,
+   "f_max_other": 0.0354,
+   "lift": 25.58,
+   "w": 2.726,
+   "groups": 11,
+   "districts": 2,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.96,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 1.08,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:हरे",
+   "kind": "w",
+   "df": 11,
+   "f_V": 0.21154,
+   "f_others_macro": 0.00976,
+   "f_max_other": 0.04176,
+   "lift": 20.61,
+   "w": 2.483,
+   "groups": 10,
+   "districts": 2,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.09,
+   "shared_with": [],
+   "human_df": 10,
+   "asr_ratio": 1.09,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:कुछ",
+   "kind": "w",
+   "df": 11,
+   "f_V": 0.21154,
+   "f_others_macro": 0.05812,
+   "f_max_other": 0.16642,
+   "lift": 3.61,
+   "w": 0.741,
+   "groups": 11,
+   "districts": 2,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.37,
+   "shared_with": [
+    [
+     "Bhojpuri",
+     0.0873
+    ],
+    [
+     "Garhwali",
+     0.1048
+    ],
+    [
+     "Khariboli",
+     0.0998
+    ],
+    [
+     "Kumaoni",
+     0.1664
+    ],
+    [
+     "Magahi",
+     0.0914
+    ],
+    [
+     "Maithili",
+     0.0647
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 1.09,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:है जिस",
+   "kind": "b",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.00186,
+   "f_max_other": 0.00928,
+   "lift": 97.81,
+   "w": 4.067,
+   "groups": 12,
+   "districts": 2,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 78.87,
+   "shared_with": [],
+   "human_df": 10,
+   "asr_ratio": 1.18,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:जिस",
+   "kind": "w",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.00225,
+   "f_max_other": 0.0116,
+   "lift": 83.81,
+   "w": 3.912,
+   "groups": 12,
+   "districts": 2,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 63.95,
+   "shared_with": [],
+   "human_df": 10,
+   "asr_ratio": 1.18,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:सके",
+   "kind": "e3",
+   "df": 9,
+   "f_V": 0.17308,
+   "f_others_macro": 0.01923,
+   "f_max_other": 0.07591,
+   "lift": 8.77,
+   "w": 1.565,
+   "groups": 9,
+   "districts": 2,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.39,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0557
+    ],
+    [
+     "Kumaoni",
+     0.0759
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.11,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:खडे",
+   "kind": "w",
+   "df": 9,
+   "f_V": 0.17308,
+   "f_others_macro": 0.02437,
+   "f_max_other": 0.06207,
+   "lift": 6.96,
+   "w": 1.333,
+   "groups": 9,
+   "districts": 2,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.71,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.052
+    ],
+    [
+     "Khariboli",
+     0.0603
+    ],
+    [
+     "Marwari",
+     0.0621
+    ]
+   ],
+   "human_df": 7,
+   "asr_ratio": 1.25,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:ौधे",
+   "kind": "e3",
+   "df": 8,
+   "f_V": 0.15385,
+   "f_others_macro": 0.01215,
+   "f_max_other": 0.05051,
+   "lift": 12.17,
+   "w": 1.852,
+   "groups": 8,
+   "districts": 2,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.49,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0505
+    ]
+   ],
+   "human_df": 7,
+   "asr_ratio": 1.12,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:पौधे",
+   "kind": "w",
+   "df": 8,
+   "f_V": 0.15385,
+   "f_others_macro": 0.01215,
+   "f_max_other": 0.05051,
+   "lift": 12.17,
+   "w": 1.852,
+   "groups": 8,
+   "districts": 2,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.49,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0505
+    ]
+   ],
+   "human_df": 7,
+   "asr_ratio": 1.12,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e2:धे",
+   "kind": "e2",
+   "df": 8,
+   "f_V": 0.15385,
+   "f_others_macro": 0.01331,
+   "f_max_other": 0.05051,
+   "lift": 11.14,
+   "w": 1.764,
+   "groups": 8,
+   "districts": 2,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.5,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0505
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:दिखाई दे रही",
+   "kind": "t",
+   "df": 8,
+   "f_V": 0.15385,
+   "f_others_macro": 0.01808,
+   "f_max_other": 0.09016,
+   "lift": 8.28,
+   "w": 1.467,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.52,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0464
+    ],
+    [
+     "Kumaoni",
+     0.0861
+    ],
+    [
+     "Rajasthani",
+     0.0902
+    ]
+   ],
+   "human_df": 7,
+   "asr_ratio": 1.12,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:दे रही",
+   "kind": "b",
+   "df": 8,
+   "f_V": 0.15385,
+   "f_others_macro": 0.01842,
+   "f_max_other": 0.09016,
+   "lift": 8.13,
+   "w": 1.449,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.17,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0464
+    ],
+    [
+     "Kumaoni",
+     0.0861
+    ],
+    [
+     "Rajasthani",
+     0.0902
+    ]
+   ],
+   "human_df": 7,
+   "asr_ratio": 1.12,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:सा",
+   "kind": "w",
+   "df": 8,
+   "f_V": 0.15385,
+   "f_others_macro": 0.02575,
+   "f_max_other": 0.08081,
+   "lift": 5.86,
+   "w": 1.122,
+   "groups": 8,
+   "districts": 2,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.15,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0808
+    ],
+    [
+     "Khariboli",
+     0.0464
+    ],
+    [
+     "Kumaoni",
+     0.054
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e2:के",
+   "kind": "e2",
+   "df": 12,
+   "f_V": 0.23077,
+   "f_others_macro": 0.05784,
+   "f_max_other": 0.13431,
+   "lift": 3.96,
+   "w": 0.859,
+   "groups": 12,
+   "districts": 2,
+   "prompts": 12,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.32,
+   "shared_with": [
+    [
+     "Bhojpuri",
+     0.0767
+    ],
+    [
+     "Bundeli",
+     0.0781
+    ],
+    [
+     "Haryanvi",
+     0.1111
+    ],
+    [
+     "Khariboli",
+     0.1067
+    ],
+    [
+     "Kumaoni",
+     0.1343
+    ],
+    [
+     "Magahi",
+     0.0842
+    ]
+   ],
+   "human_df": 11,
+   "asr_ratio": 1.08,
+   "stable_runs": 6
+  }
+ ],
+ "Khariboli": [
+  {
+   "feature": "t:है यहा पर",
+   "kind": "t",
+   "df": 29,
+   "f_V": 0.06729,
+   "f_others_macro": 0.00661,
+   "f_max_other": 0.03346,
+   "lift": 9.46,
+   "w": 1.904,
+   "groups": 29,
+   "districts": 5,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.93,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0335
+    ],
+    [
+     "Kumaoni",
+     0.0307
+    ]
+   ],
+   "human_df": 24,
+   "asr_ratio": 1.2,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:इस",
+   "kind": "w",
+   "df": 26,
+   "f_V": 0.06032,
+   "f_others_macro": 0.01091,
+   "f_max_other": 0.02482,
+   "lift": 5.29,
+   "w": 1.303,
+   "groups": 26,
+   "districts": 6,
+   "prompts": 26,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.6,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0223
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Kumaoni",
+     0.0248
+    ],
+    [
+     "Marwari",
+     0.0218
+    ]
+   ],
+   "human_df": 29,
+   "asr_ratio": 0.9,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:यह एक",
+   "kind": "b",
+   "df": 18,
+   "f_V": 0.04176,
+   "f_others_macro": 0.00817,
+   "f_max_other": 0.02482,
+   "lift": 4.82,
+   "w": 1.139,
+   "groups": 18,
+   "districts": 5,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.0,
+   "shared_with": [
+    [
+     "Angika",
+     0.0149
+    ],
+    [
+     "Bundeli",
+     0.0149
+    ],
+    [
+     "Chhattisgarhi",
+     0.0149
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Kumaoni",
+     0.0248
+    ],
+    [
+     "Magahi",
+     0.0125
+    ]
+   ],
+   "human_df": 22,
+   "asr_ratio": 0.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:काफी सारे",
+   "kind": "b",
+   "df": 13,
+   "f_V": 0.03016,
+   "f_others_macro": 0.00141,
+   "f_max_other": 0.00597,
+   "lift": 15.83,
+   "w": 2.257,
+   "groups": 13,
+   "districts": 4,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.66,
+   "shared_with": [],
+   "human_df": 12,
+   "asr_ratio": 1.08,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:भी रखी",
+   "kind": "b",
+   "df": 10,
+   "f_V": 0.0232,
+   "f_others_macro": 0.00122,
+   "f_max_other": 0.00876,
+   "lift": 13.53,
+   "w": 2.037,
+   "groups": 10,
+   "districts": 4,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.2,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0074
+    ],
+    [
+     "Kumaoni",
+     0.0088
+    ]
+   ],
+   "human_df": 9,
+   "asr_ratio": 1.1,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:लग रही है",
+   "kind": "t",
+   "df": 15,
+   "f_V": 0.0348,
+   "f_others_macro": 0.00246,
+   "f_max_other": 0.0101,
+   "lift": 11.76,
+   "w": 1.992,
+   "groups": 15,
+   "districts": 4,
+   "prompts": 15,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 21.89,
+   "shared_with": [],
+   "human_df": 9,
+   "asr_ratio": 1.6,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:लग रही",
+   "kind": "b",
+   "df": 15,
+   "f_V": 0.0348,
+   "f_others_macro": 0.00306,
+   "f_max_other": 0.01115,
+   "lift": 9.77,
+   "w": 1.807,
+   "groups": 15,
+   "districts": 4,
+   "prompts": 15,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 15.9,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0112
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 1.45,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:यहा पर",
+   "kind": "b",
+   "df": 74,
+   "f_V": 0.17169,
+   "f_others_macro": 0.02806,
+   "f_max_other": 0.09615,
+   "lift": 6.01,
+   "w": 1.586,
+   "groups": 72,
+   "districts": 7,
+   "prompts": 71,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.5,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0855
+    ],
+    [
+     "Jaipuri",
+     0.0962
+    ],
+    [
+     "Kumaoni",
+     0.0934
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 1.07,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:है यहा",
+   "kind": "b",
+   "df": 57,
+   "f_V": 0.13225,
+   "f_others_macro": 0.02419,
+   "f_max_other": 0.10511,
+   "lift": 5.36,
+   "w": 1.438,
+   "groups": 57,
+   "districts": 6,
+   "prompts": 57,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.43,
+   "shared_with": [
+    [
+     "Angika",
+     0.0418
+    ],
+    [
+     "Bundeli",
+     0.0558
+    ],
+    [
+     "Kumaoni",
+     0.1051
+    ],
+    [
+     "Magahi",
+     0.0806
+    ],
+    [
+     "Maithili",
+     0.0453
+    ]
+   ],
+   "human_df": 52,
+   "asr_ratio": 1.09,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:काफी",
+   "kind": "w",
+   "df": 37,
+   "f_V": 0.08585,
+   "f_others_macro": 0.01801,
+   "f_max_other": 0.04253,
+   "lift": 4.64,
+   "w": 1.232,
+   "groups": 37,
+   "districts": 6,
+   "prompts": 37,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.85,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Kumaoni",
+     0.038
+    ],
+    [
+     "Magahi",
+     0.0376
+    ],
+    [
+     "Marwari",
+     0.0425
+    ]
+   ],
+   "human_df": 36,
+   "asr_ratio": 1.03,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ाफी",
+   "kind": "e3",
+   "df": 37,
+   "f_V": 0.08585,
+   "f_others_macro": 0.01807,
+   "f_max_other": 0.04253,
+   "lift": 4.62,
+   "w": 1.228,
+   "groups": 37,
+   "districts": 6,
+   "prompts": 37,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.85,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Kumaoni",
+     0.038
+    ],
+    [
+     "Magahi",
+     0.0376
+    ],
+    [
+     "Marwari",
+     0.0425
+    ]
+   ],
+   "human_df": 36,
+   "asr_ratio": 1.03,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:फी",
+   "kind": "e2",
+   "df": 40,
+   "f_V": 0.09281,
+   "f_others_macro": 0.02416,
+   "f_max_other": 0.05769,
+   "lift": 3.76,
+   "w": 1.034,
+   "groups": 40,
+   "districts": 6,
+   "prompts": 40,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.94,
+   "shared_with": [
+    [
+     "Angika",
+     0.0358
+    ],
+    [
+     "Bhojpuri",
+     0.0309
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Kumaoni",
+     0.0423
+    ],
+    [
+     "Magahi",
+     0.0448
+    ],
+    [
+     "Maithili",
+     0.0329
+    ],
+    [
+     "Marwari",
+     0.0517
+    ]
+   ],
+   "human_df": 39,
+   "asr_ratio": 1.02,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:यह",
+   "kind": "w",
+   "df": 38,
+   "f_V": 0.08817,
+   "f_others_macro": 0.02827,
+   "f_max_other": 0.09091,
+   "lift": 3.06,
+   "w": 0.821,
+   "groups": 38,
+   "districts": 7,
+   "prompts": 38,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.27,
+   "shared_with": [
+    [
+     "Angika",
+     0.0299
+    ],
+    [
+     "Bundeli",
+     0.0372
+    ],
+    [
+     "Chhattisgarhi",
+     0.0682
+    ],
+    [
+     "Haryanvi",
+     0.0909
+    ],
+    [
+     "Kumaoni",
+     0.035
+    ],
+    [
+     "Magahi",
+     0.0341
+    ],
+    [
+     "Surgujia",
+     0.0411
+    ]
+   ],
+   "human_df": 50,
+   "asr_ratio": 0.76,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:हमे",
+   "kind": "w",
+   "df": 28,
+   "f_V": 0.06497,
+   "f_others_macro": 0.01124,
+   "f_max_other": 0.04833,
+   "lift": 5.53,
+   "w": 1.362,
+   "groups": 28,
+   "districts": 7,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.81,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0483
+    ]
+   ],
+   "human_df": 27,
+   "asr_ratio": 1.04,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:रहा है और",
+   "kind": "t",
+   "df": 17,
+   "f_V": 0.03944,
+   "f_others_macro": 0.00757,
+   "f_max_other": 0.02974,
+   "lift": 4.89,
+   "w": 1.142,
+   "groups": 17,
+   "districts": 6,
+   "prompts": 16,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.52,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0297
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Kumaoni",
+     0.0234
+    ],
+    [
+     "Magahi",
+     0.0125
+    ],
+    [
+     "Marwari",
+     0.0161
+    ]
+   ],
+   "human_df": 17,
+   "asr_ratio": 1.0,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:है ये",
+   "kind": "b",
+   "df": 20,
+   "f_V": 0.0464,
+   "f_others_macro": 0.00957,
+   "f_max_other": 0.0303,
+   "lift": 4.61,
+   "w": 1.116,
+   "groups": 19,
+   "districts": 5,
+   "prompts": 19,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.54,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0223
+    ],
+    [
+     "Haryanvi",
+     0.0303
+    ],
+    [
+     "Kumaoni",
+     0.0248
+    ],
+    [
+     "Marwari",
+     0.0172
+    ]
+   ],
+   "human_df": 21,
+   "asr_ratio": 0.95,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:रहे है",
+   "kind": "b",
+   "df": 74,
+   "f_V": 0.17169,
+   "f_others_macro": 0.05343,
+   "f_max_other": 0.16058,
+   "lift": 3.18,
+   "w": 0.951,
+   "groups": 73,
+   "districts": 8,
+   "prompts": 71,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.59,
+   "shared_with": [
+    [
+     "Angika",
+     0.0567
+    ],
+    [
+     "Bundeli",
+     0.1413
+    ],
+    [
+     "Haryanvi",
+     0.1111
+    ],
+    [
+     "Jaipuri",
+     0.1346
+    ],
+    [
+     "Kumaoni",
+     0.1606
+    ],
+    [
+     "Marwari",
+     0.1115
+    ],
+    [
+     "Rajasthani",
+     0.0622
+    ]
+   ],
+   "human_df": 70,
+   "asr_ratio": 1.06,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:जहा",
+   "kind": "w",
+   "df": 29,
+   "f_V": 0.06729,
+   "f_others_macro": 0.01989,
+   "f_max_other": 0.04839,
+   "lift": 3.3,
+   "w": 0.851,
+   "groups": 28,
+   "districts": 5,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.45,
+   "shared_with": [
+    [
+     "Angika",
+     0.0299
+    ],
+    [
+     "Bhojpuri",
+     0.0478
+    ],
+    [
+     "Bundeli",
+     0.0483
+    ],
+    [
+     "Chhattisgarhi",
+     0.0262
+    ],
+    [
+     "Kumaoni",
+     0.0307
+    ],
+    [
+     "Magahi",
+     0.0484
+    ],
+    [
+     "Surgujia",
+     0.0348
+    ]
+   ],
+   "human_df": 25,
+   "asr_ratio": 1.15,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:बडे पेड",
+   "kind": "b",
+   "df": 9,
+   "f_V": 0.02088,
+   "f_others_macro": 0.00093,
+   "f_max_other": 0.00723,
+   "lift": 14.57,
+   "w": 2.085,
+   "groups": 9,
+   "districts": 3,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 16.48,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.0072
+    ]
+   ],
+   "human_df": 9,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:हमे एक",
+   "kind": "b",
+   "df": 15,
+   "f_V": 0.0348,
+   "f_others_macro": 0.00237,
+   "f_max_other": 0.01923,
+   "lift": 12.11,
+   "w": 2.021,
+   "groups": 15,
+   "districts": 6,
+   "prompts": 15,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.85,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0192
+    ]
+   ],
+   "human_df": 14,
+   "asr_ratio": 1.07,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e3:लती",
+   "kind": "e3",
+   "df": 9,
+   "f_V": 0.02088,
+   "f_others_macro": 0.00122,
+   "f_max_other": 0.01075,
+   "lift": 12.17,
+   "w": 1.905,
+   "groups": 9,
+   "districts": 4,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.22,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0108
+    ]
+   ],
+   "human_df": 9,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:सकते है",
+   "kind": "b",
+   "df": 17,
+   "f_V": 0.03944,
+   "f_others_macro": 0.00392,
+   "f_max_other": 0.01842,
+   "lift": 8.92,
+   "w": 1.743,
+   "groups": 17,
+   "districts": 4,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.24,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0175
+    ],
+    [
+     "Magahi",
+     0.0143
+    ],
+    [
+     "Maithili",
+     0.0184
+    ]
+   ],
+   "human_df": 17,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:है जहा",
+   "kind": "b",
+   "df": 29,
+   "f_V": 0.06729,
+   "f_others_macro": 0.00913,
+   "f_max_other": 0.03226,
+   "lift": 6.99,
+   "w": 1.602,
+   "groups": 29,
+   "districts": 5,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.64,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0223
+    ],
+    [
+     "Kumaoni",
+     0.0292
+    ],
+    [
+     "Magahi",
+     0.0323
+    ]
+   ],
+   "human_df": 26,
+   "asr_ratio": 1.11,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:लगी हुई",
+   "kind": "b",
+   "df": 32,
+   "f_V": 0.07425,
+   "f_others_macro": 0.01276,
+   "f_max_other": 0.05769,
+   "lift": 5.6,
+   "w": 1.397,
+   "groups": 30,
+   "districts": 6,
+   "prompts": 30,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.44,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0297
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Kumaoni",
+     0.0496
+    ]
+   ],
+   "human_df": 26,
+   "asr_ratio": 1.22,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:सकते",
+   "kind": "w",
+   "df": 17,
+   "f_V": 0.03944,
+   "f_others_macro": 0.00605,
+   "f_max_other": 0.02774,
+   "lift": 6.02,
+   "w": 1.35,
+   "groups": 17,
+   "districts": 4,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.01,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0211
+    ],
+    [
+     "Kumaoni",
+     0.0277
+    ],
+    [
+     "Magahi",
+     0.0143
+    ],
+    [
+     "Maithili",
+     0.0199
+    ]
+   ],
+   "human_df": 17,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:ये एक",
+   "kind": "b",
+   "df": 23,
+   "f_V": 0.05336,
+   "f_others_macro": 0.00979,
+   "f_max_other": 0.04964,
+   "lift": 5.18,
+   "w": 1.261,
+   "groups": 23,
+   "districts": 4,
+   "prompts": 23,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.37,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Kumaoni",
+     0.0496
+    ],
+    [
+     "Magahi",
+     0.0197
+    ]
+   ],
+   "human_df": 29,
+   "asr_ratio": 0.8,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:ग्रीन",
+   "kind": "w",
+   "df": 14,
+   "f_V": 0.03248,
+   "f_others_macro": 0.00543,
+   "f_max_other": 0.03212,
+   "lift": 5.48,
+   "w": 1.214,
+   "groups": 14,
+   "districts": 4,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.5,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Kumaoni",
+     0.0321
+    ]
+   ],
+   "human_df": 14,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:सारे",
+   "kind": "w",
+   "df": 39,
+   "f_V": 0.09049,
+   "f_others_macro": 0.0261,
+   "f_max_other": 0.11095,
+   "lift": 3.4,
+   "w": 0.93,
+   "groups": 39,
+   "districts": 7,
+   "prompts": 39,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.31,
+   "shared_with": [
+    [
+     "Angika",
+     0.0358
+    ],
+    [
+     "Bundeli",
+     0.0892
+    ],
+    [
+     "Haryanvi",
+     0.0505
+    ],
+    [
+     "Kumaoni",
+     0.1109
+    ],
+    [
+     "Magahi",
+     0.0394
+    ],
+    [
+     "Maithili",
+     0.0358
+    ]
+   ],
+   "human_df": 40,
+   "asr_ratio": 0.98,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:लगे हुए",
+   "kind": "b",
+   "df": 25,
+   "f_V": 0.058,
+   "f_others_macro": 0.01553,
+   "f_max_other": 0.07692,
+   "lift": 3.62,
+   "w": 0.917,
+   "groups": 25,
+   "districts": 5,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.48,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0372
+    ],
+    [
+     "Haryanvi",
+     0.0303
+    ],
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Kumaoni",
+     0.0686
+    ]
+   ],
+   "human_df": 19,
+   "asr_ratio": 1.3,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:भी लगी",
+   "kind": "b",
+   "df": 13,
+   "f_V": 0.03016,
+   "f_others_macro": 0.00409,
+   "f_max_other": 0.0223,
+   "lift": 6.58,
+   "w": 1.379,
+   "groups": 13,
+   "districts": 3,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.79,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0223
+    ],
+    [
+     "Haryanvi",
+     0.0101
+    ],
+    [
+     "Kumaoni",
+     0.0117
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:लगी हुई है",
+   "kind": "t",
+   "df": 28,
+   "f_V": 0.06497,
+   "f_others_macro": 0.0112,
+   "f_max_other": 0.05769,
+   "lift": 5.55,
+   "w": 1.365,
+   "groups": 27,
+   "districts": 4,
+   "prompts": 27,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.52,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0297
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Kumaoni",
+     0.038
+    ]
+   ],
+   "human_df": 23,
+   "asr_ratio": 1.21,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:कते",
+   "kind": "e3",
+   "df": 18,
+   "f_V": 0.04176,
+   "f_others_macro": 0.00648,
+   "f_max_other": 0.03358,
+   "lift": 5.98,
+   "w": 1.355,
+   "groups": 18,
+   "districts": 4,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.14,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.022
+    ],
+    [
+     "Kumaoni",
+     0.0336
+    ],
+    [
+     "Maithili",
+     0.0224
+    ]
+   ],
+   "human_df": 18,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:देख सकते है",
+   "kind": "t",
+   "df": 10,
+   "f_V": 0.0232,
+   "f_others_macro": 0.0029,
+   "f_max_other": 0.01842,
+   "lift": 6.82,
+   "w": 1.353,
+   "groups": 10,
+   "districts": 3,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.54,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0161
+    ],
+    [
+     "Maithili",
+     0.0184
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:सका",
+   "kind": "e3",
+   "df": 17,
+   "f_V": 0.03944,
+   "f_others_macro": 0.0075,
+   "f_max_other": 0.0303,
+   "lift": 4.93,
+   "w": 1.15,
+   "groups": 16,
+   "districts": 6,
+   "prompts": 16,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.55,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0303
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Kumaoni",
+     0.0204
+    ],
+    [
+     "Magahi",
+     0.0143
+    ]
+   ],
+   "human_df": 16,
+   "asr_ratio": 1.06,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:पर",
+   "kind": "w",
+   "df": 112,
+   "f_V": 0.25986,
+   "f_others_macro": 0.08232,
+   "f_max_other": 0.25547,
+   "lift": 3.14,
+   "w": 0.982,
+   "groups": 108,
+   "districts": 9,
+   "prompts": 105,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.67,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.11
+    ],
+    [
+     "Bhojpuri",
+     0.1007
+    ],
+    [
+     "Bundeli",
+     0.1227
+    ],
+    [
+     "Garhwali",
+     0.1391
+    ],
+    [
+     "Jaipuri",
+     0.1538
+    ],
+    [
+     "Kumaoni",
+     0.2555
+    ],
+    [
+     "Magahi",
+     0.0806
+    ],
+    [
+     "Maithili",
+     0.1105
+    ],
+    [
+     "Marwari",
+     0.1011
+    ]
+   ],
+   "human_df": 108,
+   "asr_ratio": 1.04,
+   "stable_runs": 6
+  }
+ ],
+ "Khortha": [
+  {
+   "feature": "b:ही को",
+   "kind": "b",
+   "df": 8,
+   "f_V": 0.01643,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 32.85,
+   "w": 2.873,
+   "groups": 8,
+   "districts": 3,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 49.5,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 9.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:एगो",
+   "kind": "w",
+   "df": 84,
+   "f_V": 0.17248,
+   "f_others_macro": 0.03996,
+   "f_max_other": 0.18147,
+   "lift": 4.26,
+   "w": 1.256,
+   "groups": 83,
+   "districts": 4,
+   "prompts": 83,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.4,
+   "shared_with": [
+    [
+     "Angika",
+     0.1134
+    ],
+    [
+     "Bajjika",
+     0.1815
+    ],
+    [
+     "Bhojpuri",
+     0.1523
+    ],
+    [
+     "Magahi",
+     0.0735
+    ],
+    [
+     "Maithili",
+     0.0762
+    ]
+   ],
+   "human_df": 126,
+   "asr_ratio": 0.67,
+   "stable_runs": 7
+  }
+ ],
+ "Kumaoni": [
+  {
+   "feature": "b:मा जी",
+   "kind": "b",
+   "df": 54,
+   "f_V": 0.07883,
+   "f_others_macro": 0.00298,
+   "f_max_other": 0.0537,
+   "lift": 22.63,
+   "w": 2.87,
+   "groups": 53,
+   "districts": 2,
+   "prompts": 51,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.28,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0537
+    ]
+   ],
+   "human_df": 40,
+   "asr_ratio": 1.34,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:दे रहा है",
+   "kind": "t",
+   "df": 69,
+   "f_V": 0.10073,
+   "f_others_macro": 0.0161,
+   "f_max_other": 0.07889,
+   "lift": 6.07,
+   "w": 1.583,
+   "groups": 66,
+   "districts": 2,
+   "prompts": 65,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.5,
+   "shared_with": [
+    [
+     "Angika",
+     0.0418
+    ],
+    [
+     "Khariboli",
+     0.0789
+    ]
+   ],
+   "human_df": 67,
+   "asr_ratio": 1.03,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:दिखाई दे रहा",
+   "kind": "t",
+   "df": 69,
+   "f_V": 0.10073,
+   "f_others_macro": 0.01719,
+   "f_max_other": 0.08353,
+   "lift": 5.69,
+   "w": 1.52,
+   "groups": 66,
+   "districts": 2,
+   "prompts": 65,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.97,
+   "shared_with": [
+    [
+     "Angika",
+     0.0418
+    ],
+    [
+     "Bhojpuri",
+     0.034
+    ],
+    [
+     "Khariboli",
+     0.0835
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखेणी",
+   "kind": "w",
+   "df": 24,
+   "f_V": 0.03504,
+   "f_others_macro": 0.00147,
+   "f_max_other": 0.02641,
+   "lift": 17.81,
+   "w": 2.508,
+   "groups": 24,
+   "districts": 2,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.73,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0264
+    ]
+   ],
+   "human_df": 18,
+   "asr_ratio": 1.32,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ेणी",
+   "kind": "e3",
+   "df": 24,
+   "f_V": 0.03504,
+   "f_others_macro": 0.00161,
+   "f_max_other": 0.02905,
+   "lift": 16.57,
+   "w": 2.436,
+   "groups": 24,
+   "districts": 2,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.99,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.029
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 1.19,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:पिछाडी",
+   "kind": "w",
+   "df": 26,
+   "f_V": 0.03796,
+   "f_others_macro": 0.0022,
+   "f_max_other": 0.03961,
+   "lift": 14.05,
+   "w": 2.285,
+   "groups": 24,
+   "districts": 2,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.76,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0396
+    ]
+   ],
+   "human_df": 24,
+   "asr_ratio": 1.08,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:कु",
+   "kind": "w",
+   "df": 39,
+   "f_V": 0.05693,
+   "f_others_macro": 0.00553,
+   "f_max_other": 0.05282,
+   "lift": 9.45,
+   "w": 1.952,
+   "groups": 38,
+   "districts": 2,
+   "prompts": 38,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.9,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0528
+    ]
+   ],
+   "human_df": 32,
+   "asr_ratio": 1.21,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:दे रहे है",
+   "kind": "t",
+   "df": 47,
+   "f_V": 0.06861,
+   "f_others_macro": 0.00971,
+   "f_max_other": 0.06032,
+   "lift": 6.72,
+   "w": 1.637,
+   "groups": 43,
+   "districts": 2,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.06,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Khariboli",
+     0.0603
+    ]
+   ],
+   "human_df": 47,
+   "asr_ratio": 1.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:दे रहा",
+   "kind": "b",
+   "df": 70,
+   "f_V": 0.10219,
+   "f_others_macro": 0.01821,
+   "f_max_other": 0.08353,
+   "lift": 5.46,
+   "w": 1.48,
+   "groups": 67,
+   "districts": 2,
+   "prompts": 66,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.61,
+   "shared_with": [
+    [
+     "Angika",
+     0.0418
+    ],
+    [
+     "Bhojpuri",
+     0.034
+    ],
+    [
+     "Khariboli",
+     0.0835
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 1.01,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:यख मा जी",
+   "kind": "t",
+   "df": 29,
+   "f_V": 0.04234,
+   "f_others_macro": 0.00147,
+   "f_max_other": 0.02641,
+   "lift": 21.52,
+   "w": 2.729,
+   "groups": 28,
+   "districts": 2,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.72,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0264
+    ]
+   ],
+   "human_df": 23,
+   "asr_ratio": 1.25,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:यख मा",
+   "kind": "b",
+   "df": 29,
+   "f_V": 0.04234,
+   "f_others_macro": 0.00156,
+   "f_max_other": 0.02817,
+   "lift": 20.5,
+   "w": 2.681,
+   "groups": 28,
+   "districts": 2,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.0,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0282
+    ]
+   ],
+   "human_df": 23,
+   "asr_ratio": 1.25,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e3:ेणु",
+   "kind": "e3",
+   "df": 27,
+   "f_V": 0.03942,
+   "f_others_macro": 0.00235,
+   "f_max_other": 0.04225,
+   "lift": 13.84,
+   "w": 2.276,
+   "groups": 27,
+   "districts": 2,
+   "prompts": 27,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.41,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0423
+    ]
+   ],
+   "human_df": 24,
+   "asr_ratio": 1.12,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:दिखेणु",
+   "kind": "w",
+   "df": 26,
+   "f_V": 0.03796,
+   "f_others_macro": 0.00225,
+   "f_max_other": 0.04049,
+   "lift": 13.8,
+   "w": 2.267,
+   "groups": 26,
+   "districts": 2,
+   "prompts": 26,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.75,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0405
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 1.29,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:ब्लैक कलर",
+   "kind": "b",
+   "df": 23,
+   "f_V": 0.03358,
+   "f_others_macro": 0.00271,
+   "f_max_other": 0.0101,
+   "lift": 10.46,
+   "w": 1.969,
+   "groups": 23,
+   "districts": 2,
+   "prompts": 23,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.59,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0101
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 1.14,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:कलर की",
+   "kind": "b",
+   "df": 73,
+   "f_V": 0.10657,
+   "f_others_macro": 0.01718,
+   "f_max_other": 0.07692,
+   "lift": 6.03,
+   "w": 1.583,
+   "groups": 71,
+   "districts": 2,
+   "prompts": 71,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.94,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Khariboli",
+     0.051
+    ],
+    [
+     "Marwari",
+     0.0494
+    ]
+   ],
+   "human_df": 73,
+   "asr_ratio": 1.0,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:बहुत सारे",
+   "kind": "b",
+   "df": 62,
+   "f_V": 0.09051,
+   "f_others_macro": 0.01435,
+   "f_max_other": 0.0464,
+   "lift": 6.09,
+   "w": 1.575,
+   "groups": 58,
+   "districts": 2,
+   "prompts": 57,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.11,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0297
+    ],
+    [
+     "Haryanvi",
+     0.0303
+    ],
+    [
+     "Khariboli",
+     0.0464
+    ],
+    [
+     "Magahi",
+     0.0305
+    ]
+   ],
+   "human_df": 3,
+   "asr_ratio": 15.75,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:हुए",
+   "kind": "w",
+   "df": 149,
+   "f_V": 0.21752,
+   "f_others_macro": 0.04803,
+   "f_max_other": 0.25,
+   "lift": 4.48,
+   "w": 1.358,
+   "groups": 142,
+   "districts": 2,
+   "prompts": 138,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.05,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.1004
+    ],
+    [
+     "Jaipuri",
+     0.25
+    ],
+    [
+     "Khariboli",
+     0.1392
+    ]
+   ],
+   "human_df": 149,
+   "asr_ratio": 1.0,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:दिखाई दे",
+   "kind": "b",
+   "df": 115,
+   "f_V": 0.16788,
+   "f_others_macro": 0.03809,
+   "f_max_other": 0.14139,
+   "lift": 4.35,
+   "w": 1.305,
+   "groups": 108,
+   "districts": 2,
+   "prompts": 106,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.97,
+   "shared_with": [
+    [
+     "Angika",
+     0.0597
+    ],
+    [
+     "Bundeli",
+     0.052
+    ],
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Khariboli",
+     0.1253
+    ],
+    [
+     "Marwari",
+     0.0506
+    ],
+    [
+     "Rajasthani",
+     0.1414
+    ]
+   ],
+   "human_df": 115,
+   "asr_ratio": 1.0,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:छन",
+   "kind": "w",
+   "df": 79,
+   "f_V": 0.11533,
+   "f_others_macro": 0.00741,
+   "f_max_other": 0.10651,
+   "lift": 14.58,
+   "w": 2.475,
+   "groups": 75,
+   "districts": 2,
+   "prompts": 74,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.94,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.1065
+    ]
+   ],
+   "human_df": 85,
+   "asr_ratio": 0.93,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:कई सारा",
+   "kind": "b",
+   "df": 18,
+   "f_V": 0.02628,
+   "f_others_macro": 0.00136,
+   "f_max_other": 0.02289,
+   "lift": 14.1,
+   "w": 2.222,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.56,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0229
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 0.9,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:बहुत सारी",
+   "kind": "b",
+   "df": 60,
+   "f_V": 0.08759,
+   "f_others_macro": 0.01043,
+   "f_max_other": 0.04408,
+   "lift": 8.01,
+   "w": 1.845,
+   "groups": 59,
+   "districts": 2,
+   "prompts": 59,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.87,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Khariboli",
+     0.0441
+    ]
+   ],
+   "human_df": 0,
+   "asr_ratio": 61.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "t:दिखाई दे रहे",
+   "kind": "t",
+   "df": 63,
+   "f_V": 0.09197,
+   "f_others_macro": 0.01405,
+   "f_max_other": 0.07692,
+   "lift": 6.32,
+   "w": 1.614,
+   "groups": 58,
+   "districts": 2,
+   "prompts": 58,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.51,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Khariboli",
+     0.0557
+    ],
+    [
+     "Rajasthani",
+     0.028
+    ]
+   ],
+   "human_df": 63,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:दे रहे",
+   "kind": "b",
+   "df": 65,
+   "f_V": 0.09489,
+   "f_others_macro": 0.01551,
+   "f_max_other": 0.07692,
+   "lift": 5.93,
+   "w": 1.553,
+   "groups": 60,
+   "districts": 2,
+   "prompts": 60,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.58,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0769
+    ],
+    [
+     "Khariboli",
+     0.0557
+    ]
+   ],
+   "human_df": 65,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:व्हाइट",
+   "kind": "w",
+   "df": 51,
+   "f_V": 0.07445,
+   "f_others_macro": 0.01209,
+   "f_max_other": 0.04408,
+   "lift": 5.91,
+   "w": 1.52,
+   "groups": 49,
+   "districts": 2,
+   "prompts": 49,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.84,
+   "shared_with": [
+    [
+     "Angika",
+     0.0328
+    ],
+    [
+     "Khariboli",
+     0.0441
+    ]
+   ],
+   "human_df": 27,
+   "asr_ratio": 1.86,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:भरया",
+   "kind": "w",
+   "df": 19,
+   "f_V": 0.02774,
+   "f_others_macro": 0.00083,
+   "f_max_other": 0.01496,
+   "lift": 20.83,
+   "w": 2.622,
+   "groups": 19,
+   "districts": 2,
+   "prompts": 19,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.32,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.015
+    ]
+   ],
+   "human_df": 11,
+   "asr_ratio": 1.67,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:ब्लू कलर की",
+   "kind": "t",
+   "df": 10,
+   "f_V": 0.0146,
+   "f_others_macro": 0.00019,
+   "f_max_other": 0.00115,
+   "lift": 21.26,
+   "w": 2.51,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.33,
+   "shared_with": [],
+   "human_df": 8,
+   "asr_ratio": 1.22,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:यखमा",
+   "kind": "w",
+   "df": 25,
+   "f_V": 0.0365,
+   "f_others_macro": 0.00176,
+   "f_max_other": 0.03169,
+   "lift": 16.14,
+   "w": 2.417,
+   "groups": 24,
+   "districts": 2,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.37,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0317
+    ]
+   ],
+   "human_df": 12,
+   "asr_ratio": 2.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:खमा",
+   "kind": "e3",
+   "df": 25,
+   "f_V": 0.0365,
+   "f_others_macro": 0.0021,
+   "f_max_other": 0.03785,
+   "lift": 14.02,
+   "w": 2.276,
+   "groups": 24,
+   "districts": 2,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.39,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0379
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 1.86,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:है व्हाइट",
+   "kind": "b",
+   "df": 18,
+   "f_V": 0.02628,
+   "f_others_macro": 0.00129,
+   "f_max_other": 0.00597,
+   "lift": 14.65,
+   "w": 2.26,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.51,
+   "shared_with": [],
+   "human_df": 11,
+   "asr_ratio": 1.58,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:छा",
+   "kind": "w",
+   "df": 78,
+   "f_V": 0.11387,
+   "f_others_macro": 0.01107,
+   "f_max_other": 0.12764,
+   "lift": 9.84,
+   "w": 2.081,
+   "groups": 76,
+   "districts": 2,
+   "prompts": 75,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.14,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.1276
+    ]
+   ],
+   "human_df": 60,
+   "asr_ratio": 1.3,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:एड",
+   "kind": "w",
+   "df": 18,
+   "f_V": 0.02628,
+   "f_others_macro": 0.00172,
+   "f_max_other": 0.0116,
+   "lift": 11.81,
+   "w": 2.044,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.25,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0116
+    ]
+   ],
+   "human_df": 12,
+   "asr_ratio": 1.46,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:दे रही है",
+   "kind": "t",
+   "df": 53,
+   "f_V": 0.07737,
+   "f_others_macro": 0.01144,
+   "f_max_other": 0.06729,
+   "lift": 6.48,
+   "w": 1.617,
+   "groups": 52,
+   "districts": 2,
+   "prompts": 51,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.9,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Khariboli",
+     0.0673
+    ],
+    [
+     "Marwari",
+     0.0287
+    ]
+   ],
+   "human_df": 53,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:सारी",
+   "kind": "w",
+   "df": 74,
+   "f_V": 0.10803,
+   "f_others_macro": 0.01936,
+   "f_max_other": 0.06265,
+   "lift": 5.44,
+   "w": 1.482,
+   "groups": 72,
+   "districts": 2,
+   "prompts": 72,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.54,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0409
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Khariboli",
+     0.0626
+    ],
+    [
+     "Marwari",
+     0.0356
+    ],
+    [
+     "Rajasthani",
+     0.0335
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 1.07,
+   "stable_runs": 6
+  }
+ ],
+ "Magahi": [
+  {
+   "feature": "b:ऊपर मे",
+   "kind": "b",
+   "df": 10,
+   "f_V": 0.01792,
+   "f_others_macro": 0.00411,
+   "f_max_other": 0.01941,
+   "lift": 3.89,
+   "w": 0.8,
+   "groups": 9,
+   "districts": 3,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.34,
+   "shared_with": [
+    [
+     "Angika",
+     0.009
+    ],
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Bajjika",
+     0.0077
+    ],
+    [
+     "Chhattisgarhi",
+     0.0122
+    ],
+    [
+     "Maithili",
+     0.0194
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  }
+ ],
+ "Maithili": [
+  {
+   "feature": "b:देखने मे",
+   "kind": "b",
+   "df": 97,
+   "f_V": 0.04828,
+   "f_others_macro": 0.00436,
+   "f_max_other": 0.02867,
+   "lift": 9.93,
+   "w": 2.113,
+   "groups": 93,
+   "districts": 16,
+   "prompts": 92,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.2,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0287
+    ]
+   ],
+   "human_df": 89,
+   "asr_ratio": 1.09,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:देखने",
+   "kind": "w",
+   "df": 113,
+   "f_V": 0.05625,
+   "f_others_macro": 0.00635,
+   "f_max_other": 0.03943,
+   "lift": 8.21,
+   "w": 1.937,
+   "groups": 109,
+   "districts": 16,
+   "prompts": 108,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.37,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0394
+    ]
+   ],
+   "human_df": 106,
+   "asr_ratio": 1.07,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:खने",
+   "kind": "e3",
+   "df": 130,
+   "f_V": 0.06471,
+   "f_others_macro": 0.00854,
+   "f_max_other": 0.03943,
+   "lift": 7.16,
+   "w": 1.81,
+   "groups": 126,
+   "districts": 17,
+   "prompts": 125,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.47,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0265
+    ],
+    [
+     "Magahi",
+     0.0394
+    ]
+   ],
+   "human_df": 122,
+   "asr_ratio": 1.07,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:बहुत बढिया",
+   "kind": "b",
+   "df": 80,
+   "f_V": 0.03982,
+   "f_others_macro": 0.00837,
+   "f_max_other": 0.02464,
+   "lift": 4.49,
+   "w": 1.302,
+   "groups": 74,
+   "districts": 12,
+   "prompts": 74,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.44,
+   "shared_with": [
+    [
+     "Angika",
+     0.0149
+    ],
+    [
+     "Bhojpuri",
+     0.023
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Khortha",
+     0.0246
+    ],
+    [
+     "Surjapuri",
+     0.0171
+    ]
+   ],
+   "human_df": 75,
+   "asr_ratio": 1.07,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रहल छे",
+   "kind": "b",
+   "df": 35,
+   "f_V": 0.01742,
+   "f_others_macro": 0.00027,
+   "f_max_other": 0.00299,
+   "lift": 22.54,
+   "w": 2.826,
+   "groups": 35,
+   "districts": 9,
+   "prompts": 34,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 29.9,
+   "shared_with": [],
+   "human_df": 34,
+   "asr_ratio": 1.03,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:रहल",
+   "kind": "e3",
+   "df": 22,
+   "f_V": 0.01095,
+   "f_others_macro": 0.00062,
+   "f_max_other": 0.00447,
+   "lift": 9.77,
+   "w": 1.933,
+   "groups": 22,
+   "districts": 7,
+   "prompts": 21,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 16.43,
+   "shared_with": [
+    [
+     "Bhojpuri",
+     0.0045
+    ]
+   ],
+   "human_df": 0,
+   "asr_ratio": 23.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:मे बहुत अच्छा",
+   "kind": "t",
+   "df": 25,
+   "f_V": 0.01244,
+   "f_others_macro": 0.0008,
+   "f_max_other": 0.00717,
+   "lift": 9.57,
+   "w": 1.929,
+   "groups": 25,
+   "districts": 11,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.26,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0072
+    ]
+   ],
+   "human_df": 18,
+   "asr_ratio": 1.37,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:रहल",
+   "kind": "w",
+   "df": 58,
+   "f_V": 0.02887,
+   "f_others_macro": 0.00306,
+   "f_max_other": 0.02124,
+   "lift": 8.11,
+   "w": 1.862,
+   "groups": 58,
+   "districts": 10,
+   "prompts": 55,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.78,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0212
+    ],
+    [
+     "Bhojpuri",
+     0.0148
+    ],
+    [
+     "Magahi",
+     0.009
+    ]
+   ],
+   "human_df": 208,
+   "asr_ratio": 0.28,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:छै",
+   "kind": "w",
+   "df": 200,
+   "f_V": 0.09955,
+   "f_others_macro": 0.01445,
+   "f_max_other": 0.09254,
+   "lift": 6.66,
+   "w": 1.769,
+   "groups": 195,
+   "districts": 12,
+   "prompts": 189,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.76,
+   "shared_with": [
+    [
+     "Angika",
+     0.0925
+    ],
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Rajasthani",
+     0.041
+    ],
+    [
+     "Surjapuri",
+     0.0427
+    ]
+   ],
+   "human_df": 725,
+   "asr_ratio": 0.28,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:जै छे",
+   "kind": "b",
+   "df": 14,
+   "f_V": 0.00697,
+   "f_others_macro": 0.00033,
+   "f_max_other": 0.00597,
+   "lift": 8.38,
+   "w": 1.722,
+   "groups": 14,
+   "districts": 6,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.18,
+   "shared_with": [
+    [
+     "Angika",
+     0.006
+    ]
+   ],
+   "human_df": 0,
+   "asr_ratio": 15.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:सब",
+   "kind": "w",
+   "df": 393,
+   "f_V": 0.19562,
+   "f_others_macro": 0.04929,
+   "f_max_other": 0.14925,
+   "lift": 3.93,
+   "w": 1.282,
+   "groups": 368,
+   "districts": 16,
+   "prompts": 349,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.81,
+   "shared_with": [
+    [
+     "Angika",
+     0.1493
+    ],
+    [
+     "Awadhi",
+     0.0619
+    ],
+    [
+     "Bajjika",
+     0.1158
+    ],
+    [
+     "Bhojpuri",
+     0.0718
+    ],
+    [
+     "Khortha",
+     0.0637
+    ],
+    [
+     "Magahi",
+     0.1183
+    ]
+   ],
+   "human_df": 443,
+   "asr_ratio": 0.89,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:छी",
+   "kind": "w",
+   "df": 36,
+   "f_V": 0.01792,
+   "f_others_macro": 0.00347,
+   "f_max_other": 0.02025,
+   "lift": 4.52,
+   "w": 1.223,
+   "groups": 36,
+   "districts": 7,
+   "prompts": 36,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.64,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0193
+    ],
+    [
+     "Garhwali",
+     0.0202
+    ],
+    [
+     "Kumaoni",
+     0.0058
+    ],
+    [
+     "Surjapuri",
+     0.0085
+    ]
+   ],
+   "human_df": 52,
+   "asr_ratio": 0.7,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:बढिया लग रहा",
+   "kind": "t",
+   "df": 22,
+   "f_V": 0.01095,
+   "f_others_macro": 0.00039,
+   "f_max_other": 0.00299,
+   "lift": 12.34,
+   "w": 2.166,
+   "groups": 21,
+   "districts": 8,
+   "prompts": 21,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.1,
+   "shared_with": [],
+   "human_df": 16,
+   "asr_ratio": 1.35,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:बढिया लग",
+   "kind": "b",
+   "df": 23,
+   "f_V": 0.01145,
+   "f_others_macro": 0.00061,
+   "f_max_other": 0.00316,
+   "lift": 10.3,
+   "w": 1.991,
+   "groups": 22,
+   "districts": 8,
+   "prompts": 22,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.7,
+   "shared_with": [],
+   "human_df": 19,
+   "asr_ratio": 1.2,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:देख पा रहे",
+   "kind": "t",
+   "df": 14,
+   "f_V": 0.00697,
+   "f_others_macro": 0.00014,
+   "f_max_other": 0.00181,
+   "lift": 10.91,
+   "w": 1.987,
+   "groups": 14,
+   "districts": 6,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.56,
+   "shared_with": [],
+   "human_df": 13,
+   "asr_ratio": 1.07,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:देखिये",
+   "kind": "w",
+   "df": 25,
+   "f_V": 0.01244,
+   "f_others_macro": 0.00122,
+   "f_max_other": 0.0073,
+   "lift": 7.25,
+   "w": 1.651,
+   "groups": 24,
+   "districts": 8,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.62,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0039
+    ],
+    [
+     "Kumaoni",
+     0.0073
+    ]
+   ],
+   "human_df": 9,
+   "asr_ratio": 2.6,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:सके",
+   "kind": "w",
+   "df": 35,
+   "f_V": 0.01742,
+   "f_others_macro": 0.0028,
+   "f_max_other": 0.0202,
+   "lift": 5.27,
+   "w": 1.374,
+   "groups": 34,
+   "districts": 4,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.09,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Sadri",
+     0.0074
+    ]
+   ],
+   "human_df": 18,
+   "asr_ratio": 1.89,
+   "stable_runs": 8
+  },
+  {
+   "feature": "b:मे बहुत",
+   "kind": "b",
+   "df": 120,
+   "f_V": 0.05973,
+   "f_others_macro": 0.01571,
+   "f_max_other": 0.06571,
+   "lift": 3.69,
+   "w": 1.14,
+   "groups": 116,
+   "districts": 18,
+   "prompts": 112,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.91,
+   "shared_with": [
+    [
+     "Bhojpuri",
+     0.0289
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Khariboli",
+     0.0209
+    ],
+    [
+     "Khortha",
+     0.0657
+    ],
+    [
+     "Magahi",
+     0.0215
+    ]
+   ],
+   "human_df": 115,
+   "asr_ratio": 1.04,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:है बहुत बढिया",
+   "kind": "t",
+   "df": 16,
+   "f_V": 0.00796,
+   "f_others_macro": 0.0001,
+   "f_max_other": 0.00069,
+   "lift": 13.25,
+   "w": 2.197,
+   "groups": 14,
+   "districts": 9,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.13,
+   "shared_with": [],
+   "human_df": 12,
+   "asr_ratio": 1.31,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:छे बहुत",
+   "kind": "b",
+   "df": 65,
+   "f_V": 0.03235,
+   "f_others_macro": 0.00373,
+   "f_max_other": 0.03419,
+   "lift": 7.65,
+   "w": 1.815,
+   "groups": 64,
+   "districts": 10,
+   "prompts": 64,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.83,
+   "shared_with": [
+    [
+     "Angika",
+     0.0269
+    ],
+    [
+     "Surjapuri",
+     0.0342
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 3.14,
+   "stable_runs": 7
+  },
+  {
+   "feature": "t:पा रहे है",
+   "kind": "t",
+   "df": 14,
+   "f_V": 0.00697,
+   "f_others_macro": 0.00026,
+   "f_max_other": 0.00206,
+   "lift": 9.11,
+   "w": 1.806,
+   "groups": 14,
+   "districts": 6,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.96,
+   "shared_with": [],
+   "human_df": 13,
+   "asr_ratio": 1.07,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:पा रहे",
+   "kind": "b",
+   "df": 14,
+   "f_V": 0.00697,
+   "f_others_macro": 0.00028,
+   "f_max_other": 0.00206,
+   "lift": 8.89,
+   "w": 1.782,
+   "groups": 14,
+   "districts": 6,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.96,
+   "shared_with": [],
+   "human_df": 13,
+   "asr_ratio": 1.07,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:मिल",
+   "kind": "w",
+   "df": 36,
+   "f_V": 0.01792,
+   "f_others_macro": 0.00266,
+   "f_max_other": 0.01022,
+   "lift": 5.67,
+   "w": 1.45,
+   "groups": 35,
+   "districts": 11,
+   "prompts": 34,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.65,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.0077
+    ],
+    [
+     "Kumaoni",
+     0.0102
+    ],
+    [
+     "Magahi",
+     0.009
+    ]
+   ],
+   "human_df": 34,
+   "asr_ratio": 1.06,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:लगता है",
+   "kind": "b",
+   "df": 40,
+   "f_V": 0.01991,
+   "f_others_macro": 0.00333,
+   "f_max_other": 0.01075,
+   "lift": 5.2,
+   "w": 1.375,
+   "groups": 40,
+   "districts": 12,
+   "prompts": 40,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.67,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Khariboli",
+     0.007
+    ],
+    [
+     "Magahi",
+     0.0108
+    ],
+    [
+     "Surgujia",
+     0.0063
+    ],
+    [
+     "Surjapuri",
+     0.0085
+    ]
+   ],
+   "human_df": 34,
+   "asr_ratio": 1.17,
+   "stable_runs": 7
+  },
+  {
+   "feature": "t:देखने मे बहुत",
+   "kind": "t",
+   "df": 63,
+   "f_V": 0.03136,
+   "f_others_macro": 0.001,
+   "f_max_other": 0.00717,
+   "lift": 20.95,
+   "w": 2.819,
+   "groups": 62,
+   "districts": 15,
+   "prompts": 60,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 21.29,
+   "shared_with": [],
+   "human_df": 48,
+   "asr_ratio": 1.31,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:लागल छै",
+   "kind": "b",
+   "df": 40,
+   "f_V": 0.01991,
+   "f_others_macro": 0.0005,
+   "f_max_other": 0.00896,
+   "lift": 19.96,
+   "w": 2.721,
+   "groups": 40,
+   "districts": 5,
+   "prompts": 40,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.43,
+   "shared_with": [
+    [
+     "Angika",
+     0.009
+    ]
+   ],
+   "human_df": 74,
+   "asr_ratio": 0.55,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:है देखने मे",
+   "kind": "t",
+   "df": 60,
+   "f_V": 0.02987,
+   "f_others_macro": 0.00134,
+   "f_max_other": 0.01434,
+   "lift": 16.24,
+   "w": 2.559,
+   "groups": 58,
+   "districts": 15,
+   "prompts": 57,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 21.2,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0143
+    ]
+   ],
+   "human_df": 54,
+   "asr_ratio": 1.11,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:है देखने",
+   "kind": "b",
+   "df": 62,
+   "f_V": 0.03086,
+   "f_others_macro": 0.00144,
+   "f_max_other": 0.01613,
+   "lift": 15.92,
+   "w": 2.543,
+   "groups": 60,
+   "districts": 15,
+   "prompts": 59,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.98,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0161
+    ]
+   ],
+   "human_df": 56,
+   "asr_ratio": 1.11,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:जे छे",
+   "kind": "b",
+   "df": 11,
+   "f_V": 0.00548,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 10.95,
+   "w": 1.963,
+   "groups": 11,
+   "districts": 5,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.17,
+   "shared_with": [],
+   "human_df": 20,
+   "asr_ratio": 0.57,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:हमरा",
+   "kind": "w",
+   "df": 34,
+   "f_V": 0.01692,
+   "f_others_macro": 0.00168,
+   "f_max_other": 0.01791,
+   "lift": 7.75,
+   "w": 1.755,
+   "groups": 33,
+   "districts": 6,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.61,
+   "shared_with": [
+    [
+     "Angika",
+     0.0179
+    ],
+    [
+     "Bajjika",
+     0.0097
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 0.5,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:लागल छे",
+   "kind": "b",
+   "df": 48,
+   "f_V": 0.02389,
+   "f_others_macro": 0.00291,
+   "f_max_other": 0.02985,
+   "lift": 7.01,
+   "w": 1.696,
+   "groups": 48,
+   "districts": 7,
+   "prompts": 47,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.47,
+   "shared_with": [
+    [
+     "Angika",
+     0.0299
+    ],
+    [
+     "Surjapuri",
+     0.0171
+    ]
+   ],
+   "human_df": 26,
+   "asr_ratio": 1.81,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:बहुत अच्छे",
+   "kind": "b",
+   "df": 23,
+   "f_V": 0.01145,
+   "f_others_macro": 0.00123,
+   "f_max_other": 0.00438,
+   "lift": 6.63,
+   "w": 1.55,
+   "groups": 22,
+   "districts": 7,
+   "prompts": 22,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.68,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0037
+    ],
+    [
+     "Kumaoni",
+     0.0044
+    ],
+    [
+     "Magahi",
+     0.0036
+    ]
+   ],
+   "human_df": 25,
+   "asr_ratio": 0.92,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:बाद",
+   "kind": "w",
+   "df": 25,
+   "f_V": 0.01244,
+   "f_others_macro": 0.00186,
+   "f_max_other": 0.00896,
+   "lift": 5.26,
+   "w": 1.33,
+   "groups": 25,
+   "districts": 6,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.27,
+   "shared_with": [
+    [
+     "Angika",
+     0.009
+    ],
+    [
+     "Bajjika",
+     0.0039
+    ],
+    [
+     "Bhojpuri",
+     0.0058
+    ],
+    [
+     "Surjapuri",
+     0.0085
+    ]
+   ],
+   "human_df": 49,
+   "asr_ratio": 0.52,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:्छे",
+   "kind": "e3",
+   "df": 47,
+   "f_V": 0.02339,
+   "f_others_macro": 0.00489,
+   "f_max_other": 0.01624,
+   "lift": 4.34,
+   "w": 1.214,
+   "groups": 47,
+   "districts": 11,
+   "prompts": 47,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.84,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Bundeli",
+     0.0149
+    ],
+    [
+     "Haryanvi",
+     0.01
+    ],
+    [
+     "Khariboli",
+     0.0162
+    ],
+    [
+     "Kumaoni",
+     0.0088
+    ]
+   ],
+   "human_df": 45,
+   "asr_ratio": 1.04,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:लग रहा है",
+   "kind": "t",
+   "df": 94,
+   "f_V": 0.04679,
+   "f_others_macro": 0.01115,
+   "f_max_other": 0.05197,
+   "lift": 4.02,
+   "w": 1.205,
+   "groups": 91,
+   "districts": 19,
+   "prompts": 91,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.93,
+   "shared_with": [
+    [
+     "Angika",
+     0.0149
+    ],
+    [
+     "Bajjika",
+     0.0212
+    ],
+    [
+     "Haryanvi",
+     0.0303
+    ],
+    [
+     "Khariboli",
+     0.0302
+    ],
+    [
+     "Magahi",
+     0.052
+    ]
+   ],
+   "human_df": 77,
+   "asr_ratio": 1.22,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:अच्छे",
+   "kind": "w",
+   "df": 45,
+   "f_V": 0.0224,
+   "f_others_macro": 0.00468,
+   "f_max_other": 0.01624,
+   "lift": 4.32,
+   "w": 1.205,
+   "groups": 45,
+   "districts": 10,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.74,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Bundeli",
+     0.0112
+    ],
+    [
+     "Haryanvi",
+     0.01
+    ],
+    [
+     "Khariboli",
+     0.0162
+    ],
+    [
+     "Kumaoni",
+     0.0088
+    ]
+   ],
+   "human_df": 45,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:लगता",
+   "kind": "w",
+   "df": 42,
+   "f_V": 0.02091,
+   "f_others_macro": 0.0045,
+   "f_max_other": 0.01581,
+   "lift": 4.18,
+   "w": 1.163,
+   "groups": 42,
+   "districts": 12,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.21,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Bajjika",
+     0.0097
+    ],
+    [
+     "Bhojpuri",
+     0.0158
+    ],
+    [
+     "Khariboli",
+     0.007
+    ],
+    [
+     "Magahi",
+     0.0108
+    ],
+    [
+     "Surgujia",
+     0.0063
+    ],
+    [
+     "Surjapuri",
+     0.0085
+    ]
+   ],
+   "human_df": 36,
+   "asr_ratio": 1.16,
+   "stable_runs": 6
+  }
+ ],
+ "Marwari": [
+  {
+   "feature": "w:लाइटा",
+   "kind": "w",
+   "df": 19,
+   "f_V": 0.02184,
+   "f_others_macro": 0.00038,
+   "f_max_other": 0.00683,
+   "lift": 24.83,
+   "w": 2.804,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 25.75,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0068
+    ]
+   ],
+   "human_df": 11,
+   "asr_ratio": 1.67,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:यने",
+   "kind": "e3",
+   "df": 14,
+   "f_V": 0.01609,
+   "f_others_macro": 0.00015,
+   "f_max_other": 0.00273,
+   "lift": 24.69,
+   "w": 2.741,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 27.49,
+   "shared_with": [],
+   "human_df": 38,
+   "asr_ratio": 0.38,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:मायने",
+   "kind": "w",
+   "df": 14,
+   "f_V": 0.01609,
+   "f_others_macro": 0.00015,
+   "f_max_other": 0.00273,
+   "lift": 24.69,
+   "w": 2.741,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 27.49,
+   "shared_with": [],
+   "human_df": 38,
+   "asr_ratio": 0.38,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:माइन",
+   "kind": "w",
+   "df": 22,
+   "f_V": 0.02529,
+   "f_others_macro": 0.00067,
+   "f_max_other": 0.01161,
+   "lift": 21.61,
+   "w": 2.691,
+   "groups": 21,
+   "districts": 2,
+   "prompts": 21,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 19.22,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0116
+    ]
+   ],
+   "human_df": 22,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:इटा",
+   "kind": "e3",
+   "df": 19,
+   "f_V": 0.02184,
+   "f_others_macro": 0.00065,
+   "f_max_other": 0.00751,
+   "lift": 19.06,
+   "w": 2.54,
+   "groups": 18,
+   "districts": 2,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 24.23,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0075
+    ]
+   ],
+   "human_df": 11,
+   "asr_ratio": 1.67,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ेडा",
+   "kind": "e3",
+   "df": 33,
+   "f_V": 0.03793,
+   "f_others_macro": 0.00215,
+   "f_max_other": 0.01776,
+   "lift": 14.29,
+   "w": 2.343,
+   "groups": 33,
+   "districts": 2,
+   "prompts": 33,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.34,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0178
+    ]
+   ],
+   "human_df": 44,
+   "asr_ratio": 0.76,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:है भी",
+   "kind": "b",
+   "df": 10,
+   "f_V": 0.01149,
+   "f_others_macro": 0.00018,
+   "f_max_other": 0.00205,
+   "lift": 16.83,
+   "w": 2.291,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.91,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 11.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:अटे",
+   "kind": "w",
+   "df": 18,
+   "f_V": 0.02069,
+   "f_others_macro": 0.00089,
+   "f_max_other": 0.01571,
+   "lift": 14.86,
+   "w": 2.281,
+   "groups": 18,
+   "districts": 1,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 20.23,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0157
+    ]
+   ],
+   "human_df": 16,
+   "asr_ratio": 1.12,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:पडी है",
+   "kind": "b",
+   "df": 42,
+   "f_V": 0.04828,
+   "f_others_macro": 0.0049,
+   "f_max_other": 0.0404,
+   "lift": 8.94,
+   "w": 1.909,
+   "groups": 42,
+   "districts": 2,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.97,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0404
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Rajasthani",
+     0.0164
+    ]
+   ],
+   "human_df": 38,
+   "asr_ratio": 1.1,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:दिख रही है",
+   "kind": "t",
+   "df": 101,
+   "f_V": 0.11609,
+   "f_others_macro": 0.01728,
+   "f_max_other": 0.08081,
+   "lift": 6.53,
+   "w": 1.697,
+   "groups": 98,
+   "districts": 2,
+   "prompts": 98,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.57,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0372
+    ],
+    [
+     "Haryanvi",
+     0.0808
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Rajasthani",
+     0.0458
+    ]
+   ],
+   "human_df": 60,
+   "asr_ratio": 1.67,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:है दो",
+   "kind": "b",
+   "df": 34,
+   "f_V": 0.03908,
+   "f_others_macro": 0.00492,
+   "f_max_other": 0.02088,
+   "lift": 7.2,
+   "w": 1.662,
+   "groups": 34,
+   "districts": 2,
+   "prompts": 34,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.84,
+   "shared_with": [
+    [
+     "Khariboli",
+     0.0209
+    ],
+    [
+     "Rajasthani",
+     0.0178
+    ]
+   ],
+   "human_df": 39,
+   "asr_ratio": 0.88,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:पडी",
+   "kind": "w",
+   "df": 45,
+   "f_V": 0.05172,
+   "f_others_macro": 0.00699,
+   "f_max_other": 0.0404,
+   "lift": 6.9,
+   "w": 1.659,
+   "groups": 45,
+   "districts": 2,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.94,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0404
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Khariboli",
+     0.0186
+    ],
+    [
+     "Rajasthani",
+     0.0239
+    ]
+   ],
+   "human_df": 41,
+   "asr_ratio": 1.1,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:दिख रही",
+   "kind": "b",
+   "df": 108,
+   "f_V": 0.12414,
+   "f_others_macro": 0.01957,
+   "f_max_other": 0.08081,
+   "lift": 6.18,
+   "w": 1.648,
+   "groups": 105,
+   "districts": 2,
+   "prompts": 105,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.28,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0558
+    ],
+    [
+     "Haryanvi",
+     0.0808
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Rajasthani",
+     0.0587
+    ]
+   ],
+   "human_df": 64,
+   "asr_ratio": 1.68,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:खडी है",
+   "kind": "b",
+   "df": 48,
+   "f_V": 0.05517,
+   "f_others_macro": 0.00793,
+   "f_max_other": 0.0362,
+   "lift": 6.55,
+   "w": 1.615,
+   "groups": 46,
+   "districts": 2,
+   "prompts": 46,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.31,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.026
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Khariboli",
+     0.0255
+    ],
+    [
+     "Rajasthani",
+     0.0362
+    ]
+   ],
+   "human_df": 49,
+   "asr_ratio": 0.98,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:की फोटो है",
+   "kind": "t",
+   "df": 19,
+   "f_V": 0.02184,
+   "f_others_macro": 0.00243,
+   "f_max_other": 0.0202,
+   "lift": 7.46,
+   "w": 1.602,
+   "groups": 19,
+   "districts": 2,
+   "prompts": 19,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.36,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Khariboli",
+     0.007
+    ],
+    [
+     "Kumaoni",
+     0.0073
+    ],
+    [
+     "Rajasthani",
+     0.0075
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 0.95,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:पडे",
+   "kind": "w",
+   "df": 32,
+   "f_V": 0.03678,
+   "f_others_macro": 0.00498,
+   "f_max_other": 0.01571,
+   "lift": 6.72,
+   "w": 1.583,
+   "groups": 31,
+   "districts": 2,
+   "prompts": 31,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.55,
+   "shared_with": [
+    [
+     "Angika",
+     0.0119
+    ],
+    [
+     "Bundeli",
+     0.0112
+    ],
+    [
+     "Rajasthani",
+     0.0157
+    ]
+   ],
+   "human_df": 11,
+   "asr_ratio": 2.75,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:फोटो है",
+   "kind": "b",
+   "df": 24,
+   "f_V": 0.02759,
+   "f_others_macro": 0.00382,
+   "f_max_other": 0.0202,
+   "lift": 6.39,
+   "w": 1.487,
+   "groups": 24,
+   "districts": 2,
+   "prompts": 24,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.32,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Kumaoni",
+     0.0088
+    ],
+    [
+     "Rajasthani",
+     0.0089
+    ]
+   ],
+   "human_df": 28,
+   "asr_ratio": 0.86,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:की फोटो",
+   "kind": "b",
+   "df": 29,
+   "f_V": 0.03333,
+   "f_others_macro": 0.00526,
+   "f_max_other": 0.0303,
+   "lift": 5.78,
+   "w": 1.418,
+   "groups": 29,
+   "districts": 2,
+   "prompts": 29,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.91,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0303
+    ],
+    [
+     "Kumaoni",
+     0.0219
+    ],
+    [
+     "Rajasthani",
+     0.013
+    ]
+   ],
+   "human_df": 25,
+   "asr_ratio": 1.15,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:डो",
+   "kind": "e2",
+   "df": 53,
+   "f_V": 0.06092,
+   "f_others_macro": 0.01111,
+   "f_max_other": 0.03846,
+   "lift": 5.25,
+   "w": 1.406,
+   "groups": 51,
+   "districts": 2,
+   "prompts": 51,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.84,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0246
+    ],
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Khariboli",
+     0.0232
+    ],
+    [
+     "Rajasthani",
+     0.0335
+    ]
+   ],
+   "human_df": 106,
+   "asr_ratio": 0.5,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रही है",
+   "kind": "b",
+   "df": 203,
+   "f_V": 0.23333,
+   "f_others_macro": 0.05385,
+   "f_max_other": 0.19258,
+   "lift": 4.29,
+   "w": 1.337,
+   "groups": 194,
+   "districts": 2,
+   "prompts": 192,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.7,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.1375
+    ],
+    [
+     "Haryanvi",
+     0.1414
+    ],
+    [
+     "Jaipuri",
+     0.0962
+    ],
+    [
+     "Khariboli",
+     0.1926
+    ],
+    [
+     "Kumaoni",
+     0.1635
+    ],
+    [
+     "Rajasthani",
+     0.1113
+    ]
+   ],
+   "human_df": 127,
+   "asr_ratio": 1.59,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:है एक",
+   "kind": "b",
+   "df": 115,
+   "f_V": 0.13218,
+   "f_others_macro": 0.04089,
+   "f_max_other": 0.13462,
+   "lift": 3.19,
+   "w": 0.993,
+   "groups": 110,
+   "districts": 2,
+   "prompts": 110,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.9,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0531
+    ],
+    [
+     "Bundeli",
+     0.0743
+    ],
+    [
+     "Haryanvi",
+     0.0909
+    ],
+    [
+     "Jaipuri",
+     0.1346
+    ],
+    [
+     "Khariboli",
+     0.065
+    ],
+    [
+     "Kumaoni",
+     0.0861
+    ],
+    [
+     "Rajasthani",
+     0.0512
+    ]
+   ],
+   "human_df": 108,
+   "asr_ratio": 1.06,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:पडे है",
+   "kind": "b",
+   "df": 20,
+   "f_V": 0.02299,
+   "f_others_macro": 0.00156,
+   "f_max_other": 0.0101,
+   "lift": 11.17,
+   "w": 2.015,
+   "groups": 20,
+   "districts": 2,
+   "prompts": 20,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.34,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0101
+    ],
+    [
+     "Rajasthani",
+     0.0082
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 2.33,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ेडी",
+   "kind": "e3",
+   "df": 25,
+   "f_V": 0.02874,
+   "f_others_macro": 0.00227,
+   "f_max_other": 0.0202,
+   "lift": 10.38,
+   "w": 1.979,
+   "groups": 25,
+   "districts": 2,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.42,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0202
+    ]
+   ],
+   "human_df": 51,
+   "asr_ratio": 0.5,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:मने",
+   "kind": "w",
+   "df": 23,
+   "f_V": 0.02644,
+   "f_others_macro": 0.00206,
+   "f_max_other": 0.0303,
+   "lift": 10.31,
+   "w": 1.959,
+   "groups": 23,
+   "districts": 2,
+   "prompts": 23,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 21.19,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0303
+    ]
+   ],
+   "human_df": 19,
+   "asr_ratio": 1.2,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:एक मोटरसाइकिल",
+   "kind": "b",
+   "df": 8,
+   "f_V": 0.0092,
+   "f_others_macro": 0.00034,
+   "f_max_other": 0.00372,
+   "lift": 10.95,
+   "w": 1.817,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.98,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0037
+    ]
+   ],
+   "human_df": 2,
+   "asr_ratio": 3.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:है तीन",
+   "kind": "b",
+   "df": 14,
+   "f_V": 0.01609,
+   "f_others_macro": 0.00173,
+   "f_max_other": 0.01093,
+   "lift": 7.21,
+   "w": 1.511,
+   "groups": 14,
+   "districts": 2,
+   "prompts": 14,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.94,
+   "shared_with": [
+    [
+     "Magahi",
+     0.0072
+    ],
+    [
+     "Rajasthani",
+     0.0109
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 1.07,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:ेडो",
+   "kind": "e3",
+   "df": 21,
+   "f_V": 0.02414,
+   "f_others_macro": 0.0033,
+   "f_max_other": 0.01923,
+   "lift": 6.36,
+   "w": 1.459,
+   "groups": 21,
+   "districts": 2,
+   "prompts": 21,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.25,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0097
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Rajasthani",
+     0.0164
+    ]
+   ],
+   "human_df": 57,
+   "asr_ratio": 0.38,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:पास मे",
+   "kind": "b",
+   "df": 17,
+   "f_V": 0.01954,
+   "f_others_macro": 0.00302,
+   "f_max_other": 0.01981,
+   "lift": 5.55,
+   "w": 1.286,
+   "groups": 17,
+   "districts": 2,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.52,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0074
+    ],
+    [
+     "Rajasthani",
+     0.0198
+    ]
+   ],
+   "human_df": 17,
+   "asr_ratio": 1.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:खडे है",
+   "kind": "b",
+   "df": 40,
+   "f_V": 0.04598,
+   "f_others_macro": 0.00926,
+   "f_max_other": 0.03846,
+   "lift": 4.71,
+   "w": 1.261,
+   "groups": 40,
+   "districts": 2,
+   "prompts": 40,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.17,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0223
+    ],
+    [
+     "Chhattisgarhi",
+     0.019
+    ],
+    [
+     "Jaipuri",
+     0.0385
+    ],
+    [
+     "Khariboli",
+     0.0209
+    ],
+    [
+     "Magahi",
+     0.0143
+    ],
+    [
+     "Rajasthani",
+     0.0191
+    ]
+   ],
+   "human_df": 15,
+   "asr_ratio": 2.56,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:खडी",
+   "kind": "w",
+   "df": 69,
+   "f_V": 0.07931,
+   "f_others_macro": 0.02367,
+   "f_max_other": 0.09615,
+   "lift": 3.28,
+   "w": 0.968,
+   "groups": 66,
+   "districts": 2,
+   "prompts": 66,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.01,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0483
+    ],
+    [
+     "Jaipuri",
+     0.0962
+    ],
+    [
+     "Khariboli",
+     0.0534
+    ],
+    [
+     "Kumaoni",
+     0.0496
+    ],
+    [
+     "Rajasthani",
+     0.0546
+    ]
+   ],
+   "human_df": 66,
+   "asr_ratio": 1.04,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:रही",
+   "kind": "w",
+   "df": 216,
+   "f_V": 0.24828,
+   "f_others_macro": 0.0699,
+   "f_max_other": 0.25478,
+   "lift": 3.53,
+   "w": 1.145,
+   "groups": 206,
+   "districts": 2,
+   "prompts": 204,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.78,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.1784
+    ],
+    [
+     "Haryanvi",
+     0.1515
+    ],
+    [
+     "Jaipuri",
+     0.0962
+    ],
+    [
+     "Khariboli",
+     0.2042
+    ],
+    [
+     "Kumaoni",
+     0.1737
+    ],
+    [
+     "Rajasthani",
+     0.2548
+    ]
+   ],
+   "human_df": 131,
+   "asr_ratio": 1.64,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:दिख",
+   "kind": "w",
+   "df": 163,
+   "f_V": 0.18736,
+   "f_others_macro": 0.05807,
+   "f_max_other": 0.19331,
+   "lift": 3.2,
+   "w": 1.026,
+   "groups": 157,
+   "districts": 2,
+   "prompts": 156,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.37,
+   "shared_with": [
+    [
+     "Angika",
+     0.1134
+    ],
+    [
+     "Bundeli",
+     0.1933
+    ],
+    [
+     "Haryanvi",
+     0.1414
+    ],
+    [
+     "Jaipuri",
+     0.1731
+    ],
+    [
+     "Khariboli",
+     0.0789
+    ],
+    [
+     "Kumaoni",
+     0.0934
+    ],
+    [
+     "Rajasthani",
+     0.1066
+    ]
+   ],
+   "human_df": 174,
+   "asr_ratio": 0.94,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:है दो तीन",
+   "kind": "t",
+   "df": 13,
+   "f_V": 0.01494,
+   "f_others_macro": 0.00063,
+   "f_max_other": 0.00615,
+   "lift": 13.22,
+   "w": 2.103,
+   "groups": 13,
+   "districts": 2,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.9,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0061
+    ]
+   ],
+   "human_df": 13,
+   "asr_ratio": 1.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "e2:डु",
+   "kind": "e2",
+   "df": 16,
+   "f_V": 0.01839,
+   "f_others_macro": 0.00129,
+   "f_max_other": 0.01144,
+   "lift": 10.28,
+   "w": 1.891,
+   "groups": 16,
+   "districts": 1,
+   "prompts": 16,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 9.41,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0114
+    ],
+    [
+     "Kumaoni",
+     0.0058
+    ]
+   ],
+   "human_df": 0,
+   "asr_ratio": 17.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:साइड",
+   "kind": "w",
+   "df": 86,
+   "f_V": 0.09885,
+   "f_others_macro": 0.03199,
+   "f_max_other": 0.11,
+   "lift": 3.04,
+   "w": 0.916,
+   "groups": 84,
+   "districts": 2,
+   "prompts": 84,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.24,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.11
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Khariboli",
+     0.0487
+    ],
+    [
+     "Kumaoni",
+     0.0438
+    ],
+    [
+     "Maithili",
+     0.0373
+    ],
+    [
+     "Rajasthani",
+     0.0383
+    ],
+    [
+     "Sadri",
+     0.0442
+    ]
+   ],
+   "human_df": 68,
+   "asr_ratio": 1.26,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:को कलर",
+   "kind": "b",
+   "df": 9,
+   "f_V": 0.01034,
+   "f_others_macro": 0.00045,
+   "f_max_other": 0.00751,
+   "lift": 10.95,
+   "w": 1.84,
+   "groups": 9,
+   "districts": 2,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.03,
+   "shared_with": [
+    [
+     "Rajasthani",
+     0.0075
+    ]
+   ],
+   "human_df": 12,
+   "asr_ratio": 0.77,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:फोटो मे एक",
+   "kind": "t",
+   "df": 8,
+   "f_V": 0.0092,
+   "f_others_macro": 0.00036,
+   "f_max_other": 0.00232,
+   "lift": 10.71,
+   "w": 1.794,
+   "groups": 8,
+   "districts": 2,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.5,
+   "shared_with": [],
+   "human_df": 5,
+   "asr_ratio": 1.5,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:दिखरो",
+   "kind": "w",
+   "df": 10,
+   "f_V": 0.01149,
+   "f_others_macro": 0.00068,
+   "f_max_other": 0.0101,
+   "lift": 9.78,
+   "w": 1.749,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.48,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0101
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.22,
+   "stable_runs": 6
+  },
+  {
+   "feature": "t:आदमी खडे है",
+   "kind": "t",
+   "df": 19,
+   "f_V": 0.02184,
+   "f_others_macro": 0.0023,
+   "f_max_other": 0.01923,
+   "lift": 7.8,
+   "w": 1.646,
+   "groups": 19,
+   "districts": 2,
+   "prompts": 19,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.23,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.0112
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Rajasthani",
+     0.0075
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 2.86,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:खरो",
+   "kind": "e3",
+   "df": 11,
+   "f_V": 0.01264,
+   "f_others_macro": 0.00114,
+   "f_max_other": 0.0101,
+   "lift": 7.73,
+   "w": 1.532,
+   "groups": 11,
+   "districts": 2,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.21,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.0101
+    ],
+    [
+     "Khariboli",
+     0.0046
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.33,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e2:इड",
+   "kind": "e2",
+   "df": 90,
+   "f_V": 0.10345,
+   "f_others_macro": 0.03283,
+   "f_max_other": 0.11,
+   "lift": 3.1,
+   "w": 0.941,
+   "groups": 88,
+   "districts": 2,
+   "prompts": 88,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.28,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.11
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Khariboli",
+     0.0487
+    ],
+    [
+     "Kumaoni",
+     0.0453
+    ],
+    [
+     "Maithili",
+     0.0388
+    ],
+    [
+     "Rajasthani",
+     0.0437
+    ],
+    [
+     "Sadri",
+     0.0442
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 1.3,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:ाइड",
+   "kind": "e3",
+   "df": 90,
+   "f_V": 0.10345,
+   "f_others_macro": 0.03283,
+   "f_max_other": 0.11,
+   "lift": 3.1,
+   "w": 0.941,
+   "groups": 88,
+   "districts": 2,
+   "prompts": 88,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.28,
+   "shared_with": [
+    [
+     "Haryanvi",
+     0.11
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ],
+    [
+     "Khariboli",
+     0.0487
+    ],
+    [
+     "Kumaoni",
+     0.0453
+    ],
+    [
+     "Maithili",
+     0.0388
+    ],
+    [
+     "Rajasthani",
+     0.0437
+    ],
+    [
+     "Sadri",
+     0.0442
+    ]
+   ],
+   "human_df": 69,
+   "asr_ratio": 1.3,
+   "stable_runs": 6
+  }
+ ],
+ "Rajasthani": [
+  {
+   "feature": "t:आ रही छे",
+   "kind": "t",
+   "df": 117,
+   "f_V": 0.07992,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 159.84,
+   "w": 4.907,
+   "groups": 98,
+   "districts": 1,
+   "prompts": 98,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 169.11,
+   "shared_with": [],
+   "human_df": 48,
+   "asr_ratio": 2.41,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:दे रही छे",
+   "kind": "t",
+   "df": 85,
+   "f_V": 0.05806,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 116.12,
+   "w": 4.558,
+   "groups": 74,
+   "districts": 1,
+   "prompts": 74,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 119.5,
+   "shared_with": [],
+   "human_df": 46,
+   "asr_ratio": 1.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रही छे",
+   "kind": "b",
+   "df": 160,
+   "f_V": 0.10929,
+   "f_others_macro": 0.00052,
+   "f_max_other": 0.00345,
+   "lift": 107.47,
+   "w": 4.535,
+   "groups": 132,
+   "districts": 1,
+   "prompts": 132,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 89.62,
+   "shared_with": [],
+   "human_df": 90,
+   "asr_ratio": 1.77,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:को रग सफेद",
+   "kind": "t",
+   "df": 65,
+   "f_V": 0.0444,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 88.8,
+   "w": 4.262,
+   "groups": 61,
+   "districts": 1,
+   "prompts": 61,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 92.45,
+   "shared_with": [],
+   "human_df": 79,
+   "asr_ratio": 0.82,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:को रग",
+   "kind": "b",
+   "df": 161,
+   "f_V": 0.10997,
+   "f_others_macro": 0.0012,
+   "f_max_other": 0.0202,
+   "lift": 64.56,
+   "w": 4.026,
+   "groups": 139,
+   "districts": 1,
+   "prompts": 139,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 34.96,
+   "shared_with": [],
+   "human_df": 190,
+   "asr_ratio": 0.85,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रग सफेद",
+   "kind": "b",
+   "df": 116,
+   "f_V": 0.07923,
+   "f_others_macro": 0.00077,
+   "f_max_other": 0.00696,
+   "lift": 62.52,
+   "w": 3.967,
+   "groups": 104,
+   "districts": 1,
+   "prompts": 104,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 122.06,
+   "shared_with": [],
+   "human_df": 116,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रग हरो",
+   "kind": "b",
+   "df": 48,
+   "f_V": 0.03279,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 65.57,
+   "w": 3.925,
+   "groups": 47,
+   "districts": 1,
+   "prompts": 47,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 51.86,
+   "shared_with": [],
+   "human_df": 53,
+   "asr_ratio": 0.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखीरी",
+   "kind": "w",
+   "df": 48,
+   "f_V": 0.03279,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 65.57,
+   "w": 3.925,
+   "groups": 45,
+   "districts": 1,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 60.88,
+   "shared_with": [],
+   "human_df": 1,
+   "asr_ratio": 24.5,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखीरु",
+   "kind": "w",
+   "df": 47,
+   "f_V": 0.0321,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 64.21,
+   "w": 3.901,
+   "groups": 42,
+   "districts": 1,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 65.39,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 48.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:पेड को रग",
+   "kind": "t",
+   "df": 45,
+   "f_V": 0.03074,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 61.48,
+   "w": 3.852,
+   "groups": 44,
+   "districts": 1,
+   "prompts": 44,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 49.61,
+   "shared_with": [],
+   "human_df": 44,
+   "asr_ratio": 1.02,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:आ रहे छे",
+   "kind": "t",
+   "df": 44,
+   "f_V": 0.03005,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 60.11,
+   "w": 3.827,
+   "groups": 42,
+   "districts": 1,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 58.62,
+   "shared_with": [],
+   "human_df": 10,
+   "asr_ratio": 4.09,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ीरु",
+   "kind": "e3",
+   "df": 47,
+   "f_V": 0.0321,
+   "f_others_macro": 6e-05,
+   "f_max_other": 0.00115,
+   "lift": 56.94,
+   "w": 3.781,
+   "groups": 42,
+   "districts": 1,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 54.91,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 48.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:री",
+   "kind": "w",
+   "df": 65,
+   "f_V": 0.0444,
+   "f_others_macro": 0.00032,
+   "f_max_other": 0.0046,
+   "lift": 54.06,
+   "w": 3.766,
+   "groups": 58,
+   "districts": 1,
+   "prompts": 58,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 63.68,
+   "shared_with": [],
+   "human_df": 172,
+   "asr_ratio": 0.38,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:भूरो",
+   "kind": "w",
+   "df": 43,
+   "f_V": 0.02937,
+   "f_others_macro": 2e-05,
+   "f_max_other": 0.00034,
+   "lift": 56.58,
+   "w": 3.764,
+   "groups": 41,
+   "districts": 1,
+   "prompts": 41,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 56.9,
+   "shared_with": [],
+   "human_df": 55,
+   "asr_ratio": 0.79,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखिरु",
+   "kind": "w",
+   "df": 41,
+   "f_V": 0.02801,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 56.01,
+   "w": 3.748,
+   "groups": 37,
+   "districts": 1,
+   "prompts": 37,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 45.1,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 42.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:िरु",
+   "kind": "e3",
+   "df": 41,
+   "f_V": 0.02801,
+   "f_others_macro": 5e-05,
+   "f_max_other": 0.00088,
+   "lift": 51.02,
+   "w": 3.654,
+   "groups": 37,
+   "districts": 1,
+   "prompts": 37,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 39.0,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 42.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:अठे",
+   "kind": "w",
+   "df": 37,
+   "f_V": 0.02527,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 50.55,
+   "w": 3.632,
+   "groups": 37,
+   "districts": 1,
+   "prompts": 37,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 51.86,
+   "shared_with": [],
+   "human_df": 121,
+   "asr_ratio": 0.31,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखी",
+   "kind": "w",
+   "df": 92,
+   "f_V": 0.06284,
+   "f_others_macro": 0.00098,
+   "f_max_other": 0.00805,
+   "lift": 42.54,
+   "w": 3.561,
+   "groups": 82,
+   "districts": 1,
+   "prompts": 81,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 54.93,
+   "shared_with": [],
+   "human_df": 6,
+   "asr_ratio": 13.29,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हरो",
+   "kind": "w",
+   "df": 56,
+   "f_V": 0.03825,
+   "f_others_macro": 0.00038,
+   "f_max_other": 0.00372,
+   "lift": 43.31,
+   "w": 3.528,
+   "groups": 54,
+   "districts": 1,
+   "prompts": 54,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 34.84,
+   "shared_with": [],
+   "human_df": 60,
+   "asr_ratio": 0.93,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:नजर आ रही",
+   "kind": "t",
+   "df": 157,
+   "f_V": 0.10724,
+   "f_others_macro": 0.00223,
+   "f_max_other": 0.01034,
+   "lift": 39.26,
+   "w": 3.527,
+   "groups": 132,
+   "districts": 2,
+   "prompts": 132,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 56.52,
+   "shared_with": [],
+   "human_df": 64,
+   "asr_ratio": 2.43,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ीरी",
+   "kind": "e3",
+   "df": 48,
+   "f_V": 0.03279,
+   "f_others_macro": 0.00029,
+   "f_max_other": 0.00299,
+   "lift": 41.37,
+   "w": 3.464,
+   "groups": 45,
+   "districts": 1,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 55.37,
+   "shared_with": [],
+   "human_df": 1,
+   "asr_ratio": 24.5,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:िखी",
+   "kind": "e3",
+   "df": 94,
+   "f_V": 0.06421,
+   "f_others_macro": 0.00149,
+   "f_max_other": 0.0092,
+   "lift": 32.3,
+   "w": 3.288,
+   "groups": 84,
+   "districts": 1,
+   "prompts": 83,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 49.42,
+   "shared_with": [],
+   "human_df": 7,
+   "asr_ratio": 11.88,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:ूरो",
+   "kind": "e3",
+   "df": 44,
+   "f_V": 0.03005,
+   "f_others_macro": 0.00041,
+   "f_max_other": 0.00411,
+   "lift": 33.03,
+   "w": 3.228,
+   "groups": 42,
+   "districts": 1,
+   "prompts": 42,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 33.38,
+   "shared_with": [],
+   "human_df": 56,
+   "asr_ratio": 0.79,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:देखो रग",
+   "kind": "b",
+   "df": 25,
+   "f_V": 0.01708,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 34.15,
+   "w": 3.186,
+   "groups": 19,
+   "districts": 1,
+   "prompts": 19,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 36.08,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 26.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:दे रहे छे",
+   "kind": "t",
+   "df": 25,
+   "f_V": 0.01708,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 34.15,
+   "w": 3.186,
+   "groups": 25,
+   "districts": 1,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 36.08,
+   "shared_with": [],
+   "human_df": 5,
+   "asr_ratio": 4.33,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रही छै",
+   "kind": "b",
+   "df": 34,
+   "f_V": 0.02322,
+   "f_others_macro": 0.00023,
+   "f_max_other": 0.00193,
+   "lift": 31.97,
+   "w": 3.163,
+   "groups": 34,
+   "districts": 1,
+   "prompts": 34,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 30.99,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 35.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:रग सफेद दिखाई",
+   "kind": "t",
+   "df": 28,
+   "f_V": 0.01913,
+   "f_others_macro": 0.00013,
+   "f_max_other": 0.00232,
+   "lift": 30.41,
+   "w": 3.086,
+   "groups": 26,
+   "districts": 1,
+   "prompts": 26,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 42.84,
+   "shared_with": [],
+   "human_df": 28,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "t:आसमान को रग",
+   "kind": "t",
+   "df": 22,
+   "f_V": 0.01503,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 30.05,
+   "w": 3.039,
+   "groups": 22,
+   "districts": 1,
+   "prompts": 22,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.55,
+   "shared_with": [],
+   "human_df": 29,
+   "asr_ratio": 0.77,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:आसमान को",
+   "kind": "b",
+   "df": 23,
+   "f_V": 0.01571,
+   "f_others_macro": 6e-05,
+   "f_max_other": 0.00115,
+   "lift": 27.86,
+   "w": 2.97,
+   "groups": 23,
+   "districts": 1,
+   "prompts": 23,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.55,
+   "shared_with": [],
+   "human_df": 29,
+   "asr_ratio": 0.8,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:आ रही",
+   "kind": "b",
+   "df": 163,
+   "f_V": 0.11134,
+   "f_others_macro": 0.00478,
+   "f_max_other": 0.01923,
+   "lift": 21.08,
+   "w": 2.908,
+   "groups": 138,
+   "districts": 2,
+   "prompts": 138,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 24.9,
+   "shared_with": [],
+   "human_df": 66,
+   "asr_ratio": 2.45,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:रहे छे",
+   "kind": "b",
+   "df": 67,
+   "f_V": 0.04577,
+   "f_others_macro": 0.00152,
+   "f_max_other": 0.01195,
+   "lift": 22.68,
+   "w": 2.901,
+   "groups": 64,
+   "districts": 1,
+   "prompts": 64,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.96,
+   "shared_with": [],
+   "human_df": 17,
+   "asr_ratio": 3.78,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:रु",
+   "kind": "e2",
+   "df": 103,
+   "f_V": 0.07036,
+   "f_others_macro": 0.00289,
+   "f_max_other": 0.01144,
+   "lift": 20.78,
+   "w": 2.855,
+   "groups": 85,
+   "districts": 1,
+   "prompts": 85,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 23.57,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 104.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:सफेद दिखाई",
+   "kind": "b",
+   "df": 30,
+   "f_V": 0.02049,
+   "f_others_macro": 0.00036,
+   "f_max_other": 0.00464,
+   "lift": 23.88,
+   "w": 2.854,
+   "groups": 28,
+   "districts": 1,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 45.1,
+   "shared_with": [],
+   "human_df": 30,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:ऊपर आसमान",
+   "kind": "b",
+   "df": 46,
+   "f_V": 0.03142,
+   "f_others_macro": 0.00097,
+   "f_max_other": 0.01168,
+   "lift": 21.39,
+   "w": 2.799,
+   "groups": 45,
+   "districts": 1,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 20.74,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0117
+    ]
+   ],
+   "human_df": 43,
+   "asr_ratio": 1.07,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:नजर आ",
+   "kind": "b",
+   "df": 211,
+   "f_V": 0.14413,
+   "f_others_macro": 0.00787,
+   "f_max_other": 0.03066,
+   "lift": 17.23,
+   "w": 2.724,
+   "groups": 171,
+   "districts": 2,
+   "prompts": 171,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.26,
+   "shared_with": [],
+   "human_df": 227,
+   "asr_ratio": 0.93,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:पेड को",
+   "kind": "b",
+   "df": 45,
+   "f_V": 0.03074,
+   "f_others_macro": 0.00113,
+   "f_max_other": 0.01923,
+   "lift": 18.83,
+   "w": 2.669,
+   "groups": 44,
+   "districts": 1,
+   "prompts": 44,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 12.5,
+   "shared_with": [
+    [
+     "Jaipuri",
+     0.0192
+    ]
+   ],
+   "human_df": 45,
+   "asr_ratio": 1.0,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:नजर",
+   "kind": "w",
+   "df": 235,
+   "f_V": 0.16052,
+   "f_others_macro": 0.01193,
+   "f_max_other": 0.03212,
+   "lift": 12.91,
+   "w": 2.443,
+   "groups": 189,
+   "districts": 2,
+   "prompts": 189,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.18,
+   "shared_with": [],
+   "human_df": 232,
+   "asr_ratio": 1.01,
+   "stable_runs": 10
+  },
+  {
+   "feature": "b:सफेद नजर",
+   "kind": "b",
+   "df": 41,
+   "f_V": 0.02801,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 56.01,
+   "w": 3.748,
+   "groups": 41,
+   "districts": 1,
+   "prompts": 41,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 63.13,
+   "shared_with": [],
+   "human_df": 41,
+   "asr_ratio": 1.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:आ रही छै",
+   "kind": "t",
+   "df": 25,
+   "f_V": 0.01708,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 34.15,
+   "w": 3.186,
+   "groups": 25,
+   "districts": 1,
+   "prompts": 25,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 30.06,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 26.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:आसपास पेड",
+   "kind": "b",
+   "df": 27,
+   "f_V": 0.01844,
+   "f_others_macro": 0.00032,
+   "f_max_other": 0.0023,
+   "lift": 22.61,
+   "w": 2.784,
+   "groups": 27,
+   "districts": 1,
+   "prompts": 27,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 13.28,
+   "shared_with": [],
+   "human_df": 9,
+   "asr_ratio": 2.8,
+   "stable_runs": 9
+  },
+  {
+   "feature": "b:छे नीचे",
+   "kind": "b",
+   "df": 32,
+   "f_V": 0.02186,
+   "f_others_macro": 0.00066,
+   "f_max_other": 0.01194,
+   "lift": 18.79,
+   "w": 2.623,
+   "groups": 31,
+   "districts": 1,
+   "prompts": 31,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 23.14,
+   "shared_with": [
+    [
+     "Angika",
+     0.0119
+    ]
+   ],
+   "human_df": 20,
+   "asr_ratio": 1.57,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:आ",
+   "kind": "w",
+   "df": 240,
+   "f_V": 0.16393,
+   "f_others_macro": 0.02534,
+   "f_max_other": 0.05255,
+   "lift": 6.35,
+   "w": 1.734,
+   "groups": 199,
+   "districts": 2,
+   "prompts": 199,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 6.74,
+   "shared_with": [
+    [
+     "Kumaoni",
+     0.0526
+    ]
+   ],
+   "human_df": 284,
+   "asr_ratio": 0.85,
+   "stable_runs": 9
+  },
+  {
+   "feature": "t:को रग हरो",
+   "kind": "t",
+   "df": 44,
+   "f_V": 0.03005,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 60.11,
+   "w": 3.827,
+   "groups": 43,
+   "districts": 1,
+   "prompts": 43,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 42.84,
+   "shared_with": [],
+   "human_df": 49,
+   "asr_ratio": 0.9,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:छे पेड को",
+   "kind": "t",
+   "df": 28,
+   "f_V": 0.01913,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 38.25,
+   "w": 3.315,
+   "groups": 28,
+   "districts": 1,
+   "prompts": 28,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 27.06,
+   "shared_with": [],
+   "human_df": 31,
+   "asr_ratio": 0.91,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:छे नीचे जमीन",
+   "kind": "t",
+   "df": 22,
+   "f_V": 0.01503,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 30.05,
+   "w": 3.039,
+   "groups": 21,
+   "districts": 1,
+   "prompts": 21,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 36.08,
+   "shared_with": [],
+   "human_df": 12,
+   "asr_ratio": 1.77,
+   "stable_runs": 8
+  },
+  {
+   "feature": "t:छे देखो रग",
+   "kind": "t",
+   "df": 23,
+   "f_V": 0.01571,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 31.42,
+   "w": 3.09,
+   "groups": 20,
+   "districts": 1,
+   "prompts": 20,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 18.54,
+   "shared_with": [],
+   "human_df": 0,
+   "asr_ratio": 24.0,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:जेको",
+   "kind": "w",
+   "df": 18,
+   "f_V": 0.0123,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 24.59,
+   "w": 2.808,
+   "groups": 18,
+   "districts": 1,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 23.12,
+   "shared_with": [],
+   "human_df": 57,
+   "asr_ratio": 0.33,
+   "stable_runs": 7
+  },
+  {
+   "feature": "b:दिखी री",
+   "kind": "b",
+   "df": 58,
+   "f_V": 0.03962,
+   "f_others_macro": 0.0,
+   "f_max_other": 0.0,
+   "lift": 79.23,
+   "w": 4.136,
+   "groups": 52,
+   "districts": 1,
+   "prompts": 52,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 83.43,
+   "shared_with": [],
+   "human_df": 4,
+   "asr_ratio": 11.8,
+   "stable_runs": 6
+  }
+ ],
+ "Sadri": [],
+ "Surgujia": [
+  {
+   "feature": "w:हवे",
+   "kind": "w",
+   "df": 48,
+   "f_V": 0.1519,
+   "f_others_macro": 0.00936,
+   "f_max_other": 0.11924,
+   "lift": 15.41,
+   "w": 2.474,
+   "groups": 45,
+   "districts": 1,
+   "prompts": 45,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 17.15,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.1192
+    ]
+   ],
+   "human_df": 52,
+   "asr_ratio": 0.92,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:जग",
+   "kind": "w",
+   "df": 11,
+   "f_V": 0.03481,
+   "f_others_macro": 0.00138,
+   "f_max_other": 0.00855,
+   "lift": 18.54,
+   "w": 2.368,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 30.98,
+   "shared_with": [],
+   "human_df": 15,
+   "asr_ratio": 0.75,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:ठे",
+   "kind": "w",
+   "df": 13,
+   "f_V": 0.04114,
+   "f_others_macro": 0.00219,
+   "f_max_other": 0.00885,
+   "lift": 15.3,
+   "w": 2.218,
+   "groups": 13,
+   "districts": 1,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.3,
+   "shared_with": [],
+   "human_df": 7,
+   "asr_ratio": 1.75,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:मन",
+   "kind": "w",
+   "df": 56,
+   "f_V": 0.17722,
+   "f_others_macro": 0.02011,
+   "f_max_other": 0.13821,
+   "lift": 8.6,
+   "w": 1.913,
+   "groups": 54,
+   "districts": 1,
+   "prompts": 54,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.52,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.1382
+    ],
+    [
+     "Sadri",
+     0.1253
+    ]
+   ],
+   "human_df": 74,
+   "asr_ratio": 0.76,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:खत",
+   "kind": "e2",
+   "df": 56,
+   "f_V": 0.17722,
+   "f_others_macro": 0.02618,
+   "f_max_other": 0.20235,
+   "lift": 6.64,
+   "w": 1.655,
+   "groups": 55,
+   "districts": 1,
+   "prompts": 55,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.09,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.1504
+    ],
+    [
+     "Chhattisgarhi",
+     0.2023
+    ],
+    [
+     "Sadri",
+     0.0737
+    ]
+   ],
+   "human_df": 59,
+   "asr_ratio": 0.95,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:दिखत",
+   "kind": "w",
+   "df": 51,
+   "f_V": 0.16139,
+   "f_others_macro": 0.02423,
+   "f_max_other": 0.18835,
+   "lift": 6.52,
+   "w": 1.624,
+   "groups": 50,
+   "districts": 1,
+   "prompts": 50,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.82,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.1416
+    ],
+    [
+     "Chhattisgarhi",
+     0.1883
+    ],
+    [
+     "Sadri",
+     0.0713
+    ]
+   ],
+   "human_df": 56,
+   "asr_ratio": 0.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:िखत",
+   "kind": "e3",
+   "df": 51,
+   "f_V": 0.16139,
+   "f_others_macro": 0.02425,
+   "f_max_other": 0.18835,
+   "lift": 6.52,
+   "w": 1.623,
+   "groups": 50,
+   "districts": 1,
+   "prompts": 50,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.81,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.1416
+    ],
+    [
+     "Chhattisgarhi",
+     0.1883
+    ],
+    [
+     "Sadri",
+     0.0713
+    ]
+   ],
+   "human_df": 56,
+   "asr_ratio": 0.91,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:हर",
+   "kind": "w",
+   "df": 20,
+   "f_V": 0.06329,
+   "f_others_macro": 0.01459,
+   "f_max_other": 0.02985,
+   "lift": 4.2,
+   "w": 1.02,
+   "groups": 20,
+   "districts": 1,
+   "prompts": 20,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.38,
+   "shared_with": [
+    [
+     "Angika",
+     0.0299
+    ],
+    [
+     "Chhattisgarhi",
+     0.0276
+    ],
+    [
+     "Haryanvi",
+     0.0202
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Sadri",
+     0.0246
+    ],
+    [
+     "Surjapuri",
+     0.0256
+    ]
+   ],
+   "human_df": 15,
+   "asr_ratio": 1.31,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:लगत",
+   "kind": "w",
+   "df": 8,
+   "f_V": 0.02532,
+   "f_others_macro": 0.00401,
+   "f_max_other": 0.02655,
+   "lift": 5.61,
+   "w": 1.087,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 11.42,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0265
+    ],
+    [
+     "Bhojpuri",
+     0.0086
+    ],
+    [
+     "Chhattisgarhi",
+     0.0172
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.0,
+   "stable_runs": 9
+  },
+  {
+   "feature": "w:ज्यादा",
+   "kind": "w",
+   "df": 11,
+   "f_V": 0.03481,
+   "f_others_macro": 0.00631,
+   "f_max_other": 0.01392,
+   "lift": 5.11,
+   "w": 1.08,
+   "groups": 11,
+   "districts": 1,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.5,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0114
+    ],
+    [
+     "Khariboli",
+     0.0139
+    ],
+    [
+     "Khortha",
+     0.0123
+    ],
+    [
+     "Maithili",
+     0.0129
+    ],
+    [
+     "Sadri",
+     0.0123
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.33,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:हाय",
+   "kind": "e3",
+   "df": 11,
+   "f_V": 0.03481,
+   "f_others_macro": 0.00031,
+   "f_max_other": 0.00246,
+   "lift": 43.22,
+   "w": 3.215,
+   "groups": 9,
+   "districts": 1,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 58.24,
+   "shared_with": [],
+   "human_df": 4,
+   "asr_ratio": 2.4,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e2:ाय",
+   "kind": "e2",
+   "df": 12,
+   "f_V": 0.03797,
+   "f_others_macro": 0.00138,
+   "f_max_other": 0.00491,
+   "lift": 20.19,
+   "w": 2.475,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 24.02,
+   "shared_with": [],
+   "human_df": 4,
+   "asr_ratio": 2.6,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e3:ादा",
+   "kind": "e3",
+   "df": 13,
+   "f_V": 0.04114,
+   "f_others_macro": 0.00841,
+   "f_max_other": 0.01848,
+   "lift": 4.62,
+   "w": 1.02,
+   "groups": 13,
+   "districts": 1,
+   "prompts": 13,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.48,
+   "shared_with": [
+    [
+     "Garhwali",
+     0.0141
+    ],
+    [
+     "Khariboli",
+     0.0139
+    ],
+    [
+     "Khortha",
+     0.0185
+    ],
+    [
+     "Maithili",
+     0.0139
+    ],
+    [
+     "Sadri",
+     0.0147
+    ],
+    [
+     "Surjapuri",
+     0.0171
+    ]
+   ],
+   "human_df": 12,
+   "asr_ratio": 1.08,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:ए",
+   "kind": "w",
+   "df": 16,
+   "f_V": 0.05063,
+   "f_others_macro": 0.01338,
+   "f_max_other": 0.03686,
+   "lift": 3.65,
+   "w": 0.832,
+   "groups": 15,
+   "districts": 1,
+   "prompts": 15,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.34,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0212
+    ],
+    [
+     "Bhojpuri",
+     0.0272
+    ],
+    [
+     "Chhattisgarhi",
+     0.023
+    ],
+    [
+     "Jaipuri",
+     0.0192
+    ],
+    [
+     "Maithili",
+     0.0199
+    ],
+    [
+     "Sadri",
+     0.0369
+    ]
+   ],
+   "human_df": 49,
+   "asr_ratio": 0.34,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:आहाय",
+   "kind": "w",
+   "df": 8,
+   "f_V": 0.02532,
+   "f_others_macro": 0.00014,
+   "f_max_other": 0.00246,
+   "lift": 39.77,
+   "w": 3.046,
+   "groups": 7,
+   "districts": 1,
+   "prompts": 7,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 57.55,
+   "shared_with": [],
+   "human_df": 2,
+   "asr_ratio": 3.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:एक ठे",
+   "kind": "b",
+   "df": 12,
+   "f_V": 0.03797,
+   "f_others_macro": 0.00096,
+   "f_max_other": 0.0084,
+   "lift": 26.07,
+   "w": 2.731,
+   "groups": 11,
+   "districts": 1,
+   "prompts": 11,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 22.19,
+   "shared_with": [],
+   "human_df": 4,
+   "asr_ratio": 2.6,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e2:थे",
+   "kind": "e2",
+   "df": 8,
+   "f_V": 0.02532,
+   "f_others_macro": 0.00302,
+   "f_max_other": 0.02078,
+   "lift": 7.2,
+   "w": 1.336,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.54,
+   "shared_with": [
+    [
+     "Chhattisgarhi",
+     0.0208
+    ],
+    [
+     "Sadri",
+     0.0123
+    ]
+   ],
+   "human_df": 31,
+   "asr_ratio": 0.28,
+   "stable_runs": 6
+  },
+  {
+   "feature": "b:हरा भरा",
+   "kind": "b",
+   "df": 8,
+   "f_V": 0.02532,
+   "f_others_macro": 0.00554,
+   "f_max_other": 0.0172,
+   "lift": 4.19,
+   "w": 0.796,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "prompt_untested",
+   "matched_lift": 1.82,
+   "shared_with": [
+    [
+     "Angika",
+     0.0089
+    ],
+    [
+     "Awadhi",
+     0.0088
+    ],
+    [
+     "Chhattisgarhi",
+     0.0131
+    ],
+    [
+     "Maithili",
+     0.0105
+    ],
+    [
+     "Sadri",
+     0.0172
+    ],
+    [
+     "Surjapuri",
+     0.0084
+    ]
+   ],
+   "human_df": 9,
+   "asr_ratio": 0.9,
+   "stable_runs": 6
+  },
+  {
+   "feature": "w:ओ",
+   "kind": "w",
+   "df": 10,
+   "f_V": 0.03165,
+   "f_others_macro": 0.00824,
+   "f_max_other": 0.02184,
+   "lift": 3.62,
+   "w": 0.71,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.33,
+   "shared_with": [
+    [
+     "Bhojpuri",
+     0.0107
+    ],
+    [
+     "Bundeli",
+     0.0149
+    ],
+    [
+     "Chhattisgarhi",
+     0.0176
+    ],
+    [
+     "Maithili",
+     0.0149
+    ],
+    [
+     "Marwari",
+     0.0218
+    ],
+    [
+     "Rajasthani",
+     0.0109
+    ],
+    [
+     "Sadri",
+     0.0147
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 1.0,
+   "stable_runs": 6
+  }
+ ],
+ "Surjapuri": [
+  {
+   "feature": "w:छे",
+   "kind": "w",
+   "df": 86,
+   "f_V": 0.73504,
+   "f_others_macro": 0.07365,
+   "f_max_other": 0.47761,
+   "lift": 9.91,
+   "w": 2.169,
+   "groups": 75,
+   "districts": 1,
+   "prompts": 74,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 10.13,
+   "shared_with": [
+    [
+     "Angika",
+     0.4776
+    ],
+    [
+     "Maithili",
+     0.3688
+    ]
+   ],
+   "human_df": 75,
+   "asr_ratio": 1.14,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:ला",
+   "kind": "w",
+   "df": 10,
+   "f_V": 0.08547,
+   "f_others_macro": 0.00541,
+   "f_max_other": 0.03165,
+   "lift": 14.47,
+   "w": 2.087,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 14.46,
+   "shared_with": [
+    [
+     "Surgujia",
+     0.0316
+    ]
+   ],
+   "human_df": 8,
+   "asr_ratio": 1.22,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:ाल",
+   "kind": "e2",
+   "df": 17,
+   "f_V": 0.1453,
+   "f_others_macro": 0.02756,
+   "f_max_other": 0.05769,
+   "lift": 5.18,
+   "w": 1.201,
+   "groups": 17,
+   "districts": 1,
+   "prompts": 17,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 4.68,
+   "shared_with": [
+    [
+     "Bajjika",
+     0.0444
+    ],
+    [
+     "Bundeli",
+     0.0483
+    ],
+    [
+     "Jaipuri",
+     0.0577
+    ]
+   ],
+   "human_df": 18,
+   "asr_ratio": 0.95,
+   "stable_runs": 10
+  },
+  {
+   "feature": "w:अच्छा",
+   "kind": "w",
+   "df": 18,
+   "f_V": 0.15385,
+   "f_others_macro": 0.03774,
+   "f_max_other": 0.07616,
+   "lift": 4.02,
+   "w": 0.962,
+   "groups": 18,
+   "districts": 1,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.66,
+   "shared_with": [
+    [
+     "Angika",
+     0.0597
+    ],
+    [
+     "Bajjika",
+     0.0695
+    ],
+    [
+     "Bhojpuri",
+     0.0708
+    ],
+    [
+     "Chhattisgarhi",
+     0.0696
+    ],
+    [
+     "Khariboli",
+     0.0464
+    ],
+    [
+     "Magahi",
+     0.0627
+    ],
+    [
+     "Maithili",
+     0.0762
+    ]
+   ],
+   "human_df": 21,
+   "asr_ratio": 0.86,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:्छा",
+   "kind": "e3",
+   "df": 18,
+   "f_V": 0.15385,
+   "f_others_macro": 0.03829,
+   "f_max_other": 0.07666,
+   "lift": 3.97,
+   "w": 0.948,
+   "groups": 18,
+   "districts": 1,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.61,
+   "shared_with": [
+    [
+     "Angika",
+     0.0597
+    ],
+    [
+     "Bajjika",
+     0.0695
+    ],
+    [
+     "Bhojpuri",
+     0.0715
+    ],
+    [
+     "Chhattisgarhi",
+     0.07
+    ],
+    [
+     "Khariboli",
+     0.0464
+    ],
+    [
+     "Magahi",
+     0.0645
+    ],
+    [
+     "Maithili",
+     0.0767
+    ]
+   ],
+   "human_df": 22,
+   "asr_ratio": 0.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e2:छा",
+   "kind": "e2",
+   "df": 18,
+   "f_V": 0.15385,
+   "f_others_macro": 0.04422,
+   "f_max_other": 0.08213,
+   "lift": 3.44,
+   "w": 0.806,
+   "groups": 18,
+   "districts": 1,
+   "prompts": 18,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.2,
+   "shared_with": [
+    [
+     "Angika",
+     0.0687
+    ],
+    [
+     "Awadhi",
+     0.0619
+    ],
+    [
+     "Bajjika",
+     0.0772
+    ],
+    [
+     "Bhojpuri",
+     0.0739
+    ],
+    [
+     "Chhattisgarhi",
+     0.0727
+    ],
+    [
+     "Khariboli",
+     0.0487
+    ],
+    [
+     "Khortha",
+     0.0493
+    ],
+    [
+     "Magahi",
+     0.0681
+    ],
+    [
+     "Maithili",
+     0.0821
+    ]
+   ],
+   "human_df": 22,
+   "asr_ratio": 0.83,
+   "stable_runs": 10
+  },
+  {
+   "feature": "e3:गाल",
+   "kind": "e3",
+   "df": 8,
+   "f_V": 0.06838,
+   "f_others_macro": 0.00088,
+   "f_max_other": 0.00538,
+   "lift": 49.51,
+   "w": 3.248,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 42.08,
+   "shared_with": [],
+   "human_df": 7,
+   "asr_ratio": 1.12,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e2:गे",
+   "kind": "e2",
+   "df": 9,
+   "f_V": 0.07692,
+   "f_others_macro": 0.01425,
+   "f_max_other": 0.04107,
+   "lift": 5.21,
+   "w": 1.034,
+   "groups": 9,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 5.36,
+   "shared_with": [
+    [
+     "Bundeli",
+     0.026
+    ],
+    [
+     "Khortha",
+     0.0411
+    ],
+    [
+     "Maithili",
+     0.0388
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 1.43,
+   "stable_runs": 9
+  },
+  {
+   "feature": "e3:तला",
+   "kind": "e3",
+   "df": 9,
+   "f_V": 0.07692,
+   "f_others_macro": 0.0013,
+   "f_max_other": 0.00345,
+   "lift": 42.76,
+   "w": 3.138,
+   "groups": 9,
+   "districts": 1,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 51.77,
+   "shared_with": [],
+   "human_df": 9,
+   "asr_ratio": 1.0,
+   "stable_runs": 8
+  },
+  {
+   "feature": "w:लागे",
+   "kind": "w",
+   "df": 8,
+   "f_V": 0.06838,
+   "f_others_macro": 0.00743,
+   "f_max_other": 0.03186,
+   "lift": 8.62,
+   "w": 1.5,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 8.74,
+   "shared_with": [
+    [
+     "Khortha",
+     0.0308
+    ],
+    [
+     "Maithili",
+     0.0319
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 1.29,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e3:ागे",
+   "kind": "e3",
+   "df": 8,
+   "f_V": 0.06838,
+   "f_others_macro": 0.00883,
+   "f_max_other": 0.03335,
+   "lift": 7.33,
+   "w": 1.338,
+   "groups": 8,
+   "districts": 1,
+   "prompts": 8,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 7.46,
+   "shared_with": [
+    [
+     "Khortha",
+     0.0308
+    ],
+    [
+     "Maithili",
+     0.0333
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 1.29,
+   "stable_runs": 8
+  },
+  {
+   "feature": "e3:डकी",
+   "kind": "e3",
+   "df": 9,
+   "f_V": 0.07692,
+   "f_others_macro": 0.0195,
+   "f_max_other": 0.04255,
+   "lift": 3.85,
+   "w": 0.73,
+   "groups": 9,
+   "districts": 1,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 2.25,
+   "shared_with": [
+    [
+     "Angika",
+     0.0358
+    ],
+    [
+     "Bajjika",
+     0.0426
+    ],
+    [
+     "Bundeli",
+     0.026
+    ],
+    [
+     "Haryanvi",
+     0.03
+    ],
+    [
+     "Kumaoni",
+     0.0234
+    ],
+    [
+     "Magahi",
+     0.0233
+    ]
+   ],
+   "human_df": 10,
+   "asr_ratio": 0.91,
+   "stable_runs": 7
+  },
+  {
+   "feature": "w:लगाल",
+   "kind": "w",
+   "df": 9,
+   "f_V": 0.07563,
+   "f_others_macro": 0.00141,
+   "f_max_other": 0.00983,
+   "lift": 39.56,
+   "w": 3.061,
+   "groups": 9,
+   "districts": 1,
+   "prompts": 9,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 64.9,
+   "shared_with": [],
+   "human_df": 4,
+   "asr_ratio": 2.0,
+   "stable_runs": 6
+  },
+  {
+   "feature": "e3:तना",
+   "kind": "e3",
+   "df": 10,
+   "f_V": 0.08547,
+   "f_others_macro": 0.01523,
+   "f_max_other": 0.0354,
+   "lift": 5.43,
+   "w": 1.107,
+   "groups": 10,
+   "districts": 1,
+   "prompts": 10,
+   "matched_prompt_status": "matched_ok",
+   "matched_lift": 3.43,
+   "shared_with": [
+    [
+     "Awadhi",
+     0.0354
+    ],
+    [
+     "Bajjika",
+     0.029
+    ],
+    [
+     "Bhojpuri",
+     0.0337
+    ],
+    [
+     "Maithili",
+     0.0309
+    ]
+   ],
+   "human_df": 6,
+   "asr_ratio": 1.57,
+   "stable_runs": 6
+  }
+ ]
+}
