@@ -96,37 +96,58 @@ def main():
     for i, (d, g) in enumerate(zip(labels, groups_arr)):
         by_dialect_group[(d, g)].append(i)
 
+    # resume support: skip (dialect, group) folds already checkpointed to disk,
+    # so a kill/timeout/restart mid-run (happened twice already) loses at most
+    # the one fold in flight, not all progress.
+    ckpt_path = OUT_DIR / "logo_predictions.jsonl"
+    already_done_folds = set()
+    all_predictions = []
+    if ckpt_path.exists():
+        with open(ckpt_path) as f:
+            for line in f:
+                rec = json.loads(line)
+                already_done_folds.add((rec["dialect"], rec["group"]))
+                all_predictions.append(rec)
+        print(f"Resuming: {len(already_done_folds)} folds already checkpointed, "
+              f"{len(all_predictions)} predictions loaded")
+
     tasks = []
     all_idx = np.arange(n)
     for (d, g), idxs in by_dialect_group.items():
+        if (d, g) in already_done_folds:
+            continue
         test_idx = np.array(idxs)
         test_set = set(idxs)
         train_idx = np.array([i for i in all_idx if i not in test_set])
         tasks.append((d, g, test_idx, train_idx))
 
-    print(f"Total (dialect, group) LOGO folds: {len(tasks)}")
+    print(f"Total (dialect, group) LOGO folds: {len(by_dialect_group)}, {len(tasks)} remaining to run")
     for d in DIALECTS:
         ng = sum(1 for (dd, gg) in by_dialect_group if dd == d)
         print(f"  {d}: {ng} groups -> {ng} folds")
 
-    print("\nRunning folds in parallel (4 workers)...")
+    print(f"\nRunning {len(tasks)} folds in parallel (4 workers), checkpointing each as it completes...")
     t0 = time.time()
-    all_predictions = []
-    with ProcessPoolExecutor(max_workers=4, initializer=_init_globals, initargs=(X, labels, groups_arr)) as pool:
-        futures = {pool.submit(run_fold, t): t for t in tasks}
-        done = 0
-        for fut in as_completed(futures):
-            all_predictions.extend(fut.result())
-            done += 1
-            if done % 20 == 0:
-                elapsed = time.time() - t0
-                print(f"  {done}/{len(tasks)} folds done, {elapsed:.0f}s elapsed, "
-                      f"est. total {elapsed/done*len(tasks):.0f}s")
-    print(f"All folds done in {time.time()-t0:.0f}s. Total out-of-fold predictions: {len(all_predictions)}")
+    with open(ckpt_path, "a") as ckpt_fh:
+        with ProcessPoolExecutor(max_workers=4, initializer=_init_globals, initargs=(X, labels, groups_arr)) as pool:
+            futures = {pool.submit(run_fold, t): t for t in tasks}
+            done = 0
+            for fut in as_completed(futures):
+                fold_preds = fut.result()
+                all_predictions.extend(fold_preds)
+                for rec in fold_preds:
+                    ckpt_fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                ckpt_fh.flush()
+                done += 1
+                if done % 10 == 0:
+                    elapsed = time.time() - t0
+                    print(f"  {done}/{len(tasks)} folds done this run, {elapsed:.0f}s elapsed, "
+                          f"est. total remaining {elapsed/done*(len(tasks)-done):.0f}s")
+    print(f"All folds done in {time.time()-t0:.0f}s. Total out-of-fold predictions (all folds, resumed+new): {len(all_predictions)}")
 
     with open(OUT_DIR / "logo_predictions.json", "w") as f:
         json.dump(all_predictions, f, ensure_ascii=False)
-    print(f"Saved raw predictions to {OUT_DIR / 'logo_predictions.json'}")
+    print(f"Saved consolidated predictions to {OUT_DIR / 'logo_predictions.json'}")
 
     # --- summarize: row-weighted vs group-balanced recall per dialect ---
     print("\n=== Row-weighted vs group-balanced exact recall (TRUE LOGO, every group held out once) ===")
