@@ -1,0 +1,26 @@
+{
+  "safe": [],
+  "tempting_unsafe": [
+    {
+      "x": "बहोत",
+      "y": "बहुत",
+      "support": 56,
+      "forward_consistency": 0.5957,
+      "reverse_precision": 0.044
+    },
+    {
+      "x": "लोकत",
+      "y": "लौकत",
+      "support": 37,
+      "forward_consistency": 0.6491,
+      "reverse_precision": 0.2868
+    },
+    {
+      "x": "लउकत",
+      "y": "लौकत",
+      "support": 25,
+      "forward_consistency": 0.5952,
+      "reverse_precision": 0.1938
+    }
+  ]
+}

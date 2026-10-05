@@ -1,0 +1,101 @@
+[
+  {
+    "min_support": 10,
+    "min_precision": 0.9,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 10,
+    "min_precision": 0.95,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 10,
+    "min_precision": 0.98,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 25,
+    "min_precision": 0.9,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 25,
+    "min_precision": 0.95,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 25,
+    "min_precision": 0.98,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 50,
+    "min_precision": 0.9,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 50,
+    "min_precision": 0.95,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  },
+  {
+    "min_support": 50,
+    "min_precision": 0.98,
+    "n_rules": 0,
+    "tokens_changed": 0,
+    "incorrect_fixed": 0,
+    "correct_damaged": 0,
+    "net_reduction": 0,
+    "pct_clips_improved": 0.0,
+    "pct_clips_worsened": 0.0
+  }
+]
