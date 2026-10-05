@@ -6,6 +6,22 @@ measurement with no error bars — and today's work shows the error bars are oft
 This doc is the corrected, stability-tested version, and it changes several prior conclusions. Where it
 disagrees with the earlier report, this doc wins.
 
+**Two corrections applied mid-build, noted here so the document's own evolution is honest:**
+
+1. **Terminology.** `state|district|gender` is a *collection/geographic group proxy*, not a speaker or session
+   ID. Variation across these groups may come from speaker identity, but could equally come from recording
+   conditions, locality, or how the elicitation task was administered that day. Earlier chat explanations in
+   this project loosely said "speaker" or "which person's voice" — that was imprecise. Everywhere below, "group"
+   means the collection-group proxy, not a validated speaker identity, unless stated otherwise.
+2. **Detection map ≠ response map.** Stage 5/6's Prisma-similarity evidence (which dialects' *transcription
+   error patterns* resemble each other) answers only "can the detector reliably tell these apart, or should it
+   collapse them into one routing category." It does **not** by itself justify "these varieties can safely share
+   one Evon response register/marker set" — that is a separate decision requiring separate evidence (e.g.
+   mutual intelligibility, whether shared markers are actually appropriate across both varieties, ideally
+   native-speaker review), not yet made. Everywhere below, a "master regional profile" or "bucket" is a
+   **detection/routing** grouping only. Treat any response-style sharing as future work gated on its own
+   validation, not an automatic consequence of detection-level similarity.
+
 ## Stage 1 — corrected feature model
 
 The previous "combined" classifier mode (`regional_fingerprint_audit.py`) was a bug: it was actually just
