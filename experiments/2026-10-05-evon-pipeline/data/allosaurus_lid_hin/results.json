@@ -1,0 +1,2775 @@
+{
+ "n_clips": 1000,
+ "unusable": [],
+ "clips_per_language": {
+  "Hindi": 125,
+  "Bhojpuri": 125,
+  "Maithili": 125,
+  "Chhattisgarhi": 125,
+  "Rajasthani": 125,
+  "Garhwali": 125,
+  "Khariboli": 125,
+  "Kumaoni": 125
+ },
+ "duration": {
+  "mean": 6.33,
+  "median": 6.05,
+  "per_language_mean": {
+   "Hindi": 4.88,
+   "Bhojpuri": 6.48,
+   "Maithili": 7.49,
+   "Chhattisgarhi": 5.99,
+   "Rajasthani": 4.99,
+   "Garhwali": 5.64,
+   "Khariboli": 7.42,
+   "Kumaoni": 7.75
+  }
+ },
+ "phones_per_sec": {
+  "Hindi": 7.83,
+  "Bhojpuri": 8.97,
+  "Maithili": 8.8,
+  "Chhattisgarhi": 8.44,
+  "Rajasthani": 8.83,
+  "Garhwali": 9.82,
+  "Khariboli": 8.18,
+  "Kumaoni": 9.13
+ },
+ "phones_per_clip_mean": 55.3,
+ "n_district_groups": 94,
+ "districts_with_multiple_languages": {
+  "Chhattisgarh|Sarguja": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "UttarPradesh|Muzaffarnagar": [
+   "Hindi",
+   "Khariboli"
+  ],
+  "Uttarakhand|TehriGarhwal": [
+   "Garhwali",
+   "Hindi",
+   "Kumaoni"
+  ],
+  "Bihar|Araria": [
+   "Hindi",
+   "Maithili"
+  ],
+  "Bihar|Begusarai": [
+   "Bhojpuri",
+   "Hindi",
+   "Maithili"
+  ],
+  "Bihar|Bhagalpur": [
+   "Hindi",
+   "Maithili"
+  ],
+  "Bihar|Darbhanga": [
+   "Hindi",
+   "Maithili"
+  ],
+  "Bihar|Gaya": [
+   "Hindi",
+   "Maithili"
+  ],
+  "Bihar|Patna": [
+   "Bhojpuri",
+   "Hindi"
+  ],
+  "Bihar|Lakhisarai": [
+   "Bhojpuri",
+   "Hindi",
+   "Maithili"
+  ],
+  "Bihar|Muzaffarpur": [
+   "Bhojpuri",
+   "Hindi",
+   "Maithili"
+  ],
+  "Chhattisgarh|Bastar": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "Bihar|Jahanabad": [
+   "Hindi",
+   "Maithili"
+  ],
+  "Chhattisgarh|Korba": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "Bihar|Supaul": [
+   "Bhojpuri",
+   "Hindi",
+   "Maithili"
+  ],
+  "UttarPradesh|Hamirpur": [
+   "Hindi",
+   "Khariboli"
+  ],
+  "Bihar|Saran": [
+   "Bhojpuri",
+   "Hindi",
+   "Maithili"
+  ],
+  "UttarPradesh|Budaun": [
+   "Hindi",
+   "Khariboli"
+  ],
+  "UttarPradesh|Deoria": [
+   "Bhojpuri",
+   "Hindi",
+   "Khariboli",
+   "Maithili"
+  ],
+  "Maharashtra|Solapur": [
+   "Hindi",
+   "Maithili"
+  ],
+  "UttarPradesh|Gorakhpur": [
+   "Bhojpuri",
+   "Hindi",
+   "Khariboli"
+  ],
+  "Chhattisgarh|Kabirdham": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "Bihar|Purnia": [
+   "Hindi",
+   "Maithili"
+  ],
+  "Chhattisgarh|Raigarh": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "Chhattisgarh|Sukma": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "UttarPradesh|Jalaun": [
+   "Hindi",
+   "Khariboli"
+  ],
+  "Jharkhand|Jamtara": [
+   "Bhojpuri",
+   "Hindi"
+  ],
+  "UttarPradesh|Varanasi": [
+   "Bhojpuri",
+   "Hindi",
+   "Khariboli"
+  ],
+  "Maharashtra|Nagpur": [
+   "Chhattisgarhi",
+   "Hindi"
+  ],
+  "Jharkhand|Palamu": [
+   "Bhojpuri",
+   "Hindi"
+  ],
+  "Bihar|Gopalganj": [
+   "Bhojpuri",
+   "Maithili"
+  ],
+  "Bihar|Sitamarhi": [
+   "Bhojpuri",
+   "Maithili"
+  ],
+  "UttarPradesh|Ghazipur": [
+   "Bhojpuri",
+   "Khariboli"
+  ],
+  "Uttarakhand|Uttarkashi": [
+   "Garhwali",
+   "Kumaoni",
+   "Maithili"
+  ],
+  "Chhattisgarh|Bilaspur": [
+   "Chhattisgarhi",
+   "Maithili"
+  ]
+ },
+ "examples": [
+  {
+   "sample_id": "vaani:Hindi:test-00005-of-00028:37",
+   "language": "Hindi",
+   "duration_sec": 1.857,
+   "phones": "a l i t̪ i a t̪ʰ iː j iː t̪ iː kʰ a ɪ ʂ ɪ n"
+  },
+  {
+   "sample_id": "vaani:Rajasthani:test-00000-of-00001:1",
+   "language": "Rajasthani",
+   "duration_sec": 1.995,
+   "phones": "t̪ ɔ a t̪ʰ i ʔ a ɾ a ʂ ɔ̃ ŋ a k o"
+  },
+  {
+   "sample_id": "vaani:Kumaoni:validation-00000-of-00001:92",
+   "language": "Kumaoni",
+   "duration_sec": 10.193,
+   "phones": "ʁ e ʔ i z a ɾ iː s̪ iː b iː j a l̪ t̪ʰ i l æ d̪ iː m i n iː u b̤ ɔ ɾ ʂ t̪ k iː ɔ iː l̪ a ɪ t̪ b iː l a t̪ʰ i iː j ɪ s̪ e j a h a i kʰ ɛ ɳ n a n lː a ɾ a ʁ u w a"
+  }
+ ],
+ "taskA": {
+  "uni": {
+   "balanced_accuracy": 0.66,
+   "macro_f1": 0.5737,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.234,
+     "recall": 0.6,
+     "f1": 0.337,
+     "n": 125
+    },
+    "Regional": {
+     "precision": 0.926,
+     "recall": 0.72,
+     "f1": 0.81,
+     "n": 875
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Regional"
+   ],
+   "confusion": [
+    [
+     75,
+     50
+    ],
+    [
+     245,
+     630
+    ]
+   ]
+  },
+  "bi": {
+   "balanced_accuracy": 0.5509,
+   "macro_f1": 0.5428,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.192,
+     "recall": 0.256,
+     "f1": 0.219,
+     "n": 125
+    },
+    "Regional": {
+     "precision": 0.888,
+     "recall": 0.846,
+     "f1": 0.867,
+     "n": 875
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Regional"
+   ],
+   "confusion": [
+    [
+     32,
+     93
+    ],
+    [
+     135,
+     740
+    ]
+   ]
+  },
+  "tri": {
+   "balanced_accuracy": 0.5223,
+   "macro_f1": 0.519,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.273,
+     "recall": 0.072,
+     "f1": 0.114,
+     "n": 125
+    },
+    "Regional": {
+     "precision": 0.88,
+     "recall": 0.973,
+     "f1": 0.924,
+     "n": 875
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Regional"
+   ],
+   "confusion": [
+    [
+     9,
+     116
+    ],
+    [
+     24,
+     851
+    ]
+   ]
+  },
+  "uni+bi": {
+   "balanced_accuracy": 0.584,
+   "macro_f1": 0.5655,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.222,
+     "recall": 0.336,
+     "f1": 0.268,
+     "n": 125
+    },
+    "Regional": {
+     "precision": 0.898,
+     "recall": 0.832,
+     "f1": 0.864,
+     "n": 875
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Regional"
+   ],
+   "confusion": [
+    [
+     42,
+     83
+    ],
+    [
+     147,
+     728
+    ]
+   ]
+  },
+  "uni+bi+tri": {
+   "balanced_accuracy": 0.5629,
+   "macro_f1": 0.5716,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.293,
+     "recall": 0.192,
+     "f1": 0.232,
+     "n": 125
+    },
+    "Regional": {
+     "precision": 0.89,
+     "recall": 0.934,
+     "f1": 0.911,
+     "n": 875
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Regional"
+   ],
+   "confusion": [
+    [
+     24,
+     101
+    ],
+    [
+     58,
+     817
+    ]
+   ]
+  }
+ },
+ "taskB": {
+  "uni": {
+   "balanced_accuracy": 0.249,
+   "macro_f1": 0.2443,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.295,
+     "recall": 0.288,
+     "f1": 0.291,
+     "n": 125
+    },
+    "Bhojpuri": {
+     "precision": 0.311,
+     "recall": 0.408,
+     "f1": 0.353,
+     "n": 125
+    },
+    "Maithili": {
+     "precision": 0.208,
+     "recall": 0.168,
+     "f1": 0.186,
+     "n": 125
+    },
+    "Chhattisgarhi": {
+     "precision": 0.309,
+     "recall": 0.368,
+     "f1": 0.336,
+     "n": 125
+    },
+    "Rajasthani": {
+     "precision": 0.235,
+     "recall": 0.216,
+     "f1": 0.225,
+     "n": 125
+    },
+    "Garhwali": {
+     "precision": 0.192,
+     "recall": 0.192,
+     "f1": 0.192,
+     "n": 125
+    },
+    "Khariboli": {
+     "precision": 0.204,
+     "recall": 0.176,
+     "f1": 0.189,
+     "n": 125
+    },
+    "Kumaoni": {
+     "precision": 0.19,
+     "recall": 0.176,
+     "f1": 0.183,
+     "n": 125
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "confusion": [
+    [
+     36,
+     13,
+     8,
+     16,
+     11,
+     11,
+     18,
+     12
+    ],
+    [
+     10,
+     51,
+     14,
+     18,
+     10,
+     11,
+     1,
+     10
+    ],
+    [
+     9,
+     24,
+     21,
+     15,
+     15,
+     12,
+     14,
+     15
+    ],
+    [
+     9,
+     24,
+     9,
+     46,
+     11,
+     13,
+     4,
+     9
+    ],
+    [
+     15,
+     13,
+     13,
+     14,
+     27,
+     21,
+     17,
+     5
+    ],
+    [
+     13,
+     12,
+     9,
+     14,
+     22,
+     24,
+     12,
+     19
+    ],
+    [
+     15,
+     16,
+     11,
+     14,
+     11,
+     12,
+     22,
+     24
+    ],
+    [
+     15,
+     11,
+     16,
+     12,
+     8,
+     21,
+     20,
+     22
+    ]
+   ]
+  },
+  "bi": {
+   "balanced_accuracy": 0.227,
+   "macro_f1": 0.2243,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.23,
+     "recall": 0.232,
+     "f1": 0.231,
+     "n": 125
+    },
+    "Bhojpuri": {
+     "precision": 0.355,
+     "recall": 0.432,
+     "f1": 0.39,
+     "n": 125
+    },
+    "Maithili": {
+     "precision": 0.193,
+     "recall": 0.176,
+     "f1": 0.184,
+     "n": 125
+    },
+    "Chhattisgarhi": {
+     "precision": 0.29,
+     "recall": 0.288,
+     "f1": 0.289,
+     "n": 125
+    },
+    "Rajasthani": {
+     "precision": 0.241,
+     "recall": 0.216,
+     "f1": 0.228,
+     "n": 125
+    },
+    "Garhwali": {
+     "precision": 0.214,
+     "recall": 0.224,
+     "f1": 0.219,
+     "n": 125
+    },
+    "Khariboli": {
+     "precision": 0.154,
+     "recall": 0.144,
+     "f1": 0.149,
+     "n": 125
+    },
+    "Kumaoni": {
+     "precision": 0.105,
+     "recall": 0.104,
+     "f1": 0.104,
+     "n": 125
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "confusion": [
+    [
+     29,
+     10,
+     9,
+     15,
+     11,
+     13,
+     17,
+     21
+    ],
+    [
+     8,
+     54,
+     8,
+     17,
+     9,
+     11,
+     10,
+     8
+    ],
+    [
+     8,
+     17,
+     22,
+     11,
+     16,
+     15,
+     17,
+     19
+    ],
+    [
+     15,
+     24,
+     10,
+     36,
+     8,
+     11,
+     9,
+     12
+    ],
+    [
+     19,
+     6,
+     11,
+     16,
+     27,
+     22,
+     10,
+     14
+    ],
+    [
+     11,
+     20,
+     15,
+     7,
+     19,
+     28,
+     12,
+     13
+    ],
+    [
+     20,
+     12,
+     18,
+     10,
+     12,
+     11,
+     18,
+     24
+    ],
+    [
+     16,
+     9,
+     21,
+     12,
+     10,
+     20,
+     24,
+     13
+    ]
+   ]
+  },
+  "tri": {
+   "balanced_accuracy": 0.21,
+   "macro_f1": 0.2061,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.264,
+     "recall": 0.256,
+     "f1": 0.26,
+     "n": 125
+    },
+    "Bhojpuri": {
+     "precision": 0.348,
+     "recall": 0.432,
+     "f1": 0.386,
+     "n": 125
+    },
+    "Maithili": {
+     "precision": 0.169,
+     "recall": 0.168,
+     "f1": 0.169,
+     "n": 125
+    },
+    "Chhattisgarhi": {
+     "precision": 0.32,
+     "recall": 0.328,
+     "f1": 0.324,
+     "n": 125
+    },
+    "Rajasthani": {
+     "precision": 0.145,
+     "recall": 0.144,
+     "f1": 0.145,
+     "n": 125
+    },
+    "Garhwali": {
+     "precision": 0.175,
+     "recall": 0.16,
+     "f1": 0.167,
+     "n": 125
+    },
+    "Khariboli": {
+     "precision": 0.099,
+     "recall": 0.096,
+     "f1": 0.098,
+     "n": 125
+    },
+    "Kumaoni": {
+     "precision": 0.106,
+     "recall": 0.096,
+     "f1": 0.101,
+     "n": 125
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "confusion": [
+    [
+     32,
+     11,
+     8,
+     10,
+     9,
+     13,
+     26,
+     16
+    ],
+    [
+     10,
+     54,
+     11,
+     12,
+     7,
+     13,
+     8,
+     10
+    ],
+    [
+     9,
+     22,
+     21,
+     17,
+     17,
+     13,
+     11,
+     15
+    ],
+    [
+     16,
+     17,
+     11,
+     41,
+     7,
+     13,
+     9,
+     11
+    ],
+    [
+     18,
+     7,
+     20,
+     11,
+     18,
+     16,
+     16,
+     19
+    ],
+    [
+     10,
+     16,
+     19,
+     15,
+     20,
+     20,
+     16,
+     9
+    ],
+    [
+     16,
+     17,
+     17,
+     11,
+     20,
+     11,
+     12,
+     21
+    ],
+    [
+     10,
+     11,
+     17,
+     11,
+     26,
+     15,
+     23,
+     12
+    ]
+   ]
+  },
+  "uni+bi": {
+   "balanced_accuracy": 0.233,
+   "macro_f1": 0.2273,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.237,
+     "recall": 0.248,
+     "f1": 0.242,
+     "n": 125
+    },
+    "Bhojpuri": {
+     "precision": 0.362,
+     "recall": 0.464,
+     "f1": 0.407,
+     "n": 125
+    },
+    "Maithili": {
+     "precision": 0.14,
+     "recall": 0.12,
+     "f1": 0.129,
+     "n": 125
+    },
+    "Chhattisgarhi": {
+     "precision": 0.281,
+     "recall": 0.312,
+     "f1": 0.295,
+     "n": 125
+    },
+    "Rajasthani": {
+     "precision": 0.288,
+     "recall": 0.24,
+     "f1": 0.262,
+     "n": 125
+    },
+    "Garhwali": {
+     "precision": 0.235,
+     "recall": 0.256,
+     "f1": 0.245,
+     "n": 125
+    },
+    "Khariboli": {
+     "precision": 0.14,
+     "recall": 0.12,
+     "f1": 0.129,
+     "n": 125
+    },
+    "Kumaoni": {
+     "precision": 0.112,
+     "recall": 0.104,
+     "f1": 0.108,
+     "n": 125
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "confusion": [
+    [
+     31,
+     9,
+     7,
+     18,
+     11,
+     13,
+     18,
+     18
+    ],
+    [
+     10,
+     58,
+     9,
+     17,
+     7,
+     12,
+     6,
+     6
+    ],
+    [
+     11,
+     18,
+     15,
+     17,
+     17,
+     12,
+     14,
+     21
+    ],
+    [
+     12,
+     26,
+     13,
+     39,
+     8,
+     12,
+     4,
+     11
+    ],
+    [
+     21,
+     6,
+     11,
+     12,
+     30,
+     23,
+     12,
+     10
+    ],
+    [
+     10,
+     18,
+     14,
+     10,
+     13,
+     32,
+     15,
+     13
+    ],
+    [
+     20,
+     14,
+     18,
+     13,
+     11,
+     10,
+     15,
+     24
+    ],
+    [
+     16,
+     11,
+     20,
+     13,
+     7,
+     22,
+     23,
+     13
+    ]
+   ]
+  },
+  "uni+bi+tri": {
+   "balanced_accuracy": 0.23,
+   "macro_f1": 0.224,
+   "per_class": {
+    "Hindi": {
+     "precision": 0.25,
+     "recall": 0.232,
+     "f1": 0.241,
+     "n": 125
+    },
+    "Bhojpuri": {
+     "precision": 0.371,
+     "recall": 0.496,
+     "f1": 0.425,
+     "n": 125
+    },
+    "Maithili": {
+     "precision": 0.18,
+     "recall": 0.16,
+     "f1": 0.169,
+     "n": 125
+    },
+    "Chhattisgarhi": {
+     "precision": 0.3,
+     "recall": 0.336,
+     "f1": 0.317,
+     "n": 125
+    },
+    "Rajasthani": {
+     "precision": 0.226,
+     "recall": 0.168,
+     "f1": 0.193,
+     "n": 125
+    },
+    "Garhwali": {
+     "precision": 0.206,
+     "recall": 0.208,
+     "f1": 0.207,
+     "n": 125
+    },
+    "Khariboli": {
+     "precision": 0.117,
+     "recall": 0.104,
+     "f1": 0.11,
+     "n": 125
+    },
+    "Kumaoni": {
+     "precision": 0.125,
+     "recall": 0.136,
+     "f1": 0.13,
+     "n": 125
+    }
+   },
+   "labels": [
+    "Hindi",
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "confusion": [
+    [
+     29,
+     10,
+     5,
+     15,
+     12,
+     15,
+     19,
+     20
+    ],
+    [
+     8,
+     62,
+     10,
+     12,
+     6,
+     11,
+     8,
+     8
+    ],
+    [
+     11,
+     20,
+     20,
+     20,
+     14,
+     12,
+     12,
+     16
+    ],
+    [
+     10,
+     24,
+     13,
+     42,
+     5,
+     11,
+     5,
+     15
+    ],
+    [
+     20,
+     5,
+     12,
+     13,
+     21,
+     20,
+     19,
+     15
+    ],
+    [
+     9,
+     20,
+     12,
+     14,
+     15,
+     26,
+     12,
+     17
+    ],
+    [
+     16,
+     17,
+     16,
+     12,
+     11,
+     12,
+     13,
+     28
+    ],
+    [
+     13,
+     9,
+     23,
+     12,
+     9,
+     19,
+     23,
+     17
+    ]
+   ]
+  }
+ },
+ "taskA_regional_called_hindi_rate": {
+  "Hindi": 0.192,
+  "Bhojpuri": 0.056,
+  "Maithili": 0.048,
+  "Chhattisgarhi": 0.064,
+  "Rajasthani": 0.064,
+  "Garhwali": 0.056,
+  "Khariboli": 0.096,
+  "Kumaoni": 0.08
+ },
+ "top_confusion_pairs": [
+  [
+   "Khariboli",
+   "Kumaoni",
+   28
+  ],
+  [
+   "Chhattisgarhi",
+   "Bhojpuri",
+   24
+  ],
+  [
+   "Kumaoni",
+   "Maithili",
+   23
+  ],
+  [
+   "Kumaoni",
+   "Khariboli",
+   23
+  ],
+  [
+   "Hindi",
+   "Kumaoni",
+   20
+  ],
+  [
+   "Maithili",
+   "Bhojpuri",
+   20
+  ],
+  [
+   "Maithili",
+   "Chhattisgarhi",
+   20
+  ],
+  [
+   "Rajasthani",
+   "Hindi",
+   20
+  ]
+ ],
+ "shuffled": {
+  "taskA": 0.5097,
+  "taskB": 0.101
+ },
+ "markers_8way": {
+  "Hindi": [
+   {
+    "pattern": "kʰ-a-ɪ",
+    "n": 3,
+    "coverage": 0.104,
+    "coverage_others": 0.033,
+    "enrichment_vs_others": 2.64,
+    "enrichment_vs_hindi": null,
+    "weight": 0.721
+   },
+   {
+    "pattern": "p-a-ɾ",
+    "n": 3,
+    "coverage": 0.16,
+    "coverage_others": 0.094,
+    "enrichment_vs_others": 1.64,
+    "enrichment_vs_hindi": null,
+    "weight": 0.648
+   },
+   {
+    "pattern": "ɪ-i",
+    "n": 2,
+    "coverage": 0.12,
+    "coverage_others": 0.074,
+    "enrichment_vs_others": 1.54,
+    "enrichment_vs_hindi": null,
+    "weight": 0.562
+   },
+   {
+    "pattern": "j-æ",
+    "n": 2,
+    "coverage": 0.096,
+    "coverage_others": 0.058,
+    "enrichment_vs_others": 1.55,
+    "enrichment_vs_hindi": null,
+    "weight": 0.521
+   },
+   {
+    "pattern": "h",
+    "n": 1,
+    "coverage": 0.24,
+    "coverage_others": 0.221,
+    "enrichment_vs_others": 1.08,
+    "enrichment_vs_hindi": null,
+    "weight": 0.494
+   },
+   {
+    "pattern": "ɪ-a",
+    "n": 2,
+    "coverage": 0.184,
+    "coverage_others": 0.149,
+    "enrichment_vs_others": 1.22,
+    "enrichment_vs_hindi": null,
+    "weight": 0.437
+   },
+   {
+    "pattern": "ə-ɾ",
+    "n": 2,
+    "coverage": 0.08,
+    "coverage_others": 0.053,
+    "enrichment_vs_others": 1.44,
+    "enrichment_vs_hindi": null,
+    "weight": 0.415
+   },
+   {
+    "pattern": "ɾ-a-ɾ",
+    "n": 3,
+    "coverage": 0.072,
+    "coverage_others": 0.039,
+    "enrichment_vs_others": 1.68,
+    "enrichment_vs_hindi": null,
+    "weight": 0.413
+   },
+   {
+    "pattern": "ʂ-iː",
+    "n": 2,
+    "coverage": 0.08,
+    "coverage_others": 0.039,
+    "enrichment_vs_others": 1.84,
+    "enrichment_vs_hindi": null,
+    "weight": 0.403
+   },
+   {
+    "pattern": "a-ɪ-i",
+    "n": 3,
+    "coverage": 0.064,
+    "coverage_others": 0.023,
+    "enrichment_vs_others": 2.25,
+    "enrichment_vs_hindi": null,
+    "weight": 0.385
+   }
+  ],
+  "Bhojpuri": [
+   {
+    "pattern": "b-a",
+    "n": 2,
+    "coverage": 0.56,
+    "coverage_others": 0.25,
+    "enrichment_vs_others": 2.19,
+    "enrichment_vs_hindi": 2.82,
+    "weight": 1.759
+   },
+   {
+    "pattern": "a-t̪",
+    "n": 2,
+    "coverage": 0.616,
+    "coverage_others": 0.353,
+    "enrichment_vs_others": 1.72,
+    "enrichment_vs_hindi": 2.59,
+    "weight": 1.175
+   },
+   {
+    "pattern": "a-t̪-a",
+    "n": 3,
+    "coverage": 0.24,
+    "coverage_others": 0.096,
+    "enrichment_vs_others": 2.36,
+    "enrichment_vs_hindi": 3.05,
+    "weight": 1.07
+   },
+   {
+    "pattern": "l̪",
+    "n": 1,
+    "coverage": 0.68,
+    "coverage_others": 0.43,
+    "enrichment_vs_others": 1.57,
+    "enrichment_vs_hindi": 2.09,
+    "weight": 1.004
+   },
+   {
+    "pattern": "b",
+    "n": 1,
+    "coverage": 0.784,
+    "coverage_others": 0.614,
+    "enrichment_vs_others": 1.27,
+    "enrichment_vs_hindi": 1.65,
+    "weight": 0.984
+   },
+   {
+    "pattern": "t̪-a",
+    "n": 2,
+    "coverage": 0.504,
+    "coverage_others": 0.349,
+    "enrichment_vs_others": 1.43,
+    "enrichment_vs_hindi": 2.12,
+    "weight": 0.899
+   },
+   {
+    "pattern": "l-b",
+    "n": 2,
+    "coverage": 0.128,
+    "coverage_others": 0.022,
+    "enrichment_vs_others": 4.35,
+    "enrichment_vs_hindi": 7.67,
+    "weight": 0.788
+   },
+   {
+    "pattern": "l-b-a",
+    "n": 3,
+    "coverage": 0.096,
+    "coverage_others": 0.009,
+    "enrichment_vs_others": 5.54,
+    "enrichment_vs_hindi": 10.6,
+    "weight": 0.748
+   },
+   {
+    "pattern": "kʰ",
+    "n": 1,
+    "coverage": 0.488,
+    "coverage_others": 0.329,
+    "enrichment_vs_others": 1.47,
+    "enrichment_vs_hindi": 1.51,
+    "weight": 0.714
+   },
+   {
+    "pattern": "ɡ-a",
+    "n": 2,
+    "coverage": 0.232,
+    "coverage_others": 0.102,
+    "enrichment_vs_others": 2.17,
+    "enrichment_vs_hindi": 3.27,
+    "weight": 0.709
+   }
+  ],
+  "Maithili": [
+   {
+    "pattern": "o-t̪",
+    "n": 2,
+    "coverage": 0.336,
+    "coverage_others": 0.189,
+    "enrichment_vs_others": 1.74,
+    "enrichment_vs_hindi": 2.14,
+    "weight": 0.775
+   },
+   {
+    "pattern": "ʂ-e",
+    "n": 2,
+    "coverage": 0.192,
+    "coverage_others": 0.091,
+    "enrichment_vs_others": 1.99,
+    "enrichment_vs_hindi": 1.91,
+    "weight": 0.715
+   },
+   {
+    "pattern": "t̪-i",
+    "n": 2,
+    "coverage": 0.336,
+    "coverage_others": 0.218,
+    "enrichment_vs_others": 1.52,
+    "enrichment_vs_hindi": 2.25,
+    "weight": 0.693
+   },
+   {
+    "pattern": "l-a",
+    "n": 2,
+    "coverage": 0.552,
+    "coverage_others": 0.416,
+    "enrichment_vs_others": 1.32,
+    "enrichment_vs_hindi": 2.25,
+    "weight": 0.661
+   },
+   {
+    "pattern": "t̪-a",
+    "n": 2,
+    "coverage": 0.496,
+    "coverage_others": 0.35,
+    "enrichment_vs_others": 1.41,
+    "enrichment_vs_hindi": 2.09,
+    "weight": 0.573
+   },
+   {
+    "pattern": "t̪-i-k",
+    "n": 3,
+    "coverage": 0.08,
+    "coverage_others": 0.024,
+    "enrichment_vs_others": 2.65,
+    "enrichment_vs_hindi": 5.0,
+    "weight": 0.566
+   },
+   {
+    "pattern": "l-a-ɡ",
+    "n": 3,
+    "coverage": 0.12,
+    "coverage_others": 0.05,
+    "enrichment_vs_others": 2.16,
+    "enrichment_vs_hindi": 2.24,
+    "weight": 0.537
+   },
+   {
+    "pattern": "e-l",
+    "n": 2,
+    "coverage": 0.24,
+    "coverage_others": 0.144,
+    "enrichment_vs_others": 1.62,
+    "enrichment_vs_hindi": 2.36,
+    "weight": 0.537
+   },
+   {
+    "pattern": "e-iː",
+    "n": 2,
+    "coverage": 0.136,
+    "coverage_others": 0.066,
+    "enrichment_vs_others": 1.91,
+    "enrichment_vs_hindi": 2.52,
+    "weight": 0.528
+   },
+   {
+    "pattern": "d̪-e",
+    "n": 2,
+    "coverage": 0.136,
+    "coverage_others": 0.042,
+    "enrichment_vs_others": 2.79,
+    "enrichment_vs_hindi": 4.29,
+    "weight": 0.52
+   }
+  ],
+  "Chhattisgarhi": [
+   {
+    "pattern": "t̪ʰ",
+    "n": 1,
+    "coverage": 0.592,
+    "coverage_others": 0.358,
+    "enrichment_vs_others": 1.64,
+    "enrichment_vs_hindi": 2.2,
+    "weight": 1.365
+   },
+   {
+    "pattern": "t̪ʰ-i",
+    "n": 2,
+    "coverage": 0.232,
+    "coverage_others": 0.087,
+    "enrichment_vs_others": 2.5,
+    "enrichment_vs_hindi": 2.95,
+    "weight": 0.895
+   },
+   {
+    "pattern": "h",
+    "n": 1,
+    "coverage": 0.352,
+    "coverage_others": 0.205,
+    "enrichment_vs_others": 1.69,
+    "enrichment_vs_hindi": 1.45,
+    "weight": 0.825
+   },
+   {
+    "pattern": "m-a",
+    "n": 2,
+    "coverage": 0.456,
+    "coverage_others": 0.261,
+    "enrichment_vs_others": 1.72,
+    "enrichment_vs_hindi": 2.74,
+    "weight": 0.803
+   },
+   {
+    "pattern": "i-h",
+    "n": 2,
+    "coverage": 0.128,
+    "coverage_others": 0.038,
+    "enrichment_vs_others": 2.89,
+    "enrichment_vs_hindi": 1.86,
+    "weight": 0.717
+   },
+   {
+    "pattern": "kʰ-a",
+    "n": 2,
+    "coverage": 0.312,
+    "coverage_others": 0.201,
+    "enrichment_vs_others": 1.53,
+    "enrichment_vs_hindi": 1.29,
+    "weight": 0.717
+   },
+   {
+    "pattern": "a-t̪ʰ",
+    "n": 2,
+    "coverage": 0.208,
+    "coverage_others": 0.096,
+    "enrichment_vs_others": 2.06,
+    "enrichment_vs_hindi": 3.76,
+    "weight": 0.713
+   },
+   {
+    "pattern": "pʰ",
+    "n": 1,
+    "coverage": 0.136,
+    "coverage_others": 0.071,
+    "enrichment_vs_others": 1.81,
+    "enrichment_vs_hindi": 2.92,
+    "weight": 0.69
+   },
+   {
+    "pattern": "h-a",
+    "n": 2,
+    "coverage": 0.24,
+    "coverage_others": 0.123,
+    "enrichment_vs_others": 1.87,
+    "enrichment_vs_hindi": 1.71,
+    "weight": 0.683
+   },
+   {
+    "pattern": "kʰ-a-t̪ʰ",
+    "n": 3,
+    "coverage": 0.056,
+    "coverage_others": 0.001,
+    "enrichment_vs_others": 5.92,
+    "enrichment_vs_hindi": 6.6,
+    "weight": 0.673
+   }
+  ],
+  "Rajasthani": [
+   {
+    "pattern": "k-o",
+    "n": 2,
+    "coverage": 0.288,
+    "coverage_others": 0.191,
+    "enrichment_vs_others": 1.48,
+    "enrichment_vs_hindi": 2.16,
+    "weight": 0.983
+   },
+   {
+    "pattern": "s-o",
+    "n": 2,
+    "coverage": 0.12,
+    "coverage_others": 0.062,
+    "enrichment_vs_others": 1.81,
+    "enrichment_vs_hindi": 3.1,
+    "weight": 0.627
+   },
+   {
+    "pattern": "j-e",
+    "n": 2,
+    "coverage": 0.2,
+    "coverage_others": 0.151,
+    "enrichment_vs_others": 1.31,
+    "enrichment_vs_hindi": 1.3,
+    "weight": 0.578
+   },
+   {
+    "pattern": "iː-ɾ",
+    "n": 2,
+    "coverage": 0.12,
+    "coverage_others": 0.082,
+    "enrichment_vs_others": 1.41,
+    "enrichment_vs_hindi": 1.59,
+    "weight": 0.549
+   },
+   {
+    "pattern": "ɾ-i",
+    "n": 2,
+    "coverage": 0.248,
+    "coverage_others": 0.179,
+    "enrichment_vs_others": 1.36,
+    "enrichment_vs_hindi": 1.39,
+    "weight": 0.533
+   },
+   {
+    "pattern": "ɾ-j-e",
+    "n": 3,
+    "coverage": 0.064,
+    "coverage_others": 0.01,
+    "enrichment_vs_others": 3.65,
+    "enrichment_vs_hindi": 4.11,
+    "weight": 0.475
+   },
+   {
+    "pattern": "t̪-o",
+    "n": 2,
+    "coverage": 0.208,
+    "coverage_others": 0.146,
+    "enrichment_vs_others": 1.39,
+    "enrichment_vs_hindi": 3.3,
+    "weight": 0.468
+   },
+   {
+    "pattern": "ɾ-i-e",
+    "n": 3,
+    "coverage": 0.056,
+    "coverage_others": 0.013,
+    "enrichment_vs_others": 2.92,
+    "enrichment_vs_hindi": 2.54,
+    "weight": 0.46
+   },
+   {
+    "pattern": "s",
+    "n": 1,
+    "coverage": 0.592,
+    "coverage_others": 0.583,
+    "enrichment_vs_others": 1.02,
+    "enrichment_vs_hindi": 1.41,
+    "weight": 0.44
+   },
+   {
+    "pattern": "ɾ-j",
+    "n": 2,
+    "coverage": 0.104,
+    "coverage_others": 0.062,
+    "enrichment_vs_others": 1.59,
+    "enrichment_vs_hindi": 1.97,
+    "weight": 0.432
+   }
+  ],
+  "Garhwali": [
+   {
+    "pattern": "k-a",
+    "n": 2,
+    "coverage": 0.528,
+    "coverage_others": 0.418,
+    "enrichment_vs_others": 1.26,
+    "enrichment_vs_hindi": 1.67,
+    "weight": 0.7
+   },
+   {
+    "pattern": "æ-n",
+    "n": 2,
+    "coverage": 0.288,
+    "coverage_others": 0.163,
+    "enrichment_vs_others": 1.72,
+    "enrichment_vs_hindi": 1.67,
+    "weight": 0.692
+   },
+   {
+    "pattern": "iː-n",
+    "n": 2,
+    "coverage": 0.192,
+    "coverage_others": 0.097,
+    "enrichment_vs_others": 1.89,
+    "enrichment_vs_hindi": 3.06,
+    "weight": 0.678
+   },
+   {
+    "pattern": "o-ŋ",
+    "n": 2,
+    "coverage": 0.152,
+    "coverage_others": 0.059,
+    "enrichment_vs_others": 2.33,
+    "enrichment_vs_hindi": 4.76,
+    "weight": 0.631
+   },
+   {
+    "pattern": "ɳ-iː",
+    "n": 2,
+    "coverage": 0.184,
+    "coverage_others": 0.081,
+    "enrichment_vs_others": 2.13,
+    "enrichment_vs_hindi": 2.37,
+    "weight": 0.609
+   },
+   {
+    "pattern": "ɖ̤",
+    "n": 1,
+    "coverage": 0.32,
+    "coverage_others": 0.198,
+    "enrichment_vs_others": 1.59,
+    "enrichment_vs_hindi": 1.63,
+    "weight": 0.557
+   },
+   {
+    "pattern": "ɡ-iː",
+    "n": 2,
+    "coverage": 0.112,
+    "coverage_others": 0.034,
+    "enrichment_vs_others": 2.75,
+    "enrichment_vs_hindi": 2.9,
+    "weight": 0.528
+   },
+   {
+    "pattern": "ɔ̃",
+    "n": 1,
+    "coverage": 0.128,
+    "coverage_others": 0.041,
+    "enrichment_vs_others": 2.7,
+    "enrichment_vs_hindi": 4.06,
+    "weight": 0.527
+   },
+   {
+    "pattern": "ə-s",
+    "n": 2,
+    "coverage": 0.072,
+    "coverage_others": 0.019,
+    "enrichment_vs_others": 2.79,
+    "enrichment_vs_hindi": 4.56,
+    "weight": 0.513
+   },
+   {
+    "pattern": "o-n",
+    "n": 2,
+    "coverage": 0.2,
+    "coverage_others": 0.112,
+    "enrichment_vs_others": 1.72,
+    "enrichment_vs_hindi": 4.2,
+    "weight": 0.502
+   }
+  ],
+  "Khariboli": [
+   {
+    "pattern": "e-ɾ-e",
+    "n": 3,
+    "coverage": 0.184,
+    "coverage_others": 0.041,
+    "enrichment_vs_others": 3.79,
+    "enrichment_vs_hindi": 2.37,
+    "weight": 1.031
+   },
+   {
+    "pattern": "l-i",
+    "n": 2,
+    "coverage": 0.248,
+    "coverage_others": 0.128,
+    "enrichment_vs_others": 1.87,
+    "enrichment_vs_hindi": 1.68,
+    "weight": 0.703
+   },
+   {
+    "pattern": "e-ɾ",
+    "n": 2,
+    "coverage": 0.368,
+    "coverage_others": 0.249,
+    "enrichment_vs_others": 1.46,
+    "enrichment_vs_hindi": 1.51,
+    "weight": 0.695
+   },
+   {
+    "pattern": "e-ɾ-ɪ",
+    "n": 3,
+    "coverage": 0.112,
+    "coverage_others": 0.029,
+    "enrichment_vs_others": 3.16,
+    "enrichment_vs_hindi": 3.59,
+    "weight": 0.68
+   },
+   {
+    "pattern": "ʔ-iː",
+    "n": 2,
+    "coverage": 0.08,
+    "coverage_others": 0.025,
+    "enrichment_vs_others": 2.56,
+    "enrichment_vs_hindi": 2.65,
+    "weight": 0.655
+   },
+   {
+    "pattern": "ɾ-e",
+    "n": 2,
+    "coverage": 0.408,
+    "coverage_others": 0.259,
+    "enrichment_vs_others": 1.55,
+    "enrichment_vs_hindi": 1.62,
+    "weight": 0.641
+   },
+   {
+    "pattern": "ɾ-ɪ",
+    "n": 2,
+    "coverage": 0.312,
+    "coverage_others": 0.195,
+    "enrichment_vs_others": 1.57,
+    "enrichment_vs_hindi": 1.66,
+    "weight": 0.64
+   },
+   {
+    "pattern": "e-p",
+    "n": 2,
+    "coverage": 0.216,
+    "coverage_others": 0.119,
+    "enrichment_vs_others": 1.75,
+    "enrichment_vs_hindi": 2.13,
+    "weight": 0.541
+   },
+   {
+    "pattern": "iː-e",
+    "n": 2,
+    "coverage": 0.136,
+    "coverage_others": 0.074,
+    "enrichment_vs_others": 1.73,
+    "enrichment_vs_hindi": 1.97,
+    "weight": 0.516
+   },
+   {
+    "pattern": "a-ʁ",
+    "n": 2,
+    "coverage": 0.152,
+    "coverage_others": 0.109,
+    "enrichment_vs_others": 1.37,
+    "enrichment_vs_hindi": 1.53,
+    "weight": 0.498
+   }
+  ],
+  "Kumaoni": [
+   {
+    "pattern": "ɪ-k",
+    "n": 2,
+    "coverage": 0.368,
+    "coverage_others": 0.168,
+    "enrichment_vs_others": 2.12,
+    "enrichment_vs_hindi": 2.45,
+    "weight": 0.9
+   },
+   {
+    "pattern": "ɟ",
+    "n": 1,
+    "coverage": 0.208,
+    "coverage_others": 0.088,
+    "enrichment_vs_others": 2.22,
+    "enrichment_vs_hindi": 4.36,
+    "weight": 0.668
+   },
+   {
+    "pattern": "e-n",
+    "n": 2,
+    "coverage": 0.328,
+    "coverage_others": 0.193,
+    "enrichment_vs_others": 1.66,
+    "enrichment_vs_hindi": 1.74,
+    "weight": 0.646
+   },
+   {
+    "pattern": "p-e",
+    "n": 2,
+    "coverage": 0.304,
+    "coverage_others": 0.142,
+    "enrichment_vs_others": 2.07,
+    "enrichment_vs_hindi": 1.76,
+    "weight": 0.637
+   },
+   {
+    "pattern": "i-ʂ",
+    "n": 2,
+    "coverage": 0.12,
+    "coverage_others": 0.047,
+    "enrichment_vs_others": 2.29,
+    "enrichment_vs_hindi": 2.24,
+    "weight": 0.635
+   },
+   {
+    "pattern": "l-u",
+    "n": 2,
+    "coverage": 0.104,
+    "coverage_others": 0.027,
+    "enrichment_vs_others": 3.05,
+    "enrichment_vs_hindi": 3.35,
+    "weight": 0.618
+   },
+   {
+    "pattern": "ɪ-k-o",
+    "n": 3,
+    "coverage": 0.08,
+    "coverage_others": 0.018,
+    "enrichment_vs_others": 3.18,
+    "enrichment_vs_hindi": 9.0,
+    "weight": 0.595
+   },
+   {
+    "pattern": "i-l",
+    "n": 2,
+    "coverage": 0.2,
+    "coverage_others": 0.09,
+    "enrichment_vs_others": 2.09,
+    "enrichment_vs_hindi": 3.18,
+    "weight": 0.583
+   },
+   {
+    "pattern": "k-a",
+    "n": 2,
+    "coverage": 0.6,
+    "coverage_others": 0.408,
+    "enrichment_vs_others": 1.46,
+    "enrichment_vs_hindi": 1.89,
+    "weight": 0.569
+   },
+   {
+    "pattern": "ɑ",
+    "n": 1,
+    "coverage": 0.12,
+    "coverage_others": 0.043,
+    "enrichment_vs_others": 2.43,
+    "enrichment_vs_hindi": 3.1,
+    "weight": 0.566
+   }
+  ]
+ },
+ "markers_hindi_vs_regional": {
+  "Hindi": [
+   {
+    "pattern": "kʰ-a-ɪ",
+    "n": 3,
+    "coverage": 0.104,
+    "coverage_others": 0.033,
+    "enrichment_vs_others": 2.64,
+    "enrichment_vs_hindi": null,
+    "weight": 1.188
+   },
+   {
+    "pattern": "p-a-ɾ",
+    "n": 3,
+    "coverage": 0.16,
+    "coverage_others": 0.094,
+    "enrichment_vs_others": 1.64,
+    "enrichment_vs_hindi": null,
+    "weight": 1.064
+   },
+   {
+    "pattern": "ɪ-i",
+    "n": 2,
+    "coverage": 0.12,
+    "coverage_others": 0.074,
+    "enrichment_vs_others": 1.54,
+    "enrichment_vs_hindi": null,
+    "weight": 0.945
+   },
+   {
+    "pattern": "j-æ",
+    "n": 2,
+    "coverage": 0.096,
+    "coverage_others": 0.058,
+    "enrichment_vs_others": 1.55,
+    "enrichment_vs_hindi": null,
+    "weight": 0.768
+   },
+   {
+    "pattern": "ɾ-a-ɾ",
+    "n": 3,
+    "coverage": 0.072,
+    "coverage_others": 0.039,
+    "enrichment_vs_others": 1.68,
+    "enrichment_vs_hindi": null,
+    "weight": 0.719
+   },
+   {
+    "pattern": "h",
+    "n": 1,
+    "coverage": 0.24,
+    "coverage_others": 0.221,
+    "enrichment_vs_others": 1.08,
+    "enrichment_vs_hindi": null,
+    "weight": 0.706
+   },
+   {
+    "pattern": "i-j-e",
+    "n": 3,
+    "coverage": 0.064,
+    "coverage_others": 0.027,
+    "enrichment_vs_others": 1.98,
+    "enrichment_vs_hindi": null,
+    "weight": 0.704
+   },
+   {
+    "pattern": "e-ʂ",
+    "n": 2,
+    "coverage": 0.152,
+    "coverage_others": 0.09,
+    "enrichment_vs_others": 1.62,
+    "enrichment_vs_hindi": null,
+    "weight": 0.696
+   },
+   {
+    "pattern": "ə-ɾ",
+    "n": 2,
+    "coverage": 0.08,
+    "coverage_others": 0.053,
+    "enrichment_vs_others": 1.44,
+    "enrichment_vs_hindi": null,
+    "weight": 0.662
+   },
+   {
+    "pattern": "ʂ-iː",
+    "n": 2,
+    "coverage": 0.08,
+    "coverage_others": 0.039,
+    "enrichment_vs_others": 1.84,
+    "enrichment_vs_hindi": null,
+    "weight": 0.659
+   },
+   {
+    "pattern": "ɪ-a",
+    "n": 2,
+    "coverage": 0.184,
+    "coverage_others": 0.149,
+    "enrichment_vs_others": 1.22,
+    "enrichment_vs_hindi": null,
+    "weight": 0.655
+   },
+   {
+    "pattern": "a-ɪ-i",
+    "n": 3,
+    "coverage": 0.064,
+    "coverage_others": 0.023,
+    "enrichment_vs_others": 2.25,
+    "enrichment_vs_hindi": null,
+    "weight": 0.652
+   },
+   {
+    "pattern": "e-s̪",
+    "n": 2,
+    "coverage": 0.088,
+    "coverage_others": 0.051,
+    "enrichment_vs_others": 1.6,
+    "enrichment_vs_hindi": null,
+    "weight": 0.622
+   },
+   {
+    "pattern": "a-ɾ-iː",
+    "n": 3,
+    "coverage": 0.072,
+    "coverage_others": 0.053,
+    "enrichment_vs_others": 1.31,
+    "enrichment_vs_hindi": null,
+    "weight": 0.6
+   },
+   {
+    "pattern": "ʂ",
+    "n": 1,
+    "coverage": 0.528,
+    "coverage_others": 0.533,
+    "enrichment_vs_others": 0.99,
+    "enrichment_vs_hindi": null,
+    "weight": 0.592
+   }
+  ],
+  "Regional": [
+   {
+    "pattern": "t̪",
+    "n": 1,
+    "coverage": 0.866,
+    "coverage_others": 0.64,
+    "enrichment_vs_others": 1.35,
+    "enrichment_vs_hindi": 1.35,
+    "weight": 1.407
+   },
+   {
+    "pattern": "ŋ",
+    "n": 1,
+    "coverage": 0.381,
+    "coverage_others": 0.176,
+    "enrichment_vs_others": 2.1,
+    "enrichment_vs_hindi": 2.1,
+    "weight": 1.395
+   },
+   {
+    "pattern": "ɾ-a",
+    "n": 2,
+    "coverage": 0.472,
+    "coverage_others": 0.24,
+    "enrichment_vs_others": 1.93,
+    "enrichment_vs_hindi": 1.93,
+    "weight": 1.049
+   },
+   {
+    "pattern": "a-t̪",
+    "n": 2,
+    "coverage": 0.408,
+    "coverage_others": 0.232,
+    "enrichment_vs_others": 1.73,
+    "enrichment_vs_hindi": 1.73,
+    "weight": 1.037
+   },
+   {
+    "pattern": "ɳ",
+    "n": 1,
+    "coverage": 0.479,
+    "coverage_others": 0.296,
+    "enrichment_vs_others": 1.6,
+    "enrichment_vs_hindi": 1.6,
+    "weight": 0.962
+   },
+   {
+    "pattern": "l-a",
+    "n": 2,
+    "coverage": 0.461,
+    "coverage_others": 0.24,
+    "enrichment_vs_others": 1.88,
+    "enrichment_vs_hindi": 1.88,
+    "weight": 0.945
+   },
+   {
+    "pattern": "t̪-i",
+    "n": 2,
+    "coverage": 0.246,
+    "coverage_others": 0.144,
+    "enrichment_vs_others": 1.66,
+    "enrichment_vs_hindi": 1.66,
+    "weight": 0.933
+   },
+   {
+    "pattern": "t̪-o",
+    "n": 2,
+    "coverage": 0.168,
+    "coverage_others": 0.056,
+    "enrichment_vs_others": 2.7,
+    "enrichment_vs_hindi": 2.7,
+    "weight": 0.929
+   },
+   {
+    "pattern": "a-m",
+    "n": 2,
+    "coverage": 0.249,
+    "coverage_others": 0.128,
+    "enrichment_vs_others": 1.88,
+    "enrichment_vs_hindi": 1.88,
+    "weight": 0.923
+   },
+   {
+    "pattern": "a-ŋ",
+    "n": 2,
+    "coverage": 0.158,
+    "coverage_others": 0.064,
+    "enrichment_vs_others": 2.27,
+    "enrichment_vs_hindi": 2.27,
+    "weight": 0.921
+   },
+   {
+    "pattern": "ɡ",
+    "n": 1,
+    "coverage": 0.355,
+    "coverage_others": 0.176,
+    "enrichment_vs_others": 1.96,
+    "enrichment_vs_hindi": 1.96,
+    "weight": 0.911
+   },
+   {
+    "pattern": "a-ɳ",
+    "n": 2,
+    "coverage": 0.257,
+    "coverage_others": 0.12,
+    "enrichment_vs_others": 2.05,
+    "enrichment_vs_hindi": 2.05,
+    "weight": 0.902
+   },
+   {
+    "pattern": "t̪ʰ",
+    "n": 1,
+    "coverage": 0.405,
+    "coverage_others": 0.264,
+    "enrichment_vs_others": 1.51,
+    "enrichment_vs_hindi": 1.51,
+    "weight": 0.894
+   },
+   {
+    "pattern": "a-k",
+    "n": 2,
+    "coverage": 0.289,
+    "coverage_others": 0.136,
+    "enrichment_vs_others": 2.05,
+    "enrichment_vs_hindi": 2.05,
+    "weight": 0.878
+   },
+   {
+    "pattern": "a-l-a",
+    "n": 3,
+    "coverage": 0.144,
+    "coverage_others": 0.048,
+    "enrichment_vs_others": 2.66,
+    "enrichment_vs_hindi": 2.66,
+    "weight": 0.855
+   }
+  ]
+ },
+ "family_shared_vs_hindi": [
+  {
+   "pattern": "o-i",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.0,
+   "mean_regional_cov": 0.062
+  },
+  {
+   "pattern": "n-m",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.008,
+   "mean_regional_cov": 0.08
+  },
+  {
+   "pattern": "æ-ɳ",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.008,
+   "mean_regional_cov": 0.062
+  },
+  {
+   "pattern": "ɾ-l",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.016,
+   "mean_regional_cov": 0.085
+  },
+  {
+   "pattern": "a-d̪",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.016,
+   "mean_regional_cov": 0.077
+  },
+  {
+   "pattern": "t̪-a-ɾ",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.016,
+   "mean_regional_cov": 0.072
+  },
+  {
+   "pattern": "o-n",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.04,
+   "mean_regional_cov": 0.135
+  },
+  {
+   "pattern": "t̪-o",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.056,
+   "mean_regional_cov": 0.168
+  },
+  {
+   "pattern": "æ-ɾ",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.032,
+   "mean_regional_cov": 0.102
+  },
+  {
+   "pattern": "a-l-a",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.048,
+   "mean_regional_cov": 0.144
+  },
+  {
+   "pattern": "ɡ-o",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.032,
+   "mean_regional_cov": 0.101
+  },
+  {
+   "pattern": "o-ŋ",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.024,
+   "mean_regional_cov": 0.078
+  },
+  {
+   "pattern": "ɪ-n",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Rajasthani",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.032,
+   "mean_regional_cov": 0.097
+  },
+  {
+   "pattern": "uː-ɾ",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.016,
+   "mean_regional_cov": 0.056
+  },
+  {
+   "pattern": "ɟ",
+   "enriched_in": [
+    "Bhojpuri",
+    "Maithili",
+    "Chhattisgarhi",
+    "Garhwali",
+    "Khariboli",
+    "Kumaoni"
+   ],
+   "hindi_cov": 0.04,
+   "mean_regional_cov": 0.112
+  }
+ ],
+ "close_pairs": {
+  "Bhojpuri_vs_Maithili": {
+   "balanced_accuracy": 0.628,
+   "markers": {
+    "Bhojpuri": [
+     {
+      "pattern": "b-a",
+      "n": 2,
+      "coverage": 0.56,
+      "coverage_others": 0.256,
+      "enrichment_vs_others": 2.14,
+      "enrichment_vs_hindi": null,
+      "weight": 1.178
+     },
+     {
+      "pattern": "a-t̪-a",
+      "n": 3,
+      "coverage": 0.24,
+      "coverage_others": 0.104,
+      "enrichment_vs_others": 2.19,
+      "enrichment_vs_hindi": null,
+      "weight": 0.779
+     },
+     {
+      "pattern": "b",
+      "n": 1,
+      "coverage": 0.784,
+      "coverage_others": 0.704,
+      "enrichment_vs_others": 1.11,
+      "enrichment_vs_hindi": null,
+      "weight": 0.554
+     },
+     {
+      "pattern": "kʰ-a",
+      "n": 2,
+      "coverage": 0.336,
+      "coverage_others": 0.192,
+      "enrichment_vs_others": 1.71,
+      "enrichment_vs_hindi": null,
+      "weight": 0.544
+     },
+     {
+      "pattern": "l-b",
+      "n": 2,
+      "coverage": 0.128,
+      "coverage_others": 0.016,
+      "enrichment_vs_others": 5.31,
+      "enrichment_vs_hindi": null,
+      "weight": 0.5
+     }
+    ],
+    "Maithili": [
+     {
+      "pattern": "t̪-i",
+      "n": 2,
+      "coverage": 0.336,
+      "coverage_others": 0.184,
+      "enrichment_vs_others": 1.78,
+      "enrichment_vs_hindi": null,
+      "weight": 0.589
+     },
+     {
+      "pattern": "ʂ-e",
+      "n": 2,
+      "coverage": 0.192,
+      "coverage_others": 0.08,
+      "enrichment_vs_others": 2.24,
+      "enrichment_vs_hindi": null,
+      "weight": 0.547
+     },
+     {
+      "pattern": "iː-t̪",
+      "n": 2,
+      "coverage": 0.232,
+      "coverage_others": 0.088,
+      "enrichment_vs_others": 2.47,
+      "enrichment_vs_hindi": null,
+      "weight": 0.52
+     },
+     {
+      "pattern": "t̪-o",
+      "n": 2,
+      "coverage": 0.224,
+      "coverage_others": 0.104,
+      "enrichment_vs_others": 2.05,
+      "enrichment_vs_hindi": null,
+      "weight": 0.519
+     },
+     {
+      "pattern": "h",
+      "n": 1,
+      "coverage": 0.272,
+      "coverage_others": 0.168,
+      "enrichment_vs_others": 1.58,
+      "enrichment_vs_hindi": null,
+      "weight": 0.503
+     }
+    ]
+   }
+  },
+  "Garhwali_vs_Kumaoni": {
+   "balanced_accuracy": 0.576,
+   "markers": {
+    "Garhwali": [
+     {
+      "pattern": "n-a",
+      "n": 2,
+      "coverage": 0.24,
+      "coverage_others": 0.152,
+      "enrichment_vs_others": 1.54,
+      "enrichment_vs_hindi": null,
+      "weight": 0.472
+     },
+     {
+      "pattern": "t̪-u",
+      "n": 2,
+      "coverage": 0.072,
+      "coverage_others": 0.008,
+      "enrichment_vs_others": 4.56,
+      "enrichment_vs_hindi": null,
+      "weight": 0.452
+     },
+     {
+      "pattern": "ʁ-a",
+      "n": 2,
+      "coverage": 0.224,
+      "coverage_others": 0.152,
+      "enrichment_vs_others": 1.44,
+      "enrichment_vs_hindi": null,
+      "weight": 0.426
+     },
+     {
+      "pattern": "iː-n",
+      "n": 2,
+      "coverage": 0.192,
+      "coverage_others": 0.104,
+      "enrichment_vs_others": 1.77,
+      "enrichment_vs_hindi": null,
+      "weight": 0.396
+     },
+     {
+      "pattern": "ɔ̃",
+      "n": 1,
+      "coverage": 0.128,
+      "coverage_others": 0.056,
+      "enrichment_vs_others": 2.09,
+      "enrichment_vs_hindi": null,
+      "weight": 0.383
+     }
+    ],
+    "Kumaoni": [
+     {
+      "pattern": "h",
+      "n": 1,
+      "coverage": 0.344,
+      "coverage_others": 0.112,
+      "enrichment_vs_others": 2.9,
+      "enrichment_vs_hindi": null,
+      "weight": 0.739
+     },
+     {
+      "pattern": "e-ɾ",
+      "n": 2,
+      "coverage": 0.352,
+      "coverage_others": 0.168,
+      "enrichment_vs_others": 2.03,
+      "enrichment_vs_hindi": null,
+      "weight": 0.604
+     },
+     {
+      "pattern": "l",
+      "n": 1,
+      "coverage": 0.888,
+      "coverage_others": 0.704,
+      "enrichment_vs_others": 1.26,
+      "enrichment_vs_hindi": null,
+      "weight": 0.571
+     },
+     {
+      "pattern": "e-n",
+      "n": 2,
+      "coverage": 0.328,
+      "coverage_others": 0.168,
+      "enrichment_vs_others": 1.9,
+      "enrichment_vs_hindi": null,
+      "weight": 0.562
+     },
+     {
+      "pattern": "a-e",
+      "n": 2,
+      "coverage": 0.184,
+      "coverage_others": 0.032,
+      "enrichment_vs_others": 4.62,
+      "enrichment_vs_hindi": null,
+      "weight": 0.557
+     }
+    ]
+   }
+  },
+  "Hindi_vs_Khariboli": {
+   "balanced_accuracy": 0.592,
+   "markers": {
+    "Hindi": [
+     {
+      "pattern": "kʰ-a",
+      "n": 2,
+      "coverage": 0.24,
+      "coverage_others": 0.184,
+      "enrichment_vs_others": 1.29,
+      "enrichment_vs_hindi": null,
+      "weight": 0.428
+     },
+     {
+      "pattern": "ɾ-a-ɾ",
+      "n": 3,
+      "coverage": 0.072,
+      "coverage_others": 0.016,
+      "enrichment_vs_others": 3.15,
+      "enrichment_vs_hindi": null,
+      "weight": 0.392
+     },
+     {
+      "pattern": "ʂ",
+      "n": 1,
+      "coverage": 0.528,
+      "coverage_others": 0.504,
+      "enrichment_vs_others": 1.05,
+      "enrichment_vs_hindi": null,
+      "weight": 0.368
+     },
+     {
+      "pattern": "ɪ-a",
+      "n": 2,
+      "coverage": 0.184,
+      "coverage_others": 0.144,
+      "enrichment_vs_others": 1.26,
+      "enrichment_vs_hindi": null,
+      "weight": 0.349
+     },
+     {
+      "pattern": "k-ɔ",
+      "n": 2,
+      "coverage": 0.088,
+      "coverage_others": 0.04,
+      "enrichment_vs_others": 1.96,
+      "enrichment_vs_hindi": null,
+      "weight": 0.348
+     }
+    ],
+    "Khariboli": [
+     {
+      "pattern": "ɾ-a",
+      "n": 2,
+      "coverage": 0.528,
+      "coverage_others": 0.24,
+      "enrichment_vs_others": 2.15,
+      "enrichment_vs_hindi": 2.15,
+      "weight": 0.604
+     },
+     {
+      "pattern": "ŋ",
+      "n": 1,
+      "coverage": 0.408,
+      "coverage_others": 0.176,
+      "enrichment_vs_others": 2.25,
+      "enrichment_vs_hindi": 2.25,
+      "weight": 0.564
+     },
+     {
+      "pattern": "ɟ",
+      "n": 1,
+      "coverage": 0.112,
+      "coverage_others": 0.04,
+      "enrichment_vs_others": 2.44,
+      "enrichment_vs_hindi": 2.44,
+      "weight": 0.551
+     },
+     {
+      "pattern": "s",
+      "n": 1,
+      "coverage": 0.632,
+      "coverage_others": 0.416,
+      "enrichment_vs_others": 1.51,
+      "enrichment_vs_hindi": 1.51,
+      "weight": 0.514
+     },
+     {
+      "pattern": "l",
+      "n": 1,
+      "coverage": 0.808,
+      "coverage_others": 0.584,
+      "enrichment_vs_others": 1.38,
+      "enrichment_vs_hindi": 1.38,
+      "weight": 0.501
+     }
+    ]
+   }
+  },
+  "Rajasthani_vs_Khariboli": {
+   "balanced_accuracy": 0.564,
+   "markers": {
+    "Rajasthani": [
+     {
+      "pattern": "k-o",
+      "n": 2,
+      "coverage": 0.288,
+      "coverage_others": 0.208,
+      "enrichment_vs_others": 1.37,
+      "enrichment_vs_hindi": null,
+      "weight": 0.647
+     },
+     {
+      "pattern": "ɾ-o",
+      "n": 2,
+      "coverage": 0.168,
+      "coverage_others": 0.088,
+      "enrichment_vs_others": 1.82,
+      "enrichment_vs_hindi": null,
+      "weight": 0.432
+     },
+     {
+      "pattern": "m-i",
+      "n": 2,
+      "coverage": 0.128,
+      "coverage_others": 0.072,
+      "enrichment_vs_others": 1.68,
+      "enrichment_vs_hindi": null,
+      "weight": 0.395
+     },
+     {
+      "pattern": "e-j",
+      "n": 2,
+      "coverage": 0.088,
+      "coverage_others": 0.048,
+      "enrichment_vs_others": 1.69,
+      "enrichment_vs_hindi": null,
+      "weight": 0.353
+     },
+     {
+      "pattern": "ɾ-uː",
+      "n": 2,
+      "coverage": 0.064,
+      "coverage_others": 0.024,
+      "enrichment_vs_others": 2.18,
+      "enrichment_vs_hindi": null,
+      "weight": 0.313
+     }
+    ],
+    "Khariboli": [
+     {
+      "pattern": "h",
+      "n": 1,
+      "coverage": 0.248,
+      "coverage_others": 0.048,
+      "enrichment_vs_others": 4.45,
+      "enrichment_vs_hindi": null,
+      "weight": 0.963
+     },
+     {
+      "pattern": "ɾ-ɪ",
+      "n": 2,
+      "coverage": 0.312,
+      "coverage_others": 0.096,
+      "enrichment_vs_others": 3.04,
+      "enrichment_vs_hindi": null,
+      "weight": 0.755
+     },
+     {
+      "pattern": "e-ɾ-e",
+      "n": 3,
+      "coverage": 0.184,
+      "coverage_others": 0.024,
+      "enrichment_vs_others": 5.71,
+      "enrichment_vs_hindi": null,
+      "weight": 0.659
+     },
+     {
+      "pattern": "h-a",
+      "n": 2,
+      "coverage": 0.16,
+      "coverage_others": 0.008,
+      "enrichment_vs_others": 9.44,
+      "enrichment_vs_hindi": null,
+      "weight": 0.618
+     },
+     {
+      "pattern": "p-a",
+      "n": 2,
+      "coverage": 0.408,
+      "coverage_others": 0.152,
+      "enrichment_vs_others": 2.58,
+      "enrichment_vs_hindi": null,
+      "weight": 0.597
+     }
+    ]
+   }
+  }
+ }
+}
