@@ -1,0 +1,14 @@
+9 clips to do (3977 already done)
+  audio/Hindi/test-00008-of-00028.parquet: total 4 done, 0 errors, http {'http_calls': 6} {429: 2, 200: 4}
+  audio/Hindi/train-00000-of-00193.parquet: total 5 done, 0 errors, http {'http_calls': 7} {429: 2, 200: 5}
+  audio/Hindi/train-00044-of-00193.parquet: total 7 done, 0 errors, http {'http_calls': 10} {429: 3, 200: 7}
+  audio/Hindi/validation-00004-of-00029.parquet: total 9 done, 0 errors, http {'http_calls': 13} {429: 4, 200: 9}
+{
+  "clips_processed": 9,
+  "errors": 0,
+  "http_calls": 13,
+  "status_counts": {
+    "429": 4,
+    "200": 9
+  }
+}

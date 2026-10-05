@@ -1,0 +1,9 @@
+{
+  "clips_processed": 9,
+  "errors": 0,
+  "http_calls": 13,
+  "status_counts": {
+    "429": 4,
+    "200": 9
+  }
+}

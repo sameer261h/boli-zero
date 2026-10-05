@@ -1,0 +1,9 @@
+[17:32:54] waiting for pull parts
+[18:49:56] retry pass for errored clips
+merged 4051 lines -> 4000 unique clips, 1 with error, 2 empty transcripts
+[18:50:53] phase 2 report
+[18:50:56] phase 3: 20-class marker runs
+[18:53:33] phase 3 done
+[18:53:33] phase 4a: picture-topic check
+[18:56:22] phase 4b: leave-one-variety-out (6 configs, 3 at a time)
+[18:59:37] ALL DONE

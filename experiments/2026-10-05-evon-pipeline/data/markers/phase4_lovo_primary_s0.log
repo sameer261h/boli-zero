@@ -1,0 +1,20 @@
+[0 strict=False] full model K=10 t=1.78 hindi FPR 0.17897371714643304
+  Angika         in-dist 0.63 unseen 0.63 (svm 0.82) hindiFPR 0.17897371714643304
+  Awadhi         in-dist 0.43 unseen 0.43 (svm 0.95) hindiFPR 0.17897371714643304
+  Bajjika        in-dist 0.34 unseen 0.59 (svm 0.95) hindiFPR 0.26533166458072593
+  Bhojpuri       in-dist 0.65 unseen 0.34 (svm 0.85) hindiFPR 0.19774718397997496
+  Bundeli        in-dist 0.28 unseen 0.29 (svm 0.69) hindiFPR 0.2002503128911139
+  Chhattisgarhi  in-dist 0.57 unseen 0.58 (svm 0.84) hindiFPR 0.2753441802252816
+  Garhwali       in-dist 0.59 unseen 0.55 (svm 0.96) hindiFPR 0.31289111389236546
+  Haryanvi       in-dist 0.42 unseen 0.37 (svm 0.78) hindiFPR 0.17647058823529413
+  Jaipuri        in-dist 0.44 unseen 0.57 (svm 0.44) hindiFPR 0.43429286608260326
+  Khariboli      in-dist 0.27 unseen 0.35 (svm 0.42) hindiFPR 0.2528160200250313
+  Khortha        in-dist 0.24 unseen 0.20 (svm 0.95) hindiFPR 0.18898623279098872
+  Kumaoni        in-dist 0.43 unseen 0.45 (svm 0.51) hindiFPR 0.20150187734668334
+  Magahi         in-dist 0.20 unseen 0.21 (svm 0.69) hindiFPR 0.17521902377972465
+  Maithili       in-dist 0.59 unseen 0.51 (svm 0.83) hindiFPR 0.1927409261576971
+  Marwari        in-dist 0.38 unseen 0.22 (svm 0.78) hindiFPR 0.16020025031289112
+  Rajasthani     in-dist 0.53 unseen 0.28 (svm 0.80) hindiFPR 0.16896120150187735
+  Sadri          in-dist 0.43 unseen 0.41 (svm 0.88) hindiFPR 0.17647058823529413
+  Surgujia       in-dist 0.48 unseen 0.64 (svm 0.94) hindiFPR 0.3541927409261577
+  Surjapuri      in-dist 0.84 unseen 0.76 (svm 0.96) hindiFPR 0.17271589486858574

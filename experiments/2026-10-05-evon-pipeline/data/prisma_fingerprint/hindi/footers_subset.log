@@ -1,0 +1,22 @@
+30 Hindi shards
+  25/30 shards
+{
+  "shards_ok": 30,
+  "shards_failed": [],
+  "total_rows": 72690,
+  "schema_example": {
+    "audio": "struct<bytes: binary, path: string>",
+    "language": "string",
+    "gender": "string",
+    "state": "string",
+    "district": "string",
+    "transcript": "string",
+    "referenceImage": "string"
+  },
+  "schemas_identical": true,
+  "rows_by_split": {
+    "train": 36950,
+    "validation": 17504,
+    "test": 18236
+  }
+}

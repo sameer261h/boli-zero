@@ -1,0 +1,20 @@
+1062 clips to do (162 already done)
+  audio/Hindi/test-00004-of-00028.parquet: total 221 done, 1 errors, http {'http_calls': 445} {429: 225, 200: 220}
+  audio/Hindi/test-00015-of-00028.parquet: total 316 done, 2 errors, http {'http_calls': 669} {429: 355, 200: 314}
+  audio/Hindi/test-00027-of-00028.parquet: total 382 done, 2 errors, http {'http_calls': 823} {429: 443, 200: 380}
+  audio/Hindi/train-00030-of-00193.parquet: total 452 done, 3 errors, http {'http_calls': 973} {429: 524, 200: 449}
+  audio/Hindi/train-00074-of-00193.parquet: total 570 done, 5 errors, http {'http_calls': 1251} {429: 686, 200: 565}
+  audio/Hindi/train-00118-of-00193.parquet: total 627 done, 5 errors, http {'http_calls': 1382} {429: 760, 200: 622}
+  audio/Hindi/train-00162-of-00193.parquet: total 647 done, 5 errors, http {'http_calls': 1425} {429: 783, 200: 642}
+  audio/Hindi/validation-00000-of-00029.parquet: total 850 done, 6 errors, http {'http_calls': 1838} {429: 994, 200: 844}
+  audio/Hindi/validation-00012-of-00029.parquet: total 964 done, 7 errors, http {'http_calls': 2066} {429: 1109, 200: 957}
+  audio/Hindi/validation-00024-of-00029.parquet: total 1062 done, 7 errors, http {'http_calls': 2271} {429: 1216, 200: 1055}
+{
+  "clips_processed": 1062,
+  "errors": 7,
+  "http_calls": 2271,
+  "status_counts": {
+    "429": 1216,
+    "200": 1055
+  }
+}
