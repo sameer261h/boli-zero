@@ -161,46 +161,58 @@ def main():
     markers_by_dialect = load_markers()
     client = httpx.Client(timeout=httpx.Timeout(600, connect=10), follow_redirects=True)
 
+    # Incremental checkpointing: append each result to JSONL as it completes,
+    # so a kill/timeout mid-run doesn't lose everything (prior run lost 90+
+    # completed calls because results were only written at the very end).
+    jsonl_path = OUT_PATH.with_suffix(".jsonl")
+    already_done = set()
+    if jsonl_path.exists():
+        with open(jsonl_path) as f:
+            for line in f:
+                try:
+                    rec = json.loads(line)
+                    already_done.add((rec["ground_truth"], rec["input_transcript"]))
+                except Exception:
+                    pass
+        print(f"Resuming: {len(already_done)} already done")
+
+    def run_one(ground_truth, transcript, out_fh, dialect_for_markers=None):
+        if (ground_truth, transcript) in already_done:
+            return
+        r = call_evon(transcript, client)
+        script = classify_script(r["reply"])
+        markers_found = check_marker_presence(r["reply"], dialect_for_markers, markers_by_dialect) if dialect_for_markers else None
+        record = {
+            "ground_truth": ground_truth,
+            "input_transcript": transcript,
+            "detected": r["detected"],
+            "reply": r["reply"],
+            "reply_script": script,
+            "dialect_markers_in_reply": markers_found,
+            "latency_sec": r["latency_sec"],
+            "raw": r["raw"],
+        }
+        out_fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+        out_fh.flush()
+        print(f"  in: {transcript[:40]!r}  detected={r['detected']!r}  reply={r['reply']!r}")
+
+    with open(jsonl_path, "a") as out_fh:
+        for dialect in DIALECTS:
+            samples = sample_dialect_inputs(dialect, SAMPLES_PER_DIALECT)
+            print(f"=== {dialect}: {len(samples)} samples ===")
+            for transcript in samples:
+                run_one(dialect, transcript, out_fh, dialect_for_markers=dialect)
+
+        for label, controls in [("Hindi", HINDI_CONTROLS), ("English", ENGLISH_CONTROLS)]:
+            print(f"=== {label} control ===")
+            for transcript in controls:
+                run_one(label, transcript, out_fh)
+
+    # consolidate into the final JSON array
     results = []
-
-    for dialect in DIALECTS:
-        samples = sample_dialect_inputs(dialect, SAMPLES_PER_DIALECT)
-        print(f"=== {dialect}: {len(samples)} samples ===")
-        for transcript in samples:
-            r = call_evon(transcript, client)
-            script = classify_script(r["reply"])
-            markers_found = check_marker_presence(r["reply"], dialect, markers_by_dialect)
-            record = {
-                "ground_truth": dialect,
-                "input_transcript": transcript,
-                "detected": r["detected"],
-                "reply": r["reply"],
-                "reply_script": script,
-                "dialect_markers_in_reply": markers_found,
-                "latency_sec": r["latency_sec"],
-                "raw": r["raw"],
-            }
-            results.append(record)
-            print(f"  in: {transcript[:40]!r}  detected={r['detected']!r}  reply={r['reply']!r}")
-
-    for label, controls in [("Hindi", HINDI_CONTROLS), ("English", ENGLISH_CONTROLS)]:
-        print(f"=== {label} control ===")
-        for transcript in controls:
-            r = call_evon(transcript, client)
-            script = classify_script(r["reply"])
-            record = {
-                "ground_truth": label,
-                "input_transcript": transcript,
-                "detected": r["detected"],
-                "reply": r["reply"],
-                "reply_script": script,
-                "dialect_markers_in_reply": None,
-                "latency_sec": r["latency_sec"],
-                "raw": r["raw"],
-            }
-            results.append(record)
-            print(f"  in: {transcript[:40]!r}  detected={r['detected']!r}  reply={r['reply']!r}")
-
+    with open(jsonl_path) as f:
+        for line in f:
+            results.append(json.loads(line))
     with open(OUT_PATH, "w") as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
     print(f"\nSaved {len(results)} results to {OUT_PATH}")
