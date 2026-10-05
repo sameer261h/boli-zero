@@ -74,3 +74,18 @@ Script: `experiments/2026-10-05-evon-pipeline/scripts/allosaurus_phonotactic_lid
       - Utterances (about 6 s, about 60 phones) are not too short for phonotactic LID in principle.
     - The weakness is the representation, not data volume, so more Allosaurus data is not recommended.
     - A follow-up could restrict Allosaurus to the Hindi inventory (`lang_id='hin'`) as a cheap check before abandoning the route.
+
+## Control: Hindi phone inventory (`recognize(audio, "hin")`)
+
+Everything is unchanged except the inventory: same 1,000 clips, district-grouped split, classifier and metrics. Results are in `data/allosaurus_lid_hin/`.
+
+The implausible phones (ʀ ɴ k͡p̚ uə …) disappear, but generalization barely moves.
+
+| Task | Universal (best) | Hindi inventory (best) | Delta |
+|---|---|---|---|
+| Hindi vs regional | 0.634 (uni) | 0.660 (uni) | +0.026 |
+| 8-way | 0.235 (uni+bi+tri) | 0.249 (uni) | +0.014 |
+
+Shuffled control: 0.510 / 0.101. Unigrams still beat bigrams and trigrams.
+
+0.660 falls in the 0.65–0.75 "marginal" band. The gain over the universal inventory is within fold noise, so the decision is to **DROP Allosaurus for Boli**.
