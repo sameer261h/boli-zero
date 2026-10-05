@@ -1,0 +1,67 @@
+[
+  {
+    "human": "है",
+    "prisma": "हैं",
+    "dialect_count": 13
+  },
+  {
+    "human": "मे",
+    "prisma": "में",
+    "dialect_count": 10
+  },
+  {
+    "human": "हैं",
+    "prisma": "है",
+    "dialect_count": 10
+  },
+  {
+    "human": "यहाँ",
+    "prisma": "यहां",
+    "dialect_count": 6
+  },
+  {
+    "human": "के",
+    "prisma": "का",
+    "dialect_count": 5
+  },
+  {
+    "human": "बहोत",
+    "prisma": "बहुत",
+    "dialect_count": 5
+  },
+  {
+    "human": "हे",
+    "prisma": "है",
+    "dialect_count": 5
+  },
+  {
+    "human": "बोहोत",
+    "prisma": "बहुत",
+    "dialect_count": 5
+  },
+  {
+    "human": "यहां",
+    "prisma": "यहाँ",
+    "dialect_count": 4
+  },
+  {
+    "human": "के",
+    "prisma": "की",
+    "dialect_count": 4
+  },
+  {
+    "human": "ए",
+    "prisma": "ये",
+    "dialect_count": 3
+  },
+  {
+    "human": "छै",
+    "prisma": "छे",
+    "dialect_count": 3
+  },
+  {
+    "human": "हेय",
+    "prisma": "है",
+    "dialect_count": 3
+  }
+]

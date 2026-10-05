@@ -57,6 +57,27 @@ hardship) plus a disjoint held-out test set, intended for retrieval-based few-sh
 glossary dump. **Not yet run as a scored experiment** — the next real test is Base-Evon vs Evon+retrieved-examples
 on business-decision correctness, which is where the actual evidence for or against Boli will come from.
 
+## 6. The Prisma fingerprint, tested at scale — and it's real, with caveats
+
+Scaled the regional-fingerprint question from a handful of hand-picked examples to 24,986 real audio clips across
+19 dialects (`scripts/prisma_fingerprint_pull.py`, pulling from `Vaani-transcription-part`, running each clip
+through the actual Prisma API), then diffed human transcript against Prisma transcript word-by-word
+(`scripts/analyze_prisma_fingerprint.py`). Full writeup: `docs/2026-10-05-evon-pipeline/06-prisma-fingerprint-dialect-transformation-analysis.md`.
+
+**Headline result: yes, there's a real, measurable, dialect-specific fingerprint** — specific dialect marker words
+(verified against the earlier `data/markers_v2.json` corpus-derived markers) get transformed in consistent,
+high-volume, dialect-specific ways. Rajasthani/Marwari progressive-aspect forms (`रियो`/`रेहो`/`रहियो` →
+`रही`/`रहे`) are the cleanest example: dozens to 65 occurrences of the same normalization. But it's not clean
+"dialect word → Hindi equivalent" translation throughout — dialect-specific deictics (Garhwali `यख`, Rajasthani
+`अठे`, Maithili `एता`, all meaning roughly "here") are mostly **deleted outright or misheard as unrelated words**,
+and some content words produce outright multi-word hallucination. Divergence rate also tracks linguistic distance
+from Hindi cleanly (Khariboli lowest, Garhwali/Surjapuri highest) — consistent with, and a more tractable signal
+than, the earlier failed single-utterance classification attempt in `markers_v2.json`.
+
+Two real data-quality bugs were caught and fixed during this analysis, flagged explicitly in the full report
+rather than silently corrected: Unicode NFC normalization (precomposed vs. decomposed Devanagari nukta forms were
+being counted as false "substitutions"), and a `difflib` alignment artifact on repeated words within a sentence.
+
 ## What's honestly unverified
 
 - `data/bhojpuri_glosses_raw.txt`: Evon-generated Hindi glosses for the top corpus-derived markers. **Several are
