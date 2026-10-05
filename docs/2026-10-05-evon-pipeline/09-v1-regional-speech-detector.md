@@ -88,6 +88,56 @@ Headline reversal from the earlier report: **Awadhi was reported as 0% accuracy 
 "unusable."** That was one unlucky draw. Its 5-seed mean is 30.2% — weak, but completely ordinary for this tier,
 not an outlier floor.
 
+### Superseded by pooled 15-seed + partial-LOGO results (this table wins over the 5-seed one above)
+
+A true leave-one-group-out run (193 exhaustive folds) was attempted next, per an explicit correction requiring
+every group get a genuine held-out test. It was killed partway through (~15% complete, ~25 folds) after a direct
+cost/benefit check: it was approaching two hours of wall-clock time (including two failed attempts, one from a
+container restart, one from an oversized-job/undersized-timeout mistake on my part) to upgrade from "a cheap
+check that already found the headline finding" to "the maximally rigorous version of the same measurement" — for
+a decision (routing tier assignment) that doesn't need that much precision. Replaced with a 15-seed pooled
+version (`scripts/v1_detector_cheap_cv.py`) that also folds in the ~25 real folds that did complete before the
+kill, and critically, now reports **group-balanced recall alongside row-weighted recall** — i.e. does performance
+hold up when every group counts equally, or is it propped up by one oversized group — per an explicit correction
+that a single 542-row group (Khortha's Jamtara-Male) should not get to decide whether a dialect "generalizes."
+95,492 pooled out-of-fold predictions total.
+
+| Dialect | Row-weighted recall | Group-balanced recall | Gap | Family recall | Groups seen |
+|---|---|---|---|---|---|
+| Bhojpuri | 0.716 | 0.645 | 0.071 | 0.800 | 26 |
+| Garhwali | 0.641 | **0.706** | 0.065 | 0.669 | 4 |
+| Chhattisgarhi | 0.603 | 0.593 | 0.011 | 0.679 | 19 |
+| Bajjika | 0.563 | 0.553 | 0.010 | 0.854 | 6 |
+| Khortha | 0.442 | **0.277** | **0.165** | 0.499 | 8 |
+| Surjapuri | 0.406 | 0.314 | 0.092 | 0.827 | 2 |
+| Marwari | 0.419 | 0.401 | 0.018 | 0.588 | 4 |
+| Sadri | 0.460 | 0.319 | 0.141 | 0.482 | 4 |
+| Maithili | 0.515 | **0.363** | **0.151** | 0.752 | 39 |
+| Surgujia | 0.311 | 0.326 | 0.016 | 0.611 | 2 |
+| Kumaoni | 0.309 | **0.368** | 0.060 | 0.672 | 4 |
+| Bundeli | 0.395 | 0.330 | 0.065 | 0.560 | 6 |
+| Khariboli | 0.317 | 0.236 | 0.081 | 0.411 | 19 |
+| Rajasthani | 0.323 | 0.317 | **0.006** | 0.551 | 4 |
+| Jaipuri | 0.244 | 0.156 | 0.088 | 0.381 | 4 |
+| Awadhi | 0.185 | **0.276** | 0.091 | 0.210 | 9 |
+| Haryanvi | 0.244 | 0.315 | 0.070 | 0.372 | 5 |
+| Magahi | 0.224 | 0.205 | 0.019 | 0.558 | 9 |
+| Angika | 0.165 | 0.094 | 0.070 | 0.591 | 14 |
+
+Two directions of surprise worth flagging explicitly:
+
+- **Confirms a real inflation problem**: Khortha (gap 0.165) and Maithili (gap 0.151) and Sadri (gap 0.141) look
+  meaningfully *weaker* once every group counts equally instead of letting their biggest group dominate — exactly
+  the failure mode the correction anticipated. Khortha in particular drops from a "medium" 44% to a "weak" 28%
+  once group-balanced — this should pull Khortha's confidence assessment down from where the single-run number
+  placed it.
+- **The reassuring opposite case**: Garhwali, Kumaoni, and Awadhi all score *higher* group-balanced than
+  row-weighted — their performance isn't an artifact of one easy group, it holds up or even improves when every
+  group is weighted equally. Garhwali in particular (0.706 group-balanced) is now the single strongest dialect by
+  this metric, stronger than Bhojpuri.
+- Rajasthani's near-zero gap (0.006) is notable given its hard 2-district ceiling — whatever its real score is
+  (a modest ~32%), it is at least a *consistent* 32% across its few groups, not propped up by one of them.
+
 ## Stage 2 — calibration
 
 Fit isotonic calibration on VAL only (via `sklearn.calibration.CalibratedClassifierCV` + `FrozenEstimator`),
