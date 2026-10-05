@@ -1,0 +1,600 @@
+{
+  "best_mode": "combined",
+  "mode_comparison": {
+    "word": {
+      "mode": "word",
+      "n_features": 28436,
+      "classes": [
+        "Angika",
+        "Awadhi",
+        "Bajjika",
+        "Bhojpuri",
+        "Bundeli",
+        "Chhattisgarhi",
+        "Garhwali",
+        "Haryanvi",
+        "Jaipuri",
+        "Khariboli",
+        "Khortha",
+        "Kumaoni",
+        "Magahi",
+        "Maithili",
+        "Marwari",
+        "Rajasthani",
+        "Sadri",
+        "Surgujia",
+        "Surjapuri"
+      ],
+      "val_acc_raw": 0.5275,
+      "val_top2_raw": 0.7019,
+      "val_fam_raw": 0.6899,
+      "test_acc_raw": 0.4474,
+      "test_top2_raw": 0.5906,
+      "test_fam_raw": 0.6633
+    },
+    "char": {
+      "mode": "char",
+      "n_features": 30000,
+      "classes": [
+        "Angika",
+        "Awadhi",
+        "Bajjika",
+        "Bhojpuri",
+        "Bundeli",
+        "Chhattisgarhi",
+        "Garhwali",
+        "Haryanvi",
+        "Jaipuri",
+        "Khariboli",
+        "Khortha",
+        "Kumaoni",
+        "Magahi",
+        "Maithili",
+        "Marwari",
+        "Rajasthani",
+        "Sadri",
+        "Surgujia",
+        "Surjapuri"
+      ],
+      "val_acc_raw": 0.5271,
+      "val_top2_raw": 0.7004,
+      "val_fam_raw": 0.6823,
+      "test_acc_raw": 0.4506,
+      "test_top2_raw": 0.596,
+      "test_fam_raw": 0.6642
+    },
+    "combined": {
+      "mode": "combined",
+      "n_features": 58436,
+      "classes": [
+        "Angika",
+        "Awadhi",
+        "Bajjika",
+        "Bhojpuri",
+        "Bundeli",
+        "Chhattisgarhi",
+        "Garhwali",
+        "Haryanvi",
+        "Jaipuri",
+        "Khariboli",
+        "Khortha",
+        "Kumaoni",
+        "Magahi",
+        "Maithili",
+        "Marwari",
+        "Rajasthani",
+        "Sadri",
+        "Surgujia",
+        "Surjapuri"
+      ],
+      "val_acc_raw": 0.5768,
+      "val_top2_raw": 0.7324,
+      "val_fam_raw": 0.7191,
+      "test_acc_raw": 0.4701,
+      "test_top2_raw": 0.6135,
+      "test_fam_raw": 0.6861
+    }
+  },
+  "ece_raw": 0.0627,
+  "ece_calibrated": 0.0638,
+  "calibration_bins_raw": [
+    {
+      "bin": "0.0-0.1",
+      "n": 4,
+      "mean_confidence": 0.095,
+      "empirical_accuracy": 0.0
+    },
+    {
+      "bin": "0.1-0.2",
+      "n": 896,
+      "mean_confidence": 0.161,
+      "empirical_accuracy": 0.169
+    },
+    {
+      "bin": "0.2-0.3",
+      "n": 999,
+      "mean_confidence": 0.245,
+      "empirical_accuracy": 0.291
+    },
+    {
+      "bin": "0.3-0.4",
+      "n": 702,
+      "mean_confidence": 0.347,
+      "empirical_accuracy": 0.453
+    },
+    {
+      "bin": "0.4-0.5",
+      "n": 481,
+      "mean_confidence": 0.45,
+      "empirical_accuracy": 0.578
+    },
+    {
+      "bin": "0.5-0.6",
+      "n": 359,
+      "mean_confidence": 0.546,
+      "empirical_accuracy": 0.643
+    },
+    {
+      "bin": "0.6-0.7",
+      "n": 299,
+      "mean_confidence": 0.645,
+      "empirical_accuracy": 0.753
+    },
+    {
+      "bin": "0.7-0.8",
+      "n": 236,
+      "mean_confidence": 0.749,
+      "empirical_accuracy": 0.797
+    },
+    {
+      "bin": "0.8-0.9",
+      "n": 221,
+      "mean_confidence": 0.848,
+      "empirical_accuracy": 0.882
+    },
+    {
+      "bin": "0.9-1.0",
+      "n": 202,
+      "mean_confidence": 0.949,
+      "empirical_accuracy": 0.946
+    }
+  ],
+  "calibration_bins_calibrated": [
+    {
+      "bin": "0.1-0.2",
+      "n": 48,
+      "mean_confidence": 0.183,
+      "empirical_accuracy": 0.062
+    },
+    {
+      "bin": "0.2-0.3",
+      "n": 545,
+      "mean_confidence": 0.257,
+      "empirical_accuracy": 0.189
+    },
+    {
+      "bin": "0.3-0.4",
+      "n": 880,
+      "mean_confidence": 0.352,
+      "empirical_accuracy": 0.259
+    },
+    {
+      "bin": "0.4-0.5",
+      "n": 955,
+      "mean_confidence": 0.448,
+      "empirical_accuracy": 0.401
+    },
+    {
+      "bin": "0.5-0.6",
+      "n": 727,
+      "mean_confidence": 0.549,
+      "empirical_accuracy": 0.52
+    },
+    {
+      "bin": "0.6-0.7",
+      "n": 674,
+      "mean_confidence": 0.648,
+      "empirical_accuracy": 0.702
+    },
+    {
+      "bin": "0.7-0.8",
+      "n": 445,
+      "mean_confidence": 0.744,
+      "empirical_accuracy": 0.836
+    },
+    {
+      "bin": "0.8-0.9",
+      "n": 125,
+      "mean_confidence": 0.828,
+      "empirical_accuracy": 0.928
+    }
+  ],
+  "threshold_curve": [
+    {
+      "threshold": 0.05,
+      "coverage": 1.0,
+      "n_covered": 4399,
+      "false_confident_exact_rate": 0.5328
+    },
+    {
+      "threshold": 0.1,
+      "coverage": 1.0,
+      "n_covered": 4399,
+      "false_confident_exact_rate": 0.5328
+    },
+    {
+      "threshold": 0.15,
+      "coverage": 0.9998,
+      "n_covered": 4398,
+      "false_confident_exact_rate": 0.5327
+    },
+    {
+      "threshold": 0.2,
+      "coverage": 0.9891,
+      "n_covered": 4351,
+      "false_confident_exact_rate": 0.5284
+    },
+    {
+      "threshold": 0.25,
+      "coverage": 0.9388,
+      "n_covered": 4130,
+      "false_confident_exact_rate": 0.5114
+    },
+    {
+      "threshold": 0.3,
+      "coverage": 0.8652,
+      "n_covered": 3806,
+      "false_confident_exact_rate": 0.4877
+    },
+    {
+      "threshold": 0.35,
+      "coverage": 0.7722,
+      "n_covered": 3397,
+      "false_confident_exact_rate": 0.4522
+    },
+    {
+      "threshold": 0.4,
+      "coverage": 0.6652,
+      "n_covered": 2926,
+      "false_confident_exact_rate": 0.4115
+    },
+    {
+      "threshold": 0.45,
+      "coverage": 0.5469,
+      "n_covered": 2406,
+      "false_confident_exact_rate": 0.3624
+    },
+    {
+      "threshold": 0.5,
+      "coverage": 0.4483,
+      "n_covered": 1972,
+      "false_confident_exact_rate": 0.321
+    },
+    {
+      "threshold": 0.55,
+      "coverage": 0.3626,
+      "n_covered": 1595,
+      "false_confident_exact_rate": 0.2708
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.2828,
+      "n_covered": 1244,
+      "false_confident_exact_rate": 0.2275
+    },
+    {
+      "threshold": 0.65,
+      "coverage": 0.201,
+      "n_covered": 884,
+      "false_confident_exact_rate": 0.1946
+    },
+    {
+      "threshold": 0.7,
+      "coverage": 0.1296,
+      "n_covered": 570,
+      "false_confident_exact_rate": 0.1439
+    },
+    {
+      "threshold": 0.75,
+      "coverage": 0.0716,
+      "n_covered": 315,
+      "false_confident_exact_rate": 0.0952
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.0286,
+      "n_covered": 126,
+      "false_confident_exact_rate": 0.0794
+    },
+    {
+      "threshold": 0.85,
+      "coverage": 0.0052,
+      "n_covered": 23,
+      "false_confident_exact_rate": 0.0435
+    },
+    {
+      "threshold": 0.9,
+      "coverage": 0.0,
+      "n_covered": 0,
+      "false_confident_exact_rate": null
+    },
+    {
+      "threshold": 0.95,
+      "coverage": 0.0,
+      "n_covered": 0,
+      "false_confident_exact_rate": null
+    }
+  ],
+  "threshold_recommendations": {
+    "0.05": {
+      "threshold": 0.85,
+      "coverage": 0.0052,
+      "n_covered": 23,
+      "false_confident_exact_rate": 0.0435
+    },
+    "0.1": {
+      "threshold": 0.75,
+      "coverage": 0.0716,
+      "n_covered": 315,
+      "false_confident_exact_rate": 0.0952
+    },
+    "0.15": {
+      "threshold": 0.7,
+      "coverage": 0.1296,
+      "n_covered": 570,
+      "false_confident_exact_rate": 0.1439
+    }
+  },
+  "per_dialect_summary": {
+    "Bhojpuri": {
+      "n_test": 341,
+      "exact_recall": 0.73,
+      "top2_recall": 0.824,
+      "family_recall": 0.839,
+      "mean_conf_correct": 0.632,
+      "mean_conf_wrong": 0.381,
+      "n_groups": 27,
+      "severity": "OK",
+      "is_fallback_split": false
+    },
+    "Chhattisgarhi": {
+      "n_test": 428,
+      "exact_recall": 0.82,
+      "top2_recall": 0.909,
+      "family_recall": 0.827,
+      "mean_conf_correct": 0.605,
+      "mean_conf_wrong": 0.397,
+      "n_groups": 21,
+      "severity": "OK",
+      "is_fallback_split": false
+    },
+    "Maithili": {
+      "n_test": 511,
+      "exact_recall": 0.706,
+      "top2_recall": 0.869,
+      "family_recall": 0.812,
+      "mean_conf_correct": 0.599,
+      "mean_conf_wrong": 0.44,
+      "n_groups": 41,
+      "severity": "OK",
+      "is_fallback_split": false
+    },
+    "Rajasthani": {
+      "n_test": 488,
+      "exact_recall": 0.645,
+      "top2_recall": 0.822,
+      "family_recall": 0.793,
+      "mean_conf_correct": 0.566,
+      "mean_conf_wrong": 0.384,
+      "n_groups": 4,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Garhwali": {
+      "n_test": 378,
+      "exact_recall": 0.82,
+      "top2_recall": 0.878,
+      "family_recall": 0.82,
+      "mean_conf_correct": 0.585,
+      "mean_conf_wrong": 0.396,
+      "n_groups": 4,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Marwari": {
+      "n_test": 290,
+      "exact_recall": 0.424,
+      "top2_recall": 0.728,
+      "family_recall": 0.731,
+      "mean_conf_correct": 0.432,
+      "mean_conf_wrong": 0.392,
+      "n_groups": 4,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Magahi": {
+      "n_test": 803,
+      "exact_recall": 0.002,
+      "top2_recall": 0.007,
+      "family_recall": 0.61,
+      "mean_conf_correct": 0.259,
+      "mean_conf_wrong": 0.413,
+      "n_groups": 9,
+      "severity": "OK",
+      "is_fallback_split": false
+    },
+    "Bajjika": {
+      "n_test": 172,
+      "exact_recall": 0.593,
+      "top2_recall": 0.709,
+      "family_recall": 0.843,
+      "mean_conf_correct": 0.529,
+      "mean_conf_wrong": 0.414,
+      "n_groups": 6,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Khortha": {
+      "n_test": 161,
+      "exact_recall": 0.646,
+      "top2_recall": 0.758,
+      "family_recall": 0.646,
+      "mean_conf_correct": 0.622,
+      "mean_conf_wrong": 0.365,
+      "n_groups": 8,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Angika": {
+      "n_test": 80,
+      "exact_recall": 0.013,
+      "top2_recall": 0.325,
+      "family_recall": 0.838,
+      "mean_conf_correct": 0.432,
+      "mean_conf_wrong": 0.565,
+      "n_groups": 14,
+      "severity": "OK",
+      "is_fallback_split": false
+    },
+    "Kumaoni": {
+      "n_test": 228,
+      "exact_recall": 0.333,
+      "top2_recall": 0.728,
+      "family_recall": 0.675,
+      "mean_conf_correct": 0.371,
+      "mean_conf_wrong": 0.463,
+      "n_groups": 4,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Sadri": {
+      "n_test": 135,
+      "exact_recall": 0.185,
+      "top2_recall": 0.474,
+      "family_recall": 0.207,
+      "mean_conf_correct": 0.416,
+      "mean_conf_wrong": 0.45,
+      "n_groups": 4,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Khariboli": {
+      "n_test": 112,
+      "exact_recall": 0.027,
+      "top2_recall": 0.062,
+      "family_recall": 0.161,
+      "mean_conf_correct": 0.374,
+      "mean_conf_wrong": 0.365,
+      "n_groups": 19,
+      "severity": "OK",
+      "is_fallback_split": false
+    },
+    "Surgujia": {
+      "n_test": 105,
+      "exact_recall": 0.067,
+      "top2_recall": 0.41,
+      "family_recall": 0.752,
+      "mean_conf_correct": 0.357,
+      "mean_conf_wrong": 0.514,
+      "n_groups": 2,
+      "severity": "SEVERE (<=3 groups)",
+      "is_fallback_split": true
+    },
+    "Bundeli": {
+      "n_test": 42,
+      "exact_recall": 0.143,
+      "top2_recall": 0.286,
+      "family_recall": 0.143,
+      "mean_conf_correct": 0.313,
+      "mean_conf_wrong": 0.42,
+      "n_groups": 6,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": false
+    },
+    "Surjapuri": {
+      "n_test": 38,
+      "exact_recall": 0.0,
+      "top2_recall": 0.421,
+      "family_recall": 0.763,
+      "mean_conf_correct": null,
+      "mean_conf_wrong": 0.494,
+      "n_groups": 2,
+      "severity": "SEVERE (<=3 groups)",
+      "is_fallback_split": true
+    },
+    "Awadhi": {
+      "n_test": 37,
+      "exact_recall": 0.162,
+      "top2_recall": 0.27,
+      "family_recall": 0.162,
+      "mean_conf_correct": 0.474,
+      "mean_conf_wrong": 0.449,
+      "n_groups": 9,
+      "severity": "OK",
+      "is_fallback_split": true
+    },
+    "Haryanvi": {
+      "n_test": 33,
+      "exact_recall": 0.242,
+      "top2_recall": 0.242,
+      "family_recall": 0.303,
+      "mean_conf_correct": 0.412,
+      "mean_conf_wrong": 0.355,
+      "n_groups": 5,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    },
+    "Jaipuri": {
+      "n_test": 17,
+      "exact_recall": 0.353,
+      "top2_recall": 0.412,
+      "family_recall": 0.529,
+      "mean_conf_correct": 0.438,
+      "mean_conf_wrong": 0.355,
+      "n_groups": 4,
+      "severity": "WEAK (<=8 groups)",
+      "is_fallback_split": true
+    }
+  },
+  "length_accuracy": [
+    {
+      "length_range": "1-3",
+      "n": 57,
+      "accuracy": 0.404
+    },
+    {
+      "length_range": "4-6",
+      "n": 559,
+      "accuracy": 0.351
+    },
+    {
+      "length_range": "7-10",
+      "n": 896,
+      "accuracy": 0.414
+    },
+    {
+      "length_range": "11-20",
+      "n": 1699,
+      "accuracy": 0.5
+    },
+    {
+      "length_range": "21-+",
+      "n": 1188,
+      "accuracy": 0.519
+    }
+  ],
+  "fallback_dialects": [
+    "Rajasthani",
+    "Garhwali",
+    "Marwari",
+    "Bajjika",
+    "Khortha",
+    "Kumaoni",
+    "Sadri",
+    "Surgujia",
+    "Surjapuri",
+    "Awadhi",
+    "Haryanvi",
+    "Jaipuri"
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "Bhojpuri": {
+    "seed_recalls": [
+      0.66,
+      0.734,
+      0.727,
+      0.781,
+      0.642
+    ],
+    "seed_n_test": [
+      1642,
+      1656,
+      341,
+      1254,
+      1566
+    ],
+    "mean_recall": 0.709,
+    "median_recall": 0.727,
+    "min_recall": 0.642,
+    "max_recall": 0.781,
+    "range": 0.139,
+    "fallback_count_of_5": 0,
+    "verdict": "borderline"
+  },
+  "Chhattisgarhi": {
+    "seed_recalls": [
+      0.578,
+      0.653,
+      0.586,
+      0.594,
+      0.662
+    ],
+    "seed_n_test": [
+      1038,
+      475,
+      428,
+      456,
+      222
+    ],
+    "mean_recall": 0.615,
+    "median_recall": 0.594,
+    "min_recall": 0.578,
+    "max_recall": 0.662,
+    "range": 0.084,
+    "fallback_count_of_5": 0,
+    "verdict": "stable"
+  },
+  "Maithili": {
+    "seed_recalls": [
+      0.49,
+      0.291,
+      0.501,
+      0.477,
+      0.347
+    ],
+    "seed_n_test": [
+      923,
+      289,
+      511,
+      1704,
+      291
+    ],
+    "mean_recall": 0.421,
+    "median_recall": 0.477,
+    "min_recall": 0.291,
+    "max_recall": 0.501,
+    "range": 0.21,
+    "fallback_count_of_5": 0,
+    "verdict": "UNSTABLE"
+  },
+  "Rajasthani": {
+    "seed_recalls": [
+      0.523,
+      0.333,
+      0.584,
+      0.52,
+      0.52
+    ],
+    "seed_n_test": [
+      488,
+      1404,
+      488,
+      488,
+      488
+    ],
+    "mean_recall": 0.496,
+    "median_recall": 0.52,
+    "min_recall": 0.333,
+    "max_recall": 0.584,
+    "range": 0.251,
+    "fallback_count_of_5": 4,
+    "verdict": "UNSTABLE"
+  },
+  "Garhwali": {
+    "seed_recalls": [
+      0.84,
+      0.735,
+      0.81,
+      0.772,
+      0.794
+    ],
+    "seed_n_test": [
+      387,
+      378,
+      378,
+      378,
+      378
+    ],
+    "mean_recall": 0.79,
+    "median_recall": 0.794,
+    "min_recall": 0.735,
+    "max_recall": 0.84,
+    "range": 0.105,
+    "fallback_count_of_5": 4,
+    "verdict": "borderline"
+  },
+  "Marwari": {
+    "seed_recalls": [
+      0.566,
+      0.418,
+      0.593,
+      0.583,
+      0.514
+    ],
+    "seed_n_test": [
+      290,
+      493,
+      290,
+      290,
+      290
+    ],
+    "mean_recall": 0.535,
+    "median_recall": 0.566,
+    "min_recall": 0.418,
+    "max_recall": 0.593,
+    "range": 0.175,
+    "fallback_count_of_5": 4,
+    "verdict": "borderline"
+  },
+  "Magahi": {
+    "seed_recalls": [
+      0.435,
+      0.152,
+      0.01,
+      0.43,
+      0.086
+    ],
+    "seed_n_test": [
+      186,
+      316,
+      803,
+      186,
+      35
+    ],
+    "mean_recall": 0.223,
+    "median_recall": 0.152,
+    "min_recall": 0.01,
+    "max_recall": 0.435,
+    "range": 0.425,
+    "fallback_count_of_5": 2,
+    "verdict": "UNSTABLE"
+  },
+  "Bajjika": {
+    "seed_recalls": [
+      0.669,
+      0.634,
+      0.68,
+      0.585,
+      0.68
+    ],
+    "seed_n_test": [
+      172,
+      172,
+      172,
+      489,
+      172
+    ],
+    "mean_recall": 0.65,
+    "median_recall": 0.669,
+    "min_recall": 0.585,
+    "max_recall": 0.68,
+    "range": 0.095,
+    "fallback_count_of_5": 4,
+    "verdict": "stable"
+  },
+  "Khortha": {
+    "seed_recalls": [
+      0.689,
+      0.458,
+      0.714,
+      0.832,
+      0.447
+    ],
+    "seed_n_test": [
+      161,
+      541,
+      161,
+      161,
+      590
+    ],
+    "mean_recall": 0.628,
+    "median_recall": 0.689,
+    "min_recall": 0.447,
+    "max_recall": 0.832,
+    "range": 0.385,
+    "fallback_count_of_5": 3,
+    "verdict": "UNSTABLE"
+  },
+  "Angika": {
+    "seed_recalls": [
+      0.324,
+      0.296,
+      0.113,
+      0.199,
+      0.112
+    ],
+    "seed_n_test": [
+      111,
+      162,
+      80,
+      322,
+      347
+    ],
+    "mean_recall": 0.209,
+    "median_recall": 0.199,
+    "min_recall": 0.112,
+    "max_recall": 0.324,
+    "range": 0.212,
+    "fallback_count_of_5": 1,
+    "verdict": "UNSTABLE"
+  },
+  "Kumaoni": {
+    "seed_recalls": [
+      0.072,
+      0.434,
+      0.461,
+      0.452,
+      0.443
+    ],
+    "seed_n_test": [
+      306,
+      228,
+      228,
+      228,
+      228
+    ],
+    "mean_recall": 0.372,
+    "median_recall": 0.443,
+    "min_recall": 0.072,
+    "max_recall": 0.461,
+    "range": 0.389,
+    "fallback_count_of_5": 4,
+    "verdict": "UNSTABLE"
+  },
+  "Sadri": {
+    "seed_recalls": [
+      0.422,
+      0.422,
+      0.459,
+      0.0,
+      0.363
+    ],
+    "seed_n_test": [
+      135,
+      135,
+      135,
+      16,
+      135
+    ],
+    "mean_recall": 0.333,
+    "median_recall": 0.422,
+    "min_recall": 0.0,
+    "max_recall": 0.459,
+    "range": 0.459,
+    "fallback_count_of_5": 4,
+    "verdict": "UNSTABLE"
+  },
+  "Khariboli": {
+    "seed_recalls": [
+      0.226,
+      0.392,
+      0.33,
+      0.264,
+      0.42
+    ],
+    "seed_n_test": [
+      133,
+      143,
+      112,
+      239,
+      143
+    ],
+    "mean_recall": 0.326,
+    "median_recall": 0.33,
+    "min_recall": 0.226,
+    "max_recall": 0.42,
+    "range": 0.194,
+    "fallback_count_of_5": 2,
+    "verdict": "borderline"
+  },
+  "Surgujia": {
+    "seed_recalls": [
+      0.343,
+      0.371,
+      0.371,
+      0.381,
+      0.343
+    ],
+    "seed_n_test": [
+      105,
+      105,
+      105,
+      105,
+      105
+    ],
+    "mean_recall": 0.362,
+    "median_recall": 0.371,
+    "min_recall": 0.343,
+    "max_recall": 0.381,
+    "range": 0.038,
+    "fallback_count_of_5": 5,
+    "verdict": "stable"
+  },
+  "Bundeli": {
+    "seed_recalls": [
+      0.405,
+      0.494,
+      0.143,
+      0.381,
+      0.449
+    ],
+    "seed_n_test": [
+      42,
+      89,
+      42,
+      42,
+      89
+    ],
+    "mean_recall": 0.374,
+    "median_recall": 0.405,
+    "min_recall": 0.143,
+    "max_recall": 0.494,
+    "range": 0.351,
+    "fallback_count_of_5": 2,
+    "verdict": "UNSTABLE"
+  },
+  "Surjapuri": {
+    "seed_recalls": [
+      0.526,
+      0.474,
+      0.553,
+      0.632,
+      0.684
+    ],
+    "seed_n_test": [
+      38,
+      38,
+      38,
+      38,
+      38
+    ],
+    "mean_recall": 0.574,
+    "median_recall": 0.553,
+    "min_recall": 0.474,
+    "max_recall": 0.684,
+    "range": 0.21,
+    "fallback_count_of_5": 5,
+    "verdict": "UNSTABLE"
+  },
+  "Awadhi": {
+    "seed_recalls": [
+      0.405,
+      0.324,
+      0.297,
+      0.243,
+      0.243
+    ],
+    "seed_n_test": [
+      37,
+      37,
+      37,
+      37,
+      37
+    ],
+    "mean_recall": 0.302,
+    "median_recall": 0.297,
+    "min_recall": 0.243,
+    "max_recall": 0.405,
+    "range": 0.162,
+    "fallback_count_of_5": 5,
+    "verdict": "borderline"
+  },
+  "Haryanvi": {
+    "seed_recalls": [
+      0.216,
+      0.083,
+      0.424,
+      0.184,
+      0.394
+    ],
+    "seed_n_test": [
+      37,
+      48,
+      33,
+      49,
+      33
+    ],
+    "mean_recall": 0.26,
+    "median_recall": 0.216,
+    "min_recall": 0.083,
+    "max_recall": 0.424,
+    "range": 0.341,
+    "fallback_count_of_5": 2,
+    "verdict": "UNSTABLE"
+  },
+  "Jaipuri": {
+    "seed_recalls": [
+      0.412,
+      0.0,
+      0.353,
+      0.294,
+      0.412
+    ],
+    "seed_n_test": [
+      17,
+      43,
+      17,
+      17,
+      17
+    ],
+    "mean_recall": 0.294,
+    "median_recall": 0.353,
+    "min_recall": 0.0,
+    "max_recall": 0.412,
+    "range": 0.412,
+    "fallback_count_of_5": 4,
+    "verdict": "UNSTABLE"
+  }
+}
