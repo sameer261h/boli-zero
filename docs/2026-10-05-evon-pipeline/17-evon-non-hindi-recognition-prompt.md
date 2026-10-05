@@ -76,6 +76,24 @@ reason the evidence-based approach won't work as well as a direct label), say so
 alternative — don't silently ignore the constraint, but don't follow it blindly either if the data doesn't
 support it.
 
+## One settled finding to build on, not re-litigate
+
+A separate analysis today (`docs/2026-10-05-evon-pipeline/14-phonetic-filter-wrong-vs-unsure.md`) already
+established: **67.4% of all Prisma transcription differences across all 19 dialects are pure
+phonetic/spelling/pronunciation variation (e.g. बहोत↔बहुत, यहाँ↔यहां, सुंदर↔सुन्दर) — cosmetic noise shared
+broadly across dialects and standard Hindi alike, not evidence of dialect identity.** These are a non-issue:
+they don't need fixing, and critically for this task, **they should not be treated as recognition evidence
+either** — a word being spelled slightly differently doesn't tell Evon anything about which dialect it is,
+because the same cosmetic variation happens in standard Hindi too. The same applies to the small set of
+"universal" substitutions in `cross_dialect_universal_substitutions.json` (shared across 5+ dialects) — generic
+ASR normalization habits, not dialect-distinguishing signal.
+
+Your evidence-selection design should explicitly filter these out and focus only on what's actually
+distinguishing: the discriminative lexical markers (log-odds scores in `audit_results.json`), real grammatical
+patterns (e.g. the progressive-aspect normalization रियो/रेहो/रहियो→रही), and the genuinely consequential
+substitutions (the needs_fixing CSV — meaning-changing, not just differently-spelled). Don't spend design effort
+on the spelling-variant cases; that question is already closed.
+
 ## What "best case" needs to grapple with (use the real data to check these, don't just theorize)
 
 1. **Which markers to surface, and how many.** The discriminative-marker lists in `audit_results.json` go many
