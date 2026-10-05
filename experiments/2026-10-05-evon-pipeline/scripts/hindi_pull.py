@@ -52,22 +52,29 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--concurrency", type=int, default=8)
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--part", type=int, default=0, help="process shards with index %% nparts == part")
+    ap.add_argument("--nparts", type=int, default=1)
     a = ap.parse_args()
+    out_path = OUT if a.nparts == 1 else OUT.with_name(f"Hindi.part{a.part}.jsonl")
 
     sample = pd.read_csv(HIN / "sample_index.csv")
     if a.limit:
         sample = sample.head(a.limit)
+    shards = sorted(sample.shard.unique())
+    mine = {s for i, s in enumerate(shards) if i % a.nparts == a.part}
+    sample = sample[sample.shard.isin(mine)]
     done = set()
-    if OUT.exists():
-        for line in open(OUT, encoding="utf-8"):
-            r = json.loads(line)
-            if not r.get("error"):
-                done.add((r["shard"], r["row_idx"]))
+    for p in [OUT] + sorted(OUT.parent.glob("Hindi.part*.jsonl")):
+        if p.exists():
+            for line in open(p, encoding="utf-8"):
+                r = json.loads(line)
+                if not r.get("error"):
+                    done.add((r["shard"], r["row_idx"]))
     sample = sample[[(s, i) not in done for s, i in zip(sample.shard, sample.row_idx)]]
     print(f"{len(sample)} clips to do ({len(done)} already done)", flush=True)
 
     n_done = n_err = 0
-    with open(OUT, "a", encoding="utf-8") as out, ThreadPoolExecutor(a.concurrency) as pool:
+    with open(out_path, "a", encoding="utf-8") as out, ThreadPoolExecutor(a.concurrency) as pool:
         for shard, grp in sample.groupby("shard"):
             fh = RangeFile(shard_url(shard))
             pf = pq.ParquetFile(fh)
@@ -114,7 +121,7 @@ def main():
 
     summary = {"clips_processed": n_done, "errors": n_err, "http_calls": CALLS["http_calls"],
                "status_counts": {str(k): v for k, v in STATUS.items()}}
-    (HIN / "pull_summary.json").write_text(json.dumps(summary, indent=2))
+    (HIN / f"pull_summary_part{a.part}.json").write_text(json.dumps(summary, indent=2))
     print(json.dumps(summary, indent=2))
 
 

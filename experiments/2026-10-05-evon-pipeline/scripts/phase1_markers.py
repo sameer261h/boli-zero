@@ -202,6 +202,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--strict", action="store_true")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--hindi", action="store_true", help="20-class run: Hindi as an extra group (read at import via sys.argv)")
     a = ap.parse_args()
     tag = ("strict" if a.strict else "primary") + f"_s{a.seed}"
     OUT.mkdir(parents=True, exist_ok=True)
