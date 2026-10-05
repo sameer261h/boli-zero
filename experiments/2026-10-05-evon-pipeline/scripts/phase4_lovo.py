@@ -104,7 +104,8 @@ def run(seed, strict):
             "svm_hindi_fpr": float(S(hin_test).mean()) if hin_test else None,
         }
         p = out["per_variety"][H]
-        print(f"  {H:14s} in-dist {p['in_dist_recall']:.2f} unseen {p['unseen_recall']:.2f} "
+        idr = "n/a" if p["in_dist_recall"] is None else f"{p['in_dist_recall']:.2f}"
+        print(f"  {H:14s} in-dist {idr} unseen {p['unseen_recall']:.2f} "
               f"(svm {p['svm_unseen_recall']:.2f}) hindiFPR {p['lovo_hindi_fpr']}", flush=True)
     (OUT / f"phase4_lovo_{'strict' if strict else 'primary'}_s{seed}.json").write_text(json.dumps(out, indent=1))
 

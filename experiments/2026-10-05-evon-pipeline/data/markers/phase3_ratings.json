@@ -1,0 +1,632 @@
+{
+ "clusters": [
+  [
+   "Angika",
+   "Magahi",
+   "Maithili",
+   "Surjapuri"
+  ],
+  [
+   "Awadhi",
+   "Bhojpuri",
+   "Chhattisgarhi",
+   "Sadri",
+   "Surgujia"
+  ],
+  [
+   "Bundeli",
+   "Garhwali",
+   "Jaipuri",
+   "Khariboli",
+   "Kumaoni",
+   "Hindi"
+  ],
+  [
+   "Haryanvi",
+   "Marwari",
+   "Rajasthani"
+  ]
+ ],
+ "table": [
+  {
+   "variety": "Angika",
+   "clips": 557,
+   "state_district_gender_cells": 14,
+   "stable_markers": 2,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.005,
+   "marker_recall_strict": 0.0,
+   "svm_ceiling_primary": 0.259,
+   "svm_ceiling_strict": 0.071,
+   "group_recall_strict": 0.129,
+   "confusion_partners_svm": [
+    "Maithili"
+   ],
+   "top_marker_confusions": [
+    [
+     "Surjapuri",
+     0.24
+    ],
+    [
+     "Maithili",
+     0.14
+    ],
+    [
+     "Kumaoni",
+     0.13
+    ],
+    [
+     "Bhojpuri",
+     0.1
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Awadhi",
+   "clips": 187,
+   "state_district_gender_cells": 9,
+   "stable_markers": 1,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.0,
+   "marker_recall_strict": 0.028,
+   "svm_ceiling_primary": 0.212,
+   "svm_ceiling_strict": 0.093,
+   "group_recall_strict": 0.454,
+   "confusion_partners_svm": [
+    "Bhojpuri",
+    "Chhattisgarhi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Bhojpuri",
+     0.25
+    ],
+    [
+     "Chhattisgarhi",
+     0.18
+    ],
+    [
+     "Jaipuri",
+     0.13
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": true
+  },
+  {
+   "variety": "Bajjika",
+   "clips": 861,
+   "state_district_gender_cells": 6,
+   "stable_markers": 0,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.0,
+   "marker_recall_strict": 0.0,
+   "svm_ceiling_primary": 0.592,
+   "svm_ceiling_strict": 0.5,
+   "group_recall_strict": 0.0,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Bhojpuri",
+     0.33
+    ],
+    [
+     "Kumaoni",
+     0.1
+    ],
+    [
+     "Maithili",
+     0.1
+    ],
+    [
+     "Surjapuri",
+     0.07
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Bhojpuri",
+   "clips": 4847,
+   "state_district_gender_cells": 27,
+   "stable_markers": 42,
+   "stable_unshared_markers": 15,
+   "marker_recall_primary": 0.682,
+   "marker_recall_strict": 0.605,
+   "svm_ceiling_primary": 0.741,
+   "svm_ceiling_strict": 0.666,
+   "group_recall_strict": 0.605,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.06
+    ]
+   ],
+   "rating": "clear markers",
+   "low_confidence": false
+  },
+  {
+   "variety": "Bundeli",
+   "clips": 447,
+   "state_district_gender_cells": 6,
+   "stable_markers": 6,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.038,
+   "marker_recall_strict": 0.009,
+   "svm_ceiling_primary": 0.385,
+   "svm_ceiling_strict": 0.143,
+   "group_recall_strict": 0.085,
+   "confusion_partners_svm": [
+    "Hindi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Jaipuri",
+     0.23
+    ],
+    [
+     "Kumaoni",
+     0.17
+    ],
+    [
+     "Khariboli",
+     0.13
+    ],
+    [
+     "Marwari",
+     0.11
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Chhattisgarhi",
+   "clips": 3687,
+   "state_district_gender_cells": 21,
+   "stable_markers": 41,
+   "stable_unshared_markers": 4,
+   "marker_recall_primary": 0.519,
+   "marker_recall_strict": 0.495,
+   "svm_ceiling_primary": 0.671,
+   "svm_ceiling_strict": 0.602,
+   "group_recall_strict": 0.495,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Jaipuri",
+     0.07
+    ],
+    [
+     "Bhojpuri",
+     0.06
+    ],
+    [
+     "Kumaoni",
+     0.05
+    ]
+   ],
+   "rating": "clear markers",
+   "low_confidence": false
+  },
+  {
+   "variety": "Garhwali",
+   "clips": 1893,
+   "state_district_gender_cells": 4,
+   "stable_markers": 47,
+   "stable_unshared_markers": 3,
+   "marker_recall_primary": 0.672,
+   "marker_recall_strict": 0.527,
+   "svm_ceiling_primary": 0.711,
+   "svm_ceiling_strict": 0.633,
+   "group_recall_strict": 0.527,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.11
+    ]
+   ],
+   "rating": "clear markers",
+   "low_confidence": false
+  },
+  {
+   "variety": "Haryanvi",
+   "clips": 164,
+   "state_district_gender_cells": 5,
+   "stable_markers": 1,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.083,
+   "marker_recall_strict": 0.279,
+   "svm_ceiling_primary": 0.429,
+   "svm_ceiling_strict": 0.209,
+   "group_recall_strict": 0.465,
+   "confusion_partners_svm": [
+    "Marwari"
+   ],
+   "top_marker_confusions": [
+    [
+     "Marwari",
+     0.21
+    ],
+    [
+     "Kumaoni",
+     0.14
+    ],
+    [
+     "Rajasthani",
+     0.12
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": true
+  },
+  {
+   "variety": "Jaipuri",
+   "clips": 86,
+   "state_district_gender_cells": 4,
+   "stable_markers": 28,
+   "stable_unshared_markers": 9,
+   "marker_recall_primary": 0.524,
+   "marker_recall_strict": 0.059,
+   "svm_ceiling_primary": 0.31,
+   "svm_ceiling_strict": 0.0,
+   "group_recall_strict": 0.059,
+   "confusion_partners_svm": [
+    "Hindi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.15
+    ],
+    [
+     "Marwari",
+     0.1
+    ],
+    [
+     "Rajasthani",
+     0.08
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": true
+  },
+  {
+   "variety": "Khariboli",
+   "clips": 717,
+   "state_district_gender_cells": 19,
+   "stable_markers": 32,
+   "stable_unshared_markers": 1,
+   "marker_recall_primary": 0.172,
+   "marker_recall_strict": 0.15,
+   "svm_ceiling_primary": 0.236,
+   "svm_ceiling_strict": 0.128,
+   "group_recall_strict": 0.241,
+   "confusion_partners_svm": [
+    "Hindi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.25
+    ],
+    [
+     "Jaipuri",
+     0.19
+    ],
+    [
+     "Marwari",
+     0.07
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Khortha",
+   "clips": 809,
+   "state_district_gender_cells": 8,
+   "stable_markers": 2,
+   "stable_unshared_markers": 1,
+   "marker_recall_primary": 0.043,
+   "marker_recall_strict": 0.269,
+   "svm_ceiling_primary": 0.759,
+   "svm_ceiling_strict": 0.328,
+   "group_recall_strict": 0.269,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Bhojpuri",
+     0.21
+    ],
+    [
+     "Maithili",
+     0.14
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Kumaoni",
+   "clips": 1141,
+   "state_district_gender_cells": 4,
+   "stable_markers": 33,
+   "stable_unshared_markers": 1,
+   "marker_recall_primary": 0.417,
+   "marker_recall_strict": 0.202,
+   "svm_ceiling_primary": 0.315,
+   "svm_ceiling_strict": 0.154,
+   "group_recall_strict": 0.695,
+   "confusion_partners_svm": [
+    "Garhwali",
+    "Hindi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Garhwali",
+     0.35
+    ],
+    [
+     "Jaipuri",
+     0.1
+    ],
+    [
+     "Khariboli",
+     0.07
+    ]
+   ],
+   "rating": "shared with neighbours",
+   "low_confidence": false
+  },
+  {
+   "variety": "Magahi",
+   "clips": 930,
+   "state_district_gender_cells": 9,
+   "stable_markers": 1,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.004,
+   "marker_recall_strict": 0.062,
+   "svm_ceiling_primary": 0.325,
+   "svm_ceiling_strict": 0.105,
+   "group_recall_strict": 0.227,
+   "confusion_partners_svm": [
+    "Maithili"
+   ],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.16
+    ],
+    [
+     "Bhojpuri",
+     0.16
+    ],
+    [
+     "Maithili",
+     0.15
+    ],
+    [
+     "Jaipuri",
+     0.12
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Maithili",
+   "clips": 3348,
+   "state_district_gender_cells": 41,
+   "stable_markers": 37,
+   "stable_unshared_markers": 6,
+   "marker_recall_primary": 0.333,
+   "marker_recall_strict": 0.21,
+   "svm_ceiling_primary": 0.601,
+   "svm_ceiling_strict": 0.521,
+   "group_recall_strict": 0.21,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Surjapuri",
+     0.17
+    ],
+    [
+     "Bhojpuri",
+     0.13
+    ],
+    [
+     "Kumaoni",
+     0.07
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Marwari",
+   "clips": 1450,
+   "state_district_gender_cells": 4,
+   "stable_markers": 40,
+   "stable_unshared_markers": 3,
+   "marker_recall_primary": 0.42,
+   "marker_recall_strict": null,
+   "svm_ceiling_primary": 0.448,
+   "svm_ceiling_strict": 0.0,
+   "group_recall_strict": null,
+   "confusion_partners_svm": [
+    "Rajasthani"
+   ],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.14
+    ],
+    [
+     "Rajasthani",
+     0.12
+    ],
+    [
+     "Garhwali",
+     0.07
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Rajasthani",
+   "clips": 2440,
+   "state_district_gender_cells": 4,
+   "stable_markers": 48,
+   "stable_unshared_markers": 43,
+   "marker_recall_primary": 0.409,
+   "marker_recall_strict": 0.034,
+   "svm_ceiling_primary": 0.593,
+   "svm_ceiling_strict": 0.351,
+   "group_recall_strict": 0.356,
+   "confusion_partners_svm": [
+    "Marwari"
+   ],
+   "top_marker_confusions": [
+    [
+     "Marwari",
+     0.23
+    ],
+    [
+     "Kumaoni",
+     0.09
+    ],
+    [
+     "Garhwali",
+     0.06
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Sadri",
+   "clips": 678,
+   "state_district_gender_cells": 4,
+   "stable_markers": 0,
+   "stable_unshared_markers": 0,
+   "marker_recall_primary": 0.0,
+   "marker_recall_strict": 0.031,
+   "svm_ceiling_primary": 0.323,
+   "svm_ceiling_strict": 0.219,
+   "group_recall_strict": 0.031,
+   "confusion_partners_svm": [
+    "Chhattisgarhi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Chhattisgarhi",
+     0.25
+    ],
+    [
+     "Bhojpuri",
+     0.19
+    ],
+    [
+     "Jaipuri",
+     0.07
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  },
+  {
+   "variety": "Surgujia",
+   "clips": 526,
+   "state_district_gender_cells": 2,
+   "stable_markers": 19,
+   "stable_unshared_markers": 6,
+   "marker_recall_primary": 0.17,
+   "marker_recall_strict": null,
+   "svm_ceiling_primary": 0.247,
+   "svm_ceiling_strict": 0.0,
+   "group_recall_strict": null,
+   "confusion_partners_svm": [
+    "Chhattisgarhi"
+   ],
+   "top_marker_confusions": [
+    [
+     "Chhattisgarhi",
+     0.33
+    ],
+    [
+     "Bhojpuri",
+     0.11
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": true
+  },
+  {
+   "variety": "Surjapuri",
+   "clips": 194,
+   "state_district_gender_cells": 2,
+   "stable_markers": 14,
+   "stable_unshared_markers": 3,
+   "marker_recall_primary": 0.611,
+   "marker_recall_strict": 0.58,
+   "svm_ceiling_primary": 0.447,
+   "svm_ceiling_strict": 0.318,
+   "group_recall_strict": 0.591,
+   "confusion_partners_svm": [
+    "Maithili"
+   ],
+   "top_marker_confusions": [
+    [
+     "Maithili",
+     0.08
+    ],
+    [
+     "Jaipuri",
+     0.06
+    ],
+    [
+     "Kumaoni",
+     0.05
+    ]
+   ],
+   "rating": "clear markers",
+   "low_confidence": true
+  },
+  {
+   "variety": "Hindi",
+   "clips": 3997,
+   "state_district_gender_cells": 212,
+   "stable_markers": 33,
+   "stable_unshared_markers": 3,
+   "marker_recall_primary": 0.162,
+   "marker_recall_strict": 0.159,
+   "svm_ceiling_primary": 0.471,
+   "svm_ceiling_strict": 0.446,
+   "group_recall_strict": 0.159,
+   "confusion_partners_svm": [],
+   "top_marker_confusions": [
+    [
+     "Kumaoni",
+     0.24
+    ],
+    [
+     "Jaipuri",
+     0.2
+    ],
+    [
+     "Khariboli",
+     0.11
+    ]
+   ],
+   "rating": "not separable from text",
+   "low_confidence": false
+  }
+ ]
+}

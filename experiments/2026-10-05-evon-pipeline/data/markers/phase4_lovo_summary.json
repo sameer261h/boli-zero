@@ -1,0 +1,169 @@
+{
+ "per_variety": {
+  "Angika": {
+   "in_dist_recall": 0.7142366770697768,
+   "unseen_recall": 0.7052663076002393,
+   "svm_unseen_recall": 0.8372232196289646,
+   "unseen_no_evidence": 0.14871334530221425,
+   "lovo_hindi_fpr": 0.36708359629392434
+  },
+  "Awadhi": {
+   "in_dist_recall": 0.5587705352411234,
+   "unseen_recall": 0.5035650623885918,
+   "svm_unseen_recall": 0.9465240641711231,
+   "unseen_no_evidence": 0.40106951871657753,
+   "lovo_hindi_fpr": 0.28926309343443
+  },
+  "Bajjika": {
+   "in_dist_recall": 0.3863695090439277,
+   "unseen_recall": 0.5385210994967092,
+   "svm_unseen_recall": 0.9492837785520712,
+   "unseen_no_evidence": 0.2934572202864886,
+   "lovo_hindi_fpr": 0.3240260983687347
+  },
+  "Bhojpuri": {
+   "in_dist_recall": 0.6930467239799055,
+   "unseen_recall": 0.39708410700777114,
+   "svm_unseen_recall": 0.8610824565023038,
+   "unseen_no_evidence": 0.39973179286156385,
+   "lovo_hindi_fpr": 0.36108498126291216
+  },
+  "Bundeli": {
+   "in_dist_recall": 0.42835266921133275,
+   "unseen_recall": 0.4638329604772558,
+   "svm_unseen_recall": 0.692393736017897,
+   "unseen_no_evidence": 0.26733780760626397,
+   "lovo_hindi_fpr": 0.36730235349559703
+  },
+  "Chhattisgarhi": {
+   "in_dist_recall": 0.6282456938283144,
+   "unseen_recall": 0.5864750022601936,
+   "svm_unseen_recall": 0.8571105686646777,
+   "unseen_no_evidence": 0.3058493807069885,
+   "lovo_hindi_fpr": 0.3495725089287589
+  },
+  "Garhwali": {
+   "in_dist_recall": 0.6015147034817153,
+   "unseen_recall": 0.6115513294594118,
+   "svm_unseen_recall": 0.9647825321359395,
+   "unseen_no_evidence": 0.3020778306039795,
+   "lovo_hindi_fpr": 0.3733059662537898
+  },
+  "Haryanvi": {
+   "in_dist_recall": 0.5502461248428989,
+   "unseen_recall": 0.34552845528455284,
+   "svm_unseen_recall": 0.7886178861788619,
+   "unseen_no_evidence": 0.4491869918699187,
+   "lovo_hindi_fpr": 0.267102927433412
+  },
+  "Jaipuri": {
+   "in_dist_recall": 0.7123161764705882,
+   "unseen_recall": 0.5910852713178295,
+   "svm_unseen_recall": 0.45348837209302323,
+   "unseen_no_evidence": 0.027131782945736437,
+   "lovo_hindi_fpr": 0.45307379496092376
+  },
+  "Khariboli": {
+   "in_dist_recall": 0.4290739957792833,
+   "unseen_recall": 0.5076708507670852,
+   "svm_unseen_recall": 0.4414225941422594,
+   "unseen_no_evidence": 0.22408182240818222,
+   "lovo_hindi_fpr": 0.3842523853629514
+  },
+  "Khortha": {
+   "in_dist_recall": 0.3265434579628953,
+   "unseen_recall": 0.15533580552121962,
+   "svm_unseen_recall": 0.9610630407911002,
+   "unseen_no_evidence": 0.6248454882571074,
+   "lovo_hindi_fpr": 0.2771937541712764
+  },
+  "Kumaoni": {
+   "in_dist_recall": 0.6394811507975494,
+   "unseen_recall": 0.6032719836400818,
+   "svm_unseen_recall": 0.5052585451358457,
+   "unseen_no_evidence": 0.0993280747881975,
+   "lovo_hindi_fpr": 0.380274004715887
+  },
+  "Magahi": {
+   "in_dist_recall": 0.42017058236663474,
+   "unseen_recall": 0.30752688172043013,
+   "svm_unseen_recall": 0.6983870967741935,
+   "unseen_no_evidence": 0.40878136200716847,
+   "lovo_hindi_fpr": 0.31326458933352924
+  },
+  "Maithili": {
+   "in_dist_recall": 0.603971199737184,
+   "unseen_recall": 0.5807447232178414,
+   "svm_unseen_recall": 0.8381620868180008,
+   "unseen_no_evidence": 0.2514436479490243,
+   "lovo_hindi_fpr": 0.3244487594847724
+  },
+  "Marwari": {
+   "in_dist_recall": 0.5137931034482759,
+   "unseen_recall": 0.25298850574712645,
+   "svm_unseen_recall": 0.7833333333333332,
+   "unseen_no_evidence": 0.5152873563218391,
+   "lovo_hindi_fpr": 0.25972081437248606
+  },
+  "Rajasthani": {
+   "in_dist_recall": 0.5114303278688525,
+   "unseen_recall": 0.3876366120218579,
+   "svm_unseen_recall": 0.8260928961748634,
+   "unseen_no_evidence": 0.3801912568306011,
+   "lovo_hindi_fpr": 0.3281854072488999
+  },
+  "Sadri": {
+   "in_dist_recall": 0.4442841348811498,
+   "unseen_recall": 0.40388397246804325,
+   "svm_unseen_recall": 0.8842182890855458,
+   "unseen_no_evidence": 0.44764011799410025,
+   "lovo_hindi_fpr": 0.26273530568548487
+  },
+  "Surgujia": {
+   "in_dist_recall": 0.5577838827838827,
+   "unseen_recall": 0.6042458808618505,
+   "svm_unseen_recall": 0.9451837769328265,
+   "unseen_no_evidence": 0.317807351077313,
+   "lovo_hindi_fpr": 0.3307268776872796
+  },
+  "Surjapuri": {
+   "in_dist_recall": 0.7430622009569378,
+   "unseen_recall": 0.7053264604810995,
+   "svm_unseen_recall": 0.975085910652921,
+   "unseen_no_evidence": 0.25171821305841924,
+   "lovo_hindi_fpr": 0.3199606004988617
+  }
+ },
+ "mean": {
+  "in_dist_recall": 0.5506680447238015,
+  "unseen_recall": 0.4869232248283786,
+  "svm_unseen_recall": 0.8004586412518817,
+  "lovo_hindi_fpr": 0.3332935694207322
+ },
+ "configs": [
+  [
+   false,
+   0
+  ],
+  [
+   false,
+   1
+  ],
+  [
+   false,
+   2
+  ],
+  [
+   true,
+   0
+  ],
+  [
+   true,
+   1
+  ],
+  [
+   true,
+   2
+  ]
+ ]
+}

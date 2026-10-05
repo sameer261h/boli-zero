@@ -1,0 +1,22 @@
+3 configs: [(False, 0), (False, 1), (False, 2)]
+variety         in-dist  unseen svm-unseen  noEvid HindiFPR
+Angika             0.71    0.76       0.83    0.10    0.454
+Awadhi             0.52    0.52       0.95    0.40    0.338
+Bajjika            0.42    0.60       0.95    0.28    0.392
+Bhojpuri           0.72    0.49       0.86    0.30    0.449
+Bundeli            0.38    0.40       0.68    0.29    0.329
+Chhattisgarhi      0.63    0.65       0.85    0.28    0.456
+Garhwali           0.64    0.73       0.96    0.21    0.489
+Haryanvi           0.50    0.35       0.79    0.43    0.284
+Jaipuri            0.62    0.62       0.46    0.03    0.469
+Khariboli          0.49    0.55       0.43    0.17    0.444
+Khortha            0.31    0.19       0.96    0.57    0.306
+Kumaoni            0.64    0.62       0.51    0.08    0.418
+Magahi             0.32    0.39       0.70    0.34    0.375
+Maithili           0.66    0.63       0.83    0.22    0.396
+Marwari            0.51    0.23       0.78    0.53    0.258
+Rajasthani         0.61    0.45       0.82    0.32    0.400
+Sadri              0.49    0.41       0.88    0.44    0.279
+Surgujia           0.56    0.67       0.95    0.28    0.444
+Surjapuri          0.86    0.82       0.97    0.16    0.387
+MEAN over varieties: {'in_dist_recall': 0.5564866923608832, 'unseen_recall': 0.5314651712404355, 'svm_unseen_recall': 0.7982605926797249, 'lovo_hindi_fpr': 0.38776540851502983}

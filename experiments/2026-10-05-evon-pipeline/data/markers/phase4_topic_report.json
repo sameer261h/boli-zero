@@ -1,0 +1,323 @@
+{
+ "Angika": {
+  "stable": 2,
+  "kept": 2,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Awadhi": {
+  "stable": 1,
+  "kept": 1,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Bajjika": {
+  "stable": 0,
+  "kept": 0,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Bhojpuri": {
+  "stable": 42,
+  "kept": 42,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Bundeli": {
+  "stable": 6,
+  "kept": 6,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Chhattisgarhi": {
+  "stable": 41,
+  "kept": 41,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Garhwali": {
+  "stable": 47,
+  "kept": 47,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Haryanvi": {
+  "stable": 1,
+  "kept": 1,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Jaipuri": {
+  "stable": 28,
+  "kept": 24,
+  "topic_flagged": 4,
+  "kept_untested": 8,
+  "flagged_examples": [
+   [
+    "e3:फेद",
+    3,
+    3
+   ],
+   [
+    "w:सफेद",
+    3,
+    3
+   ],
+   [
+    "e2:ेद",
+    3,
+    3
+   ],
+   [
+    "w:हुआ",
+    14,
+    13
+   ]
+  ]
+ },
+ "Khariboli": {
+  "stable": 32,
+  "kept": 15,
+  "topic_flagged": 17,
+  "kept_untested": 0,
+  "flagged_examples": [
+   [
+    "b:यह एक",
+    30,
+    27
+   ],
+   [
+    "b:काफी सारे",
+    9,
+    9
+   ],
+   [
+    "b:यहा पर",
+    60,
+    45
+   ],
+   [
+    "w:काफी",
+    35,
+    30
+   ],
+   [
+    "e3:ाफी",
+    35,
+    30
+   ],
+   [
+    "w:जहा",
+    29,
+    30
+   ],
+   [
+    "b:लगी हुई",
+    24,
+    16
+   ],
+   [
+    "b:सकते है",
+    7,
+    7
+   ],
+   [
+    "b:है जहा",
+    18,
+    19
+   ],
+   [
+    "w:सकते",
+    7,
+    9
+   ],
+   [
+    "w:ग्रीन",
+    12,
+    11
+   ],
+   [
+    "e2:फी",
+    39,
+    35
+   ]
+  ]
+ },
+ "Khortha": {
+  "stable": 2,
+  "kept": 2,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Kumaoni": {
+  "stable": 33,
+  "kept": 24,
+  "topic_flagged": 9,
+  "kept_untested": 0,
+  "flagged_examples": [
+   [
+    "t:दे रहा है",
+    53,
+    43
+   ],
+   [
+    "t:दे रहे है",
+    39,
+    29
+   ],
+   [
+    "t:दिखाई दे रहा",
+    52,
+    43
+   ],
+   [
+    "b:दे रहा",
+    53,
+    44
+   ],
+   [
+    "b:ब्लैक कलर",
+    14,
+    11
+   ],
+   [
+    "t:दिखाई दे रहे",
+    41,
+    31
+   ],
+   [
+    "w:हुए",
+    121,
+    105
+   ],
+   [
+    "w:व्हाइट",
+    29,
+    35
+   ],
+   [
+    "b:दे रहे",
+    42,
+    32
+   ]
+  ]
+ },
+ "Magahi": {
+  "stable": 1,
+  "kept": 1,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Maithili": {
+  "stable": 37,
+  "kept": 31,
+  "topic_flagged": 6,
+  "kept_untested": 0,
+  "flagged_examples": [
+   [
+    "t:देख पा रहे",
+    5,
+    7
+   ],
+   [
+    "b:मे बहुत",
+    86,
+    48
+   ],
+   [
+    "t:पा रहे है",
+    5,
+    7
+   ],
+   [
+    "b:पा रहे",
+    5,
+    7
+   ],
+   [
+    "e3:्छे",
+    26,
+    17
+   ],
+   [
+    "w:अच्छे",
+    25,
+    17
+   ]
+  ]
+ },
+ "Marwari": {
+  "stable": 40,
+  "kept": 38,
+  "topic_flagged": 2,
+  "kept_untested": 0,
+  "flagged_examples": [
+   [
+    "b:रही है",
+    138,
+    115
+   ],
+   [
+    "w:दिख",
+    110,
+    86
+   ]
+  ]
+ },
+ "Rajasthani": {
+  "stable": 48,
+  "kept": 48,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Sadri": {
+  "stable": 0,
+  "kept": 0,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Surgujia": {
+  "stable": 19,
+  "kept": 17,
+  "topic_flagged": 2,
+  "kept_untested": 1,
+  "flagged_examples": [
+   [
+    "w:ज्यादा",
+    4,
+    4
+   ],
+   [
+    "e3:ादा",
+    4,
+    4
+   ]
+  ]
+ },
+ "Surjapuri": {
+  "stable": 14,
+  "kept": 14,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ },
+ "Hindi": {
+  "stable": 33,
+  "kept": 33,
+  "topic_flagged": 0,
+  "kept_untested": 0,
+  "flagged_examples": []
+ }
+}
