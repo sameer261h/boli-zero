@@ -33,7 +33,9 @@ import numpy as np
 
 DATA = Path(__file__).resolve().parent.parent / "data"
 MANIFEST = DATA / "shared_1k_audio_manifest.jsonl"
-OUT_DIR = DATA / "allosaurus_lid"
+import os
+ALLO_LANG = os.environ.get("ALLO_LANG", "ipa")  # "ipa" = universal inventory; "hin" = Hindi inventory
+OUT_DIR = DATA / ("allosaurus_lid" if ALLO_LANG == "ipa" else f"allosaurus_lid_{ALLO_LANG}")
 PHONES = OUT_DIR / "phones.jsonl"
 RESULTS = OUT_DIR / "results.json"
 LANGS = ["Hindi", "Bhojpuri", "Maithili", "Chhattisgarhi", "Rajasthani", "Garhwali", "Khariboli", "Kumaoni"]
@@ -93,7 +95,7 @@ def run_phones():
                     wav, sr = to_16k_mono_wav(b)
                     p = Path(td) / "x.wav"
                     p.write_bytes(wav)
-                    rec["phones"] = model.recognize(str(p)).split()
+                    rec["phones"] = model.recognize(str(p), ALLO_LANG).split()
                     rec["orig_sr"] = sr
                 except Exception as e:  # unusable audio row -- recorded, not dropped silently
                     rec["error"] = repr(e)
