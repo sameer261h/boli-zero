@@ -1,0 +1,154 @@
+{
+  "Bhojpuri": {
+    "n_pooled_predictions": 23038,
+    "n_distinct_groups_seen": 26,
+    "row_weighted_recall": 0.716,
+    "group_balanced_recall": 0.645,
+    "gap": 0.071,
+    "family_recall": 0.8
+  },
+  "Chhattisgarhi": {
+    "n_pooled_predictions": 11493,
+    "n_distinct_groups_seen": 19,
+    "row_weighted_recall": 0.603,
+    "group_balanced_recall": 0.593,
+    "gap": 0.011,
+    "family_recall": 0.679
+  },
+  "Maithili": {
+    "n_pooled_predictions": 12219,
+    "n_distinct_groups_seen": 39,
+    "row_weighted_recall": 0.515,
+    "group_balanced_recall": 0.363,
+    "gap": 0.151,
+    "family_recall": 0.752
+  },
+  "Rajasthani": {
+    "n_pooled_predictions": 9242,
+    "n_distinct_groups_seen": 4,
+    "row_weighted_recall": 0.323,
+    "group_balanced_recall": 0.317,
+    "gap": 0.006,
+    "family_recall": 0.551
+  },
+  "Garhwali": {
+    "n_pooled_predictions": 7121,
+    "n_distinct_groups_seen": 4,
+    "row_weighted_recall": 0.641,
+    "group_balanced_recall": 0.706,
+    "gap": 0.065,
+    "family_recall": 0.669
+  },
+  "Marwari": {
+    "n_pooled_predictions": 5657,
+    "n_distinct_groups_seen": 4,
+    "row_weighted_recall": 0.419,
+    "group_balanced_recall": 0.401,
+    "gap": 0.018,
+    "family_recall": 0.588
+  },
+  "Magahi": {
+    "n_pooled_predictions": 4415,
+    "n_distinct_groups_seen": 9,
+    "row_weighted_recall": 0.224,
+    "group_balanced_recall": 0.205,
+    "gap": 0.019,
+    "family_recall": 0.558
+  },
+  "Bajjika": {
+    "n_pooled_predictions": 2944,
+    "n_distinct_groups_seen": 6,
+    "row_weighted_recall": 0.563,
+    "group_balanced_recall": 0.553,
+    "gap": 0.01,
+    "family_recall": 0.854
+  },
+  "Khortha": {
+    "n_pooled_predictions": 3966,
+    "n_distinct_groups_seen": 8,
+    "row_weighted_recall": 0.442,
+    "group_balanced_recall": 0.277,
+    "gap": 0.165,
+    "family_recall": 0.499
+  },
+  "Angika": {
+    "n_pooled_predictions": 1938,
+    "n_distinct_groups_seen": 14,
+    "row_weighted_recall": 0.165,
+    "group_balanced_recall": 0.094,
+    "gap": 0.07,
+    "family_recall": 0.591
+  },
+  "Kumaoni": {
+    "n_pooled_predictions": 3999,
+    "n_distinct_groups_seen": 4,
+    "row_weighted_recall": 0.309,
+    "group_balanced_recall": 0.368,
+    "gap": 0.06,
+    "family_recall": 0.672
+  },
+  "Sadri": {
+    "n_pooled_predictions": 1787,
+    "n_distinct_groups_seen": 4,
+    "row_weighted_recall": 0.46,
+    "group_balanced_recall": 0.319,
+    "gap": 0.141,
+    "family_recall": 0.482
+  },
+  "Khariboli": {
+    "n_pooled_predictions": 2079,
+    "n_distinct_groups_seen": 19,
+    "row_weighted_recall": 0.317,
+    "group_balanced_recall": 0.236,
+    "gap": 0.081,
+    "family_recall": 0.411
+  },
+  "Surgujia": {
+    "n_pooled_predictions": 1822,
+    "n_distinct_groups_seen": 2,
+    "row_weighted_recall": 0.311,
+    "group_balanced_recall": 0.326,
+    "gap": 0.016,
+    "family_recall": 0.611
+  },
+  "Bundeli": {
+    "n_pooled_predictions": 1460,
+    "n_distinct_groups_seen": 6,
+    "row_weighted_recall": 0.395,
+    "group_balanced_recall": 0.33,
+    "gap": 0.065,
+    "family_recall": 0.56
+  },
+  "Surjapuri": {
+    "n_pooled_predictions": 672,
+    "n_distinct_groups_seen": 2,
+    "row_weighted_recall": 0.406,
+    "group_balanced_recall": 0.314,
+    "gap": 0.092,
+    "family_recall": 0.827
+  },
+  "Awadhi": {
+    "n_pooled_predictions": 739,
+    "n_distinct_groups_seen": 9,
+    "row_weighted_recall": 0.185,
+    "group_balanced_recall": 0.276,
+    "gap": 0.091,
+    "family_recall": 0.21
+  },
+  "Haryanvi": {
+    "n_pooled_predictions": 610,
+    "n_distinct_groups_seen": 5,
+    "row_weighted_recall": 0.244,
+    "group_balanced_recall": 0.315,
+    "gap": 0.07,
+    "family_recall": 0.372
+  },
+  "Jaipuri": {
+    "n_pooled_predictions": 291,
+    "n_distinct_groups_seen": 4,
+    "row_weighted_recall": 0.244,
+    "group_balanced_recall": 0.156,
+    "gap": 0.088,
+    "family_recall": 0.381
+  }
+}
