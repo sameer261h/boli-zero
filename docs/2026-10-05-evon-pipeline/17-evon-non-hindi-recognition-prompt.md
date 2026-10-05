@@ -10,12 +10,24 @@ non-technical reader. Don't skip the second one.
 Everything referenced is committed at `https://github.com/sameer261h/boli-zero` (branch `main`). Clone it before
 starting. Key files, in order of relevance:
 
+- `docs/2026-10-05-evon-pipeline/06-prisma-fingerprint-dialect-transformation-analysis.md` — **the core
+  fingerprint report, read this first.** The actual, explained finding that Prisma's transcription errors on
+  dialectal speech are systematic and dialect-specific, not random noise — universal normalizations (है↔हैं),
+  dialect-specific deictic deletions (Garhwali "यख", Rajasthani "अठे", Maithili "एता", all meaning roughly
+  "here" — mostly deleted outright or misheard as unrelated words, not translated), and grammatical
+  normalizations (Rajasthani/Marwari progressive-aspect रियो/रेहो/रहियो → रही, dozens to 65 occurrences of the
+  same pattern). This narrative report is the actual "fingerprint" the project is named for — the raw JSON files
+  below are its underlying data, not a substitute for reading this.
 - `experiments/2026-10-05-evon-pipeline/data/prisma_fingerprint/regional_fingerprint_audit/audit_results.json`
   — the real, per-dialect **discriminative lexical markers** (log-odds z-scores — which words are genuinely
   overrepresented in a dialect's speech vs. everyone else's, e.g. Bhojpuri "बा"/z=43.0, "एगो"/z=15.1), plus
   discriminative word-ending suffixes (morphology proxy), classifier confusion matrices, and calibration data.
 - `experiments/2026-10-05-evon-pipeline/data/prisma_fingerprint/analysis/per_dialect_results.json` — per-dialect
-  substitution/deletion/insertion patterns (what Prisma actually does to dialectal words).
+  substitution/deletion/insertion patterns (what Prisma actually does to dialectal words) — the raw fingerprint
+  data underlying doc 06 above.
+- `experiments/2026-10-05-evon-pipeline/data/prisma_fingerprint/analysis/cross_dialect_universal_substitutions.json`
+  — the specific substitution patterns shared across 5+ dialects (generic Hindi-ASR normalization noise, e.g.
+  है→हैं, मे→में) — useful for knowing which patterns are NOT dialect-distinguishing evidence.
 - `experiments/2026-10-05-evon-pipeline/data/prisma_fingerprint/regional_fingerprint_audit/needs_fixing_wrong_substitutions.csv`
   — 5,948 real (dialect, human_word, Prisma_word) pairs where Prisma's mistranscription actually changes
   meaning, with Roman transliteration for readability.
