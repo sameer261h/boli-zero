@@ -12,6 +12,7 @@ Usage: python phase1_markers.py [--strict] [--seed 0]
 import argparse
 import json
 import math
+import sys
 from collections import Counter, defaultdict
 
 import numpy as np
@@ -21,6 +22,11 @@ from scipy.sparse import hstack
 from sklearn.svm import LinearSVC
 
 from markers_common import OUT, VARIETIES, group_key, load_regional, split_groups
+
+HINDI = "--hindi" in sys.argv  # Phase 3: Hindi becomes a 20th class
+if HINDI:
+    VARIETIES = VARIETIES + ["Hindi"]
+PREFIX = "phase3" if HINDI else "phase1"
 
 EPS = 5e-4
 MIN_DF = 8            # utterances in the variety (train)
@@ -66,12 +72,13 @@ def parts(feat):
     return []
 
 
-def derive(rows, split, vec, Xtr_idx, ytr):
+def derive(rows, split, vec, Xtr_idx, ytr, vs=None):
     """Return {variety: [marker dicts sorted best-first]} derived from train only."""
+    vs = vs or VARIETIES
     Xtr = vec.transform([features(rows[i]["prisma"]) for i in Xtr_idx]).tocsc()
     names = np.array(vec.get_feature_names_out())
-    V = len(VARIETIES)
-    vi = {v: k for k, v in enumerate(VARIETIES)}
+    V = len(vs)
+    vi = {v: k for k, v in enumerate(vs)}
     y = np.array([vi[v] for v in ytr])
     NV = np.bincount(y, minlength=V).astype(float)
     Y = sparse.csr_matrix((np.ones(len(y)), (y, np.arange(len(y)))), shape=(V, len(y)))
@@ -83,10 +90,10 @@ def derive(rows, split, vec, Xtr_idx, ytr):
     Dh = np.asarray((Y @ Xh).todense())
     gk = [group_key(rows[i]) for i in Xtr_idx]
     dk = [rows[i]["district"] for i in Xtr_idx]
-    n_dist = {v: len({d for d, yy in zip(dk, y) if yy == vi[v]}) for v in VARIETIES}
+    n_dist = {v: len({d for d, yy in zip(dk, y) if yy == vi[v]}) for v in vs}
 
     out = {}
-    for v in VARIETIES:
+    for v in vs:
         k = vi[v]
         fV = Fr[k]
         others = (tot - fV) / (V - 1)
@@ -108,7 +115,7 @@ def derive(rows, split, vec, Xtr_idx, ytr):
             lb = wilson_lb(D[k, c], NV[k])
             if lb < 2 * others[c]:
                 continue
-            nb = [(VARIETIES[u], round(float(Fr[u, c]), 4)) for u in range(V)
+            nb = [(vs[u], round(float(Fr[u, c]), 4)) for u in range(V)
                   if u != k and Fr[u, c] >= 0.3 * fV[c]]
             res.append({
                 "feature": str(names[c]),
@@ -136,12 +143,13 @@ def derive(rows, split, vec, Xtr_idx, ytr):
     return out
 
 
-def score_matrix(rows, idx, vec, markers, K):
+def score_matrix(rows, idx, vec, markers, K, vs=None):
     """Sum of weights of distinct markers present, per variety. Returns (n x V)."""
+    vs = vs or VARIETIES
     X = vec.transform([features(rows[i]["prisma"]) for i in idx]).tocsc()
     fi = {f: j for j, f in enumerate(vec.get_feature_names_out())}
-    S = np.zeros((len(idx), len(VARIETIES)))
-    for k, v in enumerate(VARIETIES):
+    S = np.zeros((len(idx), len(vs)))
+    for k, v in enumerate(vs):
         for m in markers[v][:K]:
             j = fi.get(m["feature"])
             if j is None:
@@ -151,17 +159,18 @@ def score_matrix(rows, idx, vec, markers, K):
     return S
 
 
-def evaluate(S, truth):
-    vi = {v: k for k, v in enumerate(VARIETIES)}
+def evaluate(S, truth, vs=None):
+    vs = vs or VARIETIES
+    vi = {v: k for k, v in enumerate(vs)}
     y = np.array([vi[t] for t in truth])
     has = S.max(1) > 0
     pred = np.where(has, S.argmax(1), -1)
-    V = len(VARIETIES)
+    V = len(vs)
     conf = np.zeros((V, V + 1), int)
     for a, p in zip(y, pred):
         conf[a, p if p >= 0 else V] += 1
     rec = {}
-    for k, v in enumerate(VARIETIES):
+    for k, v in enumerate(vs):
         n = conf[k].sum()
         rec[v] = {"n": int(n), "recall": conf[k, k] / n if n else None,
                   "coverage": 1 - conf[k, V] / n if n else None}
@@ -197,7 +206,7 @@ def main():
     tag = ("strict" if a.strict else "primary") + f"_s{a.seed}"
     OUT.mkdir(parents=True, exist_ok=True)
 
-    rows, stats = load_regional()
+    rows, stats = load_regional(HINDI)
     split = split_groups(rows, seed=a.seed, strict=a.strict)
     idx = {s: [i for i, x in enumerate(split) if x == s] for s in ("train", "val", "test")}
     ng = {s: len({group_key(rows[i], a.strict) for i in idx[s]}) for s in idx}
@@ -231,8 +240,8 @@ def main():
            "test_coverage": cov, "groups": ng, "per_variety": rec,
            "confusion": conf.tolist(), "labels": VARIETIES + ["none"],
            "markers": {v: markers[v][:200] for v in VARIETIES}, "load_stats": stats}
-    (OUT / f"phase1_{tag}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1))
-    print("wrote", OUT / f"phase1_{tag}.json")
+    (OUT / f"{PREFIX}_{tag}.json").write_text(json.dumps(res, ensure_ascii=False, indent=1))
+    print("wrote", OUT / f"{PREFIX}_{tag}.json")
 
 
 if __name__ == "__main__":

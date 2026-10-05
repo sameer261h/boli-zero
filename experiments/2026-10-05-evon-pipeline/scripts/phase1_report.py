@@ -12,11 +12,17 @@ Stable marker = in the top-50 of >= 6 of the 10 runs.
 """
 
 import json
+import sys
 from collections import Counter, defaultdict
 
 import numpy as np
 
 from markers_common import OUT, VARIETIES, group_key, load_regional
+
+HINDI = "--hindi" in sys.argv
+if HINDI:
+    VARIETIES = VARIETIES + ["Hindi"]
+PREFIX = "phase3" if HINDI else "phase1"
 
 TOPK, MIN_RUNS, PARTNER_SHARE = 50, 6, 0.15
 V = len(VARIETIES)
@@ -26,7 +32,7 @@ def main():
     runs = {}
     for kind in ("primary", "strict"):
         for s in range(5):
-            runs[(kind, s)] = json.load(open(OUT / f"phase1_{kind}_s{s}.json"))
+            runs[(kind, s)] = json.load(open(OUT / f"{PREFIX}_{kind}_s{s}.json"))
 
     # stable marker library
     cnt = defaultdict(Counter)
@@ -77,7 +83,7 @@ def main():
         seen |= c
         comp.append(sorted(c))
 
-    rows, _ = load_regional()
+    rows, _ = load_regional(HINDI)
     cells = defaultdict(set)
     nclips = Counter()
     for r in rows:
@@ -121,15 +127,15 @@ def main():
             "rating": rating, "low_confidence": bool(low),
         })
 
-    (OUT / "phase1_marker_library.json").write_text(json.dumps(library, ensure_ascii=False, indent=1))
-    (OUT / "phase1_ratings.json").write_text(json.dumps(
+    (OUT / f"{PREFIX}_marker_library.json").write_text(json.dumps(library, ensure_ascii=False, indent=1))
+    (OUT / f"{PREFIX}_ratings.json").write_text(json.dumps(
         {"clusters": [[VARIETIES[i] for i in c] for c in comp if len(c) > 1],
          "table": table}, ensure_ascii=False, indent=1))
-    np.savetxt(OUT / "phase1_confusion_strict_markers.csv", conf["strict"], fmt="%d", delimiter=",",
+    np.savetxt(OUT / f"{PREFIX}_confusion_strict_markers.csv", conf["strict"], fmt="%d", delimiter=",",
                header=",".join(VARIETIES + ["none"]))
-    np.savetxt(OUT / "phase1_confusion_primary_markers.csv", conf["primary"], fmt="%d", delimiter=",",
+    np.savetxt(OUT / f"{PREFIX}_confusion_primary_markers.csv", conf["primary"], fmt="%d", delimiter=",",
                header=",".join(VARIETIES + ["none"]))
-    np.savetxt(OUT / "phase1_confusion_svm_pooled.csv", allb, fmt="%d", delimiter=",", header=",".join(VARIETIES))
+    np.savetxt(OUT / f"{PREFIX}_confusion_svm_pooled.csv", allb, fmt="%d", delimiter=",", header=",".join(VARIETIES))
 
     print("clusters (SVM confusion >= 15%):", [[VARIETIES[i] for i in c] for c in comp if len(c) > 1])
     hdr = f"{'variety':14s}{'clips':>6s}{'cells':>6s}{'stab':>5s}{'unsh':>5s}{'mkP':>6s}{'mkS':>6s}{'svmP':>6s}{'svmS':>6s}{'grpS':>6s}  rating"

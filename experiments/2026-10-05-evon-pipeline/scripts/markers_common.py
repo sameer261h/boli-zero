@@ -76,12 +76,16 @@ def load_jsonl(path, label=None):
     return rows, stats
 
 
-def load_regional():
+def load_regional(include_hindi=False):
     rows, stats = [], {}
     for v in VARIETIES:
         r, s = load_jsonl(DATA / f"{v}.jsonl", v)
         rows += r
         stats[v] = s
+    if include_hindi:
+        r, s = load_jsonl(DATA / "Hindi.jsonl", "Hindi")
+        rows += r
+        stats["Hindi"] = s
     return rows, stats
 
 
