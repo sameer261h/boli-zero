@@ -92,6 +92,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--subset", default=None, help="e.g. test=8,validation=8,train=14: evenly spaced shards per split")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
 
@@ -99,6 +100,13 @@ def main():
         f for f in HfApi().list_repo_files(REPO, repo_type="dataset")
         if f.startswith("audio/Hindi/") and f.endswith(".parquet")
     )
+    if args.subset:
+        want = {k: int(v) for k, v in (x.split("=") for x in args.subset.split(","))}
+        pick = []
+        for sp, n in want.items():
+            fs = [f for f in files if f"/{sp}-" in f]
+            pick += [fs[round(i * (len(fs) - 1) / max(n - 1, 1))] for i in range(n)]
+        files = sorted(set(pick))
     if args.limit:
         files = files[: args.limit]
     print(f"{len(files)} Hindi shards")
