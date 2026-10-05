@@ -18,3 +18,4 @@ outputs/*
 !.env.example
 .vercel/
 .scratch/
+experiments/2026-10-05-evon-pipeline/data/prisma_fingerprint/regional_fingerprint_audit/logo_predictions.jsonl
