@@ -132,7 +132,7 @@ def cv_predict(X_phones, y, groups, ns, shuffle=False):
     from sklearn.model_selection import StratifiedGroupKFold
     rng = np.random.RandomState(SEED)
     pred = np.empty(len(y), dtype=object)
-    skf = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=SEED)
+    skf = StratifiedGroupKFold(n_splits=min(5, len(set(groups))), shuffle=True, random_state=SEED)
     for tr, te in skf.split(np.zeros(len(y)), y, groups):
         ytr = y[tr].copy()
         if shuffle:
