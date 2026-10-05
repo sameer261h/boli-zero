@@ -1,9 +1,20 @@
-# Prompt for a local Opus Claude Code session: noise/garbled-speech recovery + remaining roadmap design
+# Prompt for a local Opus Claude Code session: technical logic + pecking order for the remaining roadmap
 
 Paste everything below into a fresh local session. It has no access to today's cloud session, so it's fully
-self-contained. This is a **research and design task, not an implementation task** — think deeply, ground
-proposals in real published technique where it exists, and be explicit about what's established research vs.
-your own reasoning. No code needs to be written; a clear design document is the deliverable.
+self-contained. **This is a technical-logic and prioritization task, not abstract brainstorming and not an
+implementation task.** A lot of "is this worth doing at all" judgment has already been made today (see below) —
+don't re-litigate it. What's wanted instead, for each remaining open item:
+
+1. The actual **technical mechanism** — how it would concretely work, wired into the real pipeline code (exact
+   integration points given below), to a fairly technical degree, not a hand-wavy description.
+2. An explicit **difficulty rating with reasons** — "doing X is easy because ..."; "Y is very hard because of
+   [specific technical/data/evaluation constraint], not just because it sounds hard."
+3. A **pecking order** across all the items — given the difficulty analysis, what should be tackled first,
+   second, etc., and why (dependency between items, lowest-hanging-fruit-first logic, what blocks what).
+
+Ground this is real code, not guesses — the architecture section below gives you the exact files and line-level
+integration points already identified. No new code needs to be written; a clear, technically concrete design
+document (with pseudocode where it clarifies the mechanism) is the deliverable.
 
 ## Repository access — read the real data, don't just trust this summary
 
@@ -130,12 +141,50 @@ something we tell Evon to do" to add emotion to Timbre's output** — since Timb
 punctuation, phrasing, and word choice in the text Evon sends actually achieve, and is this a real, testable
 lever or mostly wishful thinking? Be honest if the answer is "marginal at best."
 
+## The real pipeline — exact integration points, not guesses
+
+Read `src/boli_zero/conversation.py` and `src/boli_zero/clients.py` yourself, but here's the load-bearing fact
+that should shape every proposal below: the real conversation flow is three stages in `ConversationEngine`
+(`conversation.py`) —
+
+1. `recognize()` — calls Prisma (`self.recognizer.recognize(...)`), stores the raw transcript as
+   `turn.recognized_text`. It already captures a `proposed_variety` field (`result["identification"]["summary"]`,
+   from the existing lightweight marker-matching logic in `routing.py` — a different, older mechanism than
+   today's calibrated detector, not the same thing).
+2. `reply()` — this is the gap. It currently calls `self.replier.reply_with_usage(context, turn.recognized_text[:MAX_TEXT_CHARS])`
+   — **only the raw transcript text goes to Evon. No detector output, no confidence, no dialect hint, nothing
+   from today's work is wired in at all.** `EvonReply.reply_with_usage` (in `conversation.py`) builds its prompt
+   from `EVON_TASK_TEMPLATE.format(history=..., user_text=...)` — a single user-turn template, deliberately no
+   system prompt (see the class docstring for why). Any hint/flag from today's work would have to be injected
+   into that template or a new one.
+3. `speak()` — sends `turn.reply_text` (Evon's output, truncated) to `self.timbre.synthesize(text, "hi-IN", voice)`
+   as plain text. Timbre has no parameters beyond text/language/voice (`TimbreClient` in `clients.py`) — confirmed
+   from the actual client code, not assumed.
+
+This is the concrete anchor for every proposal: for each remaining item, say exactly which of these three stages
+it would touch, what data would need to flow into it (and from where — today's CSVs/JSON outputs, a new
+precomputed lookup table, something else), and what in the existing code would need to change vs. what's a new
+component.
+
 ## What to produce
 
-A single, clearly structured design document (markdown). For Part A, prioritize depth and real citations over
-breadth — better to properly ground 3 techniques than list 10 superficially. For Part B, a concrete proposal per
-item (d, f, g), each with: what's buildable today with zero new infrastructure, what would need more
-engineering, and an honest assessment of expected value vs. effort (this project has repeatedly killed
-over-engineered work today in favor of cheaper alternatives that captured most of the value — match that
-discipline). Do not write implementation code. Do not call any Evon/Prisma API (you don't have access to them
-from a local session anyway) — this is a pure research and design task.
+Write your output to a **new file**, `docs/2026-10-05-evon-pipeline/16-opus-technical-logic-and-pecking-order.md`
+— do not edit this prompt file itself. Commit and push it to the repo when done (same repo, `main` branch) so it
+can be picked back up from the cloud session.
+
+Structure:
+
+1. **Lowest-hanging fruit first.** Before the full breakdown, name the single (or 2-3) item(s) — across
+   everything in this prompt, including simply wiring today's already-built detector into `reply()`'s current
+   gap above — that gives the best value for the least engineering effort. Justify it against the others.
+2. **Per-item technical logic**, for Part A's recommendation and each of Part B's items (d, f, g): the concrete
+   mechanism (pseudocode where it clarifies things), which pipeline stage(s) it touches, what new data/state it
+   needs, and an explicit difficulty rating with *reasons* — not "this is hard," but "this is hard because
+   [specific technical, data, or evaluation constraint]."
+3. **A pecking order** — given the difficulty analysis and any dependencies between items (e.g., does one need
+   another already built first), the sequence you'd actually tackle these in, and why.
+
+For Part A, prioritize depth and real citations over breadth — better to properly ground 3 techniques than list
+10 superficially. Do not write implementation code (pseudocode for mechanism clarity is fine). Do not call any
+Evon/Prisma API (you don't have access to them from a local session anyway) — this is a technical design task,
+not an implementation task.
