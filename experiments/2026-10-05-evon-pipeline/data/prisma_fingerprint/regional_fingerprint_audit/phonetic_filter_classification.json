@@ -1,0 +1,506 @@
+{
+  "total_instances": 38705,
+  "ignore": 26095,
+  "ignore_pct": 67.4,
+  "flagged": 12610,
+  "wrong": 9610,
+  "wrong_pct_of_flagged": 76.2,
+  "unsure": 3000,
+  "unsure_pct_of_flagged": 23.8,
+  "by_dialect": {
+    "Bhojpuri": {
+      "total": 7760,
+      "ignore": 5402,
+      "ignore_pct": 69.6,
+      "flagged": 2358,
+      "wrong": 1682,
+      "wrong_pct_of_flagged": 71.3,
+      "unsure": 676,
+      "unsure_pct_of_flagged": 28.7
+    },
+    "Chhattisgarhi": {
+      "total": 5442,
+      "ignore": 3567,
+      "ignore_pct": 65.5,
+      "flagged": 1875,
+      "wrong": 1649,
+      "wrong_pct_of_flagged": 87.9,
+      "unsure": 226,
+      "unsure_pct_of_flagged": 12.1
+    },
+    "Maithili": {
+      "total": 5567,
+      "ignore": 4020,
+      "ignore_pct": 72.2,
+      "flagged": 1547,
+      "wrong": 1218,
+      "wrong_pct_of_flagged": 78.7,
+      "unsure": 329,
+      "unsure_pct_of_flagged": 21.3
+    },
+    "Rajasthani": {
+      "total": 3746,
+      "ignore": 2188,
+      "ignore_pct": 58.4,
+      "flagged": 1558,
+      "wrong": 1236,
+      "wrong_pct_of_flagged": 79.3,
+      "unsure": 322,
+      "unsure_pct_of_flagged": 20.7
+    },
+    "Garhwali": {
+      "total": 2641,
+      "ignore": 1551,
+      "ignore_pct": 58.7,
+      "flagged": 1090,
+      "wrong": 832,
+      "wrong_pct_of_flagged": 76.3,
+      "unsure": 258,
+      "unsure_pct_of_flagged": 23.7
+    },
+    "Marwari": {
+      "total": 2422,
+      "ignore": 1418,
+      "ignore_pct": 58.5,
+      "flagged": 1004,
+      "wrong": 712,
+      "wrong_pct_of_flagged": 70.9,
+      "unsure": 292,
+      "unsure_pct_of_flagged": 29.1
+    },
+    "Magahi": {
+      "total": 1147,
+      "ignore": 757,
+      "ignore_pct": 66.0,
+      "flagged": 390,
+      "wrong": 297,
+      "wrong_pct_of_flagged": 76.2,
+      "unsure": 93,
+      "unsure_pct_of_flagged": 23.8
+    },
+    "Bajjika": {
+      "total": 1617,
+      "ignore": 1218,
+      "ignore_pct": 75.3,
+      "flagged": 399,
+      "wrong": 324,
+      "wrong_pct_of_flagged": 81.2,
+      "unsure": 75,
+      "unsure_pct_of_flagged": 18.8
+    },
+    "Khortha": {
+      "total": 841,
+      "ignore": 541,
+      "ignore_pct": 64.3,
+      "flagged": 300,
+      "wrong": 245,
+      "wrong_pct_of_flagged": 81.7,
+      "unsure": 55,
+      "unsure_pct_of_flagged": 18.3
+    },
+    "Angika": {
+      "total": 910,
+      "ignore": 683,
+      "ignore_pct": 75.1,
+      "flagged": 227,
+      "wrong": 170,
+      "wrong_pct_of_flagged": 74.9,
+      "unsure": 57,
+      "unsure_pct_of_flagged": 25.1
+    },
+    "Kumaoni": {
+      "total": 2385,
+      "ignore": 1807,
+      "ignore_pct": 75.8,
+      "flagged": 578,
+      "wrong": 320,
+      "wrong_pct_of_flagged": 55.4,
+      "unsure": 258,
+      "unsure_pct_of_flagged": 44.6
+    },
+    "Sadri": {
+      "total": 730,
+      "ignore": 444,
+      "ignore_pct": 60.8,
+      "flagged": 286,
+      "wrong": 242,
+      "wrong_pct_of_flagged": 84.6,
+      "unsure": 44,
+      "unsure_pct_of_flagged": 15.4
+    },
+    "Khariboli": {
+      "total": 1271,
+      "ignore": 1014,
+      "ignore_pct": 79.8,
+      "flagged": 257,
+      "wrong": 143,
+      "wrong_pct_of_flagged": 55.6,
+      "unsure": 114,
+      "unsure_pct_of_flagged": 44.4
+    },
+    "Surgujia": {
+      "total": 556,
+      "ignore": 329,
+      "ignore_pct": 59.2,
+      "flagged": 227,
+      "wrong": 200,
+      "wrong_pct_of_flagged": 88.1,
+      "unsure": 27,
+      "unsure_pct_of_flagged": 11.9
+    },
+    "Bundeli": {
+      "total": 770,
+      "ignore": 542,
+      "ignore_pct": 70.4,
+      "flagged": 228,
+      "wrong": 145,
+      "wrong_pct_of_flagged": 63.6,
+      "unsure": 83,
+      "unsure_pct_of_flagged": 36.4
+    },
+    "Surjapuri": {
+      "total": 197,
+      "ignore": 113,
+      "ignore_pct": 57.4,
+      "flagged": 84,
+      "wrong": 52,
+      "wrong_pct_of_flagged": 61.9,
+      "unsure": 32,
+      "unsure_pct_of_flagged": 38.1
+    },
+    "Awadhi": {
+      "total": 247,
+      "ignore": 180,
+      "ignore_pct": 72.9,
+      "flagged": 67,
+      "wrong": 50,
+      "wrong_pct_of_flagged": 74.6,
+      "unsure": 17,
+      "unsure_pct_of_flagged": 25.4
+    },
+    "Haryanvi": {
+      "total": 274,
+      "ignore": 182,
+      "ignore_pct": 66.4,
+      "flagged": 92,
+      "wrong": 65,
+      "wrong_pct_of_flagged": 70.7,
+      "unsure": 27,
+      "unsure_pct_of_flagged": 29.3
+    },
+    "Jaipuri": {
+      "total": 182,
+      "ignore": 139,
+      "ignore_pct": 76.4,
+      "flagged": 43,
+      "wrong": 28,
+      "wrong_pct_of_flagged": 65.1,
+      "unsure": 15,
+      "unsure_pct_of_flagged": 34.9
+    }
+  },
+  "top_wrong": [
+    {
+      "human": "हेय",
+      "prisma": "है",
+      "count": 178
+    },
+    {
+      "human": "इ",
+      "prisma": "ये",
+      "count": 165
+    },
+    {
+      "human": "हे",
+      "prisma": "हैं",
+      "count": 146
+    },
+    {
+      "human": "म",
+      "prisma": "में",
+      "count": 130
+    },
+    {
+      "human": "ए",
+      "prisma": "ये",
+      "count": 129
+    },
+    {
+      "human": "रो",
+      "prisma": "रही",
+      "count": 93
+    },
+    {
+      "human": "अउ",
+      "prisma": "और",
+      "count": 84
+    },
+    {
+      "human": "रहियो",
+      "prisma": "रही",
+      "count": 68
+    },
+    {
+      "human": "रेहो",
+      "prisma": "रही",
+      "count": 65
+    },
+    {
+      "human": "मा",
+      "prisma": "में",
+      "count": 61
+    },
+    {
+      "human": "ई",
+      "prisma": "ये",
+      "count": 59
+    },
+    {
+      "human": "हेय",
+      "prisma": "हई",
+      "count": 55
+    },
+    {
+      "human": "एहा",
+      "prisma": "यह",
+      "count": 50
+    },
+    {
+      "human": "ए",
+      "prisma": "है",
+      "count": 48
+    },
+    {
+      "human": "एगो",
+      "prisma": "एक",
+      "count": 46
+    },
+    {
+      "human": "यहाँ",
+      "prisma": "यह",
+      "count": 46
+    },
+    {
+      "human": "इहा",
+      "prisma": "यहाँ",
+      "count": 43
+    },
+    {
+      "human": "रियो",
+      "prisma": "रही",
+      "count": 39
+    },
+    {
+      "human": "अऊ",
+      "prisma": "और",
+      "count": 38
+    },
+    {
+      "human": "ओ",
+      "prisma": "और",
+      "count": 37
+    },
+    {
+      "human": "च",
+      "prisma": "छे",
+      "count": 37
+    },
+    {
+      "human": "भौत",
+      "prisma": "बहुत",
+      "count": 37
+    },
+    {
+      "human": "भोत",
+      "prisma": "बहुत",
+      "count": 34
+    },
+    {
+      "human": "रिया",
+      "prisma": "रहे",
+      "count": 34
+    },
+    {
+      "human": "रिया",
+      "prisma": "रही",
+      "count": 31
+    },
+    {
+      "human": "बि",
+      "prisma": "भी",
+      "count": 29
+    },
+    {
+      "human": "में",
+      "prisma": "मा",
+      "count": 28
+    },
+    {
+      "human": "ह",
+      "prisma": "हाँ",
+      "count": 28
+    },
+    {
+      "human": "छीये",
+      "prisma": "छे",
+      "count": 28
+    },
+    {
+      "human": "रा",
+      "prisma": "रहे",
+      "count": 28
+    }
+  ],
+  "top_unsure": [
+    {
+      "human": "बोहोत",
+      "prisma": "बहुत",
+      "count": 195
+    },
+    {
+      "human": "वाइट",
+      "prisma": "व्हाइट",
+      "count": 125
+    },
+    {
+      "human": "वगेरा",
+      "prisma": "वगैरह",
+      "count": 36
+    },
+    {
+      "human": "देखिये",
+      "prisma": "देखिए",
+      "count": 26
+    },
+    {
+      "human": "हमर",
+      "prisma": "हमारे",
+      "count": 18
+    },
+    {
+      "human": "दिखेरो",
+      "prisma": "दिखीरु",
+      "count": 18
+    },
+    {
+      "human": "ए_टी_एम",
+      "prisma": "एटीएम",
+      "count": 15
+    },
+    {
+      "human": "येल्लो",
+      "prisma": "येलो",
+      "count": 15
+    },
+    {
+      "human": "देखिए",
+      "prisma": "देखिये",
+      "count": 13
+    },
+    {
+      "human": "दिखइ",
+      "prisma": "दिखाई",
+      "count": 12
+    },
+    {
+      "human": "पेहेन",
+      "prisma": "पहन",
+      "count": 12
+    },
+    {
+      "human": "लेडिस",
+      "prisma": "लेडीज",
+      "count": 11
+    },
+    {
+      "human": "उज्जर",
+      "prisma": "उजर",
+      "count": 10
+    },
+    {
+      "human": "खातिर",
+      "prisma": "खाती",
+      "count": 9
+    },
+    {
+      "human": "जादा",
+      "prisma": "ज्यादा",
+      "count": 9
+    },
+    {
+      "human": "चाही",
+      "prisma": "चाहिए",
+      "count": 9
+    },
+    {
+      "human": "महजिद",
+      "prisma": "मस्जिद",
+      "count": 9
+    },
+    {
+      "human": "दिखेरो",
+      "prisma": "दिखिरु",
+      "count": 9
+    },
+    {
+      "human": "रहिया",
+      "prisma": "रहा",
+      "count": 9
+    },
+    {
+      "human": "उजर",
+      "prisma": "उज्जर",
+      "count": 7
+    },
+    {
+      "human": "दिवार",
+      "prisma": "दीवाल",
+      "count": 7
+    },
+    {
+      "human": "हमर",
+      "prisma": "हमारा",
+      "count": 7
+    },
+    {
+      "human": "खड़या",
+      "prisma": "खड़े",
+      "count": 7
+    },
+    {
+      "human": "दिखेरयो",
+      "prisma": "दिखिरु",
+      "count": 7
+    },
+    {
+      "human": "दिख्याण",
+      "prisma": "दिखेण",
+      "count": 7
+    },
+    {
+      "human": "दिख्येण",
+      "prisma": "दिखेण",
+      "count": 7
+    },
+    {
+      "human": "मंदील",
+      "prisma": "मंदिर",
+      "count": 6
+    },
+    {
+      "human": "स्वास्थ",
+      "prisma": "स्वास्थ्य",
+      "count": 6
+    },
+    {
+      "human": "जेन्स",
+      "prisma": "जेंट्स",
+      "count": 6
+    },
+    {
+      "human": "विधालय",
+      "prisma": "विद्यालय",
+      "count": 6
+    }
+  ]
+}
