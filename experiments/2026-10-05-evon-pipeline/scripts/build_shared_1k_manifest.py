@@ -38,6 +38,7 @@ TARGETS = ["Hindi", "Bhojpuri", "Maithili", "Chhattisgarhi", "Rajasthani", "Garh
 PER_TARGET = 125
 SEED = 20261005
 MIN_DUR = 1.0
+HINDI_SHARDS = 12
 
 ROOT = Path(__file__).resolve().parent.parent / "data"
 PF_DIR = ROOT / "prisma_fingerprint"
@@ -82,6 +83,8 @@ def regional_pool(lang):
 def hindi_pool(api):
     files = sorted(f for f in api.list_repo_files(REPO, repo_type="dataset")
                    if "/Hindi/" in f and f.endswith(".parquet"))
+    # 250 Hindi shards: take a seeded random subset (neutral, not content-based)
+    files = sorted(random.Random(SEED).sample(files, HINDI_SHARDS))
     rows = []
     for f in files:
         df = pd.read_parquet(hf_hub_download(REPO, f, repo_type="dataset"))
