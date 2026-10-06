@@ -50,9 +50,12 @@ def download_model():
     timeout=60 * 60 * 2,
     min_containers=0,
     max_containers=1,
-    scaledown_window=60 * 60,
+    # 5 minutes, not 60: an idle A100 bills the whole window after the last request.
+    scaledown_window=5 * 60,
     memory=131072,
 )
+# Without this Modal sends the container one request at a time, so vLLM never batches and concurrent callers queue.
+@modal.concurrent(max_inputs=32)
 @modal.web_server(port=8000, startup_timeout=60 * 10)
 def serve():
     import subprocess
