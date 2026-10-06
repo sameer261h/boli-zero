@@ -1,0 +1,51 @@
+
+Notes on how each variety tends to show up in transcripts like this one, learned from about 125 transcripts per variety. For each variety, the five grammar features that best separated it from the others. "more often here" lists forms at least twice as frequent in that variety as in the others; "less often here" lists forms at most half as frequent. Forms used about equally everywhere are left out.
+
+Hindi:
+  1. Copulas: appears more often here than in the other varieties; more often here: हूं, हैं
+  2. Participles / converbs: appears more often here than in the other varieties; more often here: हुई, हुआ, हुए
+  3. Non-copular auxiliaries: appears more often here than in the other varieties; more often here: रही, रहा
+  4. Locative / deictic adverbs: appears more often here than in the other varieties; more often here: चारों, सामने, यहां, पीछे, लगे, अंदर, बाहर
+  5. Gender agreement: appears more often here than in the other varieties; more often here: लिखा, बनी, रही, बैठा, रहा, रखा, बना
+Bhojpuri:
+  1. Aspect morphology: appears more often here than in the other varieties; more often here: देता, जाले, आवता, लगेले, मिलेला, करता, देखता, जाला
+  2. Gender agreement: appears less often here than in the other varieties; more often here: देता, आवता, करता, जाई, देखता, जाला, कहीं, होता
+  3. Numeral classifiers / count markers: appears more often here than in the other varieties; more often here: एगो, ठे
+  4. Non-copular auxiliaries: appears less often here than in the other varieties; more often here: लागल, रहल; less often here: रहा, रहे
+  5. Case / postposition system: appears more often here than in the other varieties; more often here: ले, खातिर, से, के
+Maithili:
+  1. Comparative / degree markers: appears more often here than in the other varieties; more often here: ढेर
+  2. Numeral classifiers / count markers: appears more often here than in the other varieties; more often here: तीनगो, एगो
+  3. Gender agreement: appears less often here than in the other varieties; more often here: लगता, चला, लिखा, लगा, बैठा, जाता
+  4. Interrogatives: appears more often here than in the other varieties; more often here: कितना, क्या
+  5. Conjunctions: appears less often here than in the other varieties
+Chhattisgarhi:
+  1. Vocative / address particles: appears more often here than in the other varieties; more often here: हे
+  2. Non-copular auxiliaries: appears less often here than in the other varieties; less often here: रही
+  3. Locative / deictic adverbs: appears less often here than in the other varieties; more often here: अंदर; less often here: यहां, नीचे
+  4. Indefinite / quantifier paradigms: appears less often here than in the other varieties; more often here: हर; less often here: कुछ, सारा
+  5. Case / postposition system: appears less often here than in the other varieties; more often here: ला, ले, कर
+Rajasthani:
+  1. Comparative / degree markers: appears less often here than in the other varieties; less often here: बहुत
+  2. Demonstratives: appears less often here than in the other varieties; more often here: यो, ओ; less often here: यह, ये
+  3. Participles / converbs: appears less often here than in the other varieties; less often here: हुए, हुई, हुआ
+  4. Tense morphology: appears less often here than in the other varieties; more often here: जाली
+  5. Non-copular auxiliaries: appears more often here than in the other varieties; more often here: रही
+Garhwali:
+  1. Copulas: appears less often here than in the other varieties; more often here: छी, छ, छो, छन; less often here: हैं
+  2. Non-copular auxiliaries: appears less often here than in the other varieties
+  3. Participles / converbs: appears less often here than in the other varieties; less often here: हुई
+  4. Aspect morphology: appears less often here than in the other varieties
+  5. Gender agreement: appears less often here than in the other varieties; more often here: होया, लगीं
+Khariboli:
+  1. Copulas: appears more often here than in the other varieties; more often here: हैं
+  2. Vocative / address particles: appears less often here than in the other varieties
+  3. Locative / deictic adverbs: appears more often here than in the other varieties; more often here: वहीं, यहां, अंदर, बाहर
+  4. Basic pronouns: appears less often here than in the other varieties
+  5. Non-copular auxiliaries: appears more often here than in the other varieties; more often here: रहा, रहे
+Kumaoni:
+  1. Participles / converbs: appears more often here than in the other varieties; more often here: हुए, हुई
+  2. Numeral classifiers / count markers: appears less often here than in the other varieties
+  3. Aspect morphology: appears less often here than in the other varieties; more often here: होता
+  4. Vocative / address particles: appears more often here than in the other varieties; more often here: जी
+  5. Gender agreement: appears more often here than in the other varieties; more often here: रखीं, करा, लगीं, होता, रखा, लगी
