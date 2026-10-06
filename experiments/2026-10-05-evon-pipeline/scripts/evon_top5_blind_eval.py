@@ -6,8 +6,12 @@ Stages (each a subcommand), run in order:
   prompt   write the teaching prompt (generated only from the pilot's results.json) to TEACHING_PROMPT_PATH
   items    build the blinded eval set: items_blind.jsonl (opaque id + Prisma transcript only) and, in a separate
            file, gold_key.jsonl. Runs the leakage controls and refuses to write anything if one fails.
-  infer    call Evon on items_blind.jsonl only; saves predictions.jsonl. Never opens the gold key.
-  score    join predictions with the gold key and report (only after infer has finished every item)
+  infer    call Evon on items_blind.jsonl only; saves predictions_<arm>.jsonl. Never opens the gold key.
+           --arm taught: the teaching prompt is included. --arm untaught: the same item prompt without it (control).
+  score    join predictions with the gold key and report (only after infer has finished every item of the arm)
+
+Hindi: the 130a39d manifest has no Hindi Prisma transcripts, and the pilot's Hindi clips are its training data, so
+by the user's decision the eval covers the other 7 languages while Hindi stays one of the 8 possible answers.
 
 Eval rows come from the 1,000-clip manifest frozen at commit 130a39d (shared_1k_audio_manifest.jsonl on branch
 claude/determined-brahmagupta-ro0jiw), minus every row in the 999-clip manifest the Grammar-40 pilot learned its
@@ -119,7 +123,19 @@ def teaching_prompt():
     return "\n".join(lines)
 
 
+UNTAUGHT_INTRO = ("You will help identify which of 8 related Indian language varieties a speaker is using: %s.\n\n"
+                  "You may receive speech transcribed imperfectly by Prisma. Infer which of these languages is most likely "
+                  "being spoken. Base your judgment on the strongest surviving evidence. Then respond naturally in the "
+                  "language you believe the speaker used." % ", ".join(LANGS))
+UNTAUGHT_MARKER_RULE = ("\nNo marker set has been taught in this task, so always return \"matched_markers\": []. "
+                        "Confidence must reflect how strong the evidence is, not the fact that you must pick one of the "
+                        "%d languages." % len(LANGS))
+
+
 def item_prompt(teaching, transcript):
+    if teaching is None:  # untaught control: same context, transcript and JSON format, no teaching block
+        spec = OUTPUT_SPEC.split("Rules:")[0].rstrip() + UNTAUGHT_MARKER_RULE
+        return f"{UNTAUGHT_INTRO}\n\n{CONTEXT}\n\nPrisma transcript of their turn:\n{transcript}\n\n{spec}"
     return f"{teaching}\n\n{CONTEXT}\n\nPrisma transcript of their turn:\n{transcript}\n\n{OUTPUT_SPEC}"
 
 
@@ -146,7 +162,7 @@ def cmd_items(args):
     rows = [r for r in eval_rows if (r["shard"], r["row_idx"]) not in train_keys]
     failures = []
     per_lang = Counter(r["language"] for r in rows if r.get("prisma_transcript"))
-    for lang in LANGS:
+    for lang in args.languages.split(","):
         if per_lang[lang] == 0:
             failures.append(f"{lang}: no eval rows with a Prisma transcript outside the pilot's training clips")
     if any(r["speaker_or_source_group"] in train_spk for r in rows):
@@ -160,7 +176,7 @@ def cmd_items(args):
         print("LEAKAGE / DATA CONTROL FAILED -- nothing written:\n  " + "\n  ".join(failures))
         print("\nEval rows with Prisma, per language:", dict(per_lang))
         sys.exit(1)
-    rows = [r for r in rows if r.get("prisma_transcript")]
+    rows = [r for r in rows if r.get("prisma_transcript") and r["language"] in args.languages.split(",")]
     random.Random(20261006).shuffle(rows)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUT_DIR / "items_blind.jsonl", "w") as blind, open(OUT_DIR / "gold_key.jsonl", "w") as gold:
@@ -181,9 +197,9 @@ def parse_json(raw):
 
 
 def cmd_infer(args):
-    teaching = TEACHING_PROMPT_PATH.read_text().rstrip("\n")
+    teaching = TEACHING_PROMPT_PATH.read_text().rstrip("\n") if args.arm == "taught" else None
     items = [json.loads(l) for l in open(OUT_DIR / "items_blind.jsonl")]
-    pred_path = OUT_DIR / "predictions.jsonl"
+    pred_path = OUT_DIR / f"predictions_{args.arm}.jsonl"
     done = {json.loads(l)["item_id"] for l in open(pred_path)} if pred_path.exists() else set()
     todo = [it for it in items if it["item_id"] not in done][: args.limit or None]
     client = httpx.Client(timeout=httpx.Timeout(900, connect=10), follow_redirects=True)
@@ -204,12 +220,13 @@ def cmd_infer(args):
         for n, rec in enumerate(pool.map(run, todo), 1):
             out.write(json.dumps(rec, ensure_ascii=False) + "\n")
             out.flush()
-            print(f"{n}/{len(todo)} {rec['item_id']} {rec['latency_sec']}s parsed={rec['parsed'] is not None}")
+            print(f"[{args.arm}] {n}/{len(todo)} {rec['item_id']} {rec['latency_sec']}s parsed={rec['parsed'] is not None}")
 
 
-def cmd_score(_):
+def cmd_score(args):
+    print(f"## Arm: {args.arm}\n")
     items = [json.loads(l) for l in open(OUT_DIR / "items_blind.jsonl")]
-    preds = {p["item_id"]: p for p in map(json.loads, open(OUT_DIR / "predictions.jsonl"))}
+    preds = {p["item_id"]: p for p in map(json.loads, open(OUT_DIR / f"predictions_{args.arm}.jsonl"))}
     missing = [it["item_id"] for it in items if it["item_id"] not in preds]
     if missing:
         sys.exit(f"{len(missing)} items have no saved prediction yet; finish infer before scoring.")
@@ -231,6 +248,9 @@ def cmd_score(_):
     print("| Language | N | Correct | Accuracy | ≥1 marker coverage |\n|---|---:|---:|---:|---:|")
     for lang in LANGS:
         rs = [r for r in rows if r["gold"] == lang]
+        if not rs:
+            print(f"| {lang} | 0 | - | - | - |")
+            continue
         c = sum(r["pred"] == lang for r in rs)
         cov = sum(r["n_valid"] >= 1 for r in rs)
         print(f"| {lang} | {len(rs)} | {c} | {100 * c / len(rs):.1f}% | {100 * cov / len(rs):.1f}% |")
@@ -247,16 +267,16 @@ def cmd_score(_):
     cols = LANGS + ["UNPARSED"]
     print("\nConfusion (rows gold, columns predicted):\n| gold \\ pred | " + " | ".join(CODES.get(c, "UNP") for c in cols) + " |")
     print("|---|" + "---:|" * len(cols))
-    for g in LANGS:
+    for g in [g for g in LANGS if any(r["gold"] == g for r in rows)]:
         print(f"| {g} | " + " | ".join(str(sum(r['gold'] == g and r['pred'] == c for r in rows)) for c in cols) + " |")
-    with open(OUT_DIR / "wrong_predictions.jsonl", "w") as f:
+    with open(OUT_DIR / f"wrong_predictions_{args.arm}.jsonl", "w") as f:
         for r in rows:
             if r["pred"] != r["gold"]:
                 checks = [{**m, "occurs_in_transcript": bool(isinstance(m, dict) and m.get("evidence") and m["evidence"] in r["transcript"])}
                           for m in r["claimed"]]
                 f.write(json.dumps({"gold": r["gold"], "pred": r["pred"], "transcript": r["transcript"],
                                     "claimed_markers": checks}, ensure_ascii=False) + "\n")
-    print(f"\nEvery wrong prediction, with claimed-marker checks: {OUT_DIR / 'wrong_predictions.jsonl'}")
+    print(f"\nEvery wrong prediction, with claimed-marker checks: {OUT_DIR / f'wrong_predictions_{args.arm}.jsonl'}")
 
 
 def main():
@@ -267,12 +287,15 @@ def main():
     p = sub.add_parser("items")
     p.add_argument("--eval-manifest", required=True, help="the 130a39d shared_1k_audio_manifest.jsonl")
     p.add_argument("--train-manifest", required=True, help="the pilot's 999-clip shared_1k_audio_manifest.jsonl (df83a25)")
+    p.add_argument("--languages", default=",".join(LANGS), help="gold languages to evaluate (all 8 stay possible answers)")
     p = sub.add_parser("infer")
     p.add_argument("--evon-url", default="https://sameer261h--evon-v3-3-serve-serve.modal.run")
     p.add_argument("--evon-model", default="/weights/gnani/gnani-evon-v3.3-30B-A3B")
+    p.add_argument("--arm", choices=["taught", "untaught"], required=True)
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--limit", type=int, default=0)
-    sub.add_parser("score")
+    p = sub.add_parser("score")
+    p.add_argument("--arm", choices=["taught", "untaught"], required=True)
     args = ap.parse_args()
     {"table": cmd_table, "prompt": cmd_prompt, "items": cmd_items, "infer": cmd_infer, "score": cmd_score}[args.cmd](args)
 
