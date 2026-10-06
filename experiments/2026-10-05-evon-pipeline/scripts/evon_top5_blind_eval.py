@@ -199,6 +199,8 @@ def parse_json(raw):
 def cmd_infer(args):
     teaching = TEACHING_PROMPT_PATH.read_text().rstrip("\n") if args.arm == "taught" else None
     items = [json.loads(l) for l in open(OUT_DIR / "items_blind.jsonl")][: args.n_items or None]
+    if args.item_ids:
+        items = [it for it in items if it["item_id"] in args.item_ids.split(",")]
     pred_path = OUT_DIR / f"predictions_{args.arm}.jsonl"
     done = {json.loads(l)["item_id"] for l in open(pred_path)} if pred_path.exists() else set()
     todo = [it for it in items if it["item_id"] not in done][: args.limit or None]
@@ -228,6 +230,8 @@ def cmd_infer(args):
 def cmd_score(args):
     print(f"## Arm: {args.arm}\n")
     items = [json.loads(l) for l in open(OUT_DIR / "items_blind.jsonl")][: args.n_items or None]
+    if args.item_ids:
+        items = [it for it in items if it["item_id"] in args.item_ids.split(",")]
     keep = {it["item_id"] for it in items}
     preds = {p["item_id"]: p for p in map(json.loads, open(OUT_DIR / f"predictions_{args.arm}.jsonl")) if p["item_id"] in keep}
     missing = [it["item_id"] for it in items if it["item_id"] not in preds]
@@ -298,9 +302,11 @@ def main():
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--limit", type=int, default=0)
     p.add_argument("--n-items", type=int, default=0, help="use only the first N items of the shuffled set (0 = all)")
+    p.add_argument("--item-ids", default="", help="comma-separated item ids to use (default: all)")
     p = sub.add_parser("score")
     p.add_argument("--arm", choices=["taught", "untaught"], required=True)
     p.add_argument("--n-items", type=int, default=0, help="score only the first N items of the shuffled set (0 = all)")
+    p.add_argument("--item-ids", default="", help="comma-separated item ids to score (default: all)")
     args = ap.parse_args()
     {"table": cmd_table, "prompt": cmd_prompt, "items": cmd_items, "infer": cmd_infer, "score": cmd_score}[args.cmd](args)
 
