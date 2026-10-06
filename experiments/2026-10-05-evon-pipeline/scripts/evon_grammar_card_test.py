@@ -9,7 +9,11 @@ Turns the pilot's top-5 parameters per language (data/grammar40_pilot/results.js
 The prompts are identical apart from the card, so B minus A is the card's contribution. Test transcripts are written
 by hand in a JSONL file, one object per line:
 
-  {"id": "bho-01", "transcript": "...", "expected": "Bhojpuri", "note": "optional"}
+  {"id": "bho-01", "transcript": "...", "expected": "Bhojpuri", "context": "optional", "note": "optional"}
+
+Without "context", Evon is only asked to name the variety. With "context" (a role and situation), Evon is asked to
+reply in that role in the caller's own language, and to state first which variety it heard, so the reply can be read
+and the variety scored in the same call.
 
 `expected` must be one of the 8 pilot languages. Ideally the transcripts are Prisma output (what Evon sees in
 production) and NOT taken from the pilot's 999-clip manifest, which the card was learned from.
@@ -63,6 +67,21 @@ Answer in exactly this format, on two lines:
 LANGUAGE: <one name from the list>
 EVIDENCE: <the words in the transcript that led you there, or "none">"""
 
+ROLE_PROMPT = """{context}
+
+Below is the other person's last turn in an ongoing conversation, as transcribed by a Hindi speech recogniser. \
+Because the recogniser works in Hindi, some regional words may have been rewritten into Hindi spellings.
+
+Their turn:
+{transcript}
+{card}
+Understand what they said and reply naturally in the same language they used. Do not describe, translate, or \
+summarise their speech. Respond directly to them as that person would in this situation.
+
+Answer in exactly this format, on two lines:
+LANGUAGE: <the variety they are speaking, one of: {langs}>
+REPLY: <your reply to them>"""
+
 CARD_INTRO = """
 Notes on how each variety tends to show up in transcripts like this one, learned from about 125 transcripts per \
 variety. For each variety, the five grammar features that best separated it from the others. "more often here" \
@@ -98,8 +117,15 @@ def build_card(top_k=5):
     return "\n".join(lines) + "\n"
 
 
-def make_prompt(transcript, card):
-    return QUESTION.format(transcript=transcript, card=card, langs=", ".join(LANGS))
+def make_prompt(test, card):
+    template = ROLE_PROMPT if test.get("context") else QUESTION
+    return template.format(transcript=test["transcript"], card=card, langs=", ".join(LANGS), context=test.get("context"))
+
+
+def parse_reply(raw):
+    answer = raw.rsplit("</think>", 1)[-1]
+    match = re.search(r"REPLY\s*:\s*(.+)", answer, re.IGNORECASE | re.DOTALL)
+    return match.group(1).strip() if match else None
 
 
 def parse_language(raw):
@@ -177,6 +203,7 @@ def main():
     ap.add_argument("--tests", help="JSONL file of hand-written test cases")
     ap.add_argument("--arms", default="A_no_card,B_card", help="comma-separated: A_no_card, B_card")
     ap.add_argument("--write-card", action="store_true", help=f"write the card to {CARD_PATH.name} and exit")
+    ap.add_argument("--only", help="comma-separated test ids to run (default: all)")
     ap.add_argument("--dry-run", action="store_true", help="print the first test's card prompt, make no Evon calls")
     args = ap.parse_args()
 
@@ -188,23 +215,28 @@ def main():
     if not args.tests:
         ap.error("--tests is required unless --write-card is given")
     tests = load_tests(args.tests)
+    if args.only:
+        tests = [t for t in tests if t["id"] in args.only.split(",")]
     arms = [a.strip() for a in args.arms.split(",")]
     if args.dry_run:
-        print(make_prompt(tests[0]["transcript"], card if "B_card" in arms else ""))
+        print(make_prompt(tests[0], card if "B_card" in arms else ""))
         print(f"\n[dry run] {len(tests)} tests x {len(arms)} arms = {len(tests) * len(arms)} Evon calls would be made.")
         return
 
-    out_path = Path(args.tests).with_suffix(".results.json")
+    out_path = Path(args.tests).with_suffix(f".{args.only.replace(',', '_')}.results.json" if args.only else ".results.json")
     rows = []
     with httpx.Client(timeout=httpx.Timeout(600, connect=10), follow_redirects=True) as client:
         for t in tests:
             for arm in arms:
-                prompt = make_prompt(t["transcript"], card if arm == "B_card" else "")
+                prompt = make_prompt(t, card if arm == "B_card" else "")
                 res = call_evon(client, prompt)
-                row = {**t, "arm": arm, "prompt": prompt, **res, "predicted": parse_language(res["raw_output"])}
+                row = {**t, "arm": arm, "prompt": prompt, **res, "predicted": parse_language(res["raw_output"]),
+                       "reply": parse_reply(res["raw_output"])}
                 rows.append(row)
                 print(f"{t['id']:>12} {arm:10} expected={t['expected']:13} predicted={row['predicted']:13} "
                       f"{'OK' if row['predicted'] == t['expected'] else '--'}  {res['latency_sec']}s")
+                if row["reply"]:
+                    print(f"{'':>12} reply: {row['reply']}")
                 out_path.write_text(json.dumps(rows, ensure_ascii=False, indent=1))  # save as we go
     summary = summarise(rows, arms)
     out_path.with_suffix(".summary.md").write_text(summary + "\n")
